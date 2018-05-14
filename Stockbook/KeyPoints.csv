@@ -1,0 +1,742 @@
+FishStock,Year,Column,Value
+anf.27.3a46,2017,ICES Category,3
+anf.27.3a46,2017,"MSY proxy  (WKProxy, 2015)",No proxy identified
+anf.27.3a46,2017,Management Plan,No
+anf.27.3a46,2017,Landing Obligation applicable in 2018,No
+ank.27.78ab,2016,ICES Category,3
+ank.27.78ab,2016,"MSY proxy (WKProxy,2015)","F<FMSY proxy  
+SSB > MSY Btrigger proxy
+"
+ank.27.78ab,2016,MSY Range,Not defined
+ank.27.78ab,2016,Manage Plan,No
+ank.27.78ab,2016,Landing Obligation applicable,Not in 2017
+ank.27.78ab,2017,ICES Category,3
+ank.27.78ab,2017,"MSY proxy (WKProxy,2015)","F<FMSY proxy  
+SSB > MSY Btrigger proxy
+"
+ank.27.78ab,2017,MSY Range,Not defined
+ank.27.78ab,2017,Manage Plan,No
+ank.27.78ab,2017,Landing Obligation applicable in 2018,No
+mon.27.78ab,2016,ICES Category,3
+mon.27.78ab,2016,"MSY proxy (WKProxy,2015)","F<FMSY proxy  
+SSB > MSY Btrigger proxy
+"
+mon.27.78ab,2016,MSY Range,Not defined
+mon.27.78ab,2016,Manage Plan,No
+mon.27.78ab,2016,Landing Obligation applicable,Not in 2017
+mon.27.78ab,2017,ICES Category,3
+mon.27.78ab,2017,"MSY proxy (WKProxy,2015)","F<FMSY proxy  
+SSB > MSY Btrigger proxy
+"
+mon.27.78ab,2017,MSY Range,Not defined
+mon.27.78ab,2017,Manage Plan,No
+mon.27.78ab,2017,Landing Obligation applicable in 2018,No
+boc.27.6-8,2017,ICES Category,3
+boc.27.6-8,2017,MSY ,Not Available
+boc.27.6-8,2017,MSY Range,Not Available
+boc.27.6-8,2017,Management Plan,Yes
+boc.27.6-8,2017,Landing Obligation applicable in 2018,Yes
+cod.27.6a,2017,ICES Category,1
+cod.27.6a,2017,MSY ,F=0.17 Catch=498 t
+cod.27.6a,2017,  MSY Range lower,F=0.108 Catch=325 t 
+cod.27.6a,2017,  MSY Range upper,F=0.254 Catch=719 t
+cod.27.6a,2017,Management Plan,Yes
+cod.27.6a,2017,Landing Obligation applicable in 2018,No
+cod.27.6a,2017,Stock Collapsed,Yes
+cod.27.6b,2017,ICES Category,6
+cod.27.6b,2017,MSY,Not Available
+cod.27.6b,2017,Management Plan,No
+cod.27.6b,2017,Landing Obligation applicable in 2018,No
+cod.27.7a,2017,ICES Category,1
+cod.27.7a,2017,MSY,0.309
+cod.27.7a,2017,MSY lower,"F= 0.213, Catch=765t"
+cod.27.7a,2017,MSY Upper,"F= 0.408, Catch=1369t"
+cod.27.7a,2017,Manage Plan,No
+cod.27.7a,2017,Landing Obligation applicable in 2018,No
+cod.27.7e-k,2017,ICES Category,1
+cod.27.7e-k,2017,MSY ,"F=0.35, Landings=3,539 t"
+cod.27.7e-k,2017,  MSY Range Lower,"F=0.23, Landings=2,430 t"
+cod.27.7e-k,2017,  MSY Range Upper,"F=0.55, Landings=5,102 t"
+cod.27.7e-k,2017,Management Plan,No
+cod.27.7e-k,2017,Landing Obligation applicable in 2018,No
+dgs.27.nea,2017,ICES Category,1
+dgs.27.nea,2017,Harvest rate corresponding to MSY,0.03
+dgs.27.nea,2017,MSY Range,Not available 
+dgs.27.nea,2017,Management Plan,No
+dgs.27.nea,2017,Landing Obligation applicable in 2018,No
+had.27.7a,2017,ICES Category,1
+had.27.7a,2017,MSY ,"F=0.27 Catch=3,444 t "
+had.27.7a,2017,  MSY Range lower,"F=0.192 Catch=2,516 t"
+had.27.7a,2017,  MSY Range upper,"F=0.351 Catch=4,355 t"
+had.27.7a,2017,Management Plan,No
+had.27.7a,2017,Landing Obligation applicable 2018,Yes
+had.27.6b,2017,ICES Category,1
+had.27.6b,2017,MSY ,"F=0.20 Catch =5,163 t"
+had.27.6b,2017,  MSY Range lower,"F=0.13 Catch =3,344 t "
+had.27.6b,2017,  MSY Range upper,"F=0.20 Catch =5,163 t"
+had.27.6b,2017,Management Plan,No
+had.27.6b,2017,Landing Obligation applicable in 2018,Yes
+had.27.46a20,2017,ICES Category,1
+had.27.46a20,2017,MSY ,"F=0.194: Catch=51,037 t"
+had.27.46a20,2017,MSY Range lower,"F=0.167: Catch=44,106 t"
+had.27.46a20,2017,MSY Range upper,"F=0.194: Catch=51,037 t"
+had.27.46a20,2017,Management Plan,No
+had.27.46a20,2017,Landing Obligation applicable in 2018,Yes
+had.27.7b-k,2017,ICES Category,1
+had.27.7b-k,2017,MSY ,"F=0.40 Catch=8,358 t"
+had.27.7b-k,2017,  MSY Range lower,"F=0.26 Catch=5,689 t "
+had.27.7b-k,2017,  MSY Range upper,"F=0.60 Catch=11,574 t"
+had.27.7b-k,2017,Management Plan,No
+had.27.7b-k,2017,Landing Obligation applicable in 2018,No
+her.27.1-24a514a,2017,ICES Category,1
+her.27.1-24a514a,2017,MSY ,"F=0.15 Catch=647,543t"
+her.27.1-24a514a,2017,MSY Range,Not available
+her.27.1-24a514a,2017,Management Plan,Yes
+her.27.1-24a514a,2017,Landing Obligation applicable in 2018,Yes
+her.27.6a7bc,2017,ICES Category,1
+her.27.6a7bc,2017,MSY,"F=0.16 Catch=21,050t"
+her.27.6a7bc,2017,MSY Range,Not available
+her.27.6a7bc,2017,Management Plan,No
+her.27.6a7bc,2017,Landing Obligation applicable in 2018,Yes 
+her.27.6a7bc,2017,Stock Collapsed,Yes
+her.27.irls,2017,ICES Category,1
+her.27.irls,2017,MSY ,"F=0.26 Catch=7,547t"
+her.27.irls,2017,MSY Range,Not available
+her.27.irls,2017,Management Plan (see below),"Yes, not yet in legislation (subject to co-decision)"
+her.27.irls,2017,Landing Obligation applicable in 2018,Yes 
+her.27.nirs,2017,ICES Category,1
+her.27.nirs,2017,MSY ,"F=0.266 Catch=7,016t"
+her.27.nirs,2017,MSY Range,Not available
+her.27.nirs,2017,Management Plan,No
+her.27.nirs,2017,Landing Obligation applicable in 2018,Yes 
+hke.27.3a46-8abd,2017,ICES Category,1
+hke.27.3a46-8abd,2017,MSY ,"F = 0.28 Catch = 115,335t"
+hke.27.3a46-8abd,2017,  MSY Range Lower,"F = 0.18 Catch = 78,584t"
+hke.27.3a46-8abd,2017,  MSY Range Upper,"F = 0.45 Catch = 168,408t"
+hke.27.3a46-8abd,2017,Management Plan,No
+hke.27.3a46-8abd,2017,Landing Obligation applicable in 2018,Yes
+hom.27.2a4a5b6a7a-ce-k8,2017,ICES Category,1
+hom.27.2a4a5b6a7a-ce-k8,2017,FMSY,0.108
+hom.27.2a4a5b6a7a-ce-k8,2017,MSY Btrigger,"911,587 t"
+hom.27.2a4a5b6a7a-ce-k8,2017,Management Plan,No
+hom.27.2a4a5b6a7a-ce-k8,2017,Landing Obligation applicable in 2018,Yes
+hom.27.3a4bc7d,2017,ICES Category,3
+hom.27.3a4bc7d,2017,FMSYproxy (Length based indicator),24.7 cm
+hom.27.3a4bc7d,2017,MSY Btrigger,Not defined
+hom.27.3a4bc7d,2017,Management Plan,No
+hom.27.3a4bc7d,2017,Landing Obligation applicable in 2018,Yes
+lez.27.4a6a,2017,ICES Category,1
+lez.27.4a6a,2017,MSY ,F2018=FMSY Catch= 7800t
+lez.27.4a6a,2017,  MSY Range lower,F2018=FMSY*0.78 Catch = 6150t 
+lez.27.4a6a,2017,  MSY Range upper,F2018=FMSY*1.22 Catch = 9500t
+lez.27.4a6a,2017,Management Plan,No
+lez.27.4a6a,2017,Landing Obligation applicable in 2018,Yes
+lez.27.6b,2017,ICES Category,3
+lez.27.6b,2017,"MSY proxy (WKProxy, 2015)",F<FMSY proxy  SSB > MSY Btrigger proxy
+lez.27.6b,2017,Management Plan,No
+lez.27.6b,2017,Landing Obligation applicable in 2018,Yes
+lin.27.3a4a6-91214,2017,ICES Category,3
+lin.27.3a4a6-91214,2017,MSY ,Not available
+lin.27.3a4a6-91214,2017,MSY Range,Not available
+lin.27.3a4a6-91214,2017,Management Plan,No
+lin.27.3a4a6-91214,2017,Landing Obligation applicable in 2018,No
+mac.27.nea,2017,ICES Category,1
+mac.27.nea,2017,FMSY,0.21
+mac.27.nea,2017,MSY Btrigger,2.57 Mt
+mac.27.nea,2017,Management Plan,Yes
+mac.27.nea,2017,Landing Obligation applicable in 2018,Yes
+meg.27.7b-k8abd,2017,ICES Category,1
+meg.27.7b-k8abd,2017,MSY,"F = 0.19 Catch = 15,720t"
+meg.27.7b-k8abd,2017,  MSY Range lower,"F = 0.12 Catch = 10,246t"
+meg.27.7b-k8abd,2017,  MSY Range upper,"F = 0.29 Catch = 22,743t"
+meg.27.7b-k8abd,2017,Management Plan,No
+meg.27.7b-k8abd,2017,Landing Obligation applicable in 2018,No
+ple.27.7a,2017,ICES Category,1
+ple.27.7a,2017,MSY,"F=0.169 Catch=3,336"
+ple.27.7a,2017,MSY Range Lower,"F=0.113 Catch=2,278"
+ple.27.7a,2017,MSY Range Upper,"F=0.249 Catch=4,772"
+ple.27.7a,2017,Management plan,No
+ple.27.7a,2017,Landing Obligation applicable in 2018,No
+ple.27.7bc,2017,ICES Category,6
+ple.27.7bc,2017,MSY,Not available
+ple.27.7bc,2017,MSY Range,Not available
+ple.27.7bc,2017,Management Plan,No
+ple.27.7bc,2017,Landing Obligation applicable in 2018,No
+ple.27.7fg,2017,ICES Category,3
+ple.27.7fg,2017,"MSY proxy* (WKProxy, 2015)",F<FMSY proxy  SSB > MSY Btrigger proxy
+ple.27.7fg,2017,MSY Range ,Not defined
+ple.27.7fg,2017,Management Plan,No
+ple.27.7fg,2017,Landing Obligation applicable in 2018,No
+ple.27.7h-k,2017,ICES Category,3
+ple.27.7h-k,2017,MSY Proxy  ,F=0.32  Catch=0 t
+ple.27.7h-k,2017,MSY Proxy Range Lower,F=0.22  Catch=N/A
+ple.27.7h-k,2017,MSY Proxy Range Upper,F=0.39  Catch=N/A
+ple.27.7h-k,2017,Management Plan,No
+ple.27.7h-k,2017,Landing Obligation applicable in 2018,No
+pol.27.67,2017,ICES Category,4
+pol.27.67,2017,MSY,Not available
+pol.27.67,2017,MSY Range ,Not available
+pol.27.67,2017,Management Plan,No
+pol.27.67,2017,Landing Obligation applicable in 2018,Yes
+rjc.27.6,2017,ICES Category,3 and 5
+rjc.27.6,2017,MSY ,Not available
+rjc.27.6,2017,MSY Range,Not available
+rjc.27.6,2017,Management Plan,No
+rjc.27.6,2017,Landing Obligation applicable in 2018,No
+rjc.27.7afg,2017,ICES Category,3 and 5
+rjc.27.7afg,2017,MSY ,Not available
+rjc.27.7afg,2017,MSY Range,Not available
+rjc.27.7afg,2017,Management Plan,No
+rjc.27.7afg,2017,Landing Obligation applicable in 2018,No
+rje.27.7fg,2017,ICES Category,3 and 5
+rje.27.7fg,2017,MSY ,Not available
+rje.27.7fg,2017,MSY Range,Not available
+rje.27.7fg,2017,Management Plan,No
+rje.27.7fg,2017,Landing Obligation applicable in 2018,No
+rjf.27.67,2017,ICES Category,3 and 5
+rjf.27.67,2017,MSY ,Not available
+rjf.27.67,2017,MSY Range,Not available
+rjf.27.67,2017,Management Plan,No
+rjf.27.67,2017,Landing Obligation applicable in 2018,No
+rjh.27.7afg,2017,ICES Category,3 and 5
+rjh.27.7afg,2017,MSY ,Not available
+rjh.27.7afg,2017,MSY Range,Not available
+rjh.27.7afg,2017,Management Plan,No
+rjh.27.7afg,2017,Landing Obligation applicable in 2018,No
+rjm.27.67bj,2017,ICES Category,3 and 5
+rjm.27.67bj,2017,MSY ,Not available
+rjm.27.67bj,2017,MSY Range,Not available
+rjm.27.67bj,2017,Management Plan,No
+rjm.27.67bj,2017,Landing Obligation applicable in 2018,No
+rjm.27.7ae-h,2017,ICES Category,3 and 5
+rjm.27.7ae-h,2017,MSY ,Not available
+rjm.27.7ae-h,2017,MSY Range,Not available
+rjm.27.7ae-h,2017,Management Plan,No
+rjm.27.7ae-h,2017,Landing Obligation applicable in 2018,No
+rjn.27.67,2017,ICES Category,3 and 5
+rjn.27.67,2017,MSY ,Not available
+rjn.27.67,2017,MSY Range,Not available
+rjn.27.67,2017,Management Plan,No
+rjn.27.67,2017,Landing Obligation applicable in 2018,No
+sol.27.7a,2017,ICES Category,1
+sol.27.7a,2017,MSY  ,F=0.20 Catch=320t 
+sol.27.7a,2017,MSY Range lower,F=0.16 Catch=259t
+sol.27.7a,2017,MSY Range upper,F=0.24 Catch=377t 
+sol.27.7a,2017,Management Plan,No
+sol.27.7a,2017,Landing Obligation applicable in 2018,No 
+sol.27.7bc,2017,ICES Category,6
+sol.27.7bc,2017,MSY ,Not Available
+sol.27.7bc,2017,  MSY Range ,Not Available
+sol.27.7bc,2017,Management Plan,No
+sol.27.7bc,2017,Landing Obligation applicable in 2018,Yes
+sol.27.7fg,2017,ICES Category,1
+sol.27.7fg,2017,MSY,F=0.27 Catch=931t
+sol.27.7fg,2017,  MSY Range lower,F=0.15 Catch=517t
+sol.27.7fg,2017,  MSY Range upper,F=0.42 Catch=1353t
+sol.27.7fg,2017,Management Plan,No
+sol.27.7fg,2017,Landing Obligation applicable in 2018,Yes
+sol.27.7h-k,2017,ICES Category,3
+sol.27.7h-k,2017,MSY Proxy *,F=0.67 Catch=268t
+sol.27.7h-k,2017,  MSY Proxy Range lower ,F=0.48 Catch= N/A
+sol.27.7h-k,2017,  MSY Proxy Range upper,F=0.80 Catch=N/A
+sol.27.7h-k,2017,Management Plan,No
+sol.27.7h-k,2017,Landing Obligation applicable 2018,Yes
+spr.27.67a-cf-k,2017,ICES Category,5
+spr.27.67a-cf-k,2017,MSY ,Not Available
+spr.27.67a-cf-k,2017,MSY Range,Not available
+spr.27.67a-cf-k,2017,Management Plan,No
+spr.27.67a-cf-k,2017,Landing Obligation applicable in 2018,No
+whb.27.1-91214,2017,ICES category,1
+whb.27.1-91214,2017,MSY ,"F = 0.32 Catch = 1,387,872 t"
+whb.27.1-91214,2017,MSY Range,Not available
+whb.27.1-91214,2017,Management plan,Yes
+whb.27.1-91214,2017,Landing Obligation applicable in 2018,Yes
+whg.27.6a,2017,ICES Category,1
+whg.27.6a,2017,MSY ,0.18
+whg.27.6a,2017,MSY Range,0.15 - 0.18 
+whg.27.6a,2017,Management Plan,No
+whg.27.6a,2017,Landing Obligation applicable in 2018,No
+whg.27.7a,2017,ICES Category,1
+whg.27.7a,2017,MSY,F = 0.22 Catch = 413 t
+whg.27.7a,2017,   MSY Range upper,F = 0.33 Catch = 537 t
+whg.27.7a,2017,   MSY Range lower,F = 0.15 Catch = 303 t
+whg.27.7a,2017,Management Plan,No
+whg.27.7a,2017,Landing Obligation applicable in 2018,Yes
+whg.27.7b-ce-k,2017,ICES Category,1
+whg.27.7b-ce-k,2017,MSY,"F = 0.52 Catch = 19,429 t"
+whg.27.7b-ce-k,2017,   MSY Range upper,"F = 0.67 Catch = 23,467 t )"
+whg.27.7b-ce-k,2017,   MSY Range lower,"F = 0.32 Catch 13,053 t "
+whg.27.7b-ce-k,2017,Management Plan,No
+whg.27.7b-ce-k,2017,Landing Obligation applicable in 2018,Yes
+whg.27.6b,2017,ICES Category,6
+whg.27.6b,2017,MSY ,Not Available
+whg.27.6b,2017,MSY Range,Not Available
+whg.27.6b,2017,Management Plan,No
+whg.27.6b,2017,Landing Obligation applicable in 2018,No
+BFT-E,2017,MSY Proxies,"F0.1 = 0.107, Catch = 41,205 t"
+BFT-E,2017,MSY proxies lower range,"F0.1 = 0.103, Catch = 31,190 t"
+BFT-E,2017,MSY proxies upper range,"F0.1 = 0.120, Catch = 57,770 t"
+BFT-E,2017,Management Plan,"Yes, rebuilding plan"
+BFT-E,2017,Landing Obligation applicable in 2018,Yes
+cod.27.1-2,2017,ICES Category,1
+cod.27.1-2,2017,MSY ,"F=0.4, Catch=653,971 t "
+cod.27.1-2,2017,Management Plan,Yes
+cod.27.1-2,2017,Landing Obligation applicable in 2018,No
+ple.27.4,2017,ICES Category,Not available
+ple.27.4,2017,MSY,Not available
+ple.27.4,2017,MSY Range,Not available
+ple.27.4,2017,Management Plan,No
+ple.27.4,2017,Landing Obligation applicable in 2018,No
+pok.27.3a46,2017,ICES Category,1
+pok.27.3a46,2017,MSY,"F=0.36  Catch=118,460 t"
+pok.27.3a46,2017,MSY Range lower,"F=0.21 Catch=75,093 t"
+pok.27.3a46,2017,MSY Range upper,"F=0.49 Catch=153,765 t"
+pok.27.3a46,2017,Management Plan,Yes
+pok.27.3a46,2017,Landing Obligation applicable in 2018,Yes
+pok.27.7,2017,ICES Category,6
+pok.27.7,2017,MSY,Not available
+pok.27.7,2017,MSY Range ,Not available
+pok.27.7,2017,Management Plan,No
+pok.27.7,2017,Landing Obligation applicable in 2018,Yes
+sol.27.6,2017,ICES Category,Not Available
+sol.27.6,2017,MSY ,Not Available
+sol.27.6,2017,  MSY Range ,Not Available
+sol.27.6,2017,Management Plan,No
+sol.27.6,2017,Landing Obligation applicable in 2018,No
+ALB-N,2016,BMSY,"407,567 t (366,309 - 463,685) "
+ALB-N,2016,MSY ,"37,082 t (35,396 - 42,364)"
+ALB-N,2016,Management Plan,No
+ALB-N,2016,Landings Obligation applicable?,Yes since 2015
+whb.27.1-91214,2016,ICES Category,1
+whb.27.1-91214,2016,FMSY ,0.32
+whb.27.1-91214,2016,MSY Btrigger,2.25 million tonnes
+whb.27.1-91214,2016,Management Plan,No
+whb.27.1-91214,2016,Landings Obligation applicable?,Yes
+BFT-E,2016,SSB,"351,500 - 1,121,000 t"
+BFT-E,2016,MSY ,"23,256 -74,248 t"
+BFT-E,2016,Management Plan,Yes 
+BFT-E,2016,Landings Obligation applicable?,Yes since 2015
+boc.27.6-8,2016,ICES Category,3
+boc.27.6-8,2016,MSY ,Not Available
+boc.27.6-8,2016,MSY Range,Not Available
+boc.27.6-8,2016,Management Plan,No
+boc.27.6-8,2016,Landings Obligation applicable?,Yes
+cap.27.2a514,2016,ICES Category,1
+cap.27.2a514,2016,Blim,"150,000 t"
+cap.27.2a514,2016,Management Plan,Escapement strategy
+cap.27.2a514,2016,Landings Obligation applicable?,No
+cod.27.7e-k,2016,ICES Category,1
+cod.27.7e-k,2016,MSY ,"0.35 (2,270 t)"
+cod.27.7e-k,2016,MSY Range,"0.23 - 0.55 (1,567 t - 3,297 t) "
+cod.27.7e-k,2016,Management Plan,No
+cod.27.7e-k,2016,Landings Obligation applicable?,Not in 2017
+cod.27.7a,2016,ICES Category,1
+cod.27.7a,2016,MSY ,0.37
+cod.27.7a,2016,MSY Range,0.23-0.63  No Forecast
+cod.27.7a,2016,Management Plan,No
+cod.27.7a,2016,Landings Obligation applicable?,Not in 2017
+cod.27.6b,2016,ICES Category,6
+cod.27.6b,2016,MSY,Not Available
+cod.27.6b,2016,Management Plan,No
+cod.27.6b,2016,Landings Obligation applicable?,Not in 2017
+cod.27.6a,2016,ICES Category,1
+cod.27.6a,2016,MSY,0.17 (553 t)
+cod.27.6a,2016,MSY Range,0.11 - 0.25 (394 t - 749 t)
+cod.27.6a,2016,Management Plan,Yes
+cod.27.6a,2016,Landings Obligation applicable?,Not in 2017
+cod.27.6a,2016,Stock Collapsed,Yes
+cod.27.1-2,2016,ICES Category,1
+cod.27.1-2,2016,MSY ,0.4
+cod.27.1-2,2016,Management Plan,Yes
+cod.27.1-2,2016,Landings Obligation applicable?,Not in 2017
+had.27.7a,2016,ICES Category,3
+had.27.7a,2016,MSY ,0.81
+had.27.7a,2016,Management Plan,No
+had.27.7a,2016,Landings Obligation applicable?,Yes
+had.27.6b,2016,ICES Category,"1 (ICES, 2016b)"
+had.27.6b,2016,MSY ,"0.20 (5,130 t)"
+had.27.6b,2016,MSY Range,"0.13 - 0.2 (3,813 t - 5,130 t)"
+had.27.6b,2016,Management Plan,No
+had.27.6b,2016,Landings Obligation applicable?,Not in 2017
+had.27.7b-k,2016,ICES Category,1
+had.27.7b-k,2016,MSY ,"0.40 (12,444 t)"
+had.27.7b-k,2016,MSY Range,"0.26 - 0.60 (8,521 t - 18,883 t)"
+had.27.7b-k,2016,Management Plan,No
+had.27.7b-k,2016,Landings Obligation applicable?,Not in 2017
+had.27.6a,2016,ICES Category,1
+had.27.6a,2016,MSY ,0.19
+had.27.6a,2016,Management Plan,No
+had.27.6a,2016,Landings Obligation applicable?,Yes
+hke.27.3a46-8abd,2016,ICES Category,1
+hke.27.3a46-8abd,2016,MSY (catch 2017),"0.28 (123,777 t)"
+hke.27.3a46-8abd,2016,MSY Range ,0.18 - 0.45 
+hke.27.3a46-8abd,2016,(catch 2017),"(76,601 t - 156,430 t)"
+hke.27.3a46-8abd,2016,Management Plan,No
+hke.27.3a46-8abd,2016,Landings Obligation applicable?,Yes
+her.27.irls,2016,ICES Category,1
+her.27.irls,2016,MSY Btrigger,"54,000 t"
+her.27.irls,2016,Fmsy,0.26
+her.27.irls,2016,Management Plan,"Yes, not yet in legislation"
+her.27.irls,2016,Landings Obligation applicable?,Yes
+her.27.nirs,2016,ICES Category,1
+her.27.nirs,2016,MSY Btrigger,9500t
+her.27.nirs,2016,F MSY,0.26
+her.27.nirs,2016,Management Plan,No
+her.27.nirs,2016,Landings Obligation applicable,Yes
+her.27.1-24a514a,2016,ICES Category,1
+her.27.1-24a514a,2016,MSY Btrigger,5.0 million tonnes
+her.27.1-24a514a,2016,FMSY,0.15
+her.27.1-24a514a,2016,Management Plan,No
+her.27.1-24a514a,2016,Landings Obligation applicable,Yes
+her.27.6a7bc,2016,ICES Category,1
+her.27.6a7bc,2016,MSY Btrigger,"410,000 t"
+her.27.6a7bc,2016,Fmsy,0.16
+her.27.6a7bc,2016,Management Plan,No
+her.27.6a7bc,2016,Landings Obligation applicable?,Yes
+hom.27.3a4bc7d,2016,ICES Category,5
+hom.27.3a4bc7d,2016,FMSY ,Not defined
+hom.27.3a4bc7d,2016,MSY Btrigger,Not defined
+hom.27.3a4bc7d,2016,Management Plan,No
+hom.27.3a4bc7d,2016,Landings Obligation applicable?,Yes
+hom.27.2a4a5b6a7a-ce-k8,2016,ICES Category,1
+hom.27.2a4a5b6a7a-ce-k8,2016,FMSY,0.13
+hom.27.2a4a5b6a7a-ce-k8,2016,MSY Btrigger,"634,577 t"
+hom.27.2a4a5b6a7a-ce-k8,2016,Management Plan,No
+hom.27.2a4a5b6a7a-ce-k8,2016,Landings Obligation applicable?,Yes
+lin.27.3a4a6-91214,2016,ICES Category,3.2
+lin.27.3a4a6-91214,2016,MSY ,Not available
+lin.27.3a4a6-91214,2016,Management Plan,No
+lin.27.3a4a6-91214,2016,Landings Obligation applicable?,Not in 2017
+mac.27.nea,2016,ICES Category,1
+mac.27.nea,2016,FMSY,0.22
+mac.27.nea,2016,MSY Btrigger,3.0 Mt
+mac.27.nea,2016,Management Plan,No
+mac.27.nea,2016,Landings Obligation applicable?,Yes
+meg.27.7b-k8abd,2016,ICES Category,1
+meg.27.7b-k8abd,2016,MSY (Catch 2017),0.19 (16021t)
+meg.27.7b-k8abd,2016,MSY Range (Catch 17),0.12 - 0.29 (10164t - 22741t)
+meg.27.7b-k8abd,2016,Management Plan,No
+meg.27.7b-k8abd,2016,Landings Obligation applicable?,Yes from 2017
+lez.27.6b,2016,ICES Category,3
+lez.27.6b,2016,"MSY proxy (WKProxy, 2015)",F<FMSY proxy  SSB > MSY Btrigger proxy
+lez.27.6b,2016,Management Plan,No
+lez.27.6b,2016,Landings Obligation applicable?,Yes in 2017
+lez.27.4a6a,2016,ICES Category,"1 (ICES, 2015c)"
+lez.27.4a6a,2016,F2015/FMSY,0.33
+lez.27.4a6a,2016,B2016/BMSY,1.81
+lez.27.4a6a,2016,Management Plan,No
+lez.27.4a6a,2016,Landings Obligation applicable?,Yes from 2017
+ple.27.7fg,2016,ICES Category,3
+ple.27.7fg,2016,MSY,0.27 based on SPiCT
+ple.27.7fg,2016,MSY Range,Not available
+ple.27.7fg,2016,Landings Obligation applicable?,Not in 2017
+ple.27.7fg,2016,Discards increasing,Yes
+ple.27.7a,2016,ICES Category,3
+ple.27.7a,2016,MSY,0.5 based on SPiCT
+ple.27.7a,2016,MSY Range,Not available
+ple.27.7a,2016,Landings Obligation applicable?,Not in 2017
+ple.27.7a,2016,Discards increasing,Yes
+ple.27.7h-k,2016,ICES Category,3
+ple.27.7h-k,2016,MSY Proxy,0.25 aged-based YPR
+ple.27.7h-k,2016,MSY Range,Not available
+ple.27.7h-k,2016,Management Plan,No
+ple.27.7h-k,2016,Landings Obligation applicable?,Not in 2017
+ple.27.7bc,2016,ICES Category,6
+ple.27.7bc,2016,MSY,Not available
+ple.27.7bc,2016,MSY Range,Not available
+ple.27.7bc,2016,Management Plan,No
+ple.27.7bc,2016,Landings Obligation applicable?,Not in 2017
+ple.27.6,2016,ICES Category,Not available
+ple.27.6,2016,MSY,Not available
+ple.27.6,2016,MSY Range,Not available
+ple.27.6,2016,Management Plan,No
+ple.27.6,2016,Landings Obligation applicable?,Not in 2017
+pol.27.67,2016,ICES Category,4
+pol.27.67,2016,"MSY proxy (WKProxy, 2015)",F<FMSY proxy  SSB > MSY Btrigger proxy
+pol.27.67,2016,Management Plan,No
+pol.27.67,2016,Landings Obligation applicable?,Not in 2017
+pok.27.3a46,2016,ICES Category,1
+pok.27.3a46,2016,MSY (Catch 2017),"0.36 (116,605t)"
+pok.27.3a46,2016,MSY Range ,0.21-0.49 
+pok.27.3a46,2016,(Catch 2017),"(73,497-128,157t)"
+pok.27.3a46,2016,Management Plan,"Yes, but not used"
+pok.27.3a46,2016,Landings Obligation applicable,Bottom Trawls from 2016
+pok.27.7,2016,ICES Category,6
+pok.27.7,2016,MSY ,No
+pok.27.7,2016,Management Plan,No
+pok.27.7,2016,Landings Obligation applicable,"Yes, since 2016"
+bss.27.4bc7ad-h,2016,ICES Category,1
+bss.27.4bc7ad-h,2016,MSY ,None
+bss.27.4bc7ad-h,2016,Management Plan,No
+bss.27.4bc7ad-h,2016,Landings Obligation applicable?,Not in 2017
+bss.27.6a7bj,2016,ICES Category,6.2
+bss.27.6a7bj,2016,MSY ,Not available
+bss.27.6a7bj,2016,Management Plan,No
+bss.27.6a7bj,2016,Landings Obligation applicable?,Not in 2017
+rjc.27.6,2016,ICES Category,3 and 5
+rjc.27.6,2016,"MSY proxy (WKProxy, 2015)",Not defined
+rjc.27.6,2016,MSY Range,Not defined
+rjc.27.6,2016,Management Plan,No
+rjc.27.6,2016,Landings Obligation applicable?,Not in 2017
+rjc.27.7afg,2016,ICES Category,3 and 5
+rjc.27.7afg,2016,"MSY proxy (WKProxy, 2015)",Not defined
+rjc.27.7afg,2016,MSY Range,Not defined
+rjc.27.7afg,2016,Management Plan,No
+rjc.27.7afg,2016,Landings Obligation applicable?,Not in 2017
+rje.27.7fg,2016,ICES Category,3 and 5
+rje.27.7fg,2016,"MSY proxy (WKProxy, 2015)",Not defined
+rje.27.7fg,2016,MSY Range,Not defined
+rje.27.7fg,2016,Management Plan,No
+rje.27.7fg,2016,Landings Obligation applicable?,Not in 2017
+rjf.27.67,2016,ICES Category,3 and 5
+rjf.27.67,2016,"MSY proxy (WKProxy, 2015)",Not defined
+rjf.27.67,2016,MSY Range,Not defined
+rjf.27.67,2016,Management Plan,No
+rjf.27.67,2016,Landings Obligation applicable?,Not in 2017
+rjh.27.7afg,2016,ICES Category,3 and 5
+rjh.27.7afg,2016,"MSY proxy (WKProxy, 2015)",Not defined
+rjh.27.7afg,2016,MSY Range,Not defined
+rjh.27.7afg,2016,Management Plan,No
+rjh.27.7afg,2016,Landings Obligation applicable?,Not in 2017
+rjm.27.67bj,2016,ICES Category,3 and 5
+rjm.27.67bj,2016,"MSY proxy (WKProxy, 2015)",Not defined
+rjm.27.67bj,2016,MSY Range,Not defined
+rjm.27.67bj,2016,Management Plan,No
+rjm.27.67bj,2016,Landings Obligation applicable?,Not in 2017
+rjm.27.7ae-h,2016,ICES Category,3 and 5
+rjm.27.7ae-h,2016,"MSY proxy (WKProxy, 2015)",Not defined
+rjm.27.7ae-h,2016,MSY Range,Not defined
+rjm.27.7ae-h,2016,Management Plan,No
+rjm.27.7ae-h,2016,Landings Obligation applicable?,Not in 2017
+rjn.27.67,2016,ICES Category,3 and 5
+rjn.27.67,2016,"MSY proxy (WKProxy, 2015)",Not defined
+rjn.27.67,2016,MSY Range,Not defined
+rjn.27.67,2016,Management Plan,No
+rjn.27.67,2016,Landings Obligation applicable?,Not in 2017
+sol.27.7fg,2016,ICES Category,1
+sol.27.7fg,2016,MSY ,0.27 (806t)
+sol.27.7fg,2016,MSY Range,0.15 - 0.42  (451t -  1135t)
+sol.27.7fg,2016,Management Plan,No
+sol.27.7fg,2016,Landings Obligation applicable?,Not in 2017
+sol.27.7h-k,2016,ICES Category,3
+sol.27.7h-k,2016,MSY ,Not Available
+sol.27.7h-k,2016,Management Plan,No
+sol.27.7h-k,2016,Landings Obligation applicable?,Not in 2017
+sol.27.7bc,2016,ICES Category,6
+sol.27.7bc,2016,MSY ,Not Available
+sol.27.7bc,2016,Management Plan,No
+sol.27.7bc,2016,Landings Obligation applicable?,Not in 2017
+sol.27.6,2016,ICES Category,Not Available
+sol.27.6,2016,MSY ,Not Available
+sol.27.6,2016,MSY Range,Not Available
+sol.27.6,2016,Management Plan,No
+sol.27.6,2016,Landings Obligation applicable?,Not in 2017
+sol.27.7a,2016,ICES Category,1
+sol.27.7a,2016,MSY ,0.20 (320t)
+sol.27.7a,2016,MSY Range,0.16 - 0.24  (259t -  377t)
+sol.27.7a,2016,Management Plan,No
+sol.27.7a,2016,Landings Obligation applicable?,Not in 2017
+spr.27.67a-cf-k,2016,ICES Category,5
+spr.27.67a-cf-k,2016,MSY ,Not Available
+spr.27.67a-cf-k,2016,Management Plan,Not Available
+spr.27.67a-cf-k,2016,Landings Obligation applicable?,Not in 2017
+dgs.27.nea,2016,ICES Category,1
+dgs.27.nea,2016,FMSY ,0.03
+dgs.27.nea,2016,MSY Range,Not available 
+dgs.27.nea,2016,Management Plan,No
+dgs.27.nea,2016,Landings Obligation applicable?,Not in 2017
+whg.27.7b-ce-k,2016,ICES Category,1
+whg.27.7b-ce-k,2016,MSY ,"0.52 (25,125 t )"
+whg.27.7b-ce-k,2016,MSY Range,"0.32 - 0.67 (16,995 t -  30,261 t )"
+whg.27.7b-ce-k,2016,Management Plan,No
+whg.27.7b-ce-k,2016,Landings Obligation applicable?,Yes
+whg.27.7a,2016,ICES Category,3
+whg.27.7a,2016,MSY ,Not available
+whg.27.7a,2016,Management Plan,No
+whg.27.7a,2016,Landings Obligation applicable?,Not in 2017
+whg.27.6b,2016,ICES Category,6
+whg.27.6b,2016,MSY ,Not Available
+whg.27.6b,2016,MSY Range,Not Available
+whg.27.6b,2016,Management Plan,No
+whg.27.6b,2016,Landings Obligation applicable?,Not in 2017
+whg.27.6a,2016,ICES Category,1
+whg.27.6a,2016,MSY ,0.18
+whg.27.6a,2016,MSY Range,0.16 - 0.18 
+whg.27.6a,2016,Management Plan,No
+whg.27.6a,2016,Landings Obligation applicable?,Not in 2017
+nep.fu.11,2016,ICES Category,1
+nep.fu.11,2016,F MSY (Landings 2017),10.8 (3610t)
+nep.fu.11,2016,F MSY  Range,8.4 - 10.8
+nep.fu.11,2016,Landings Obligation applicable,Yes
+nep.fu.11,2016,MSY Btrigger,Yes
+nep.fu.12,2016,ICES Category,1
+nep.fu.12,2016,F MSY (Landings 2017),11.7 (6196t)
+nep.fu.12,2016,F MSY  Range,9.3 - 11.7
+nep.fu.12,2016,Landings Obligation applicable,Yes
+nep.fu.12,2016,MSY Btrigger,Yes
+nep.fu.13,2016,,Firth of Clyde
+nep.fu.13,2016,ICES Category,1
+nep.fu.13,2016,F MSY (Landings 2017),15.1 (5276t)
+nep.fu.13,2016,F MSY  Range,9.9 - 15.1
+nep.fu.13,2016,Landings Obligation applicable,Yes
+nep.fu.13,2016,MSY Btrigger,Yes
+nep.fu.13,2016,,Sound of Jura
+nep.fu.13,2016,ICES Category,1
+nep.fu.13,2016,F MSY (Landings 2017),12.0 (909t)
+nep.fu.13,2016,F MSY  Range,9.4 - 12.0
+nep.fu.13,2016,Landings Obligation applicable,Yes
+nep.fu.13,2016,MSY Btrigger,Yes
+nep.fu.14,2016,ICES Category,1
+nep.fu.14,2016,F MSY (Landings 2017),11.0 (941t)
+nep.fu.14,2016,F MSY  Range,9.1 - 11.0  (778t - 941t)
+nep.fu.14,2016,Landings Obligation applicable,Yes
+nep.fu.14,2016,MSY Btrigger,Yes
+nep.fu.15,2016,ICES Category,1
+nep.fu.15,2016,F MSY (Landings 2017),"18.2 (9,376t)"
+nep.fu.15,2016,F MSY  Range (Landings 2017),"12.4 - 18.2  (6,390t - 9,376t)"
+nep.fu.15,2016,Landings Obligation applicable?,Yes
+nep.fu.15,2016,MSY Btrigger,Yes 
+nep.fu.16,2016,ICES Category,1
+nep.fu.16,2016,F MSY (Landings 2017),"6.2 (3,100t)"
+nep.fu.16,2016,F MSY  Range (Landings 2017),"5.0 - 6.2 (2,500t - 3,100t)"
+nep.fu.16,2016,Landings Obligation applicable?,No
+nep.fu.16,2016,MSY Btrigger,No
+nep.fu.17,2016,ICES Category,1
+nep.fu.17,2016,MSY Approach (Landings 2017),6.0 (456t)
+nep.fu.17,2016,F MSY  Range (Landings 2017),7.4 - 8.5 (565t - 629t)
+nep.fu.17,2016,Landings Obligation applicable?,Yes
+nep.fu.17,2016,MSY Btrigger,Yes 
+nep.fu.18,2016,ICES Category,5
+nep.fu.18,2016,F MSY ,No
+nep.fu.18,2016,F MSY  Range ,No
+nep.fu.18,2016,Landings Obligation applicable?,Yes
+nep.fu.18,2016,MSY Btrigger,No
+nep.fu.19,2016,ICES Category,1
+nep.fu.19,2016,F MSY (Landings 2017),8.6 (599t)
+nep.fu.19,2016,F MSY  Range (Landings 2017),8.3 - 9.3 (576t - 646t)
+nep.fu.19,2016,Landings Obligation applicable?,Yes
+nep.fu.19,2016,MSY Btrigger,Yes 
+nep.fu.22,2016,ICES Category,1
+nep.fu.22,2016,F MSY (Landings 2017),"11.2 (1,807t)"
+nep.fu.22,2016,F MSY  Range (Landings 2017),"10.2 - 12.8 (1,646t - 2,065t)"
+nep.fu.22,2016,Landings Obligation applicable?,Yes
+nep.fu.22,2016,MSY Btrigger,Yes 
+nep.fu.2021,2016,ICES Category,1
+nep.fu.2021,2016,F MSY (Landings 2017),"6.0 (2,727t)"
+nep.fu.2021,2016,F MSY  Range (Landings 2017),No
+nep.fu.2021,2016,Landings Obligation applicable?,Yes
+nep.fu.2021,2016,MSY Btrigger,No
+nep.fu.11,2017,ICES Category,1
+nep.fu.11,2017,MSY,"HR=10.8, Catch=2,819t"
+nep.fu.11,2017,MSY Lower,"HR=8.4,  Catch=2,193t"
+nep.fu.11,2017,MSY Upper,"HR=10.8, Catch=2,819t"
+nep.fu.11,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.11,2017,MSY Btrigger (million individuals),540
+nep.fu.12,2017,ICES Category,1
+nep.fu.12,2017,MSY,"HR=11.7, Catch=4,112t"
+nep.fu.12,2017,MSY Lower,"HR=9.3,  Catch=3,269t"
+nep.fu.12,2017,MSY Upper,"HR=11.7, Catch=4,112t"
+nep.fu.12,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.12,2017,MSY Btrigger (million individuals),1020
+nep.fu.13,2017,,Firth of Clyde
+nep.fu.13,2017,ICES Category,1
+nep.fu.13,2017,MSY,"HR=15.1, Catch=4,484t"
+nep.fu.13,2017,MSY Lower,"HR=9.9,  Catch=2,940t"
+nep.fu.13,2017,MSY Upper,"HR=15.1, Catch=4,484t"
+nep.fu.13,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.13,2017,MSY Btrigger (million individuals),580
+nep.fu.13,2017,,Sound of Jura 
+nep.fu.13,2017,ICES Category,1
+nep.fu.13,2017,MSY,"HR=12.0, Catch=695t"
+nep.fu.13,2017,MSY Lower,"HR=9.4,   Catch=545t"
+nep.fu.13,2017,MSY Upper,"HR=12.0, Catch=695t"
+nep.fu.13,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.13,2017,MSY Btrigger (million individuals),160
+nep.fu.14,2017,ICES Category,1
+nep.fu.14,2017,MSY ,"HR=11.0, Catch=1,281t"
+nep.fu.14,2017,  MSY Lower,"HR=9.1,  Catch=1,060t "
+nep.fu.14,2017,  MSY Upper,"HR=11.0, Catch=1,281t"
+nep.fu.14,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.14,2017,MSY Btrigger (million individuals),350
+nep.fu.15,2017,ICES Category,1
+nep.fu.15,2017,MSY ,"HR=18.2, Catch=11,807t"
+nep.fu.15,2017,  MSY Lower,"HR=12.4, Catch=8,045t "
+nep.fu.15,2017,  MSY Upper,"HR=18.2, Catch=11,807t"
+nep.fu.15,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.15,2017,MSY Btrigger (individuals),3 billion 
+nep.fu.16,2017,ICES Category,1
+nep.fu.16,2017,MSY ,"HR=6.2, Catch=2,734t"
+nep.fu.16,2017,  MSY Lower,"HR=5.0, Catch=2,206t "
+nep.fu.16,2017,  MSY Upper,"HR=6.2, Catch=2,734t"
+nep.fu.16,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.16,2017,MSY Btrigger,Not defined
+nep.fu.17,2017,ICES Category,1
+nep.fu.17,2017,MSY ,"HR=8.5, Catch=737t"
+nep.fu.17,2017,  MSY Lower,"HR=7.4, Catch=641t "
+nep.fu.17,2017,  MSY Upper,"HR=8.5, Catch=737t"
+nep.fu.17,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.17,2017,MSY Btrigger (million individuals),540
+nep.fu.18,2017,ICES Category,5
+nep.fu.18,2017,MSY ,Not available
+nep.fu.18,2017,  MSY Lower,Not available
+nep.fu.18,2017,  MSY Upper,Not available
+nep.fu.18,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.18,2017,MSY Btrigger,Not defined
+nep.fu.19,2017,ICES Category,1
+nep.fu.19,2017,MSY ,"HR=9.3, Catch=1,192t"
+nep.fu.19,2017,  MSY Lower,"HR=8.3, Catch=1,065t "
+nep.fu.19,2017,  MSY Upper,"HR=9.3, Catch=1,192t"
+nep.fu.19,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.19,2017,MSY Btrigger (million individuals),430
+nep.fu.22,2017,ICES Category,1
+nep.fu.22,2017,MSY ,"HR=12.8, Catch=4,322t"
+nep.fu.22,2017,  MSY Lower,"HR=10.2, Catch=3,441t "
+nep.fu.22,2017,  MSY Upper,"HR=12.8, Catch=4,322t"
+nep.fu.22,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.22,2017,MSY Btrigger (million individuals),1600
+nep.fu.2021,2017,ICES Category,1
+nep.fu.2021,2017,MSY ,"HR=6.0, Catch=8,673t"
+nep.fu.2021,2017,  MSY Lower,"HR=5.1, Catch=7,366t"
+nep.fu.2021,2017,  MSY Upper,"HR=6.0, Catch=8,673t"
+nep.fu.2021,2017,Landing Obligation applicable in 2018,Yes
+nep.fu.2021,2017,MSY Btrigger,Not defined
+bss.27.4bc7ad-h,2017,ICES Category,1
+bss.27.4bc7ad-h,2017,MSY ,None
+bss.27.4bc7ad-h,2017,Management Plan,No
+bss.27.4bc7ad-h,2017,Landing Obligation applicable in 2018,No
+bss.27.6a7bj,2017,ICES Category,6.2
+bss.27.6a7bj,2017,MSY ,Not available
+bss.27.6a7bj,2017,Management Plan,No
+bss.27.6a7bj,2017,Landing Obligation applicable ,No
+ALB-N,2017,MSY ,"B = 407,567 t, F = 0.097, Landings = 37,082 t"
+ALB-N,2017,MSY Range Lower,"B = 366,309 t, F = 0.079, Landings = 35,396 t"
+ALB-N,2017,MSY Range Upper,"B = 463,685 t, F = 0.109, Landings = 42,364 t"
+ALB-N,2017,Management Plan,Yes
+ALB-N,2017,Landing Obligation applicable in 2018,Yes
+ple.27.6,2017,ICES Category,Not available
+ple.27.6,2017,MSY,Not available
+ple.27.6,2017,MSY Range,Not available
+ple.27.6,2017,Management Plan,No
+ple.27.6,2017,Landing Obligation applicable in 2018,Yes
+anf.27.3a46,2016,ICES Category,3
+anf.27.3a46,2016,"MSY proxy (WKProxy, 2015)",No proxy identified
+anf.27.3a46,2016,Management Plan,No
+anf.27.3a46,2016,Landings Obligation applicable?,Not in 2017
+pil.27.7,2016,ICES Category,3.2
+pil.27.7,2016,MSY ,Not Available
+pil.27.7,2016,Management Plan,No
+pil.27.7,2016,Landings Obligation applicable?,Not in 2017
+SWO-N,2016,SSB,"65,060 t (54,450-76,700)"
+SWO-N,2016,MSY ,"13,660 t (13,250-14,080)"
+SWO-N,2016,FMSY, 0.21 (0.17-0.26)
+SWO-N,2016,Management Plan,Yes
+SWO-N,2016,Landings Obligation applicable?,Yes
+pil.27.7,2017,ICES Category,5
+pil.27.7,2017,MSY ,Not Available
+pil.27.7,2017,Management Plan,No
+pil.27.7,2017,Landing Obligation applicable in 2018,No
+SWO-N,2017,MSY,"B=82,640 t,  F=0.17 ,  Catch=13,059 t "
+SWO-N,2017,MSY Range lower,"B=51.580 t,  F=0.10 ,  Catch=11,840 t"
+SWO-N,2017,MSY Range upper,"B=132,010 t,  F=0.27,  Catch=14,970 t"
+SWO-N,2017,Management Plan,Yes
+SWO-N,2017,Landing Obligation applicable in 2018,No
