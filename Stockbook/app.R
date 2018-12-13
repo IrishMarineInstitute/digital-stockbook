@@ -75,7 +75,6 @@ ui <- fluidPage(
            column(3,img(src="Logos/dafm_logo.png", width = "300px", height = "100px",style="margin-top: 1.5em;")),
            column(3,img(src="Logos/EU logo with text.jpg", width = "280px", height = "90px",style="margin-top: 32px;")),
            column(3,img(src="Logos/Marine_logo_rgb.jpg", width = "320px", height = "90px",style="margin-left: -0px;margin-top: 2em;"))
-           #img(src="Niamh.png", width = "1250px", height = "100px", style="display: block; margin-left: auto; margin-right: auto;margin-top:0em")
   )
 )
 
@@ -350,7 +349,6 @@ server <- function(input, output, session) {
   # Stock Advice Tab #
   ####################
   #Species Table for mapping different codes
-  #setwd("H:/Stockbook/shiny/WIP") #If needing to run it
   ICEStable=read.csv('ICES-New-Old - extra species.csv', header=TRUE)
   ICEStable$Fish=as.character(ICEStable$Fish)
   ICEStable$SpeciesByDiv=as.character(ICEStable$SpeciesByDiv)
@@ -591,16 +589,7 @@ server <- function(input, output, session) {
   
   ######################
   # Adding ICES output #
-  ######################
-  #ICCATlist=c("North Atlantic", "East Atlantic and Mediterranean Sea")
-  #output$advicelabel <-renderText ({
-  #  if(input$speciesbydiv %in% ICCATlist){
-  #    paste0("ICCAT Advice")
-  #  }else{
-  #    paste0("ICES Advice")
-  #  }
-  #})
-  
+  ######################  
   output$ICESAdviceTextMI <- renderText({
     paste0("Advice for ", as.numeric(as.character(input$year))+1)
   })
@@ -738,7 +727,6 @@ server <- function(input, output, session) {
   ###############
   # Forecasting #
   ###############
-  #setwd("H:/Stockbook/shiny/WIP")
   Forecasting=read.csv('ForecastingData.csv', header=TRUE)
   Forecasting$value <- as.numeric(Forecasting$value)
   Forecasting$Year <- as.numeric(Forecasting$Year)
@@ -754,13 +742,9 @@ server <- function(input, output, session) {
                        inline = TRUE) #, selected = "F = F2017"
   })
   
-  #sbl <-reactive({
-  #  filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
-  #})
-  
+
   mypalette<-primary.colors(length(factor(Forecasting$Basis)))
   
-  #output$plotforecasting <- renderPlotly({
   output$plotSSB <- renderPlotly({
     sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     ssb <- filter(sbl, var=="SSB")
@@ -796,13 +780,7 @@ server <- function(input, output, session) {
   output$plotF <- renderPlotly({
     sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     f <- filter(sbl, var=="F")
-    #if(dim(f[f$Year==2018 & f$Basis=="Assessment",])[1]==0){
-    #      f2018= data.frame(FishStock=f[1,1], Year=2018, Basis="Assessment", 
-    #                    var="F", value=f[f$Year==2018 & f$Basis=="ICES Advice",][,5])
-    #      f=rbind(f, f2018)
-    #}else{
     f[f$Year==2018 & f$Basis=="Assessment",][,5] <- f[f$Year==2018 & f$Basis=="ICES Advice",][,5]
-    #}
     Fmsy <- filter(sbl, var=="Fmsy")[1,5]
     Fpa <- filter(sbl, var=="Fpa")[1,5]
     f1 <- filter(f, Basis %in% c("Assessment", "ICES Advice"))
@@ -854,7 +832,6 @@ server <- function(input, output, session) {
              yaxis = list (title = yaxislabel, range = c(0, max(la3$value, na.rm = T)*1.05)))
     p3$elementId <- NULL
     p3
-    #subplot(p1, p2, p3)
   })
   
   #Forecasting table
@@ -1108,7 +1085,6 @@ server <- function(input, output, session) {
                                       )),
                              HTML("<br><br>"))}}
     do.call(tabsetPanel, panels)
-    #tabsetPanel(panels)
                                                                                  })
   
   output$EcosystemOverview <-renderUI({
