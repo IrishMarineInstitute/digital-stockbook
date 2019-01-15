@@ -1,0 +1,76 @@
+Anchovy 49 
+Antimora blue 0 
+Argentine 5 
+Blue ling 0 0 
+Blue Whiting 21468 24785 27658 
+Bluemouth 18 14 9 
+Boarfish 34634 16325 17496 
+Brill 72 79 121 
+Clam 95 119 56 
+Cockle 3 217 
+Cod 1371 1534 941 
+Conger eel 62 44 50 
+Crab 8583 8155 7269 
+Cuttlefish 0 14 38 
+Dab 9 8 1 
+Demersal shark 422 436 476 
+European Pilchard 277 232 
+Flathead Grey Mullet 2 1 
+Flounder 2 4 1 
+Forkbeard 27 37 13 
+G/land Halibut 0 
+Gadiformes nei 0 
+Gurnard 89 80 55 
+Haddock 3396 3127 3771 
+Hake 2584 2738 3392 
+Halibut 0 0 
+Herring 24071 19261 19317 
+Horse Mackerel 32795 21655 27532 
+John dory 227 200 252 
+Lemon Sole 465 479 472 
+Ling 582 510 740 
+Lobster 456 373 138 
+Long Rough Dab 0 1 0 
+Mackerel 103357 88853 76540 
+Megrim 2845 3022 3281 
+Mix Boxes 200 206 221 
+Monkfish 3885 3818 4412 
+Mora 2 0 
+Mullet 4 17 1 
+Mussel 848 235 
+Nephrops 8686 8233 9390 
+Octopus 7 7 4 
+Oyster 335 153 176 
+Pandalus 7 2 8 
+Pelagic Shark 1 3 1 
+Periwinkle 1135 17 
+Plaice 298 378 672 
+Pollack 1125 1093 979 
+Pouting 2 0 0 
+Razor Shell 1019 827 762 
+Red Mullet 2 3 5 
+Redfish 0 2 
+Saithe 1169 763 909 
+Sand gaper 2 1 1 
+Sand Sole 1 1 0 
+Scallop 2706 2026 2226 
+Sea Bream 0 0 0 
+Sea Cucumbers 20 
+Seabass 0 
+Shrimp 295 248 35 
+Skates and rays 1085 1047 904 
+Sole Black 198 187 212 
+Spiny Lobsters 23 26 5 
+Sprat 3022 10371 4763 
+Squid 294 238 375 
+Swordfish 3 16 15 
+Tuna 64 
+Tuna Albacore 2485 2367 2324 
+Tuna Northern Bluefin 19 16 34 
+Turbot 164 160 222 
+Tusk 2 0 2 
+Whelk 2175 3394 2561 
+Whiting 7043 6591 7835 
+Witch 574 535 594 
+Wolffish 0 0 1 
+Wrasse 1 5 1 

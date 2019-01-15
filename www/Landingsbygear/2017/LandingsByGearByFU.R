@@ -1,0 +1,39 @@
+library(RODBC)
+library(RColorBrewer)
+library(dplyr)
+
+setwd('H:/Stockbook/shiny/WIP/www/Landingsbygear/2017')
+
+
+pal <- brewer.pal(9, 'Blues')
+
+#Landings by Gear by FU
+#Data from \\galwayfs03\FishData\Data for ICESWG\2017\NEP functions
+
+land=read.csv("LandingsByGearbyFU.csv", header=TRUE)
+
+table(land$stock)
+table(land$gear)
+
+land$gear <- ordered(land$gear, c("Others", "Seines", "Midwater trawls", "Gillnets", "Bottom otter trawls", 
+"Beam trawls")
+)
+
+#2016 only
+land=filter(land, year=="2016")
+table(land$stock)
+table(land$gear)
+
+for(s in levels(factor(land$stock))) {
+  t <- with(subset(land,stock==s), tapply(landWt,gear,sum))
+  t <- ifelse(is.na(t),0,t)
+  cat(s,'\n')
+  png(paste0('nep.fu.', s,'.png'),4,1.75,'in',8,'white',600)
+    par(mar=c(4,8.5,2,1))
+    barplot(sort(t)/1000,xlim=extendrange(c(0,max(t)/1000),f=0.02),horiz=T,col=pal[7],border=pal[9],space=0.5,las=1,xlab='Tonnes',main = 'Irish landings by gear type')
+    box()
+  dev.off()
+}
+
+
+
