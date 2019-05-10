@@ -8,12 +8,14 @@ library(DT)
 library(ggplot2)
 library(reshape2)
 
+availableYears<- list("2018", "2017", "2016", "2015")
+
 ui <- fluidPage(
   tags$head(includeScript("google-analytics.js")),
   theme = shinytheme("journal"),
   titlePanel("The Stock Book"),
   selectInput("year", h3("Select Stock Book Year"),
-              choices = list("2018", "2017", "2016", "2015"), selected = "2018"),
+              choices = availableYears),
   navlistPanel(id="mainpanel", widths=c(2,10), 
               tabPanel("Introduction", 
                        tabsetPanel(type="tabs",
@@ -82,6 +84,65 @@ ui <- fluidPage(
 ############################################################################################
 ############################################################################################
 server <- function(input, output, session) {
+  
+  
+  ## Read parameter strings from the URL and change the selection appropriately
+  observe({
+    urlParameters <- parseQueryString(session$clientData$url_search)
+    ## If we have a stock parameter in the URL we will try and use it to
+    ## choose our default species
+    if (!is.null(urlParameters[['stock']])) {
+      
+      stockURLParameter <- urlParameters[['stock']]
+      
+      # Try and find the description for the parameter passed in
+      #speciesURLName <- SpeciesList[tolower(SpeciesList$IC_Species)==tolower(speciesURLParameter),"Species_Name"]
+      
+      # If we didn't get a match just use the first species in the data frame as the default species
+      #if (length(speciesURLName) == 0){
+      #  speciesURLName <- SpeciesList[1,"Species_Name"]
+      #}
+      
+      #updateSelectInput(session, 
+      #                  "species",label="Species",
+      #                  choices= SpeciesList$Species_Name,
+      #                  selected= speciesURLName )
+      
+      
+      #Show the Fish Species tab using SELECT - this is a bit of hack to make sure the
+      # user is taken to the Fish Species page first
+      #showTab("TopLevelMenu","Fish Species",select= TRUE, session)
+      
+    } 
+    ## Else we 'll just use the first species in the data frame as the default species
+    else 
+    {
+      #updateSelectInput(session, 
+      #                  "species",label="Species",
+      #                  choices= SpeciesList$Species_Name,
+      #                  selected= SpeciesList[1,"Species_Name"] )
+      
+    }
+    
+    # YEAR
+    # If we have a valid year parameter - change the year input selection
+    if (!is.null(urlParameters[['year']])) {
+      
+      yearURLParameter <- urlParameters[['year']]
+      yearURLParameter <- '2017'
+      if(yearURLParameter %in% availableYears){
+        updateSelectInput(session, 
+                          "year",
+                          choices= availableYears,
+                          selected= yearURLParameter )
+      }
+      
+    }
+    
+      
+  })
+  
+  
   #Introduction
   Introduction=read.csv('Introduction.csv', header=TRUE)
   output$Introtext <- renderText({
