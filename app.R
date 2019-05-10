@@ -95,14 +95,7 @@ server <- function(input, output, session) {
   ICEStable$Fish=as.character(ICEStable$Fish)
   ICEStable$SpeciesByDiv=as.character(ICEStable$SpeciesByDiv)
   Speciesfilter <- unique(ICEStable$Fish)
-  #output$speciesSelector <- renderUI({
-  #  selectInput("speciesfilter", h3("Select Species"), as.list(Speciesfilter), selected = "Cod") 
-  #})
-  # output$DescSelector <- renderUI({
-  #   SpeciesbyDiv=filter(ICEStable, Fish %in% c(input$speciesfilter))
-  #   Descriptions <- unique(SpeciesbyDiv$SpeciesByDiv)
-  #   selectInput("speciesbydiv", h3("Select Stock Area"), as.list(Descriptions), selected = Descriptions[1])
-  # })
+
   
   
   ## Read parameter strings from the URL and change the selection appropriately
@@ -116,7 +109,7 @@ server <- function(input, output, session) {
       stockURLParameter <- urlParameters[['stock']]
       #stockURLParameter <- 'mon.27.78ab'
       
-      print(stockURLParameter)
+      #print(stockURLParameter)
       
       stockParameterFrame <- ICEStable[as.character(ICEStable$New)==stockURLParameter,]
       stockParameterFish <- stockParameterFrame$Fish
@@ -126,7 +119,7 @@ server <- function(input, output, session) {
         stockParameterFish <- ICEStable[1,"Fish"]
       }
       
-      print(stockParameterFish)
+      #print(stockParameterFish)
 
       # create the speciesfilter input
       output$speciesSelector <- renderUI({
@@ -140,7 +133,7 @@ server <- function(input, output, session) {
         stockParameterDiv <- ICEStable[1,"SpeciesByDiv"]
       }
       
-      print(stockParameterDiv)
+      #print(stockParameterDiv)
 
       # create the DescSelector input
       output$DescSelector <- renderUI({
@@ -454,6 +447,7 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", height = 350))
   }, deleteFile = FALSE)
   
+  # Code moved to the start of the server function because we need it to handle URL parameters
   # ####################
   # # Stock Advice Tab #
   # ####################
