@@ -85,51 +85,98 @@ ui <- fluidPage(
 ############################################################################################
 server <- function(input, output, session) {
   
+  # This code has been moved here because we need the data for handling URL parameters
+  ####################
+  # Stock Advice Tab #
+  ####################
+  #Species Table for mapping different codes
+  #setwd("H:/Stockbook/shiny/WIP") #If needing to run it
+  ICEStable=read.csv('ICES-New-Old - extra species.csv', header=TRUE)
+  ICEStable$Fish=as.character(ICEStable$Fish)
+  ICEStable$SpeciesByDiv=as.character(ICEStable$SpeciesByDiv)
+  Speciesfilter <- unique(ICEStable$Fish)
+  #output$speciesSelector <- renderUI({
+  #  selectInput("speciesfilter", h3("Select Species"), as.list(Speciesfilter), selected = "Cod") 
+  #})
+  # output$DescSelector <- renderUI({
+  #   SpeciesbyDiv=filter(ICEStable, Fish %in% c(input$speciesfilter))
+  #   Descriptions <- unique(SpeciesbyDiv$SpeciesByDiv)
+  #   selectInput("speciesbydiv", h3("Select Stock Area"), as.list(Descriptions), selected = Descriptions[1])
+  # })
+  
   
   ## Read parameter strings from the URL and change the selection appropriately
   observe({
     urlParameters <- parseQueryString(session$clientData$url_search)
+    
     ## If we have a stock parameter in the URL we will try and use it to
-    ## choose our default species
+    ## choose our default stock
     if (!is.null(urlParameters[['stock']])) {
       
       stockURLParameter <- urlParameters[['stock']]
+      #stockURLParameter <- 'mon.27.78ab'
       
-      # Try and find the description for the parameter passed in
-      #speciesURLName <- SpeciesList[tolower(SpeciesList$IC_Species)==tolower(speciesURLParameter),"Species_Name"]
+      print(stockURLParameter)
+      
+      stockParameterFrame <- ICEStable[as.character(ICEStable$New)==stockURLParameter,]
+      stockParameterFish <- stockParameterFrame$Fish
       
       # If we didn't get a match just use the first species in the data frame as the default species
-      #if (length(speciesURLName) == 0){
-      #  speciesURLName <- SpeciesList[1,"Species_Name"]
-      #}
+      if (length(stockParameterFish) == 0){
+        stockParameterFish <- ICEStable[1,"Fish"]
+      }
       
-      #updateSelectInput(session, 
-      #                  "species",label="Species",
-      #                  choices= SpeciesList$Species_Name,
-      #                  selected= speciesURLName )
+      print(stockParameterFish)
+
+      # create the speciesfilter input
+      output$speciesSelector <- renderUI({
+        selectInput("speciesfilter", h3("Select Species"), as.list(Speciesfilter), selected = stockParameterFish) 
+      })
       
+      stockParameterDiv <- stockParameterFrame$SpeciesByDiv
       
-      #Show the Fish Species tab using SELECT - this is a bit of hack to make sure the
-      # user is taken to the Fish Species page first
-      #showTab("TopLevelMenu","Fish Species",select= TRUE, session)
+      # If we didn't get a match just use the first area for that species in the data frame as the default species
+      if (length(stockParameterDiv) == 0){
+        stockParameterDiv <- ICEStable[1,"SpeciesByDiv"]
+      }
+      
+      print(stockParameterDiv)
+
+      # create the DescSelector input
+      output$DescSelector <- renderUI({
+        SpeciesbyDiv=filter(ICEStable, Fish %in% c(input$speciesfilter))
+        Descriptions <- unique(SpeciesbyDiv$SpeciesByDiv)
+        selectInput("speciesbydiv", h3("Select Stock Area"), as.list(Descriptions), selected = stockParameterDiv)
+      })
+      
+      #Show the Stock Advice tab using SELECT - this is a bit of hack to make sure the
+      # user is taken to the Stock page first if a stock paramter is provided
+      showTab("mainpanel","StockAdvice_tab",select= TRUE, session)
       
     } 
-    ## Else we 'll just use the first species in the data frame as the default species
+    ## If there's no stock parameter we'll just default to Cod, and use the first area as the selected stock
     else 
     {
-      #updateSelectInput(session, 
-      #                  "species",label="Species",
-      #                  choices= SpeciesList$Species_Name,
-      #                  selected= SpeciesList[1,"Species_Name"] )
+      # create the speciesfilter input with a default selection
+      output$speciesSelector <- renderUI({
+        selectInput("speciesfilter", h3("Select Species"), as.list(Speciesfilter), selected = "Cod") 
+      }) 
+      
+      # create the DescSelector input with a default selection
+      output$DescSelector <- renderUI({
+        SpeciesbyDiv=filter(ICEStable, Fish %in% c(input$speciesfilter))
+        Descriptions <- unique(SpeciesbyDiv$SpeciesByDiv)
+        selectInput("speciesbydiv", h3("Select Stock Area"), as.list(Descriptions), selected = Descriptions[1])
+      })
       
     }
     
     # YEAR
-    # If we have a valid year parameter - change the year input selection
+    # If we have a valid year parameter - change the year input selection to the relevent value
     if (!is.null(urlParameters[['year']])) {
       
       yearURLParameter <- urlParameters[['year']]
-      yearURLParameter <- '2017'
+
       if(yearURLParameter %in% availableYears){
         updateSelectInput(session, 
                           "year",
@@ -407,23 +454,23 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", height = 350))
   }, deleteFile = FALSE)
   
-  ####################
-  # Stock Advice Tab #
-  ####################
-  #Species Table for mapping different codes
-  #setwd("H:/Stockbook/shiny/WIP") #If needing to run it
-  ICEStable=read.csv('ICES-New-Old - extra species.csv', header=TRUE)
-  ICEStable$Fish=as.character(ICEStable$Fish)
-  ICEStable$SpeciesByDiv=as.character(ICEStable$SpeciesByDiv)
-  Speciesfilter <- unique(ICEStable$Fish)
-  output$speciesSelector <- renderUI({
-    selectInput("speciesfilter", h3("Select Species"), as.list(Speciesfilter), selected = "Cod") 
-  })
-  output$DescSelector <- renderUI({
-    SpeciesbyDiv=filter(ICEStable, Fish %in% c(input$speciesfilter))
-    Descriptions <- unique(SpeciesbyDiv$SpeciesByDiv)
-    selectInput("speciesbydiv", h3("Select Stock Area"), as.list(Descriptions), selected = Descriptions[1])
-  })
+  # ####################
+  # # Stock Advice Tab #
+  # ####################
+  # #Species Table for mapping different codes
+  # #setwd("H:/Stockbook/shiny/WIP") #If needing to run it
+  # ICEStable=read.csv('ICES-New-Old - extra species.csv', header=TRUE)
+  # ICEStable$Fish=as.character(ICEStable$Fish)
+  # ICEStable$SpeciesByDiv=as.character(ICEStable$SpeciesByDiv)
+  # Speciesfilter <- unique(ICEStable$Fish)
+  # output$speciesSelector <- renderUI({
+  #   selectInput("speciesfilter", h3("Select Species"), as.list(Speciesfilter), selected = "Cod") 
+  # })
+  # output$DescSelector <- renderUI({
+  #   SpeciesbyDiv=filter(ICEStable, Fish %in% c(input$speciesfilter))
+  #   Descriptions <- unique(SpeciesbyDiv$SpeciesByDiv)
+  #   selectInput("speciesbydiv", h3("Select Stock Area"), as.list(Descriptions), selected = Descriptions[1])
+  # })
 
   ###################
   # Species Summary #
