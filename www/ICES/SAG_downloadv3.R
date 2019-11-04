@@ -6,19 +6,29 @@
 #install.packages("icesSAG")
 library(icesSAG)
 
-setwd("H:/Stockbook/2018/2018_V1/www/ICES")
+#setwd("H:/Stockbook/2018/2018_V1/www/ICES")
+
+#update wd Oct 2019 - SM
+#setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES")
+setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES")
 
 IrishStocks=read.csv("stock_lookupV2.csv", header=TRUE)
 dim(IrishStocks)
 head(IrishStocks)
 colnames(IrishStocks) <- c("ecoregion","Old","sepcies type" ,"New","x")
 
+#~~ NOTE ~~
+#update wd Oct 2019 - SM
+#create a new loop, for the new years plot generation - see line 172 to 220 
+#skip down to the start of this new section (for 2019 - line 172), to run the code to generate the required plots
+#make sure the path ends in '/' so the plots go into the required folder
+#~~~~~~~~~~
 
 #icesSAG graphs
 #Define Species
 Years=c(2015:2016)
-#Stock Development Over Time
 
+#Stock Development Over Time
 for(i in  IrishStocks$Old){
   for(j in Years){
   graphs <- getSAGGraphs(findAssessmentKey(i, j)[1])
@@ -159,3 +169,57 @@ for(i in  IrishStocks$New){
   plot(graphs)
   dev.off()
 }
+
+
+#~~~~~~  2019  ~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~
+#Nov 01st - changed the file path from '....2019_V1' to '....2019_Git' 
+#Stock Development Over Time
+for(i in  IrishStocks$New){
+  graphs <- getSAGGraphs(findAssessmentKey(i, 2019)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES/SAG/2019", i, ".png", sep=""),
+      width = 850, height = 650)
+  plot(graphs)
+  dev.off()
+}
+
+
+#Stock and Exploitation status
+for(i in  IrishStocks$New){
+  graphs <- getStockStatusTable(findAssessmentKey(i, 2019)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES/Status/2019/", i, ".png", sep=""),
+      width = 950, height = 215)
+  plot(graphs)
+  dev.off()
+}
+
+
+#Quality of Assessment
+for(i in  IrishStocks$New){
+  graphs <- getSSBHistoricalPerformance(findAssessmentKey(i, 2019)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES/SSB/2019/", i, ".png", sep=""),
+      width = 450, height = 350)
+  plot(graphs)
+  dev.off()
+}
+
+#Fishing mortality
+for(i in  IrishStocks$New){
+  graphs <- getFishingMortalityHistoricalPerformance(findAssessmentKey(i, 2019)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES/Fishmort/2019/", i, ".png", sep=""),
+      width = 450, height = 350)
+  plot(graphs)
+  dev.off()
+}
+
+#RecruitHist
+for(i in  IrishStocks$New){
+  graphs <- getRecruitmentHistoricalPerformance(findAssessmentKey(i, 2019)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES/RecruitHist/2019/", i, ".png", sep=""),
+      width = 450, height = 350)
+  plot(graphs)
+  dev.off()
+}
+
+
+
