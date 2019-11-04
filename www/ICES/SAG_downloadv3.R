@@ -9,7 +9,8 @@ library(icesSAG)
 #setwd("H:/Stockbook/2018/2018_V1/www/ICES")
 
 #update wd Oct 2019 - SM
-setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES")
+#setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES")
+setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES")
 
 IrishStocks=read.csv("stock_lookupV2.csv", header=TRUE)
 dim(IrishStocks)
@@ -172,10 +173,11 @@ for(i in  IrishStocks$New){
 
 #~~~~~~  2019  ~~~~~~#
 #~~~~~~~~~~~~~~~~~~~~~
+#Nov 01st - changed the file path from '....2019_V1' to '....2019_Git' 
 #Stock Development Over Time
 for(i in  IrishStocks$New){
   graphs <- getSAGGraphs(findAssessmentKey(i, 2019)[1])
-  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES/SAG/2019/", i, ".png", sep=""),
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES/SAG/2019", i, ".png", sep=""),
       width = 850, height = 650)
   plot(graphs)
   dev.off()
