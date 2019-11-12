@@ -15,7 +15,7 @@ setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES")
 IrishStocks=read.csv("stock_lookupV2.csv", header=TRUE)
 dim(IrishStocks)
 head(IrishStocks)
-colnames(IrishStocks) <- c("ecoregion","Old","sepcies type" ,"New","x")
+colnames(IrishStocks) <- c("ecoregion","Old","species type" ,"New","x")
 
 #~~ NOTE ~~
 #update wd Oct 2019 - SM
@@ -177,7 +177,7 @@ for(i in  IrishStocks$New){
 #Stock Development Over Time
 for(i in  IrishStocks$New){
   graphs <- getSAGGraphs(findAssessmentKey(i, 2019)[1])
-  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES/SAG/2019", i, ".png", sep=""),
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES/SAG/2019/", i, ".png", sep=""),
       width = 850, height = 650)
   plot(graphs)
   dev.off()
@@ -187,7 +187,7 @@ for(i in  IrishStocks$New){
 #Stock and Exploitation status
 for(i in  IrishStocks$New){
   graphs <- getStockStatusTable(findAssessmentKey(i, 2019)[1])
-  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES/Status/2019/", i, ".png", sep=""),
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES/Status/2019/", i, ".png", sep=""),
       width = 950, height = 215)
   plot(graphs)
   dev.off()
@@ -197,7 +197,7 @@ for(i in  IrishStocks$New){
 #Quality of Assessment
 for(i in  IrishStocks$New){
   graphs <- getSSBHistoricalPerformance(findAssessmentKey(i, 2019)[1])
-  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES/SSB/2019/", i, ".png", sep=""),
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES/SSB/2019/", i, ".png", sep=""),
       width = 450, height = 350)
   plot(graphs)
   dev.off()
@@ -206,7 +206,7 @@ for(i in  IrishStocks$New){
 #Fishing mortality
 for(i in  IrishStocks$New){
   graphs <- getFishingMortalityHistoricalPerformance(findAssessmentKey(i, 2019)[1])
-  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES/Fishmort/2019/", i, ".png", sep=""),
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES/Fishmort/2019/", i, ".png", sep=""),
       width = 450, height = 350)
   plot(graphs)
   dev.off()
@@ -215,7 +215,7 @@ for(i in  IrishStocks$New){
 #RecruitHist
 for(i in  IrishStocks$New){
   graphs <- getRecruitmentHistoricalPerformance(findAssessmentKey(i, 2019)[1])
-  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES/RecruitHist/2019/", i, ".png", sep=""),
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES/RecruitHist/2019/", i, ".png", sep=""),
       width = 450, height = 350)
   plot(graphs)
   dev.off()
