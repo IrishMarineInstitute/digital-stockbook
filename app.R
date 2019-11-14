@@ -842,7 +842,8 @@ server <- function(input, output, session) {
   ###############
   #setwd("H:/Stockbook/shiny/WIP")
   Forecasting=read.csv('ForecastingData.csv', header=TRUE)
-  Forecasting$value <- as.numeric(Forecasting$value)
+  Forecasting$value <- as.numeric(as.character(Forecasting$value))
+  # djc Forecasting$value <- as.numeric(Forecasting$value)
   Forecasting$Year <- as.numeric(Forecasting$Year)
   Forecasting = Forecasting[,2:6]
   output$ForecastOptionsSelector <- renderUI({
@@ -874,7 +875,9 @@ server <- function(input, output, session) {
     ssb2 <- filter(ssb, Basis %in% c(input$forecastoptionselection))
     ssb3 <- rbind(ssb1, ssb2)#, ssb2018
     
-    ssb3[ssb3$Year==2018 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2018 & ssb3$Basis=="ICES Advice",][,5]
+    ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- head(ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5],1)
+    # DJC ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5]
+    # DJC ssb3[ssb3$Year==2018 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2018 & ssb3$Basis=="ICES Advice",][,5]
     
     p1 <- plot_ly(ssb3, x = ~Year, y = ~value, type = 'scatter', mode = 'lines', showlegend = F, #linetype = ~Basis,
             color = ~Basis, colors=mypalette, height=375) %>% 
@@ -903,7 +906,9 @@ server <- function(input, output, session) {
     #                    var="F", value=f[f$Year==2018 & f$Basis=="ICES Advice",][,5])
     #      f=rbind(f, f2018)
     #}else{
-    f[f$Year==2018 & f$Basis=="Assessment",][,5] <- f[f$Year==2018 & f$Basis=="ICES Advice",][,5]
+    f[f$Year==2019 & f$Basis=="Assessment",][,5] <- head(f[f$Year==2019 & f$Basis=="ICES Advice",][,5],1)
+    # DJCf[f$Year==2019 & f$Basis=="Assessment",][,5] <- f[f$Year==2019 & f$Basis=="ICES Advice",][,5]
+    # DJC f[f$Year==2018 & f$Basis=="Assessment",][,5] <- f[f$Year==2018 & f$Basis=="ICES Advice",][,5]
     #}
     Fmsy <- filter(sbl, var=="Fmsy")[1,5]
     Fpa <- filter(sbl, var=="Fpa")[1,5]
@@ -934,17 +939,23 @@ server <- function(input, output, session) {
     sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     la <- filter(sbl, var %in% c("Landings", "TAC"))
     yaxislabel="Landings"
-    if(dim(la[la$Year==2018 & la$Basis=="Assessment",])[1]==0){
-      la2018= data.frame(FishStock=la[1,1], Year=2018, Basis="Assessment", 
-                        var="Landings", value=la[la$Year==2018 & la$Basis=="ICES Advice",][,5])
-      la=rbind(la, la2018)
+    if(dim(la[la$Year==2019 & la$Basis=="Assessment",])[1]==0){
+    # DJC if(dim(la[la$Year==2018 & la$Basis=="Assessment",])[1]==0){
+      la2019= data.frame(FishStock=la[1,1], Year=2019, Basis="Assessment", 
+                         var="Landings", value=la[la$Year==2019 & la$Basis=="ICES Advice",][,5])
+      la=rbind(la, la2019)
+      # DJC la2018= data.frame(FishStock=la[1,1], Year=2018, Basis="Assessment", 
+      # DJC                   var="Landings", value=la[la$Year==2018 & la$Basis=="ICES Advice",][,5])
+      # DJC la=rbind(la, la2018)
     }else{
-      la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Landings",][,5]
+      la[la$Year==2019 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2019 & la$Basis=="F=F2019" & la$var =="Landings",][,5]
+      # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Landings",][,5]
     }
     if(is.na(la[which(la$Basis=="ICES Advice"),"value"])[1]){
       la <- filter(sbl, var %in% c("Catch", "TAC"))
       yaxislabel="Total Catch"
-      la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Catch",][,5]
+      la[la$Year==2019 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2019 & la$Basis=="F=F2019" & la$var =="Catch",][,5]
+      # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Catch",][,5]
     }
     la1 <- filter(la, Basis %in% c("Assessment", "ICES Advice", "TAC"))
     la2 <- filter(la, Basis %in% c(input$forecastoptionselection))
@@ -961,16 +972,27 @@ server <- function(input, output, session) {
   
   #Forecasting table
   ForecastingTable=read.csv('ForecastOptionsV2.csv', header=TRUE)
+  # DJC Get rid of the X column - we don't need it
+  ForecastingTable$X <- NULL
   ForecastingTable=ForecastingTable[,c(1,3,4,5,6,7,10,11,12)]#3 missing)]#
-  ForecastingTable$Catch...2019=formatC(as.numeric(as.character(ForecastingTable$Catch...2019)), format="d", big.mark=",")
-  ForecastingTable$Landings...2019=formatC(as.numeric(as.character(ForecastingTable$Landings...2019)), format="d", big.mark=",")
-  ForecastingTable$Discards...2019=formatC(as.numeric(as.character(ForecastingTable$Discards...2019)), format="d", big.mark=",")
-  ForecastingTable$SSB...2020=formatC(as.numeric(as.character(ForecastingTable$SSB...2020)), format="d", big.mark=",")
+  ForecastingTable$Catch...2020=formatC(as.numeric(as.character(ForecastingTable$Catch...2020)), format="d", big.mark=",")
+  ForecastingTable$Landings...2020=formatC(as.numeric(as.character(ForecastingTable$Landings...2020)), format="d", big.mark=",")
+  ForecastingTable$Discards...2020=formatC(as.numeric(as.character(ForecastingTable$Discards...2020)), format="d", big.mark=",")
+  ForecastingTable$SSB...2021=formatC(as.numeric(as.character(ForecastingTable$SSB...2021)), format="d", big.mark=",")
   colnames(ForecastingTable)=c("FishStock", "Basis", 
-                               "Catch (2019)", 
-                               "Landings (2019)", "Discards (2019)", 
-                               "F (2019)", "SSB (2020)",
+                               "Total Catch (2020)", 
+                               "Wanted Catch (2020)", "Unwanted Catch (2020)", 
+                               "F total (2020)", "SSB (2021)",
                                "% SSB change*", "% TAC change**")
+  # DJC ForecastingTable$Catch...2019=formatC(as.numeric(as.character(ForecastingTable$Catch...2019)), format="d", big.mark=",")
+  # DJC ForecastingTable$Landings...2019=formatC(as.numeric(as.character(ForecastingTable$Landings...2019)), format="d", big.mark=",")
+  # DJC ForecastingTable$Discards...2019=formatC(as.numeric(as.character(ForecastingTable$Discards...2019)), format="d", big.mark=",")
+  # DJC ForecastingTable$SSB...2020=formatC(as.numeric(as.character(ForecastingTable$SSB...2020)), format="d", big.mark=",")
+  # DJC colnames(ForecastingTable)=c("FishStock", "Basis", 
+  # DJC                             "Catch (2019)", 
+  # DJC                             "Landings (2019)", "Discards (2019)", 
+  # DJC                             "F (2019)", "SSB (2020)",
+  # DJC                             "% SSB change*", "% TAC change**")
   output$Forecasting_Table <- renderTable({
     ForecastingFilter=filter(ForecastingTable, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     ForecastingFilter[,c(-1)]
@@ -1147,7 +1169,8 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
     }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
-      panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
+      # DJC panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
+      panels[[4]]=tabPanel("Forecasting 2020", value="ForecastingTab",
                            uiOutput("ForecastOptionsSelector"),
                            #plotlyOutput("plotforecasting"),
                            fluidRow(column(width = 3 ,plotlyOutput("plotSSB", width = "100%")), 
@@ -1157,8 +1180,10 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                            tags$head(
                              tags$style("td:nth-child(1) {background: #f2f2f2;}")),
                            tableOutput("Forecasting_Table"),
-                           "* SSB 2020 relative to SSB 2019",p(),
-                           "** Landings in 2019 relative to TAC in 2018", HTML("<br><br>")
+                           "* SSB 2021 relative to SSB 2020",p(),
+                           "** Landings in 2020 relative to TAC in 2019", HTML("<br><br>")
+                           # DJC"* SSB 2020 relative to SSB 2019",p(),
+                           # DJC"** Landings in 2019 relative to TAC in 2018", HTML("<br><br>")
                            )
     }
     
