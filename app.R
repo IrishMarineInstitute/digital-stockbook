@@ -1336,20 +1336,25 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                imageOutput("D3table22018",height = "50%")
                              )
                            },
-                           HTML("<br>"),
-                           h3("Time Series of Pressure and State Indicators"),
-                           htmlOutput("PressureState"), p(), HTML("<br>"),
-                           fluidRow(column(width = 4, imageOutput("RelativeF", height="50%")),
-                                    column(width = 4, imageOutput("RelativeSSB",height = "50%"))),
-                           "Figure 4: Relative F and Relative SSB of all assessed stocks. For stocks 
-                           included in each category, see Table 2",
-                           HTML("<br><br>"),
-                           fluidRow(column(width = 7, imageOutput("Kobe", height="50%"), 
-                                           "Figure 5: F/FMSY and SSB/MSYbtrigger for all assessed stocks. 
-                                           (Grey lines represent MSY reference values)."),
-                                    column(width = 5, imageOutput("Bar",height = "50%"),
-                                           "Figure 6: Catch (triangles) and landings (circles) of all 
-                                           assessed stocks at GES (green), non GES (red) or unknown (grey).")),
+                           # We don't want these bits for 2019 - very messy :-S
+                           if(input$year != 2019){
+                             list(
+                               HTML("<br>"),
+                               h3("Time Series of Pressure and State Indicators"),
+                               htmlOutput("PressureState"), p(), HTML("<br>"),
+                               fluidRow(column(width = 4, imageOutput("RelativeF", height="50%")),
+                                        column(width = 4, imageOutput("RelativeSSB",height = "50%"))),
+                               "Figure 4: Relative F and Relative SSB of all assessed stocks. For stocks 
+                               included in each category, see Table 2",
+                               HTML("<br><br>"),
+                               fluidRow(column(width = 7, imageOutput("Kobe", height="50%"), 
+                                               "Figure 5: F/FMSY and SSB/MSYbtrigger for all assessed stocks. 
+                                               (Grey lines represent MSY reference values)."),
+                                        column(width = 5, imageOutput("Bar",height = "50%"),
+                                               "Figure 6: Catch (triangles) and landings (circles) of all 
+                                               assessed stocks at GES (green), non GES (red) or unknown (grey)."))
+                             )
+                            },
                            HTML("<br><br>")),
                   tabPanel("Mixed Fisheries", 
                            htmlOutput("MixedFish_1"),
