@@ -252,7 +252,7 @@ vessels (47.32 t in 2017). This bycatch allowance may be very restrictive as the
 <li> The reported total catch in 2016 exceeded the TAC.</li>
 <li> A recommendation to consider moving from a rebuilding to a management plan has been made.</li></ul>"
 BFT-E,2018,"<ul><li>The TAC covers the entire North Atlantic Ocean east of 45 &deg W and the also the Mediterranean Sea.</li>
-<li>ICCAT recommendation 09-06 sets the objective of achieving F<sub>MSY</sub> and BMSY by 2022 with at least a 60% probability.</li>
+<li>ICCAT recommendation 09-06 sets the objective of achieving F<sub>MSY</sub> and B<sub>MSY</sub> by 2022 with at least a 60% probability.</li>
 <li>In 2006, ICCAT adopted a rebuilding plan for this stock. This plan includes various conservation measures, including a TAC together with extended time/area closures and minimum size. Management measures to reduce fishing mortality were introduced in 2008. These measures included lower TACs, increased control and enforcement measures, particularly within the Mediterranean Sea, and a requirement for all purse seine vessels targeting Bluefin tuna for farming in cages to carry observers on-board. This plan runs until 2022.</li>
 <li>EU member states' retained recreational catches must be deducted from available quotas. The quota that Ireland has access to is designated for bycatch only, and not for target fisheries.</li>
 </ul>","<ul><li>The stock was assessed in 2017 by means of applying statistical modelling to the available data up to 2015.</li>
@@ -262,7 +262,7 @@ BFT-E,2018,"<ul><li>The TAC covers the entire North Atlantic Ocean east of 45 &d
 
 </ul>"
 BFT-E,2019,"<ul><li>The TAC covers the entire North Atlantic Ocean east of 45 &deg W and the also the Mediterranean Sea.</li>
-<li>ICCAT recommendation 09-06 sets the objective of achieving F<sub>MSY</sub> and BMSY by 2022 with at least a 60% probability.</li>
+<li>ICCAT recommendation 09-06 sets the objective of achieving F<sub>MSY</sub> and B<sub>MSY</sub> by 2022 with at least a 60% probability.</li>
 <li>In 2006, ICCAT adopted a rebuilding plan for this stock. This plan includes various conservation measures, including a TAC together with extended time/area closures and minimum size. Management measures to reduce fishing mortality were introduced in 2008. These measures included lower TACs, increased control and enforcement measures, particularly within the Mediterranean Sea, and a requirement for all purse seine vessels targeting Bluefin tuna for farming in cages to carry observers on-board. This plan runs until 2022.</li>
 <li>EU member states' retained recreational catches must be deducted from available quotas. The quota that Ireland has access to is designated for bycatch only, and not for target fisheries.</li>
 </ul>","<ul><li>The stock was assessed in 2017 by means of applying statistical modelling to the available data up to 2015.</li>
@@ -514,8 +514,8 @@ bss.27.6a7bj,2019,"<ul><li> A prohibition on landings of sea bass by Irish comme
 <li> SI 17 of 2019 prohibited the retention of any sea bass by anglers in 4.b-c, 7.a and 7.d-h from January 1st to March 31st and between November 1st and December 31st. A bag limit of a single fish daily over 42cm between April 1st to October 31st.</li></ul> </li></ul>
 ","<ul><li> Official reported landings are low. They are predominately caught by French fishing vessels in Division 7.j.</li>
 <li> Sea bass stock identity is poorly understood. There are ongoing tagging experiments led by Inland Fisheries Ireland on the western coast of Ireland.</li>
-<li> Previous tag/recapture studies on sea bass on the western Irish coastline have shown evidence of interconnectivity with the Celtic Sea.</li></ul>
-"
+<li> Previous tag/recapture studies on sea bass on the western Irish coastline have shown evidence of interconnectivity with the Celtic Sea.</li>
+<li>Further information on this stock can be found in the 2018 Stock Book.</li></ul>"
 cod.27.1-2,2015,"<ul><li> The current management plan has been in place since 2004 (amended in 2009). ICES considers the
 amended plan to be in accordance with the precautionary approach and not in contradiction with the MSY
 approach. The plan aims to maintain F at Fpa (0.40) and to restrict between-year TAC changes to +-10%.
