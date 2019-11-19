@@ -1168,7 +1168,8 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   
     
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
+    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2019"){
+    # DJC}else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
       # DJC panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
       panels[[4]]=tabPanel("Forecasting 2020", value="ForecastingTab",
                            uiOutput("ForecastOptionsSelector"),
