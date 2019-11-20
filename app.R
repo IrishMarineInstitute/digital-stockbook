@@ -488,15 +488,41 @@ server <- function(input, output, session) {
     return(list(src = image_file, width = 350))#
   }, deleteFile = FALSE)
   output$text.InternationalLandings <- renderText({
+    
+    #2019 uses a different text pattern
+    if(input$year == "2019"){
+      
       if(input$speciesfilter=="Nephrops"){      
-      paste0("The distribution of international landings of <em>",
-          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], "</em> during ", 
-          (as.numeric(as.character(input$year))-1), sep="")
-    }else{
-      paste0("The distribution of international landings of ",
-             ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " during ", 
-             (as.numeric(as.character(input$year))-1), sep="")
+        paste0("The distribution of international landings of <em>",
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], "</em>  between 2012 - 2016", sep="")
+      }
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+        paste0("The distribution of international landings of ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               " during 2018", sep="")
+      }
+      else{
+        paste0("The distribution of international landings of ",
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " between 2012 - 2016 ", sep="")
+      }
+    } 
+    # 2018 and earlier
+    else {
+      
+      if(input$speciesfilter=="Nephrops"){      
+        paste0("The distribution of international landings of <em>",
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], "</em> during ", 
+               (as.numeric(as.character(input$year))-1), sep="")
+      }else{
+        paste0("The distribution of international landings of ",
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " during ", 
+               (as.numeric(as.character(input$year))-1), sep="")
+      }
+      
     }
+    
+    
+
   })
   #Irish Landings
   output$display.IrishLandings <- renderImage({
@@ -506,14 +532,38 @@ server <- function(input, output, session) {
     return(list(src = image_file, width = 350))
   }, deleteFile = FALSE)
   output$text.IrishLandings <- renderText({
-    if(input$speciesfilter=="Nephrops"){      
-      paste0("The distribution of <em>", 
-           ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
-           "</em> landings by Irish Vessels during ", (as.numeric(as.character(input$year))-1), sep="")
-    }else{
-      paste0("The distribution of ", 
-             ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
-             " landings by Irish Vessels during ", (as.numeric(as.character(input$year))-1), sep="")
+    
+    #2019 uses a different text pattern
+    if(input$year == "2019"){
+      
+      if(input$speciesfilter=="Nephrops"){      
+        paste0("The distribution of <em>", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               "</em> landings by Irish Vessels between 2014 - 2018", sep="")
+      } 
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+        paste0("The distribution of <em>", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               "</em> landings by Irish Vessels during 2018", sep="")
+      }
+      else{
+        paste0("The distribution of ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               " landings by Irish Vessels between 2014 - 2018 ", sep="")
+      }
+      
+    }
+    # 2018 and earlier
+    else {
+      if(input$speciesfilter=="Nephrops"){      
+        paste0("The distribution of <em>", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               "</em> landings by Irish Vessels during ", (as.numeric(as.character(input$year))-1), sep="")
+      }else{
+        paste0("The distribution of ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               " landings by Irish Vessels during ", (as.numeric(as.character(input$year))-1), sep="")
+      }
     }
   })
   #Landings text
@@ -1168,7 +1218,8 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   
     
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
+    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2019"){
+    # DJC}else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
       # DJC panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
       panels[[4]]=tabPanel("Forecasting 2020", value="ForecastingTab",
                            uiOutput("ForecastOptionsSelector"),
@@ -1285,27 +1336,32 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                imageOutput("D3table22018",height = "50%")
                              )
                            },
-                           HTML("<br>"),
-                           h3("Time Series of Pressure and State Indicators"),
-                           htmlOutput("PressureState"), p(), HTML("<br>"),
-                           fluidRow(column(width = 4, imageOutput("RelativeF", height="50%")),
-                                    column(width = 4, imageOutput("RelativeSSB",height = "50%"))),
-                           "Figure 4: Relative F and Relative SSB of all assessed stocks. For stocks 
-                           included in each category, see Table 2",
-                           HTML("<br><br>"),
-                           fluidRow(column(width = 7, imageOutput("Kobe", height="50%"), 
-                                           "Figure 5: F/FMSY and SSB/MSYbtrigger for all assessed stocks. 
-                                           (Grey lines represent MSY reference values)."),
-                                    column(width = 5, imageOutput("Bar",height = "50%"),
-                                           "Figure 6: Catch (triangles) and landings (circles) of all 
-                                           assessed stocks at GES (green), non GES (red) or unknown (grey).")),
+                           # We don't want these bits for 2019 - very messy :-S
+                           if(input$year != 2019){
+                             list(
+                               HTML("<br>"),
+                               h3("Time Series of Pressure and State Indicators"),
+                               htmlOutput("PressureState"), p(), HTML("<br>"),
+                               fluidRow(column(width = 4, imageOutput("RelativeF", height="50%")),
+                                        column(width = 4, imageOutput("RelativeSSB",height = "50%"))),
+                               "Figure 4: Relative F and Relative SSB of all assessed stocks. For stocks 
+                               included in each category, see Table 2",
+                               HTML("<br><br>"),
+                               fluidRow(column(width = 7, imageOutput("Kobe", height="50%"), 
+                                               "Figure 5: F/FMSY and SSB/MSYbtrigger for all assessed stocks. 
+                                               (Grey lines represent MSY reference values)."),
+                                        column(width = 5, imageOutput("Bar",height = "50%"),
+                                               "Figure 6: Catch (triangles) and landings (circles) of all 
+                                               assessed stocks at GES (green), non GES (red) or unknown (grey)."))
+                             )
+                            },
                            HTML("<br><br>")),
                   tabPanel("Mixed Fisheries", 
                            htmlOutput("MixedFish_1"),
                            htmlOutput("MixedFish_2"),
                            imageOutput("MixedFishimage", height="50%"), HTML("<br><br>")))
       
-      panelstest=if(input$year==2018){panelsD3MF}else{c(panelsEO, panelsD3MF)}
+      panelstest=if(input$year==2018 | input$year==2019){panelsD3MF}else{c(panelsEO, panelsD3MF)}
       
       do.call(tabsetPanel, panelstest)
   }else if(input$year=="2016"){
