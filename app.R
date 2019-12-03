@@ -673,7 +673,10 @@ server <- function(input, output, session) {
   
   #Links
   output$Stockbooklink <-renderUI({
-    if(input$year==2018){
+    if(input$year==2019){
+      a(href=paste0("https://https://oar.marine.ie/handle/10793/1433"),
+        "The Stock Book 2019",target="_blank")
+    }else if(input$year==2018){
       a(href=paste0("https://oar.marine.ie/bitstream/handle/10793/1383/The%20Stock%20Book%202018.pdf"),
         "The Stock Book 2018",target="_blank")
     }else if(input$year==2017){
@@ -814,7 +817,8 @@ server <- function(input, output, session) {
     HTML("<hr>"),
     h4("Management Plan:"),
     textOutput("ManagementPlan"),
-    easyClose = TRUE))
+    easyClose = TRUE))####fluidRow(column(width=12)))
+
   })
   
   #Stock Development Over Time
@@ -1051,8 +1055,8 @@ server <- function(input, output, session) {
   colnames = TRUE, bordered = TRUE)
   
   ForecastingStocks= c("Cod Divisions 7.e-k (eastern English Channel and southern Celtic Seas)",
-                       #"Cod Division 6.a (West of Scotland)",
-                       "Cod Division 7.a (Irish Sea)",
+                       "Cod Division 6.a (West of Scotland)",
+                       #"Cod Division 7.a (Irish Sea)",
                        "Haddock  Division 6.b (Rockall) ",
                        "Haddock  Division7.a (Irish Sea) ",
                        "Haddock Divisions 7.b-k (southern Celtic Seas and English Channel)",
@@ -1261,28 +1265,34 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1333"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1378"}),"Link to UWTV for FU15",target="_blank"),p(),
+                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1378"}
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1378"}),"Link to UWTV for FU15",target="_blank"),p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/1185"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1334"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1379"}),"Link to UWTV for FU16",target="_blank"),p(),
+                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1379"}
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1431"}),"Link to UWTV for FU16",target="_blank"),p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/1184"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1335"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1374"}),"Link to UWTV for FU17",target="_blank"),p(),
+                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1374"}
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1427"}),"Link to UWTV for FU17",target="_blank"),p(),
                                          "No Link Available",p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1332"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1375"}),"Link to UWTV for FU19",target="_blank"),p(),
+                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1375"}
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1429"}),"Link to UWTV for FU19",target="_blank"),p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1330"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1377"}),"Link to UWTV for FU2021",target="_blank"),p(),
+                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1377"}
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1430"}),"Link to UWTV for FU2021",target="_blank"),p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
                                            else if(input$year==2017){"http://oar.marine.ie/handle/10793/1331"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1376"}),"Link to UWTV for FU22",target="_blank")
+                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1376"}
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1428"}),"Link to UWTV for FU22",target="_blank")
                                   )),
                          HTML("<br><br>"))}}
     do.call(tabsetPanel, panels)
