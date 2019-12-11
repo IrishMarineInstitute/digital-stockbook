@@ -674,7 +674,7 @@ server <- function(input, output, session) {
   #Links
   output$Stockbooklink <-renderUI({
     if(input$year==2019){
-      a(href=paste0("https://https://oar.marine.ie/handle/10793/1433"),
+      a(href=paste0("https://oar.marine.ie/handle/10793/1433"),
         "The Stock Book 2019",target="_blank")
     }else if(input$year==2018){
       a(href=paste0("https://oar.marine.ie/bitstream/handle/10793/1383/The%20Stock%20Book%202018.pdf"),
@@ -1266,7 +1266,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1333"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1378"}
-                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1378"}),"Link to UWTV for FU15",target="_blank"),p(),
+                                           else if(input$year==2019){"http://hdl.handle.net/10793/1451"}),"Link to UWTV for FU15",target="_blank"),p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/1185"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1334"}
