@@ -7788,8 +7788,6 @@
 7983,cod.27.7e-k,2020,FMSYupper x SSB2020/MSYBtrigger,Catch,293
 7984,cod.27.7e-k,2020,F=FMSY,Catch,1033
 7985,cod.27.7e-k,2020,Flim,Catch,1977
-7986,cod.27.7e-k,2020,SSB2021=Blim,Catch,
-7987,cod.27.7e-k,2020,SSB2021=Bpa=MSYBtrigger,Catch,
 7988,cod.27.7e-k,2020,F=F2019,Catch,2088
 7989,had.27.7a,2020,ICES Advice,Catch,3156
 7990,had.27.7a,2020,F = MAP FMSYlower,Catch,2333
@@ -7817,9 +7815,6 @@
 8012,her.27.irls,2020,F=0,Catch,0
 8013,her.27.irls,2020,Fpa,Catch,4404
 8014,her.27.irls,2020,Flim,Catch,6823
-8015,her.27.irls,2020,SSB2020=Blim,Catch,
-8016,her.27.irls,2020,SSB2020=Bpa,Catch,
-8017,her.27.irls,2020,SSB2020=MSYBtrigger,Catch,
 8018,her.27.irls,2020,F=F2019,Catch,5334
 8019,hke.27.3a46-8abd,2020,ICES Advice,Catch,104763
 8020,hke.27.3a46-8abd,2020,EUMAP : FMSY,Catch,104763
@@ -7968,8 +7963,6 @@
 8163,cod.27.7e-k,2020,FMSYupper x SSB2020/MSYBtrigger,Landings,272
 8164,cod.27.7e-k,2020,F=FMSY,Landings,960
 8165,cod.27.7e-k,2020,Flim,Landings,1838
-8166,cod.27.7e-k,2020,SSB2021=Blim,Landings,
-8167,cod.27.7e-k,2020,SSB2021=Bpa=MSYBtrigger,Landings,
 8168,cod.27.7e-k,2020,F=F2019,Landings,1941
 8169,had.27.7a,2020,ICES Advice,Landings,2667
 8170,had.27.7a,2020,F = MAP FMSYlower,Landings,1975
@@ -7997,9 +7990,6 @@
 8192,her.27.irls,2020,F=0,Landings,
 8193,her.27.irls,2020,Fpa,Landings,
 8194,her.27.irls,2020,Flim,Landings,
-8195,her.27.irls,2020,SSB2020=Blim,Landings,
-8196,her.27.irls,2020,SSB2020=Bpa,Landings,
-8197,her.27.irls,2020,SSB2020=MSYBtrigger,Landings,
 8198,her.27.irls,2020,F=F2019,Landings,
 8199,hke.27.3a46-8abd,2020,ICES Advice,Landings,97949
 8200,hke.27.3a46-8abd,2020,EUMAP : FMSY,Landings,97949
@@ -8148,8 +8138,6 @@
 8343,cod.27.7e-k,2020,FMSYupper x SSB2020/MSYBtrigger,F,0.089
 8344,cod.27.7e-k,2020,F=FMSY,F,0.35
 8345,cod.27.7e-k,2020,Flim,F,0.8
-8346,cod.27.7e-k,2020,SSB2021=Blim,F,
-8347,cod.27.7e-k,2020,SSB2021=Bpa=MSYBtrigger,F,
 8348,cod.27.7e-k,2020,F=F2019,F,0.87
 8349,had.27.7a,2020,ICES Advice,F,0.28
 8350,had.27.7a,2020,F = MAP FMSYlower,F,0.2
@@ -8177,9 +8165,6 @@
 8372,her.27.irls,2020,F=0,F,0
 8373,her.27.irls,2020,Fpa,F,0.27
 8374,her.27.irls,2020,Flim,F,0.45
-8375,her.27.irls,2020,SSB2020=Blim,F,
-8376,her.27.irls,2020,SSB2020=Bpa,F,
-8377,her.27.irls,2020,SSB2020=MSYBtrigger,F,
 8378,her.27.irls,2020,F=F2019,F,0.34
 8379,hke.27.3a46-8abd,2020,ICES Advice,F,0.26
 8380,hke.27.3a46-8abd,2020,EUMAP : FMSY,F,0.26
@@ -8328,8 +8313,6 @@
 8523,cod.27.7e-k,2020,FMSYupper x SSB2020/MSYBtrigger,Fwanted,0.089
 8524,cod.27.7e-k,2020,F=FMSY,Fwanted,0.35
 8525,cod.27.7e-k,2020,Flim,Fwanted,0.8
-8526,cod.27.7e-k,2020,SSB2021=Blim,Fwanted,
-8527,cod.27.7e-k,2020,SSB2021=Bpa=MSYBtrigger,Fwanted,
 8528,cod.27.7e-k,2020,F=F2019,Fwanted,0.87
 8529,had.27.7a,2020,EUMAP : FMSY,Fwanted,0.19
 8530,had.27.7a,2020,F = MAP FMSYlower,Fwanted,0.14
@@ -8357,9 +8340,6 @@
 8552,her.27.irls,2020,F=0,Fwanted,
 8553,her.27.irls,2020,Fpa,Fwanted,
 8554,her.27.irls,2020,Flim,Fwanted,
-8555,her.27.irls,2020,SSB2020=Blim,Fwanted,
-8556,her.27.irls,2020,SSB2020=Bpa,Fwanted,
-8557,her.27.irls,2020,SSB2020=MSYBtrigger,Fwanted,
 8558,her.27.irls,2020,F=F2019,Fwanted,
 8559,hke.27.3a46-8abd,2020,MSYapproach=FMSY,Fwanted,0.21
 8560,hke.27.3a46-8abd,2020,EUMAP : FMSY,Fwanted,0.21
@@ -8508,8 +8488,6 @@
 8703,cod.27.7e-k,2021,FMSYupper x SSB2020/MSYBtrigger,SSB,4136
 8704,cod.27.7e-k,2021,F=FMSY,SSB,3361
 8705,cod.27.7e-k,2021,Flim,SSB,2402
-8706,cod.27.7e-k,2021,SSB2021=Blim,SSB,
-8707,cod.27.7e-k,2021,SSB2021=Bpa=MSYBtrigger,SSB,
 8708,cod.27.7e-k,2021,F=F2019,SSB,2293
 8709,had.27.7a,2021,ICES Advice,SSB,10493
 8710,had.27.7a,2021,F = MAP FMSYlower,SSB,11317
@@ -8537,9 +8515,6 @@
 8732,her.27.irls,2021,F=0,SSB,27628
 8733,her.27.irls,2021,Fpa,SSB,19779
 8734,her.27.irls,2021,Flim,SSB,18263
-8735,her.27.irls,2021,SSB2020=Blim,SSB,
-8736,her.27.irls,2021,SSB2020=Bpa,SSB,
-8737,her.27.irls,2021,SSB2020=MSYBtrigger,SSB,
 8738,her.27.irls,2021,F=F2019,SSB,19194
 8739,hke.27.3a46-8abd,2021,ICES Advice,SSB,263204
 8740,hke.27.3a46-8abd,2021,EUMAP : FMSY,SSB,263204
@@ -8688,8 +8663,6 @@
 8883,cod.27.7e-k,2019,FMSYupper x SSB2020/MSYBtrigger,F,0.87
 8884,cod.27.7e-k,2019,F=FMSY,F,0.87
 8885,cod.27.7e-k,2019,Flim,F,0.87
-8886,cod.27.7e-k,2019,SSB2021=Blim,F,0.87
-8887,cod.27.7e-k,2019,SSB2021=Bpa=MSYBtrigger,F,0.87
 8888,cod.27.7e-k,2019,F=F2019,F,0.87
 8889,had.27.7a,2019,ICES Advice,F,0.25
 8890,had.27.7a,2019,F = MAP FMSYlower,F,0.25
@@ -8717,9 +8690,6 @@
 8912,her.27.irls,2019,F=0,F,0.34
 8913,her.27.irls,2019,Fpa,F,0.34
 8914,her.27.irls,2019,Flim,F,0.34
-8915,her.27.irls,2019,SSB2020=Blim,F,0.34
-8916,her.27.irls,2019,SSB2020=Bpa,F,0.34
-8917,her.27.irls,2019,SSB2020=MSYBtrigger,F,0.34
 8918,her.27.irls,2019,F=F2019,F,0.34
 8919,hke.27.3a46-8abd,2019,ICES Advice,F,0.24
 8920,hke.27.3a46-8abd,2019,EUMAP : FMSY,F,0.24
@@ -8868,8 +8838,6 @@
 9063,cod.27.7e-k,2020,FMSYupper x SSB2020/MSYBtrigger,SSB,1664
 9064,cod.27.7e-k,2020,F=FMSY,SSB,1664
 9065,cod.27.7e-k,2020,Flim,SSB,1664
-9066,cod.27.7e-k,2020,SSB2021=Blim,SSB,1664
-9067,cod.27.7e-k,2020,SSB2021=Bpa=MSYBtrigger,SSB,1664
 9068,cod.27.7e-k,2020,F=F2019,SSB,1664
 9069,had.27.7a,2020,ICES Advice,SSB,14160
 9070,had.27.7a,2020,F = MAP FMSYlower,SSB,14160
@@ -8897,9 +8865,6 @@
 9092,her.27.irls,2020,F=0,SSB,204340
 9093,her.27.irls,2020,Fpa,SSB,204340
 9094,her.27.irls,2020,Flim,SSB,204340
-9095,her.27.irls,2020,SSB2020=Blim,SSB,204340
-9096,her.27.irls,2020,SSB2020=Bpa,SSB,204340
-9097,her.27.irls,2020,SSB2020=MSYBtrigger,SSB,204340
 9098,her.27.irls,2020,F=F2019,SSB,204340
 9099,hke.27.3a46-8abd,2020,ICES Advice,SSB,276565
 9100,hke.27.3a46-8abd,2020,EUMAP : FMSY,SSB,276565
@@ -9048,8 +9013,6 @@
 9243,cod.27.7e-k,2019,FMSYupper x SSB2020/MSYBtrigger,Catch,1321
 9244,cod.27.7e-k,2019,F=FMSY,Catch,1321
 9245,cod.27.7e-k,2019,Flim,Catch,1321
-9246,cod.27.7e-k,2019,SSB2021=Blim,Catch,1321
-9247,cod.27.7e-k,2019,SSB2021=Bpa=MSYBtrigger,Catch,1321
 9248,cod.27.7e-k,2019,F=F2019,Catch,1321
 9249,had.27.7a,2019,ICES Advice,Catch,3746
 9250,had.27.7a,2019,F = MAP FMSYlower,Catch,3746
@@ -9077,9 +9040,6 @@
 9272,her.27.irls,2019,F=0,Catch,5320
 9273,her.27.irls,2019,Fpa,Catch,5320
 9274,her.27.irls,2019,Flim,Catch,5320
-9275,her.27.irls,2019,SSB2020=Blim,Catch,5320
-9276,her.27.irls,2019,SSB2020=Bpa,Catch,5320
-9277,her.27.irls,2019,SSB2020=MSYBtrigger,Catch,5320
 9278,her.27.irls,2019,F=F2019,Catch,5320
 9279,hke.27.3a46-8abd,2019,ICES Advice,Catch,100240
 9280,hke.27.3a46-8abd,2019,EUMAP : FMSY,Catch,100240
@@ -9228,8 +9188,6 @@
 9423,cod.27.7e-k,2019,FMSYupper x SSB2020/MSYBtrigger,Landings,1228
 9424,cod.27.7e-k,2019,F=FMSY,Landings,1228
 9425,cod.27.7e-k,2019,Flim,Landings,1228
-9426,cod.27.7e-k,2019,SSB2021=Blim,Landings,1228
-9427,cod.27.7e-k,2019,SSB2021=Bpa=MSYBtrigger,Landings,1228
 9428,cod.27.7e-k,2019,F=F2019,Landings,1228
 9429,had.27.7a,2019,ICES Advice,Landings,3309
 9430,had.27.7a,2019,F = MAP FMSYlower,Landings,3309
@@ -9257,9 +9215,6 @@
 9452,her.27.irls,2019,F=0,Landings,NA
 9453,her.27.irls,2019,Fpa,Landings,NA
 9454,her.27.irls,2019,Flim,Landings,NA
-9455,her.27.irls,2019,SSB2020=Blim,Landings,NA
-9456,her.27.irls,2019,SSB2020=Bpa,Landings,NA
-9457,her.27.irls,2019,SSB2020=MSYBtrigger,Landings,NA
 9458,her.27.irls,2019,F=F2019,Landings,NA
 9459,hke.27.3a46-8abd,2019,ICES Advice,Landings,93834
 9460,hke.27.3a46-8abd,2019,EUMAP : FMSY,Landings,93834
@@ -9408,8 +9363,6 @@
 9603,cod.27.7e-k,2019,FMSYupper x SSB2020/MSYBtrigger,SSB,NA
 9604,cod.27.7e-k,2019,F=FMSY,SSB,NA
 9605,cod.27.7e-k,2019,Flim,SSB,NA
-9606,cod.27.7e-k,2019,SSB2021=Blim,SSB,NA
-9607,cod.27.7e-k,2019,SSB2021=Bpa=MSYBtrigger,SSB,NA
 9608,cod.27.7e-k,2019,F=F2019,SSB,NA
 9609,had.27.7a,2019,ICES Advice,SSB,18945
 9610,had.27.7a,2019,F = MAP FMSYlower,SSB,NA
@@ -9437,9 +9390,6 @@
 9632,her.27.irls,2019,F=0,SSB,NA
 9633,her.27.irls,2019,Fpa,SSB,NA
 9634,her.27.irls,2019,Flim,SSB,NA
-9635,her.27.irls,2019,SSB2020=Blim,SSB,NA
-9636,her.27.irls,2019,SSB2020=Bpa,SSB,NA
-9637,her.27.irls,2019,SSB2020=MSYBtrigger,SSB,NA
 9638,her.27.irls,2019,F=F2019,SSB,NA
 9639,hke.27.3a46-8abd,2019,ICES Advice,SSB,285371
 9640,hke.27.3a46-8abd,2019,EUMAP : FMSY,SSB,NA
