@@ -50,11 +50,11 @@ ple.27.7a,Footnotes,2019,"* The F<sub>MSY</sub> Ranges have not been used as the
 pok.27.3a46,Footnotes,2019,"* The EU North Sea Multi Annual Plan (EU 2018/973) lists this stock, however it has not been adopted by Norway. 
 <p>ICES has carried out further management strategy evaluations due to a special request, 
 which could form the basis for an agreement between EU & Norway.",
-bss.27.4bc7ad-h,Footnotes,2019,<p>* The F<sub>MSY</sub> Range Upper is not appropriate in this case as the stock is well below MSY B<sub>trigger</sub> - as set out in WWMAP (EU COM(2018)149 Final).,
+bss.27.4bc7ad-h,Footnotes,2019,* The F<sub>MSY</sub> Range Upper is not appropriate in this case as the stock is well below MSY B<sub>trigger</sub> - as set out in WWMAP (EU COM(2018)149 Final).,
 bss.27.6a7bj,Footnotes,2019,"* ICES 2017 advice, based then on recent landings multiplied by the PA buffer (0.8)
 <p>** The F<sub>MSY</sub> Ranges are not appropriate as this stock is considered as bycatch in WWMAP
 ",
-spr.27.67a-cf-k,Footnotes,2019,*Roll over advice from 2018-2019 which was the 2016-2017 advice reduced by 20% (PA buffer),
+spr.27.67a-cf-k,Footnotes,2019,* Roll over advice from 2018-2019 which was the 2016-2017 advice reduced by 20% (PA buffer),
 dgs.27.nea,Footnotes,2019,* Exemption for permitted bycatch in fisheries implementing an avoidance scheme.,
 nep.fu.14,Footnotes,2019,"* The F<sub>MSY</sub> Range Upper value capped at F<sub>MSY</sub> because it has not been possible to evaluate the probability of SSB < B<sub>lim</sub>, ICES (2016).
 <p>** Described below under Key Stock Considerations, details in (EC 2019/7048 & 2018/2034).
@@ -84,27 +84,23 @@ nep.fu.11,Footnotes,2019,"* The F<sub>MSY</sub> Range Upper value capped at F<su
 nep.fu.12,Footnotes,2019,"* The F<sub>MSY</sub> Range Upper value capped at F<sub>MSY</sub> because it has not been possible to evaluate the probability of SSB < B<sub>lim</sub>, ICES (2016).
 <p>** Described below under Key Stock Considerations, details in (EC 2019/7048 & 2018/2034).
 ",
-nep.fu.13,Footnotes,2019,"* The F<sub>MSY</sub> Range Upper value capped at F<sub>MSY</sub> because it has not been possible to evaluate the probability of SSB < B<sub>lim</sub>, ICES (2016).
-<p>** Described below under Key Stock Considerations, details in (EC 2019/7048 & 2018/2034).
-",
-nep.fu.13,Footnotes,2019,"* The F<sub>MSY</sub> Range Upper value capped at F<sub>MSY</sub> because it has not been possible to evaluate the probability of SSB < B<sub>lim</sub>, ICES (2016).
-<p>** Described below under Key Stock Considerations, details in (EC 2019/7048 & 2018/2034).
+nep.fu.13,Footnotes,2019,"* The F<sub>MSY</sub> Range Upper value capped at F<sub>MSY</sub> because it has not been possible to evaluate the probability of SSB < B<sub>lim</sub>, ICES (2016).                                                                                                    <p>** Described below under Key Stock Considerations, details in (EC 2019/7048 & 2018/2034).
 ",
 ank.27.78ab,Footnotes,2018,"* Proposed EU management plan (WWMAP) for the Western Waters, which is not yet finalised (COM(2018) 149 final).",
 mon.27.78ab,Footnotes,2018,"* Proposed EU management plan (WWMAP) for the Western Waters, which is not yet finalised (COM(2018) 149 final).",
 anf.27.3a46,Footnotes,2018,* Multiannual plan for demersal stocks in the North Sea and the fisheries exploiting those stocks (EU 2018/973),
-cod.27.7e-k,Footnotes,2018,"<p>* Under the ICES Advice approach, when spawning stock biomass (SSB) is below the biomass limit reference point (B<sub>lim</sub>) and it is not possible under any level of fishing for SSB to recover to B<sub>lim</sub> within the TAC year, the fishing pressure (F) is set to zero.
-<p>** The F<sub>MSY</sub> Range Upper is not appropriate in this case as the stock is well below MSY B<sub>trigger</sub> - as set out in the proposed WWMAP (EU COM(2018)149 Final).
+cod.27.7e-k,Footnotes,2018,"* Under the ICES Advice approach, when spawning stock biomass (SSB) is below the biomass limit reference point (B<sub>lim</sub>) and it is not possible under any level of fishing for SSB to recover to B<sub>lim</sub> within the TAC year, the fishing pressure (F) is set to zero.
+** The F<sub>MSY</sub> Range Upper is not appropriate in this case as the stock is well below MSY B<sub>trigger</sub> - as set out in the proposed WWMAP (EU COM(2018)149 Final).
 <p>*** Proposed EU management plan (MAP) for the Western Waters has not been adopted yet (EU COM(2018)149 Final).
 <p>**** Suggested de minimis exemption, caught using trammel nets or otter trawls, and requiring reporting to STECF (proposed NWW Discard Plan).
 ",
 cod.27.1-2,Footnotes,2018,*Adopted at the 46th meeting of the Joint Russian-Norwegian Fisheries Commission (JRNFC) in October 2016,
 cod.27.6a,Footnotes,2018,* MAP for demersal stocks in the North Sea ((EU) 2018/973),
-cod.27.6b,Footnotes,2018,"<p>* The F<sub>MSY</sub> Ranges are not appropriate as this stock is considered as bycatch in the proposed WWMAP.
-<p>** Proposed EU management plan (MAP) for the Western Waters has not been adopted yet (EU COM(2018)149 Final). 
+cod.27.6b,Footnotes,2018,"* The F<sub>MSY</sub> Ranges are not appropriate as this stock is considered as bycatch in the proposed WWMAP.
+** Proposed EU management plan (MAP) for the Western Waters has not been adopted yet (EU COM(2018)149 Final). 
 ",
-cod.27.7a,Footnotes,2018,"<p>* The ICES MSY approach applies a scaling to F<sub>MSY</sub> to attain a value of F relative to the spawning stock biomass (SSB) and the MSY B<sub>trigger</sub> reference point, where F = F<sub>MSY</sub> x SSB (2019)/MSY B<sub>trigger</sub> 
-<p>** In the context of the proposed WWMAP the F<sub>MSY</sub> Range Upper would not be appropriate because SSB is below MSY B<sub>trigger</sub> (EU COM(2018)149 Final.) 
+cod.27.7a,Footnotes,2018,"* The ICES MSY approach applies a scaling to F<sub>MSY</sub> to attain a value of F relative to the spawning stock biomass (SSB) and the MSY B<sub>trigger</sub> reference point, where F = F<sub>MSY</sub> x SSB (2019)/MSY B<sub>trigger</sub> 
+** In the context of the proposed WWMAP the F<sub>MSY</sub> Range Upper would not be appropriate because SSB is below MSY B<sub>trigger</sub> (EU COM(2018)149 Final.) 
 ",
 whb.27.1-91214,Footnotes,2018,* Commission delegated regulations 2018/190 & 2016/2377,
 whg.27.7a,Footnotes,2018,"* Under the ICES MSY approach, when spawning stock biomass (SSB) is below the biomass limit reference point (B<sub>lim</sub>) and it is not possible under any level of fishing for SSB to recover to B<sub>lim</sub> within the TAC year, the fishing pressure (F) is set to zero.
@@ -126,7 +122,7 @@ hke.27.3a46-8abd,Footnotes,2018,"* Proposed EU management plan (MAP) for the Wes
 <p>** For vessels with catches of more than 55% hake more selective gear options should be used (proposed NWW Discard Plan).
 ",
 her.27.6a7bc,Footnotes,2018,"* Under the ICES MSY approach, when spawning stock biomass (SSB) is below the biomass limit reference point (B<sub>lim</sub>) and it is not possible under any level of fishing for SSB to recover to B<sub>lim</sub> within the TAC year, the fishing pressure (F) is set to zero.",
-her.27.irls,Footnotes,2018," * Under the ICES MSY approach, when spawning stock biomass (SSB) is below MSY B<sub>trigger</sub> the fishing mortality advised is less than F<sub>MSY</sub>.",
+her.27.irls,Footnotes,2018,"* Under the ICES MSY approach, when spawning stock biomass (SSB) is below MSY B<sub>trigger</sub> the fishing mortality advised is less than F<sub>MSY</sub>.",
 her.27.1-24a514a,Footnotes,2018,"* According to the harvest control rule (HCR) in the management plan F(2019) = Fmgt = 0.14, since the SSB is forecast to be above B<sub>trigger</sub> on 1 January 2019. ",
 hom.27.3a4bc7d,Footnotes,2018,* Commission delegated regulations 2018/190 & 2016/2377,
 hom.27.2a4a5b6a7a-ce-k8,Footnotes,2018,* Commission delegated regulations 2018/190 & 2016/2377,
@@ -163,12 +159,12 @@ ple.27.7bc,Footnotes,2018,"* Based on ICES landings advice, 2017.
 ple.27.7a,Footnotes,2018,"* The F<sub>MSY</sub> Ranges are not appropriate as this stock is considered as bycatch in the proposed WWMAP (EU COM(2018)149 Final).
 <p>** Suggested high survivability exemption, caught using beam trawl (&#8804 221kW, &#8804 24m, within 12nm and tow &#8804 1.30 hours); beam trawls (&#8804 221kW, using flip-up rope or benthic release panel) until 2019 (proposed NWW Discard Plan).
 ",
-lin.27.3a4a6-91214,Footnotes,2018,*Expected mean length of catch above Lmean when F = M,
+lin.27.3a4a6-91214,Footnotes,2018,* Expected mean length of catch above Lmean when F = M,
 pol.27.67,Footnotes,2018,"* Based on ICES advice for 2018 multiplied by the PA buffer (0.8)
 <p>** Proposed EU management plan (MAP) for the Western Waters has not been adopted yet (EU COM(2018)149 Final).
 ",
 pok.27.7,Footnotes,2018,* The F<sub>MSY</sub> Ranges are not appropriate as this stock is considered as bycatch in the proposed WWMAP (EU COM(2018)149 Final).,
-pok.27.3a46,Footnotes,2018,"*Not used as a basis for ICES advice in 2018. 
+pok.27.3a46,Footnotes,2018,"* Not used as a basis for ICES advice in 2018. 
 ",
 bss.27.4bc7ad-h,Footnotes,2018,"* Under the ICES MSY approach, when spawning stock biomass (SSB) is below MSY B<sub>trigger</sub> the fishing mortality advised is less than F<sub>MSY</sub>.
 <p>** The F<sub>MSY</sub> Range Upper is not appropriate in this case as the stock is well below MSY B<sub>trigger</sub> - as set out in the proposed WWMAP (EU COM(2018)149 Final).
@@ -178,7 +174,7 @@ bss.27.4bc7ad-h,Footnotes,2018,"* Under the ICES MSY approach, when spawning sto
 bss.27.6a7bj,Footnotes,2018,"* ICES 2017 advice, based then on recent landings multiplied by the PA buffer (0.8)
 <p>** The F<sub>MSY</sub> Ranges are not appropriate as this stock is considered as bycatch in the proposed WWMAP (EU COM(2018)149 Final).
 ",
-spr.27.67a-cf-k,Footnotes,2018,*Based on ICES advice for 2018 multiplied by the PA buffer (0.8),
+spr.27.67a-cf-k,Footnotes,2018,* Based on ICES advice for 2018 multiplied by the PA buffer (0.8),
 dgs.27.nea,Footnotes,2018,* Exemption for permitted bycatch in fisheries implementing an avoidance scheme.,
 nep.fu.14,Footnotes,2018,"* The F<sub>MSY</sub> Range Upper value capped at F<sub>MSY</sub> because it has not been possible to evaluate the probability of SSB < B<sub>lim</sub>, ICES (2016).
 <p>** Proposed EU management plan (MAP) for the Western Waters has not been adopted yet (EU COM(2018)149 Final).
@@ -1809,3 +1805,457 @@ nep.fu.13,KeyPoints,2019,  FMSY ,HR=12.0%; Catch=634 t
 nep.fu.13,KeyPoints,2019,  FMSY Range Upper*,HR=12.0%; Catch=634 t
 nep.fu.13,KeyPoints,2019,Landing Obligation ,From 2016. Gear specific high survivability exemption**
 nep.fu.13,KeyPoints,2019,MSY Btrigger (million individuals),160
+ALB-N,KeyPoints,2020,ICCAT Advice Basis,Quantitative assessment and HCR (from MSE framework)
+ALB-N,KeyPoints,2020,Management Plan,"Management Plan SCRS Rec. 17-04  Catch=37,801 t"
+ALB-N,KeyPoints,2020,FMSY Range Lower,"Catch=35,761 t"
+ALB-N,KeyPoints,2020,FMSY ,"Catch=36,816 t"
+ALB-N,KeyPoints,2020,FMSY Range Upper,"Catch=38,039 t"
+ALB-N,KeyPoints,2020,Landing Obligation,From 2015. Area and gear specific de minimis exemption in 2020 *
+anf.27.3a46,KeyPoints,2020,ICES Assessment Category,3 (Survey-based Assessment Trends)
+anf.27.3a46,KeyPoints,2020,Management Plan,NSMAP (target species)
+anf.27.3a46,KeyPoints,2020,Advice Basis,"ICES PA approach. Catch =17,645 t"
+anf.27.3a46,KeyPoints,2020,FMSY Range Lower,Not available
+anf.27.3a46,KeyPoints,2020,FMSY ,Not available
+anf.27.3a46,KeyPoints,2020,FMSY Range Upper,Not available
+anf.27.3a46,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions apply 
+ank.27.78ab,KeyPoints,2020,ICES Assessment Category,3 (Trend-based Assessment)
+ank.27.78ab,KeyPoints,2020,Management Plan,WWMAP (target species)
+ank.27.78ab,KeyPoints,2020,Advice Basis,"Management Plan. Catch = 15,551 t
+"
+ank.27.78ab,KeyPoints,2020,FMSY Range Lower,Not Available
+ank.27.78ab,KeyPoints,2020,FMSY ,Not Available
+ank.27.78ab,KeyPoints,2020,FMSY Range Upper,Not Available
+ank.27.78ab,KeyPoints,2020,Landing Obligation,"From 2019. Area and gear specific derogation*       
+"
+BFT-E,KeyPoints,2020,ICCAT Advice Basis,Previous advice and indicators 
+BFT-E,KeyPoints,2020,Management Plan,"Management Strategy Evaluation (Rec. 18-02*) 
+Catch = 36,000 t
+"
+BFT-E,KeyPoints,2020,ICCAT MSY  Lower,Not available
+BFT-E,KeyPoints,2020,ICCAT MSY ,Not available
+BFT-E,KeyPoints,2020,ICCAT MSY Upper,Not available
+BFT-E,KeyPoints,2020,Landing Obligation,From 2015. No derogations or exemptions
+boc.27.6-8,KeyPoints,2020,ICES Assessment Category,3 (Survey-based Assessment)
+boc.27.6-8,KeyPoints,2020,Management Plan,No
+boc.27.6-8,KeyPoints,2020,Advice Basis,"ICES PA approach. Catch=19,152 t. Index ratio and precautionary buffer applied"
+boc.27.6-8,KeyPoints,2020,Ranges,Not available
+boc.27.6-8,KeyPoints,2020,Landing Obligation,From 2015. Area and gear specific de minimis exemption applies in 2020*
+bss.27.4bc7ad-h,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+bss.27.4bc7ad-h,KeyPoints,2020,Management Plan,WWMAP (target)
+bss.27.4bc7ad-h,KeyPoints,2020,Advice Basis,MAP ranges
+bss.27.4bc7ad-h,KeyPoints,2020,FMSY Range Lower,"Catch=1,680 t"
+bss.27.4bc7ad-h,KeyPoints,2020,FMSY ,"Catch=2,000 t"
+bss.27.4bc7ad-h,KeyPoints,2020,FMSY Range Upper,"Catch=2,000 t"
+bss.27.4bc7ad-h,KeyPoints,2020,Landing Obligation,Does not apply (Not a TAC species)
+bss.27.6a7bj,KeyPoints,2020,ICES Assessment Category,6
+bss.27.6a7bj,KeyPoints,2020,Management Plan,WWMAP(target)
+bss.27.6a7bj,KeyPoints,2020,Advice Basis,ICES PA approach. Catch=3 t
+bss.27.6a7bj,KeyPoints,2020,FMSY Range Lower,Not available
+bss.27.6a7bj,KeyPoints,2020,FMSY ,Not available
+bss.27.6a7bj,KeyPoints,2020,FMSY Range Upper,Not available
+bss.27.6a7bj,KeyPoints,2020,Landing Obligation,Does not apply (Not a TAC species)
+cod.27.1-2,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+cod.27.1-2,KeyPoints,2020,Management Plan,Joint Russian-Norwegian Fisheries Commission Management Plan*
+cod.27.1-2,KeyPoints,2020,Advice Basis,"Management Plan. Catch=885,600 t"
+cod.27.1-2,KeyPoints,2020,FMSY Range Lower,Not available
+cod.27.1-2,KeyPoints,2020,FMSY ,"Catch=774,860 t"
+cod.27.1-2,KeyPoints,2020,FMSY Range Upper,Not available
+cod.27.1-2,KeyPoints,2020,Landing Obligation,Not applicable
+cod.27.6a,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+cod.27.6a,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+cod.27.6a,KeyPoints,2020,Advice Basis,ICES MSY approach; Catch=0 t
+cod.27.6a,KeyPoints,2020,FMSY Range Lower,Not Appropriate (bycatch)
+cod.27.6a,KeyPoints,2020,FMSY ,Catch=738 t
+cod.27.6a,KeyPoints,2020,FMSY Range Upper,Not Appropriate (bycatch)
+cod.27.6a,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions
+cod.27.6b,KeyPoints,2020,ICES Assessment Category,6 (Bycatch only)
+cod.27.6b,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+cod.27.6b,KeyPoints,2020,Advice Basis,ICES PA approach; Catch=14 t
+cod.27.6b,KeyPoints,2020,FMSY Range Lower,Not available
+cod.27.6b,KeyPoints,2020,FMSY ,Not available
+cod.27.6b,KeyPoints,2020,FMSY Range Upper,Not available
+cod.27.6b,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions
+cod.27.7a,KeyPoints,2020,ICES Assessment Category,3 (Survey-based Assessment Trends)
+cod.27.7a,KeyPoints,2020,Management Plan,WWMAP (target)
+cod.27.7a,KeyPoints,2020,Advice Basis,ICES PA approach; Catch=108 t
+cod.27.7a,KeyPoints,2020,FMSY Range Lower,Not available
+cod.27.7a,KeyPoints,2020,FMSY ,Not available
+cod.27.7a,KeyPoints,2020,FMSY Range Upper,Not available
+cod.27.7a,KeyPoints,2020,Landing Obligation,From 2019. Specific technical measures under Article 10 of the 2020-2021 landing obligation plan.*
+cod.27.7e-k,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+cod.27.7e-k,KeyPoints,2020,Management Plan,WWMAP (target)
+cod.27.7e-k,KeyPoints,2020,Advice Basis,Management Plan; Catch=0 t
+cod.27.7e-k,KeyPoints,2020,FMSY Range Lower,Catch=328 t
+cod.27.7e-k,KeyPoints,2020,FMSY ,Catch=544 t
+cod.27.7e-k,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+cod.27.7e-k,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions 
+dgs.27.nea,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+dgs.27.nea,KeyPoints,2020,Management Plan,No
+dgs.27.nea,KeyPoints,2020,Advice Basis,PA Approach. No targeted fisheries.
+dgs.27.nea,KeyPoints,2020,MSY Range ,Not Applicable
+dgs.27.nea,KeyPoints,2020,Landing Obligation,Does not apply. Not applicable (prohibited species*)
+had.27.46a20,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+had.27.46a20,KeyPoints,2020,Management Plan,NSMAP (target); Not agreed between EU & Norway
+had.27.46a20,KeyPoints,2020,Advice Basis,"ICES MSY approach. Catch=69,280 t"
+had.27.46a20,KeyPoints,2020,FMSY Range Lower,"Catch=60,139 t"
+had.27.46a20,KeyPoints,2020,FMSY ,"Catch=69,280 t"
+had.27.46a20,KeyPoints,2020,FMSY Range Upper,"Catch=69,280 t"
+had.27.46a20,KeyPoints,2020,Landing Obligation,From 2016. Below MCRS De minimis up to 3%*
+had.27.6b,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+had.27.6b,KeyPoints,2020,Management Plan,WWMAP (target); No management plan has been agreed between all the relevant management authorities.
+had.27.6b,KeyPoints,2020,Advice Basis,"ICES MSY approach. Catch=6,239 t"
+had.27.6b,KeyPoints,2020,FMSY Range Lower,"Catch=4,019 t"
+had.27.6b,KeyPoints,2020,FMSY ,"Catch=6,239 t"
+had.27.6b,KeyPoints,2020,FMSY Range Upper,"Catch=9,546 t"
+had.27.6b,KeyPoints,2020,Landing Obligation,From 2016. No derogations or exemptions
+had.27.7a,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+had.27.7a,KeyPoints,2020,Management Plan,WWMAP (target)
+had.27.7a,KeyPoints,2020,Advice Basis,"Management Plan. Catch=3,371 t"
+had.27.7a,KeyPoints,2020,FMSY Range Lower,"Catch=2,491 t"
+had.27.7a,KeyPoints,2020,FMSY ,"Catch=3,371 t"
+had.27.7a,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+had.27.7a,KeyPoints,2020,Landing Obligation,From 2016. Specific technical measures under Article 10 of the 2020-2021 landing obligation plan
+had.27.7b-k,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+had.27.7b-k,KeyPoints,2020,Management Plan,WWMAP (target)
+had.27.7b-k,KeyPoints,2020,Advice Basis,"Management Plan  Catch=18,382 t"
+had.27.7b-k,KeyPoints,2020,FMSY Range Lower,"FMSY Range Lower Catch=12,128 t"
+had.27.7b-k,KeyPoints,2020,FMSY ,"FMSY Catch=18,382 t"
+had.27.7b-k,KeyPoints,2020,FMSY Range Upper,"FMSY Range Upper Catch=25,454 t"
+had.27.7b-k,KeyPoints,2020,Landing Obligation,From 2019. De minimis up to 5%*
+her.27.1-24a514a,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+her.27.1-24a514a,KeyPoints,2020,Management Plan,"Yes  (EU, the Faroe Islands, Iceland, Norway, and Russia in 2018)"
+her.27.1-24a514a,KeyPoints,2020,Advice Basis,"Management Plan. Catch=651,033 t."
+her.27.1-24a514a,KeyPoints,2020,Ranges,Not available
+her.27.1-24a514a,KeyPoints,2020,Landing Obligation,From 2015. No derogations or exemptions relevant to Ireland
+her.27.6a7bc,KeyPoints,2020,ICES Assessment Category,3 (Trend-based Assessment)
+her.27.6a7bc,KeyPoints,2020,Management Plan,No
+her.27.6a7bc,KeyPoints,2020,Advice Basis,ICES PA approach. Catch=0 t*.
+her.27.6a7bc,KeyPoints,2020,FMSY Range Lower,Not Appropriate
+her.27.6a7bc,KeyPoints,2020,FMSY ,Not available
+her.27.6a7bc,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+her.27.6a7bc,KeyPoints,2020,Landing Obligation,From 2015. No derogations or exemptions.
+her.27.irls,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+her.27.irls,KeyPoints,2020,Management Plan,No
+her.27.irls,KeyPoints,2020,Advice Basis,ICES MSY approach* Catch=0 t
+her.27.irls,KeyPoints,2020,Ranges,Not available
+her.27.irls,KeyPoints,2020,Landing Obligation,From 2015. No derogations or exemptions.
+her.27.nirs,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+her.27.nirs,KeyPoints,2020,Management Plan,No
+her.27.nirs,KeyPoints,2020,Advice Basis,"ICES MSY approach. Catch=7,341 t."
+her.27.nirs,KeyPoints,2020,Ranges,Not available
+her.27.nirs,KeyPoints,2020,Landing Obligation,From 2015. No derogations or exemptions.
+hke.27.3a46-8abd,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+hke.27.3a46-8abd,KeyPoints,2020,Management Plan,WWMAP (target)
+hke.27.3a46-8abd,KeyPoints,2020,Advice Basis,ICES MSY approach
+hke.27.3a46-8abd,KeyPoints,2020,FMSY Range Lower,"Catch=71,881 t"
+hke.27.3a46-8abd,KeyPoints,2020,FMSY ,"Catch=98,657 t"
+hke.27.3a46-8abd,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+hke.27.3a46-8abd,KeyPoints,2020,Landing Obligation,From 2019. Area and gear specific derogation*
+hom.27.2a4a5b6a7a-ce-k8,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+hom.27.2a4a5b6a7a-ce-k8,KeyPoints,2020,Management Plan,No
+hom.27.2a4a5b6a7a-ce-k8,KeyPoints,2020,Advice Basis,"ICES MSY approach. Catch=81,376 t"
+hom.27.2a4a5b6a7a-ce-k8,KeyPoints,2020,Ranges,Not available
+hom.27.2a4a5b6a7a-ce-k8,KeyPoints,2020,Landing Obligation,From 2015. Area and gear specific de minimis exemptions in 2020*
+hom.27.3a4bc7d,KeyPoints,2020,ICES Assessment Category,3 (Trend-based Assessment)
+hom.27.3a4bc7d,KeyPoints,2020,Management Plan,No
+hom.27.3a4bc7d,KeyPoints,2020,Advice Basis,"ICES PA approach. Catch=14,014 t."
+hom.27.3a4bc7d,KeyPoints,2020,Ranges,Not available
+hom.27.3a4bc7d,KeyPoints,2020,Landing Obligation,From 2015. Area and gear specific de minimis  exemptions in 2020*.
+lez.27.4a6a,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+lez.27.4a6a,KeyPoints,2020,Management Plan,WWMAP (target)
+lez.27.4a6a,KeyPoints,2020,Advice Basis,"Management Plan. Catch=7,300 t"
+lez.27.4a6a,KeyPoints,2020,FMSY Range Lower,"Catch=5,700 t"
+lez.27.4a6a,KeyPoints,2020,FMSY ,"Catch=7,300 t"
+lez.27.4a6a,KeyPoints,2020,FMSY Range Upper,"Catch=7,300 t"
+lez.27.4a6a,KeyPoints,2020,Landing Obligation,No derogations or exemptions
+lez.27.6b,KeyPoints,2020,ICES Assessment Category,3 (Trend-based Assessment) 
+lez.27.6b,KeyPoints,2020,Management Plan,WWMAP (target)
+lez.27.6b,KeyPoints,2020,Advice Basis,Precautionary Approach. Catch=512 t
+lez.27.6b,KeyPoints,2020,FMSY Range Lower,Not Available  
+lez.27.6b,KeyPoints,2020,FMSY ,Not Available  
+lez.27.6b,KeyPoints,2020,FMSY Range Upper,Not Available  
+lez.27.6b,KeyPoints,2020,Landing Obligation,From 2019. No derogation or exemptions
+lin.27.3a4a6-91214,KeyPoints,2020,ICES Assessment Category,3 (Trend-based Assessment)
+lin.27.3a4a6-91214,KeyPoints,2020,Management Plan,No
+lin.27.3a4a6-91214,KeyPoints,2020,Advice Basis,ICES PA approach
+lin.27.3a4a6-91214,KeyPoints,2020,FMSY Range Lower,Not appropriate
+lin.27.3a4a6-91214,KeyPoints,2020,FMSY ,Not appropriate
+lin.27.3a4a6-91214,KeyPoints,2020,FMSY Range Upper,Not appropriate
+lin.27.3a4a6-91214,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions
+mac.27.nea,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+mac.27.nea,KeyPoints,2020,Management Plan,Yes*
+mac.27.nea,KeyPoints,2020,Advice Basis,"MSY approach. Catch=852,284 t."
+mac.27.nea,KeyPoints,2020,Ranges,Not available
+mac.27.nea,KeyPoints,2020,Landing Obligation,From 2015. Area and gear specific de minimis and survivability exemptions in 2020**
+meg.27.7b-k8abd,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+meg.27.7b-k8abd,KeyPoints,2020,Management Plan,WWMAP (target)
+meg.27.7b-k8abd,KeyPoints,2020,Advice Basis,"WWMAP. Catch=19,184 t"
+meg.27.7b-k8abd,KeyPoints,2020,FMSY Range Lower,"Catch=12,706 t"
+meg.27.7b-k8abd,KeyPoints,2020,FMSY ,"Catch=19,184 t"
+meg.27.7b-k8abd,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+meg.27.7b-k8abd,KeyPoints,2020,Landing Obligation,From 2019. Area and gear specific derogation*
+mon.27.78ab,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+mon.27.78ab,KeyPoints,2020,Management Plan,WWMAP (target species)
+mon.27.78ab,KeyPoints,2020,Advice Basis,"Management Plan. Catch=34,579 t
+"
+mon.27.78ab,KeyPoints,2020,FMSY Range Lower,"Catch=23,320 t"
+mon.27.78ab,KeyPoints,2020,FMSY ,"Catch=34,579 t"
+mon.27.78ab,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+mon.27.78ab,KeyPoints,2020,Landing Obligation,"From 2019, Area and gear specific derogation*       
+"
+nep.27.7outfu,KeyPoints,2020,ICES Assessment Category,5 (Landings only)
+nep.27.7outfu,KeyPoints,2020,Management Plan,WWMAP
+nep.27.7outfu,KeyPoints,2020,Advice Basis,ICES PA approach
+nep.27.7outfu,KeyPoints,2020,Ranges,Not available
+nep.27.7outfu,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption* 
+nep.fu.11,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+nep.fu.11,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.11,KeyPoints,2020,Advice Basis,WWMAP
+nep.fu.11,KeyPoints,2020,FMSY Range Lower,"Total catch=3,075 t "
+nep.fu.11,KeyPoints,2020,FMSY ,"Total catch=3,953 t "
+nep.fu.11,KeyPoints,2020,FMSY Range Upper,"Total catch=3,953 t "
+nep.fu.11,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption*
+nep.fu.12,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+nep.fu.12,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.12,KeyPoints,2020,Advice Basis,WWMAP
+nep.fu.12,KeyPoints,2020,FMSY Range Lower,"Total catch=4,703 t "
+nep.fu.12,KeyPoints,2020,FMSY ,"Total catch=5,916 t "
+nep.fu.12,KeyPoints,2020,FMSY Range Upper,"Total catch=5,916 t "
+nep.fu.12,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption*
+nep.fu.14,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+nep.fu.14,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.14,KeyPoints,2020,Advice Basis,"WWMAP Catch=1,053 t"
+nep.fu.14,KeyPoints,2020,FMSY Range Lower,Catch=871 t
+nep.fu.14,KeyPoints,2020,FMSY ,"Catch=1,053 t"
+nep.fu.14,KeyPoints,2020,FMSY Range Upper,"Catch=1,053 t"
+nep.fu.14,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption*
+nep.fu.15,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+nep.fu.15,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.15,KeyPoints,2020,Advice Basis,"WWMAP. Catch=11,691 t"
+nep.fu.15,KeyPoints,2020,FMSY Range Lower,"Catch=7,965 t"
+nep.fu.15,KeyPoints,2020,FMSY ,"Catch=11,691 t "
+nep.fu.15,KeyPoints,2020,FMSY Range Upper,"Catch=11,691 t"
+nep.fu.15,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption*
+nep.fu.16,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+nep.fu.16,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.16,KeyPoints,2020,Advice Basis,"Management Plan. Catch=3,290 t"
+nep.fu.16,KeyPoints,2020,FMSY Range Lower,"Catch=2,653 t"
+nep.fu.16,KeyPoints,2020,FMSY ,"Catch=3,290 t"
+nep.fu.16,KeyPoints,2020,FMSY Range Upper,"Catch=3,290 t"
+nep.fu.16,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption*
+nep.fu.17,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+nep.fu.17,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.17,KeyPoints,2020,Advice Basis,Management Plan. Catch=508 t
+nep.fu.17,KeyPoints,2020,FMSY Range Lower,Catch=443 t
+nep.fu.17,KeyPoints,2020,FMSY ,Catch=508 t
+nep.fu.17,KeyPoints,2020,FMSY Range Upper,Catch=508 t
+nep.fu.17,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption*
+nep.fu.19,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+nep.fu.19,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.19,KeyPoints,2020,Advice Basis,Management Plan. Catch=595 t
+nep.fu.19,KeyPoints,2020,FMSY Range Lower,Catch=531 t
+nep.fu.19,KeyPoints,2020,FMSY ,Catch=595 t
+nep.fu.19,KeyPoints,2020,FMSY Range Upper,Catch=595 t
+nep.fu.19,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption*
+nep.fu.2021,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+nep.fu.2021,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.2021,KeyPoints,2020,Advice Basis,"Management Plan. Catch=1,170 t"
+nep.fu.2021,KeyPoints,2020,FMSY Range Lower,"Catch=1,682 t"
+nep.fu.2021,KeyPoints,2020,FMSY ,"Catch=1,710 t"
+nep.fu.2021,KeyPoints,2020,FMSY Range Upper,"Catch=1,710 t"
+nep.fu.2021,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption*
+nep.fu.22,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+nep.fu.22,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.22,KeyPoints,2020,Advice Basis,"Management Plan. Catch=1,560 t"
+nep.fu.22,KeyPoints,2020,FMSY Range Lower,"Catch=1,238 t"
+nep.fu.22,KeyPoints,2020,FMSY ,"Catch=1,560 t"
+nep.fu.22,KeyPoints,2020,FMSY Range Upper,"Catch=1,560 t"
+nep.fu.22,KeyPoints,2020,Landing Obligation,From 2016. Gear specific high survivability exemption*
+ple.27.6,KeyPoints,2020,ICES Assessment Category,Not Appropriate
+ple.27.6,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+ple.27.6,KeyPoints,2020,Advice Basis,None. Not Appropriate
+ple.27.6,KeyPoints,2020,FMSY Range Lower,Not Appropriate
+ple.27.6,KeyPoints,2020,FMSY ,Not Appropriate
+ple.27.6,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+ple.27.6,KeyPoints,2020,Landing Obligation,No derogations or exemptions
+ple.27.7a,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+ple.27.7a,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+ple.27.7a,KeyPoints,2020,Advice Basis,"ICES MSY approach. Catch=2,846 t"
+ple.27.7a,KeyPoints,2020,FMSY Range Lower,Not Appropriate (bycatch)
+ple.27.7a,KeyPoints,2020,FMSY ,"Catch=2,846 t "
+ple.27.7a,KeyPoints,2020,FMSY Range Upper,Not Appropriate (bycatch)
+ple.27.7a,KeyPoints,2020,Landing Obligation,From 2019. High survivability exemption*
+ple.27.7bc,KeyPoints,2020,ICES Assessment Category,6 (Bycatch only)
+ple.27.7bc,KeyPoints,2020,Management Plan,No (considered bycatch in WWMAP)
+ple.27.7bc,KeyPoints,2020,Advice Basis,Precautionary approach. Landings=19 t
+ple.27.7bc,KeyPoints,2020,FMSY Range Lower,Not appropriate
+ple.27.7bc,KeyPoints,2020,FMSY ,Not available
+ple.27.7bc,KeyPoints,2020,FMSY Range Upper,Not appropriate
+ple.27.7bc,KeyPoints,2020,Landing Obligation,From 2019. High survivability exemption* 
+ple.27.7fg,KeyPoints,2020,ICES Assessment Category,3 (Survey-based Assessment)
+ple.27.7fg,KeyPoints,2020,Management Plan,WWMAP (bycatch) 
+ple.27.7fg,KeyPoints,2020,Advice Basis,"ICES PA approach. Catch=1,911 t"
+ple.27.7fg,KeyPoints,2020,FMSY Range Lower,Not Appropriate
+ple.27.7fg,KeyPoints,2020,FMSY ,Not available
+ple.27.7fg,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+ple.27.7fg,KeyPoints,2020,Landing Obligation,From 2019. High survivability exemption*
+ple.27.7h-k,KeyPoints,2020,ICES Assessment Category,3 (Survey-based Assessment)
+ple.27.7h-k,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+ple.27.7h-k,KeyPoints,2020,Advice Basis,Precautionary approach. Catch = 0 t
+ple.27.7h-k,KeyPoints,2020,FMSY Range Lower,Not Appropriate 
+ple.27.7h-k,KeyPoints,2020,FMSY ,Not Available 
+ple.27.7h-k,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+ple.27.7h-k,KeyPoints,2020,Landing Obligation,From 2019. High survivability exemption*
+pok.27.3a46,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+pok.27.3a46,KeyPoints,2020,Management Plan,NSMAP (target); Not agreed between EU & Norway
+pok.27.3a46,KeyPoints,2020,Advice Basis,"ICES MSY approach. Catch=65,687 t"
+pok.27.3a46,KeyPoints,2020,FMSY Range Lower," Catch=40,391 t"
+pok.27.3a46,KeyPoints,2020,FMSY ,"Catch=65,687 t"
+pok.27.3a46,KeyPoints,2020,FMSY Range Upper," Catch=90,731 t"
+pok.27.3a46,KeyPoints,2020,Landing Obligation,From 2016. No derogations or exemptions
+pok.27.7,KeyPoints,2020,ICES Assessment Category,Not Appropriate
+pok.27.7,KeyPoints,2020,Management Plan,WWMAP(bycatch)
+pok.27.7,KeyPoints,2020,Advice Basis,None. Not Appropriate
+pok.27.7,KeyPoints,2020,FMSY Range Lower,Not Appropriate
+pok.27.7,KeyPoints,2020,FMSY ,Not Available
+pok.27.7,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+pok.27.7,KeyPoints,2020,Landing Obligation,From 2016. No derogations or exemptions
+pol.27.67,KeyPoints,2020,ICES Assessment Category,4 (Catch-based Assessment)
+pol.27.67,KeyPoints,2020,Management Plan,WWMAP (target)
+pol.27.67,KeyPoints,2020,Advice Basis,"ICES PA approach. Catch=3,360 t"
+pol.27.67,KeyPoints,2020,FMSY Range Lower,Not Available
+pol.27.67,KeyPoints,2020,FMSY ,Not Available
+pol.27.67,KeyPoints,2020,FMSY Range Upper,Not Available
+pol.27.67,KeyPoints,2020,Landing Obligation,From 2017. No derogations or exemptions
+sol.27.6,KeyPoints,2020,ICES Assessment Category,Not Appropriate
+sol.27.6,KeyPoints,2020,Management Plan,No*
+sol.27.6,KeyPoints,2020,Advice Basis,None. Not Appropriate
+sol.27.6,KeyPoints,2020,FMSY Range Lower,Not Appropriate
+sol.27.6,KeyPoints,2020,FMSY ,Not Available
+sol.27.6,KeyPoints,2020,FMSY Range Upper,Not Appropriate
+sol.27.6,KeyPoints,2020,Landing Obligation,From 2017. No derogations or exemptions
+sol.27.7a,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+sol.27.7a,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+sol.27.7a,KeyPoints,2020,Advice Basis,ICES MSY approach. Catch=768 t 
+sol.27.7a,KeyPoints,2020,FMSY Range Lower,Not Appropriate (bycatch)
+sol.27.7a,KeyPoints,2020,FMSY ,Catch=768 t 
+sol.27.7a,KeyPoints,2020,FMSY Range Upper,Not Appropriate (bycatch)
+sol.27.7a,KeyPoints,2020,Landing Obligation,From 2019. No derogation or exemptions
+sol.27.7bc,KeyPoints,2020,ICES Assessment Category,6 (Bycatch-only Assessment)
+sol.27.7bc,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+sol.27.7bc,KeyPoints,2020,Advice Basis,ICES PA approach. Catch=19 t
+sol.27.7bc,KeyPoints,2020,FMSY Range Lower,Not Appropriate (bycatch)
+sol.27.7bc,KeyPoints,2020,FMSY ,Not Appropriate (bycatch)
+sol.27.7bc,KeyPoints,2020,FMSY Range Upper,Not Appropriate (bycatch)
+sol.27.7bc,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions
+sol.27.7fg,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
+sol.27.7fg,KeyPoints,2020,Management Plan,WWMAP (target)
+sol.27.7fg,KeyPoints,2020,Advice Basis,"ICES MSY approach  Catch=1,413 t"
+sol.27.7fg,KeyPoints,2020,FMSY Range Lower,"Catch=1,413 t"
+sol.27.7fg,KeyPoints,2020,FMSY ,Catch=811 t
+sol.27.7fg,KeyPoints,2020,FMSY Range Upper,"Catch=2,364 t"
+sol.27.7fg,KeyPoints,2020,Landing Obligation,From 2016. De minimis up to 3%
+sol.27.7h-k,KeyPoints,2020,ICES Assessment Category,5 (Landings-only Assessment)
+sol.27.7h-k,KeyPoints,2020,Management Plan,WWMAP (target)
+sol.27.7h-k,KeyPoints,2020,Advice Basis,ICES PA approach. Catch = 213 t
+sol.27.7h-k,KeyPoints,2020,FMSY Range Lower,Not available
+sol.27.7h-k,KeyPoints,2020,FMSY ,Not available
+sol.27.7h-k,KeyPoints,2020,FMSY Range Upper,Not available
+sol.27.7h-k,KeyPoints,2020,Landing Obligation,From 2019. De minimis up to 3%
+spr.27.67a-cf-k,KeyPoints,2020,ICES Assessment Category,5 (Landings only)
+spr.27.67a-cf-k,KeyPoints,2020,Management Plan,No
+spr.27.67a-cf-k,KeyPoints,2020,Advice Basis,"ICES PA approach.Catch &#88042,800 t"
+spr.27.67a-cf-k,KeyPoints,2020,FMSY Range Lower,Not appropriate
+spr.27.67a-cf-k,KeyPoints,2020,FMSY ,Not available  
+spr.27.67a-cf-k,KeyPoints,2020,FMSY Range Upper,Not appropriate
+spr.27.67a-cf-k,KeyPoints,2020,Landing Obligation,Does not apply (Not a TAC species)
+whb.27.1-91214,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+whb.27.1-91214,KeyPoints,2020,Management Plan,"Yes (European Union, the Faroe Islands, Iceland and Norway in 2016)"
+whb.27.1-91214,KeyPoints,2020,Advice Basis,"Long Term Management Strategy. Catch=929,292 t"
+whb.27.1-91214,KeyPoints,2020,Ranges,Not available
+whb.27.1-91214,KeyPoints,2020,Landing Obligation,From 2015. Fleet specific de minimis  exemption in 2020*
+whg.27.6a,KeyPoints,2020,ICES Assessment Category,5 (Catch-only Assessment)
+whg.27.6a,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+whg.27.6a,KeyPoints,2020,Advice Basis,ICES PA approach. Catch = 0 t.
+whg.27.6a,KeyPoints,2020,FMSY Range Lower,Not Appropriate (bycatch)
+whg.27.6a,KeyPoints,2020,FMSY ,Not available
+whg.27.6a,KeyPoints,2020,FMSY Range Upper,Not Appropriate (bycatch)
+whg.27.6a,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions.
+whg.27.6b,KeyPoints,2020,ICES Assessment Category,6 (Bycatch-only Assessment)
+whg.27.6b,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+whg.27.6b,KeyPoints,2020,Advice Basis,PA Approach* Recent advised catches minus 20%
+whg.27.6b,KeyPoints,2020,FMSY Range Lower,Not Appropriate (bycatch)
+whg.27.6b,KeyPoints,2020,FMSY ,Not Available
+whg.27.6b,KeyPoints,2020,FMSY Range Upper,Not Appropriate (bycatch)
+whg.27.6b,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions.
+whg.27.7a,KeyPoints,2020,ICES Assessment Category,1 (Quantitative assessment)
+whg.27.7a,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+whg.27.7a,KeyPoints,2020,Advice Basis,ICES MSY approach. Catch=0 t
+whg.27.7a,KeyPoints,2020,FMSY Range Lower,Not Appropriate (bycatch)
+whg.27.7a,KeyPoints,2020,FMSY ,Not available
+whg.27.7a,KeyPoints,2020,FMSY Range Upper,Not Appropriate (bycatch)
+whg.27.7a,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions.
+whg.27.7b-ce-k,KeyPoints,2020,ICES Assessment Category,1 (Quantitative assessment)
+whg.27.7b-ce-k,KeyPoints,2020,Management Plan,WWMAP (target)
+whg.27.7b-ce-k,KeyPoints,2020,Advice Basis,Management Plan
+whg.27.7b-ce-k,KeyPoints,2020,FMSY Range Lower,"Catch=4,458 t"
+whg.27.7b-ce-k,KeyPoints,2020,FMSY ,"Catch=5,261 t "
+whg.27.7b-ce-k,KeyPoints,2020,FMSY Range Upper,"Catch=5,261 t"
+whg.27.7b-ce-k,KeyPoints,2020,Landing Obligation,From 2019. De minimis up to 5%*.
+nep.fu.13,KeyPoints,2020,,13 Clyde
+nep.fu.13,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+nep.fu.13,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.13,KeyPoints,2020,Advice Basis ,WWMAP
+nep.fu.13,KeyPoints,2020,  FMSY Range Lower,"Catch=3,142 t"
+nep.fu.13,KeyPoints,2020,  FMSY ,"Catch=4,791 t"
+nep.fu.13,KeyPoints,2020,  FMSY Range Upper,"Catch=4,791 t"
+nep.fu.13,KeyPoints,2020,Landing Obligation ,From 2016. Gear specific high survivability exemption*
+nep.fu.13,KeyPoints,2020,MSY Btrigger (million individuals),580
+nep.fu.13,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+nep.fu.13,KeyPoints,2020,,13 Jura
+nep.fu.13,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
+nep.fu.13,KeyPoints,2020,Management Plan,WWMAP
+nep.fu.13,KeyPoints,2020,Advice Basis ,WWMAP
+nep.fu.13,KeyPoints,2020,  FMSY Range Lower,Catch=496 t
+nep.fu.13,KeyPoints,2020,  FMSY ,Catch=634 t
+nep.fu.13,KeyPoints,2020,  FMSY Range Upper,Catch=634 t
+nep.fu.13,KeyPoints,2020,Landing Obligation ,From 2016. Gear specific high survivability exemption*
+nep.fu.13,KeyPoints,2020,MSY Btrigger (million individuals),160
+hom.27.3a4bc7d,Footnotes,2020,"*Commission delegated regulations 2019/2239 & 2018/190
+",
+mac.27.nea,Footnotes,2020,"* Management plan is not agreed by all parties and is thus not used as the basis of advice by ICES. 
+** Commission delegated regulations 2019/2239 and 2018/190
+",
+meg.27.7b-k8abd,Footnotes,2020,"* For vessels with catches of more than 55% combined hake, anglerfish and megrim, there is a derogation for additional gear options in the Celtic Sea Protection Zone (EU 2019/2239).",
+mon.27.78ab,Footnotes,2020,"* For vessels with catches of more than 55% combined hake, anglerfish and megrim, there is a derogation for additional gear options in the Celtic Sea Protection Zone (EU 2019/2239).",
+nep.27.7outfu,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+nep.fu.14,KeyPoints,2020,MSY Btrigger (million individuals),350
+nep.fu.15,KeyPoints,2020,MSY Btrigger (million individuals),3 billion 
+nep.fu.16,KeyPoints,2020,MSY Btrigger (million individuals),Not defined
+nep.fu.17,KeyPoints,2020,MSY Btrigger (million individuals),540
+nep.fu.2021,KeyPoints,2020,MSY Btrigger (million individuals),Not defined
+ple.27.7a,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239)",
+ple.27.7bc,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239). ",
+ple.27.7fg,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239).",
+ple.27.7h-k,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239). ",
+whb.27.1-91214,Footnotes,2020,* Commission delegated regulation 2018/190,
+whg.27.7b-ce-k,Footnotes,2020,"* The de minimis exemption, caught using bottom trawls and seines with mesh &#880580mm, pelagic trawls and beam trawls with mesh 80-119 mm and requiring reporting to STECF (EU 2019\2239).",
+BFT-E,Footnotes,2020,* Recommendation by ICCAT Establishing a Multi-Annual Management Plan for Bluefin Tuna in the Eastern Atlantic and the Mediterranean Sea 18-02.,
+hke.27.3a46-8abd,Footnotes,2020,"* For vessels with catches of more than 55% combined hake, anglerfish and megrim, there is a derogation for additional gear options in the Celtic Sea Protection Zone (NWW Discard Plan EU 2019/2239).",
+nep.fu.11,KeyPoints,2020,MSY Btrigger (million individuals),540
+nep.fu.11,Footnotes,2019,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & 2019/2239).
+",
+nep.fu.12,KeyPoints,2020,MSY Btrigger (million individuals),1020
+nep.fu.11,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+nep.fu.12,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+nep.fu.14,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+nep.fu.15,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+nep.fu.16,Footnotes,2020,"* Described below under Key Sock Considerations, details in (EC2019/7048 & EU 2019/2239).",
+nep.fu.17,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+nep.fu.19,KeyPoints,2020,MSY Btrigger (million individuals),430
+nep.fu.19,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+nep.fu.2021,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+nep.fu.22,KeyPoints,2020,MSY Btrigger (million individuals),990
+nep.fu.22,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
+sol.27.6,Footnotes,2020,"* Sole 6.a is not specifically mentioned in WWMAP, which lists sole 5, 6.b, 12 & 14.",
+dgs.27.nea,Footnotes,2020,* Exemption for permitted bycatch in fisheries implementing an avoidance scheme.,
