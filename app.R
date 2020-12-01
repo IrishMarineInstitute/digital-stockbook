@@ -8,7 +8,7 @@ library(DT)
 library(ggplot2)
 library(reshape2)
 
-availableYears<- list("2019","2018", "2017", "2016", "2015")
+availableYears<- list("2020", "2019","2018", "2017", "2016", "2015")
 
 ui <- fluidPage(
   tags$head(includeScript("google-analytics.js")),
@@ -489,8 +489,27 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$text.InternationalLandings <- renderText({
     
+    #2020 uses a different year range (SM Nov2020)
+    if(input$year == "2020"){
+      
+      if(input$speciesfilter=="Nephrops"){      
+        paste0("The distribution of international landings of <em>",
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], "</em>  between 2015 - 2018", sep="")
+      }
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+        paste0("The distribution of international landings of ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               " during 2019", sep="")
+      }
+      else{
+        paste0("The distribution of international landings of ",
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " between 2015 - 2018 ", sep="")
+      }
+    } 
+    
+    
     #2019 uses a different text pattern
-    if(input$year == "2019"){
+    else if(input$year == "2019"){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
@@ -506,6 +525,7 @@ server <- function(input, output, session) {
                ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " between 2012 - 2016 ", sep="")
       }
     } 
+    
     # 2018 and earlier
     else {
       
@@ -520,10 +540,10 @@ server <- function(input, output, session) {
       }
       
     }
-    
-    
 
   })
+  
+  
   #Irish Landings
   output$display.IrishLandings <- renderImage({
     image_file <- paste0("www/Irishlandings/", input$year, "/Land",
@@ -533,8 +553,29 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$text.IrishLandings <- renderText({
     
+    #2020 uses a different year range (SM Nov2020)
+    if(input$year == "2020"){
+      
+      if(input$speciesfilter=="Nephrops"){      
+        paste0("The distribution of <em>", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               "</em> landings by Irish Vessels between 2015 - 2018", sep="")
+      } 
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+        paste0("The distribution of <em>", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               "</em> landings by Irish Vessels during 2019", sep="")
+      }
+      else{
+        paste0("The distribution of ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               " landings by Irish Vessels between 2015 - 2018 ", sep="")
+      }
+    }
+    
+    
     #2019 uses a different text pattern
-    if(input$year == "2019"){
+    else if(input$year == "2019"){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
@@ -551,8 +592,8 @@ server <- function(input, output, session) {
                ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " landings by Irish Vessels between 2014 - 2018 ", sep="")
       }
-      
     }
+    
     # 2018 and earlier
     else {
       if(input$speciesfilter=="Nephrops"){      
@@ -745,7 +786,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   ######################
-  # Adding ICES output #
+  # Adding ICES output 
   ######################
   #ICCATlist=c("North Atlantic", "East Atlantic and Mediterranean Sea")
   #output$advicelabel <-renderText ({
@@ -895,14 +936,21 @@ server <- function(input, output, session) {
   # Forecasting #
   ###############
   #setwd("H:/Stockbook/shiny/WIP")
-  Forecasting=read.csv('ForecastingData.csv', header=TRUE)
+  Forecasting=read.csv('ForecastingData.csv', header=TRUE, stringsAsFactors=FALSE)
   Forecasting$value <- as.numeric(as.character(Forecasting$value))
+  # Djc Basis was brought in as a factor
+  Forecasting$Basis <- as.character(Forecasting$Basis)
   # djc Forecasting$value <- as.numeric(Forecasting$value)
   Forecasting$Year <- as.numeric(Forecasting$Year)
   Forecasting = Forecasting[,2:6]
   output$ForecastOptionsSelector <- renderUI({
     sbl <- filter(Forecasting, 
                   FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    #print(input$speciesbydiv)
+    #print(paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    #print(unique(Forecasting$FishStock))
+    ## djc
+    #sbl <- filter(Forecasting, FishStock=='cod.27.6a')
     Options <- unique(sbl$Basis)
     Options <- Options[Options!= "Assessment"]
     Options <- Options[Options!= "ICES Advice"]
@@ -920,16 +968,26 @@ server <- function(input, output, session) {
   #output$plotforecasting <- renderPlotly({
   output$plotSSB <- renderPlotly({
     sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    ## djc
+    #sbl <- filter(Forecasting, FishStock=='cod.27.6a')
     ssb <- filter(sbl, var=="SSB")
     Blim <- filter(sbl, var=="Blim")[1,5]
     Bpa <- filter(sbl, var=="Bpa")[1,5]
     ssb1 <- filter(ssb, Basis %in% c("Assessment", "ICES Advice"))
+    print(ssb1)
     #ssb2018= data.frame(FishStock=ssb1[1,1], Year=2018, Basis="Assessment", 
     #                    var="SSB", value=ssb1[ssb1$Year==2018 & ssb1$Basis=="ICES Advice",][,5])
     ssb2 <- filter(ssb, Basis %in% c(input$forecastoptionselection))
+    ## djc
+    #ssb2 <- filter(ssb, Basis %in% c('F=FMSY'))
     ssb3 <- rbind(ssb1, ssb2)#, ssb2018
     
-    ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- head(ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5],1)
+    if (length(ssb3[ssb3$Year==2020 & ssb3$Basis=="Assessment",][,5])>0){
+      ssb3[ssb3$Year==2020 & ssb3$Basis=="Assessment",][,5] <- head(ssb3[ssb3$Year==2020 & ssb3$Basis=="ICES Advice",][,5],1)
+    }
+    # SM  Nov2020: Changed 2019 to 2020
+    # SM this is the 2019 line 
+    #ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- head(ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5],1)
     # DJC ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5]
     # DJC ssb3[ssb3$Year==2018 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2018 & ssb3$Basis=="ICES Advice",][,5]
     
@@ -960,8 +1018,12 @@ server <- function(input, output, session) {
     #                    var="F", value=f[f$Year==2018 & f$Basis=="ICES Advice",][,5])
     #      f=rbind(f, f2018)
     #}else{
-    f[f$Year==2019 & f$Basis=="Assessment",][,5] <- head(f[f$Year==2019 & f$Basis=="ICES Advice",][,5],1)
-    # DJCf[f$Year==2019 & f$Basis=="Assessment",][,5] <- f[f$Year==2019 & f$Basis=="ICES Advice",][,5]
+    
+    if (length(f[f$Year==2020 & f$Basis=="Assessment",][,5])>0){
+      f[f$Year==2020 & f$Basis=="Assessment",][,5] <- head(f[f$Year==2020 & f$Basis=="ICES Advice",][,5],1)
+    }
+    # SM  Nov2020: Changed 2019 to 2020
+    # DJC f[f$Year==2019 & f$Basis=="Assessment",][,5] <- f[f$Year==2019 & f$Basis=="ICES Advice",][,5]
     # DJC f[f$Year==2018 & f$Basis=="Assessment",][,5] <- f[f$Year==2018 & f$Basis=="ICES Advice",][,5]
     #}
     Fmsy <- filter(sbl, var=="Fmsy")[1,5]
@@ -993,22 +1055,26 @@ server <- function(input, output, session) {
     sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     la <- filter(sbl, var %in% c("Landings", "TAC"))
     yaxislabel="Landings"
-    if(dim(la[la$Year==2019 & la$Basis=="Assessment",])[1]==0){
+    if(dim(la[la$Year==2020 & la$Basis=="Assessment",])[1]==0){
+    # SM Nov2020: Changed 2019 to 2020
     # DJC if(dim(la[la$Year==2018 & la$Basis=="Assessment",])[1]==0){
-      la2019= data.frame(FishStock=la[1,1], Year=2019, Basis="Assessment", 
-                         var="Landings", value=la[la$Year==2019 & la$Basis=="ICES Advice",][,5])
-      la=rbind(la, la2019)
+      la2020= data.frame(FishStock=la[1,1], Year=2020, Basis="Assessment", 
+                         var="Landings", value=la[la$Year==2020 & la$Basis=="ICES Advice",][,5])
+      la=rbind(la, la2020)
+      # SM Nov2020: Changed 2019 to 2020
       # DJC la2018= data.frame(FishStock=la[1,1], Year=2018, Basis="Assessment", 
       # DJC                   var="Landings", value=la[la$Year==2018 & la$Basis=="ICES Advice",][,5])
       # DJC la=rbind(la, la2018)
     }else{
-      la[la$Year==2019 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2019 & la$Basis=="F=F2019" & la$var =="Landings",][,5]
+      la[la$Year==2020 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2020 & la$Basis=="F=F2020" & la$var =="Landings",][,5]
+      # SM Nov2020: Changed 2019 to 2020
       # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Landings",][,5]
     }
     if(is.na(la[which(la$Basis=="ICES Advice"),"value"])[1]){
       la <- filter(sbl, var %in% c("Catch", "TAC"))
       yaxislabel="Total Catch"
-      la[la$Year==2019 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2019 & la$Basis=="F=F2019" & la$var =="Catch",][,5]
+      la[la$Year==2020 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2020 & la$Basis=="F=F2020" & la$var =="Catch",][,5]
+      # SM Nov2020: Changed 2019 to 2020
       # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Catch",][,5]
     }
     la1 <- filter(la, Basis %in% c("Assessment", "ICES Advice", "TAC"))
@@ -1029,15 +1095,16 @@ server <- function(input, output, session) {
   # DJC Get rid of the X column - we don't need it
   ForecastingTable$X <- NULL
   ForecastingTable=ForecastingTable[,c(1,3,4,5,6,7,10,11,12)]#3 missing)]#
-  ForecastingTable$Catch...2020=formatC(as.numeric(as.character(ForecastingTable$Catch...2020)), format="d", big.mark=",")
-  ForecastingTable$Landings...2020=formatC(as.numeric(as.character(ForecastingTable$Landings...2020)), format="d", big.mark=",")
-  ForecastingTable$Discards...2020=formatC(as.numeric(as.character(ForecastingTable$Discards...2020)), format="d", big.mark=",")
-  ForecastingTable$SSB...2021=formatC(as.numeric(as.character(ForecastingTable$SSB...2021)), format="d", big.mark=",")
+  ForecastingTable$Catch...2021=formatC(as.numeric(as.character(ForecastingTable$Catch...2021)), format="d", big.mark=",")
+  ForecastingTable$Landings...2021=formatC(as.numeric(as.character(ForecastingTable$Landings...2021)), format="d", big.mark=",")
+  ForecastingTable$Discards...2021=formatC(as.numeric(as.character(ForecastingTable$Discards...2021)), format="d", big.mark=",")
+  ForecastingTable$SSB...2022=formatC(as.numeric(as.character(ForecastingTable$SSB...2022)), format="d", big.mark=",")
   colnames(ForecastingTable)=c("FishStock", "Basis", 
-                               "Total Catch (2020)", 
-                               "Wanted Catch (2020)", "Unwanted Catch (2020)", 
-                               "F total (2020)", "SSB (2021)",
+                               "Total Catch (2021)", 
+                               "Wanted Catch (2021)", "Unwanted Catch (2021)", 
+                               "F total (2021)", "SSB (2022)",
                                "% SSB change*", "% TAC change**")
+  # SM Nov2020: Updated year dates by +1
   # DJC ForecastingTable$Catch...2019=formatC(as.numeric(as.character(ForecastingTable$Catch...2019)), format="d", big.mark=",")
   # DJC ForecastingTable$Landings...2019=formatC(as.numeric(as.character(ForecastingTable$Landings...2019)), format="d", big.mark=",")
   # DJC ForecastingTable$Discards...2019=formatC(as.numeric(as.character(ForecastingTable$Discards...2019)), format="d", big.mark=",")
@@ -1058,21 +1125,32 @@ server <- function(input, output, session) {
                        "Cod Division 6.a (West of Scotland)",
                        #"Cod Division 7.a (Irish Sea)",
                        "Haddock  Division 6.b (Rockall) ",
-                       "Haddock  Division7.a (Irish Sea) ",
+                       "Haddock  Division 7.a (Irish Sea) ",
                        "Haddock Divisions 7.b-k (southern Celtic Seas and English Channel)",
                        "Herring Divisions 7.a South of 52 30N  7.g-h  and 7.j-k (Irish Sea  Celtic Sea  and southwest of Ireland)",
-                       "Hake Subareas 4  6  and 7  and Divisions 3.a  8.a-b  and 8.d  Northern stock (Greater North Sea  Celtic Seas  and the northern Bay of Biscay)",
+                       "Herring Divisions Division 7.a North of 52 30N (Irish Sea)",
+                       "Hake Subareas 4 6 and 7 and Divisions 3.a  8.a-b  and 8.d  Northern stock (Greater North Sea  Celtic Seas  and the northern Bay of Biscay)",
                        "Horse Mackerel Subarea 8 and Divisions 2.a  4.a  5.b  6.a  7.a-c e-k (the Northeast Atlantic)",
                        "Mackerel Subareas 1-8 and 14 and Division 9.a (the Northeast Atlantic and adjacent waters)",
                        "Megrim  Divisions 7.b-k  8.a-b  and 8.d (west and southwest of Ireland  Bay of Biscay)",
-                       "Plaice Division 7.a (Irish Sea)    ",
-                       "Saithe Subareas 4  6 and Division 3.a (North Sea  Rockall and West of Scotland  Skagerrak and Kattegat)   ",
+                       "Plaice Division 7.a (Irish Sea)",
+                       "Saithe Subareas 4 6 and Division 3.a (North Sea  Rockall and West of Scotland  Skagerrak and Kattegat)",
                        "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea)  ",
                        "Blue Whiting Subareas 1-9  12  and 14 (Northeast Atlantic and adjacent waters)",
-                       #"Whiting  Division 7.a (Irish Sea)",
+                       "Whiting  Division 7.a (Irish Sea)",
                        "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)",
-                       "Anglerfish Lophius piscatorius in Divisions 7.b-k, 8.a-b, and 8.d (southern Celtic Seas and Bay of Biscay)")
-
+                       "Anglerfish Lophius piscatorius in Divisions 7.b-k, 8.a-b, and 8.d (southern Celtic Seas and Bay of Biscay)",
+                        # Added in 2020
+                       "Seabass Divisions 4.b-c  7.a  and 7.d-h (central and southern North Sea  Irish Sea  English Channel  Bristol Channel  and Celtic Sea)",
+                       "Cod (Gadus morhua) in subareas 1 and 2 (Northeast Arctic)",
+                       "Haddock	Subarea 4  Division 6.a  and Subdivision 20  (North Sea  West of Scotland  Skagerrak)",
+                       "Herring	Subareas 1  2  5 and Divisions 4.a and 14.a (the Northeast Atlantic and Arctic Ocean)",
+                       "Megrim	 Divisions 4.a and 6.a (northern North Sea  West of Scotland)",
+                       "Sole	Divisions 7.b and 7.c (West of Ireland)",
+                       "Sole	Division 7.a (Irish Sea)",
+                       "Spurdog (Squalus acanthias) in Subareas 1-10, 12 and 14 (the Northeast Atlantic and adjacent waters)"
+                         )
+  
   NephropsStock=c("Division 7.a  Functional Unit 14 (Irish Sea  East)", 
                   "Division 7.a  Functional Unit 15 (Irish Sea  West)",
                   "Divisions 7.b-c and 7.j-k  Functional Unit 16 (west and southwest of Ireland  Porcupine Bank)",
@@ -1081,6 +1159,7 @@ server <- function(input, output, session) {
                   "Divisions 7.g and 7.h  Functional Units 20 and 21 (Celtic Sea)",
                   "Divisions 7.g and 7.f  Functional Unit 22 (Celtic Sea  Bristol Channel)",
                   "Subarea 7 - Functional Unit 18 and rectangles outside the functional units (Southern Celtic Seas, Southwest of Ireland)")
+   
   
   output$tabstest <- renderUI({
     panels= if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
@@ -1222,10 +1301,11 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   
     
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2019"){
+    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2020"){
     # DJC}else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
       # DJC panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
-      panels[[4]]=tabPanel("Forecasting 2020", value="ForecastingTab",
+      # SM Nov2020 Changed input$year from 2019 to 2020 (row 12320) and changed "Forecasting 2020" (row 1236) to "Forecasting 2021"
+      panels[[4]]=tabPanel("Forecasting 2021", value="ForecastingTab",
                            uiOutput("ForecastOptionsSelector"),
                            #plotlyOutput("plotforecasting"),
                            fluidRow(column(width = 3 ,plotlyOutput("plotSSB", width = "100%")), 
@@ -1235,8 +1315,9 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                            tags$head(
                              tags$style("td:nth-child(1) {background: #f2f2f2;}")),
                            tableOutput("Forecasting_Table"),
-                           "* SSB 2021 relative to SSB 2020",p(),
-                           "** Landings in 2020 relative to TAC in 2019", HTML("<br><br>")
+                           "* SSB 2022 relative to SSB 2021",p(),
+                           "** Landings in 2021 relative to TAC in 2020", HTML("<br><br>")
+                           # SM Nov2020: Updated year dates by +1 
                            # DJC"* SSB 2020 relative to SSB 2019",p(),
                            # DJC"** Landings in 2019 relative to TAC in 2018", HTML("<br><br>")
                            )
@@ -1267,32 +1348,38 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1333"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1378"}
                                            else if(input$year==2019){"http://hdl.handle.net/10793/1451"}),"Link to UWTV for FU15",target="_blank"),p(),
+                                         #"No Link Available",p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/1185"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1334"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1379"}
-                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1431"}),"Link to UWTV for FU16",target="_blank"),p(),
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1431"}
+                                           else if(input$year==2020){"http://hdl.handle.net/10793/1655"}),"Link to UWTV for FU16",target="_blank"),p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/1184"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1335"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1374"}
-                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1427"}),"Link to UWTV for FU17",target="_blank"),p(),
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1427"}
+                                           else if(input$year==2020){"http://hdl.handle.net/10793/1656"}),"Link to UWTV for FU17",target="_blank"),p(),
                                          "No Link Available",p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1332"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1375"}
-                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1429"}),"Link to UWTV for FU19",target="_blank"),p(),
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1429"}
+                                           else if(input$year==2020){"http://hdl.handle.net/10793/1654"}),"Link to UWTV for FU19",target="_blank"),p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1330"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1377"}
-                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1430"}),"Link to UWTV for FU2021",target="_blank"),p(),
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1430"}
+                                           else if(input$year==2020){"https://oar.marine.ie/handle/10793/1430"}),"Link to UWTV for FU2021",target="_blank"),p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
                                            else if(input$year==2017){"http://oar.marine.ie/handle/10793/1331"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1376"}
-                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1428"}),"Link to UWTV for FU22",target="_blank")
+                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1428"}
+                                           else if(input$year==2020){"http://hdl.handle.net/10793/1658"}),"Link to UWTV for FU22",target="_blank")
                                   )),
                          HTML("<br><br>"))}}
     do.call(tabsetPanel, panels)
