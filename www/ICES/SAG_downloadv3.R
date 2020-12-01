@@ -4,13 +4,37 @@
 
 # install from CRAN
 #install.packages("icesSAG")
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#2020 warning  !!   ##
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Warning in install.packages :
+#  package icesSAG is not available (for R version 4.0.2)
+
+#Package icesSAG was removed from the CRAN repository.
+#Formerly available versions can be obtained from the archive.
+#Archived on 2020-08-07 as it requires archived package 'icesVocab'.
+
+#STEP 1
+#downloaded the latest tar.gz from https://cran.r-project.org/src/contrib/Archive/icesSAG/
+#open 'install'  - whan the pop-up box opens, select 'Package Archive File', from the first drop down box.
+#Browse to the downloaded tar.gx file location and install. 
+
+#Got an error message - ERROR: dependency 'png' is not available for package 'icesSAG'
+#* removing 'C:/Users/smoran/Documents/R/win-library/4.0/icesSAG'
+
+#STEP 2
+#install 'png' package, then repeat STEP 1 and continue
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 library(icesSAG)
 
 #setwd("H:/Stockbook/2018/2018_V1/www/ICES")
 
 #update wd Oct 2019 - SM
 #setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES")
-setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES")
+setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES")
 
 IrishStocks=read.csv("stock_lookupV2.csv", header=TRUE)
 dim(IrishStocks)
@@ -18,9 +42,11 @@ head(IrishStocks)
 colnames(IrishStocks) <- c("ecoregion","Old","species type" ,"New","x")
 
 #~~ NOTE ~~
-#update wd Oct 2019 - SM
-#create a new loop, for the new years plot generation - see line 172 to 220 
-#skip down to the start of this new section (for 2019 - line 172), to run the code to generate the required plots
+#update wd Oct 2019 - SM - and 2020
+#create a new loop, for the new years plot generation - 
+#            2020 lines 247 to 300
+#            2019 lines 172 to 220  
+#skip down to the start of this new section (for 2020 - line 247), to run the code to generate the required plots
 #make sure the path ends in '/' so the plots go into the required folder
 #~~~~~~~~~~
 
@@ -216,6 +242,58 @@ for(i in  IrishStocks$New){
 for(i in  IrishStocks$New){
   graphs <- getRecruitmentHistoricalPerformance(findAssessmentKey(i, 2019)[1])
   png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_Git/www/ICES/RecruitHist/2019/", i, ".png", sep=""),
+      width = 450, height = 350)
+  plot(graphs)
+  dev.off()
+}
+
+#~~~~~~  2020  ~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~
+#Oct 15th - changed the file path from '....2019_Git' to '....2020_Git' 
+#Manually add a 2020 folder in each ICES folder, for the downloaded png's to be saved into
+
+#Stock Development Over Time
+for(i in  IrishStocks$New){
+  graphs <- getSAGGraphs(findAssessmentKey(i, 2020)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES/SAG/2020/", i, ".png", sep=""),
+      width = 850, height = 650)
+  plot(graphs)
+  dev.off()
+}
+
+
+#Stock and Exploitation status
+for(i in  IrishStocks$New){
+  graphs <- getStockStatusTable(findAssessmentKey(i, 2020)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES/Status/2020/", i, ".png", sep=""),
+      width = 950, height = 215)
+  plot(graphs)
+  dev.off()
+}
+
+
+#Quality of Assessment
+for(i in  IrishStocks$New){
+  graphs <- getSSBHistoricalPerformance(findAssessmentKey(i, 2020)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES/SSB/2020/", i, ".png", sep=""),
+      width = 450, height = 350)
+  plot(graphs)
+  dev.off()
+}
+
+#Fishing mortality
+for(i in  IrishStocks$New){
+  graphs <- getFishingMortalityHistoricalPerformance(findAssessmentKey(i, 2020)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES/Fishmort/2020/", i, ".png", sep=""),
+      width = 450, height = 350)
+  plot(graphs)
+  dev.off()
+}
+
+#RecruitHist
+for(i in  IrishStocks$New){
+  graphs <- getRecruitmentHistoricalPerformance(findAssessmentKey(i, 2020)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES/RecruitHist/2020/", i, ".png", sep=""),
       width = 450, height = 350)
   plot(graphs)
   dev.off()
