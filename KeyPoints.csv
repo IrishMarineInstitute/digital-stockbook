@@ -1806,7 +1806,7 @@ nep.fu.13,KeyPoints,2019,  FMSY Range Upper*,HR=12.0%; Catch=634 t
 nep.fu.13,KeyPoints,2019,Landing Obligation ,From 2016. Gear specific high survivability exemption**
 nep.fu.13,KeyPoints,2019,MSY Btrigger (million individuals),160
 ALB-N,KeyPoints,2020,ICCAT Advice Basis,Quantitative assessment and HCR (from MSE framework)
-ALB-N,KeyPoints,2020,Management Plan,"Management Plan SCRS Rec. 17-04  Catch=37,801 t"
+ALB-N,KeyPoints,2020,Management Plan,"SCRS Rec. 17-04  Catch=37,801 t"
 ALB-N,KeyPoints,2020,FMSY Range Lower,"Catch=35,761 t"
 ALB-N,KeyPoints,2020,FMSY ,"Catch=36,816 t"
 ALB-N,KeyPoints,2020,FMSY Range Upper,"Catch=38,039 t"
@@ -1914,7 +1914,7 @@ had.27.7a,KeyPoints,2020,Advice Basis,"Management Plan. Catch=3,371 t"
 had.27.7a,KeyPoints,2020,FMSY Range Lower,"Catch=2,491 t"
 had.27.7a,KeyPoints,2020,FMSY ,"Catch=3,371 t"
 had.27.7a,KeyPoints,2020,FMSY Range Upper,Not Appropriate
-had.27.7a,KeyPoints,2020,Landing Obligation,From 2016. Specific technical measures under Article 10 of the 2020-2021 landing obligation plan
+had.27.7a,KeyPoints,2020,Landing Obligation,From 2016. Specific technical measures under Article 10 of the 2020-2021 landing obligation plan*
 had.27.7b-k,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
 had.27.7b-k,KeyPoints,2020,Management Plan,WWMAP (target)
 had.27.7b-k,KeyPoints,2020,Advice Basis,"Management Plan  Catch=18,382 t"
@@ -2259,3 +2259,12 @@ nep.fu.22,KeyPoints,2020,MSY Btrigger (million individuals),990
 nep.fu.22,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
 sol.27.6,Footnotes,2020,"* Sole 6.a is not specifically mentioned in WWMAP, which lists sole 5, 6.b, 12 & 14.",
 dgs.27.nea,Footnotes,2020,* Exemption for permitted bycatch in fisheries implementing an avoidance scheme.,
+ALB-N,Footnotes,2020,* Commission delegated regulations 2018/190 ,
+boc.27.6-8,Footnotes,2020,* Commission delegated regulations 2019/2239 ,
+cod.27.7a,Footnotes,2020,* EU (2019) 2239,
+cod.27.1-2,Footnotes,2020,* Adopted at the 46th meeting of the Joint Russian-Norwegian Fisheries Commission (JRNFC).,
+had.27.46a20,Footnotes,2020,* Maximum of 2020 catch by bottom trawls with mesh size up to 119 mm and requiring reporting (NWW Discard Plan EU 2019/2239).,
+had.27.7a,Footnotes,2020,* EU (2019) 2239,
+had.27.7b-k,Footnotes,2020,"* Caught using bottom trawls, seines and beam trawls with mesh &#880580mm, and requiring reporting (EU 2019; 2239).",
+her.27.6a7bc,Footnotes,2020,"* For the Divisions 6.a, 7.b-c herring, the advice is given on the basis that the stock is currently well below possible reference points and at one of the lowest levels in the time series.",
+her.27.irls,Footnotes,2020,"* Under the ICES MSY approach, when spawning stock biomass (SSB) is below B<sub>lim</sub> and no catch scenario enables the stock to recover above B<sub>lim</sub> in one year, the advised fishing mortality is 0.",
