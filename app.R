@@ -716,7 +716,7 @@ server <- function(input, output, session) {
   output$Stockbooklink <-renderUI({
     if(input$year==2019){
       a(href=paste0("http://hdl.handle.net/10793/1660"),
-        "The Stock Book 2019",target="_blank")
+        "The Stock Book 2020",target="_blank")
     }else if(input$year==2019){
       a(href=paste0("https://oar.marine.ie/handle/10793/1433"),
         "The Stock Book 2019",target="_blank")
