@@ -715,6 +715,9 @@ server <- function(input, output, session) {
   #Links
   output$Stockbooklink <-renderUI({
     if(input$year==2019){
+      a(href=paste0("http://hdl.handle.net/10793/1660"),
+        "The Stock Book 2019",target="_blank")
+    }else if(input$year==2019){
       a(href=paste0("https://oar.marine.ie/handle/10793/1433"),
         "The Stock Book 2019",target="_blank")
     }else if(input$year==2018){
@@ -1348,7 +1351,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1333"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1378"}
                                            else if(input$year==2019){"http://hdl.handle.net/10793/1451"}),"Link to UWTV for FU15",target="_blank"),p(),
-                                         #"No Link Available",p(),
+                                           "No Link Available",p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/1185"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1334"}
@@ -1433,8 +1436,8 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                imageOutput("D3table22018",height = "50%")
                              )
                            },
-                           # We don't want these bits for 2019 - very messy :-S
-                           if(input$year != 2019){
+                           # We don't want these bits for 2019 - very messy :-S. Also don't want them for 2020 SM Dec2020 #if | input$year !=2020
+                           if (input$year != 2019 | input$year !=2020 ){
                              list(
                                HTML("<br>"),
                                h3("Time Series of Pressure and State Indicators"),
