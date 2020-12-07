@@ -1419,7 +1419,21 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                            "Table 3: MSFD Preliminary GES Results for D3 in 2017",
                            imageOutput("D3results1", height="50%"),
                            imageOutput("D3results2", height="50%"),
-                           imageOutput("D3results3", height="50%"))
+                           imageOutput("D3results3", height="50%"),
+                            HTML("<br>"),
+                            h3("Time Series of Pressure and State Indicators"),
+                            htmlOutput("PressureState"), p(), HTML("<br>"),
+                            fluidRow(column(width = 4, imageOutput("RelativeF", height="50%")),
+                                     column(width = 4, imageOutput("RelativeSSB",height = "50%"))),
+                            "Figure 4: Relative F and Relative SSB of all assessed stocks. For stocks 
+                            included in each category, see Table 2",
+                            HTML("<br><br>"),
+                            fluidRow(column(width = 7, imageOutput("Kobe", height="50%"), 
+                                            "Figure 5: F/FMSY and SSB/MSYbtrigger for all assessed stocks. 
+                                            (Grey lines represent MSY reference values)."),
+                                     column(width = 5, imageOutput("Bar",height = "50%"),
+                                            "Figure 6: Catch (triangles) and landings (circles) of all 
+                                            assessed stocks at GES (green), non GES (red) or unknown (grey).")) )
                             }else if(input$year==2018){
                              list(
                                "Table 1a. MSFD GES assessment for D3 in 2018, demersal stocks.",
@@ -1433,12 +1447,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                "Table 1e. MSFD GES assessment for D3 in 2018, deepwater stocks.",
                                imageOutput("D3table1e",height = "50%"),
                                "Table 2. MSFD Preliminary GES Results for D3 in 2018.",
-                               imageOutput("D3table22018",height = "50%")
-                             )
-                           },
-                           # We don't want these bits for 2019 - very messy :-S. Also don't want them for 2020 SM Dec2020 #if | input$year !=2020
-                           if (input$year != 2019 | input$year !=2020 ){
-                             list(
+                               imageOutput("D3table22018",height = "50%"),
                                HTML("<br>"),
                                h3("Time Series of Pressure and State Indicators"),
                                htmlOutput("PressureState"), p(), HTML("<br>"),
@@ -1453,15 +1462,17 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                         column(width = 5, imageOutput("Bar",height = "50%"),
                                                "Figure 6: Catch (triangles) and landings (circles) of all 
                                                assessed stocks at GES (green), non GES (red) or unknown (grey)."))
-                             )
-                            },
+                             )},
+                           
+                           # We don't want these bits for 2019 - very messy :-S. Also don't want them for 2020 SM Dec2020 #if | input$year !=2020
+                        
                            HTML("<br><br>")),
                   tabPanel("Mixed Fisheries", 
                            htmlOutput("MixedFish_1"),
                            htmlOutput("MixedFish_2"),
                            imageOutput("MixedFishimage", height="50%"), HTML("<br><br>")))
       
-      panelstest=if(input$year==2018 | input$year==2019){panelsD3MF}else{c(panelsEO, panelsD3MF)}
+      panelstest=if(input$year>=2018 ){panelsD3MF}else{c(panelsEO, panelsD3MF)}#changed in 2020 
       
       do.call(tabsetPanel, panelstest)
   }else if(input$year=="2016"){
