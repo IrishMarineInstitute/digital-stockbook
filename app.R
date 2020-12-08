@@ -1464,9 +1464,9 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                                assessed stocks at GES (green), non GES (red) or unknown (grey)."))
                              )},
                            
-                           # We don't want these bits for 2019 - very messy :-S. Also don't want them for 2020 SM Dec2020 #if | input$year !=2020
-                        
-                           HTML("<br><br>")),
+                           # We don't want these bits for 2019 - very messy :-S. Also don't want them for 2020 SM Dec2020
+                 #app.R has been changed in 2020 to stop the Ecosystems Overview tab from appearing. Also stopped the hard-coded headings and graph captions from appearing for those years.                      HTML("<br><br>")),
+                 HTML("<br><br>")),###
                   tabPanel("Mixed Fisheries", 
                            htmlOutput("MixedFish_1"),
                            htmlOutput("MixedFish_2"),
