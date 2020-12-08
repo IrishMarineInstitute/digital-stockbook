@@ -58,11 +58,11 @@ Atlantic albacore stock. If one was to be accepted the quota would be increased 
 will be decided by ICCAT during the Marrakech meeting in November.</li></ul>"
 ALB-N,2018,"<ul><li>The stock assessment and management area for North Atlantic albacore tuna covers the Atlantic, north of 5 &deg N line, and excluding the Mediterranean Sea.</li>
 <li>ICCAT recommendation 98-08 limiting fishing capacity to the average of 1993-1995, remains in force. This limits the number of Irish vessels that may fish for tuna to a maximum of 50 vessels.</li>
-<li>ICCAT recommendation 16-06 sets the objective of maintaining the fishing pressure below F<sub>MSY</sub> and stock biomass state above BMSY, while maximizing average catch and minimizing inter?annual fluctuations in TAC levels.</li>
+<li>ICCAT recommendation 16-06 sets the objective of maintaining the fishing pressure below F<sub>MSY</sub> and stock biomass state above B<sub>MSY</sub>, while maximizing average catch and minimizing inter-annual fluctuations in TAC levels.</li>
 <li>Any unused portion or excess of the annual adjusted quota may be added to/shall be deducted from, according to the case, the quota 2 years later (adjustment 2 years later, i.e. in 2018 for catches in 2016). The maximum allowed carryover is 25% of the initial quota in those years. ICCAT undertakes to implement additional measures if carried over quota leads to a TAC in excess of 33,600 t.</li>
 </ul>","<ul><li>The stock was last assessed in 2016 by means of applying statistical modelling to the available data up to 2014.</li>
 <li>Ireland has had almost full quota uptake in recent years (2,845 t in 2018). </li>
-<li>The primary Irish fishery is with pair pelagic trawlers in the Bay of Biscay, there can be some late season catches to the south west of Ireland. Observer data suggest that bycatch of sharks, seabirds, turtles and mammals are near zero. Bluefin tuna, and swordfish to a lesser extent, are potential choke species for the fisheries. The HCR adopted in Rec 17-04 was tested in 2018, with variants accounting for  i) the carry over,  ii) the effect of setting a lower TAC limit of 15,000 t,  iii) the effect of applying the 20% stability clause and  iv) the effect of 20% maximum TAC reduction and 25% maximum TAC increase. Results indicate that the HCR adopted in 17-04 and its new variants achieve ICCAT's management objective of maintaining the fishing pressure below F<sub>MSY</sub> and stock biomass state above BMSY, while maximizing average catch and minimizing inter?annual fluctuations in TAC levels. </li>
+<li>The primary Irish fishery is with pair pelagic trawlers in the Bay of Biscay, there can be some late season catches to the south west of Ireland. Observer data suggest that bycatch of sharks, seabirds, turtles and mammals are near zero. Bluefin tuna, and swordfish to a lesser extent, are potential choke species for the fisheries. The HCR adopted in Rec 17-04 was tested in 2018, with variants accounting for  i) the carry over,  ii) the effect of setting a lower TAC limit of 15,000 t,  iii) the effect of applying the 20% stability clause and  iv) the effect of 20% maximum TAC reduction and 25% maximum TAC increase. Results indicate that the HCR adopted in 17-04 and its new variants achieve ICCAT's management objective of maintaining the fishing pressure below F<sub>MSY</sub> and stock biomass state above BMSY, while maximizing average catch and minimizing inter-annual fluctuations in TAC levels. </li>
 </ul>"
 ALB-N,2019,"<ul><li> The stock assessment and management area for North Atlantic albacore tuna covers the Atlantic, north of 5&deg N line, and excluding the Mediterranean Sea.
 <li> ICCAT recommendation 98-08 limiting fishing capacity to the average of 1993-1995, remains in force. This limits the number of Irish vessels that may fish for tuna to a maximum of 50 vessels.</li>
@@ -528,7 +528,7 @@ cod.27.1-2,2016,"<ul><li> The current management plan has been in place since 20
 2009). ICES considers the amended plan to be in accordance with the
 precautionary approach and not in contradiction with the MSY
 approach. The plan aims to maintain F at Fpa (0.40) and to restrict
-between-year TAC changes to ?10%. However, should F fall below
+between-year TAC changes to &#177 10%. However, should F fall below
 0.3, the TAC should be increased (without restriction) to a level
 corresponding to a fishing mortality of 0.30. The plan stipulates that
 should SSB fall below B<sub>pa</sub> (460,000 t), the target F should be reduced
@@ -995,7 +995,7 @@ had.27.7b-k,2018,"<ul><li> The stock area consists of 7.b,c,e-k and two rectangl
 <li> The large reduction in fishing mortality advised for Celtic sea cod in 2019 will result in cod becoming a choke species for all demersal fleets. </li>
 <li> Landings in the south of Division 7.a (33E2 and 33E3) are included in the assessment because they are considered to be part of this stock. Whilst they are a relatively minor component of the catches in this stock they constitute a large component of the 7.a stock. </li>
 <li> Discards by weight continued to be high (about 8,000 t) in 2017, comprising 50% of the international catch.</li>
-<li> The proposed 7% de minimis exemption will apply to bottom trawls, seines and beam trawls, using ?80mm mesh, fishing in ICES divisions 7.b-c and 7.e-k and limited to 1 year, with an obligation to submit relevant data to assess the justification to STECF by 31st May 2019.</li>
+<li> The proposed 7% de minimis exemption will apply to bottom trawls, seines and beam trawls, using &#8805 80mm mesh, fishing in ICES divisions 7.b-c and 7.e-k and limited to 1 year, with an obligation to submit relevant data to assess the justification to STECF by 31st May 2019.</li>
 <li> This stock will be benchmarked by ICES in 2020 to align the Celtic Sea haddock, cod and whiting assessments. </li></ul>"
 had.27.7b-k,2019,"<ul><li> The stock area consists of 7.b,c,e-k and two rectangles in the south of Division 7.a (ICES rectangles 33E2 and 33E3) which are reallocated to 7.g.  This differs to the TAC area, 7.b-k, 8, 9 and 10.</li>
 <li> This reallocation (from 2 rectangles from the Irish Sea to the Celtic Sea) has increased since first introduced in 2006, peaking in 2017. The 2018 reallocation of 532 t accounted for 7.5% of Division 7.b-k landings and 21% of Irish Sea landings (Division 7.a).</li>
@@ -1179,7 +1179,7 @@ her.27.6a7bc,2018,"<ul><li> Since 2016 ICES gives one advice for the combined ar
 <li> In 2016, a stock identification project was initiated which aims to develop a genetic method to distinguish the 6.aS and 6.aN spawning stocks. This work is ongoing and will be completed and a report produced in 2020. </li>
 </ul>"
 her.27.6a7bc,2019,"<ul><li> Since 2016, ICES gives one advice for the combined area 6.aN, 6.aS, and 7.b-c. ICES still considers two separate stocks exist, but it is not currently possible to segregate them in commercial catches or surveys. The 56&deg N boundary between 6.aS/7.b-c and 6.aN is not biologically meaningful. Created in 1981, it corresponds roughly to the boundary of the Irish and UK fishery patrol zones, or ""EEZs"". The boundary cuts through both the summer feeding grounds and the winter spawning grounds, and thus the fishing grounds also. </li>
-<li> Since 2015 all targeted herring fishing is prohibited in the part of the ICES zones subject to this TAC between 56&deg N and 57&deg 30?N, with the exception of a six nautical mile limit measured from the baseline of the United Kingdom's territorial sea.</li>
+<li> Since 2015 all targeted herring fishing is prohibited in the part of the ICES zones subject to this TAC between 56&deg N and 57&deg 30&degN, with the exception of a six nautical mile limit measured from the baseline of the United Kingdom's territorial sea.</li>
 <li> In 2016 a scientific monitoring fishery (4,840 t) was considered appropriate by ICES to allow the collection of samples for the two stocks and continue the time series. </li>
 <li> Since 2016 a TAC of 5,800 t was agreed for 5.b, 6.b, 6.aN, 6.aS and 7.b-c. This TAC is split for 5.b, 6.b and 6.aN (4,170 t 72%) and 6.aS and 7.b-c (1,630 t 28%).</li>
 <li> Irish quota in 6.aS, 7.b-c is allocated to vessels in 4 different size categories. </li>
@@ -1292,7 +1292,7 @@ Louth and Down is closed from the 21st September - 31st December
 and the Douglas Bank area, east of the Isle of Man is closed from 21st
 September until 15th November.</li>
 <li> Vessels of less than 40 feet in length may fish within the Down-Louth seasonal closed box, but only using
-driftnets of mesh size ? 54 mm.</li>
+driftnets of mesh size &#8805 54 mm.</li>
 <li> Republic of Ireland vessels are not permitted to fish herring in any part of the 0-12 mile limits off England,
 Wales, Scotland or the Isle of Man. This was established under the terms of the London Fisheries Agreement,
 1964.</li>
@@ -1309,7 +1309,7 @@ Down is closed from the 21st September - 31st December
 and the Douglas Bank area, east of the Isle of Man is closed
 from 21st September until 15th November.</li>
 <li> Vessels of less than 40 feet in length may fish within the Down-Louth seasonal closed box, but only using
-driftnets of mesh size ? 54 mm.</li>
+driftnets of mesh size &#8805 54 mm.</li>
 <li> Republic of Ireland vessels are not permitted to fish herring in any part of the 0-12 mile limits off England,
 Wales, Scotland or the Isle of Man. This was established under the terms of the London Fisheries Agreement,
 1964.</li>
@@ -2788,7 +2788,7 @@ TAC making the total value 10,404t.</li>
 on the EU-Norway agreement. However, changes to the stock assessment and reference points in 2016 imply
 a need to re-evaluate the EU-Norway management strategy. Until such an evaluation is conducted, the ICES
 advice is based on the MSY approach.</li>
-<li> Trawl fisheries with cod ends ?100 mm in 6 and 5.b. are subject to the landing obligation for saithe in 2018
+<li> Trawl fisheries with cod ends &#8805 100 mm in 6 and 5.b. are subject to the landing obligation for saithe in 2018
 (see Appendix VI).</li></ul>","<ul><li> One-third of Irish landings of saithe in 3.a, 4 and 6 come from trips where saithe was the dominant species.
 The remainder are taken in more mixed fishery and are mainly landed with haddock, anglerfish and megrim.</li></ul>"
 pok.27.3a46,2018,"<ul><li>The assessment area includes two TAC areas; the first TAC area covers Divisions 2.a, 3.a, and Sub-area 4. The second TAC area covers Division 5.b and Sub-areas 6, 12 and 14 (Pie Plot of 2018 Quota Allocations for 5.b, 6, 12 and 14).</li>
@@ -3106,7 +3106,7 @@ SWO-N,2016,"<ul><li>Rec. 11-13, adopted by the Commission that indicates that Fo
 <li>Rec. 13-02 stipulates that a total allowable shall be 13,700 t for 2014, 2015 and 2016. For some CPCs, part of Swordfish taken in the South Atlantic can be count up against uncaught catch in the North. CPCs who have overall exceeded their individual adjusted catch limits shall pay back their overharvest.</li>
 </ul>"
 SWO-N,2017,"<ul><li>ICCAT recommendation 16-03
-<ul><li> The Contracting Parties, and non?Contracting Parties, Entities or Fishing Entities (CPCs) shall ensure the conservation of North Atlantic swordfish with the goal of maintaining BMSY, with a greater than 50% probability.</li>
+<ul><li> The Contracting Parties, and non-Contracting Parties, Entities or Fishing Entities (CPCs) shall ensure the conservation of North Atlantic swordfish with the goal of maintaining BMSY, with a greater than 50% probability.</li>
 <li> Any unused portion or excess of the annual adjusted quota may be added to/shall be deducted from, according to the case, the quota 2 years later (i.e. in 2018 for catch in 2016). The maximum underage (deficiency in amount) that a Party may carryover in any given year shall not exceed 15% of its initial catch limit (excluding quota transfers) for those CPCs holding catch limits more than 500 t, and 50% for other CPCs.</li>
 <li> The SCRS and the Commission shall begin a dialogue to allow for the development of harvest control rules (HCRs).</li></ul></li>
 <li>ICCAT recommendation 16-04
