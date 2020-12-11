@@ -1546,9 +1546,7 @@ her.27.1-24a514a,KeyPoints,2019,Ranges,Not available
 her.27.1-24a514a,KeyPoints,2019,Landing Obligation,From 2015. No derogations or exemptions relevant to Ireland
 hom.27.3a4bc7d,KeyPoints,2019,ICES Assessment Category,3 (Survey Trends Based Assessment)
 hom.27.3a4bc7d,KeyPoints,2019,Management Plan,No
-hom.27.3a4bc7d,KeyPoints,2019,Advice Basis ,"ICES PA approach. Catch=14,014 t. 
-Index ratio and uncertainty cap applied
-"
+hom.27.3a4bc7d,KeyPoints,2019,Advice Basis ,"ICES PA approach. Catch=14,014 t."
 hom.27.3a4bc7d,KeyPoints,2019,Ranges,Not available
 hom.27.3a4bc7d,KeyPoints,2019,Landing Obligation,From 2015. Area and gear specific de minimis exemptions*
 hom.27.2a4a5b6a7a-ce-k8,KeyPoints,2019,ICES Assessment Category,1 (Quantitative Assessment)
@@ -1810,27 +1808,23 @@ ALB-N,KeyPoints,2020,Management Plan,"SCRS Rec. 17-04  Catch=37,801 t"
 ALB-N,KeyPoints,2020,FMSY Range Lower,"Catch=35,761 t"
 ALB-N,KeyPoints,2020,FMSY ,"Catch=36,816 t"
 ALB-N,KeyPoints,2020,FMSY Range Upper,"Catch=38,039 t"
-ALB-N,KeyPoints,2020,Landing Obligation,From 2015. Area and gear specific de minimis exemption in 2020 *
+ALB-N,KeyPoints,2020,Landing Obligation,From 2015. Area and gear specific de minimis exemption in 2020*
 anf.27.3a46,KeyPoints,2020,ICES Assessment Category,3 (Survey-based Assessment Trends)
 anf.27.3a46,KeyPoints,2020,Management Plan,NSMAP (target species)
 anf.27.3a46,KeyPoints,2020,Advice Basis,"ICES PA approach. Catch =17,645 t"
 anf.27.3a46,KeyPoints,2020,FMSY Range Lower,Not available
 anf.27.3a46,KeyPoints,2020,FMSY ,Not available
 anf.27.3a46,KeyPoints,2020,FMSY Range Upper,Not available
-anf.27.3a46,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions apply 
+anf.27.3a46,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exemptions apply
 ank.27.78ab,KeyPoints,2020,ICES Assessment Category,3 (Trend-based Assessment)
 ank.27.78ab,KeyPoints,2020,Management Plan,WWMAP (target species)
-ank.27.78ab,KeyPoints,2020,Advice Basis,"Management Plan. Catch = 15,551 t
-"
+ank.27.78ab,KeyPoints,2020,Advice Basis,"Management Plan. Catch = 15,551 t"
 ank.27.78ab,KeyPoints,2020,FMSY Range Lower,Not Available
 ank.27.78ab,KeyPoints,2020,FMSY ,Not Available
 ank.27.78ab,KeyPoints,2020,FMSY Range Upper,Not Available
-ank.27.78ab,KeyPoints,2020,Landing Obligation,"From 2019. Area and gear specific derogation*       
-"
+ank.27.78ab,KeyPoints,2020,Landing Obligation,"From 2019. Area and gear specific derogation*"
 BFT-E,KeyPoints,2020,ICCAT Advice Basis,Previous advice and indicators 
-BFT-E,KeyPoints,2020,Management Plan,"Management Strategy Evaluation (Rec. 18-02*) 
-Catch = 36,000 t
-"
+BFT-E,KeyPoints,2020,Management Plan,"Management Strategy Evaluation (Rec. 18-02*) Catch = 36,000 t" 
 BFT-E,KeyPoints,2020,ICCAT MSY  Lower,Not available
 BFT-E,KeyPoints,2020,ICCAT MSY ,Not available
 BFT-E,KeyPoints,2020,ICCAT MSY Upper,Not available
@@ -1996,13 +1990,11 @@ meg.27.7b-k8abd,KeyPoints,2020,FMSY Range Upper,Not Appropriate
 meg.27.7b-k8abd,KeyPoints,2020,Landing Obligation,From 2019. Area and gear specific derogation*
 mon.27.78ab,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment)
 mon.27.78ab,KeyPoints,2020,Management Plan,WWMAP (target species)
-mon.27.78ab,KeyPoints,2020,Advice Basis,"Management Plan. Catch=34,579 t
-"
+mon.27.78ab,KeyPoints,2020,Advice Basis,"Management Plan. Catch=34,579 t"
 mon.27.78ab,KeyPoints,2020,FMSY Range Lower,"Catch=23,320 t"
 mon.27.78ab,KeyPoints,2020,FMSY ,"Catch=34,579 t"
 mon.27.78ab,KeyPoints,2020,FMSY Range Upper,Not Appropriate
-mon.27.78ab,KeyPoints,2020,Landing Obligation,"From 2019, Area and gear specific derogation*       
-"
+mon.27.78ab,KeyPoints,2020,Landing Obligation,"From 2019, Area and gear specific derogation*"
 nep.27.7outfu,KeyPoints,2020,ICES Assessment Category,5 (Landings only)
 nep.27.7outfu,KeyPoints,2020,Management Plan,WWMAP
 nep.27.7outfu,KeyPoints,2020,Advice Basis,ICES PA approach
@@ -2093,16 +2085,16 @@ ple.27.7bc,KeyPoints,2020,FMSY ,Not available
 ple.27.7bc,KeyPoints,2020,FMSY Range Upper,Not appropriate
 ple.27.7bc,KeyPoints,2020,Landing Obligation,From 2019. High survivability exemption* 
 ple.27.7fg,KeyPoints,2020,ICES Assessment Category,3 (Survey-based Assessment)
-ple.27.7fg,KeyPoints,2020,Management Plan,WWMAP (bycatch) 
+ple.27.7fg,KeyPoints,2020,Management Plan,WWMAP (bycatch)
 ple.27.7fg,KeyPoints,2020,Advice Basis,"ICES PA approach. Catch=1,911 t"
 ple.27.7fg,KeyPoints,2020,FMSY Range Lower,Not Appropriate
 ple.27.7fg,KeyPoints,2020,FMSY ,Not available
 ple.27.7fg,KeyPoints,2020,FMSY Range Upper,Not Appropriate
 ple.27.7fg,KeyPoints,2020,Landing Obligation,From 2019. High survivability exemption*
-ple.27.7h-k,KeyPoints,2020,ICES Assessment Category,3 (Survey-based Assessment)
-ple.27.7h-k,KeyPoints,2020,Management Plan,WWMAP (bycatch)
+ple.27.7h-k,KeyPoints,2020,ICES Assessment Category,3(Survey-based Assessment)
+ple.27.7h-k,KeyPoints,2020,Management Plan,WWMAP(bycatch)
 ple.27.7h-k,KeyPoints,2020,Advice Basis,Precautionary approach. Catch = 0 t
-ple.27.7h-k,KeyPoints,2020,FMSY Range Lower,Not Appropriate 
+ple.27.7h-k,KeyPoints,2020,FMSY Range Lower,Not Appropriate
 ple.27.7h-k,KeyPoints,2020,FMSY ,Not Available 
 ple.27.7h-k,KeyPoints,2020,FMSY Range Upper,Not Appropriate
 ple.27.7h-k,KeyPoints,2020,Landing Obligation,From 2019. High survivability exemption*
@@ -2136,9 +2128,9 @@ sol.27.6,KeyPoints,2020,FMSY Range Upper,Not Appropriate
 sol.27.6,KeyPoints,2020,Landing Obligation,From 2017. No derogations or exemptions
 sol.27.7a,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
 sol.27.7a,KeyPoints,2020,Management Plan,WWMAP (bycatch)
-sol.27.7a,KeyPoints,2020,Advice Basis,ICES MSY approach. Catch=768 t 
+sol.27.7a,KeyPoints,2020,Advice Basis,ICES MSY approach. Catch=768t 
 sol.27.7a,KeyPoints,2020,FMSY Range Lower,Not Appropriate (bycatch)
-sol.27.7a,KeyPoints,2020,FMSY ,Catch=768 t 
+sol.27.7a,KeyPoints,2020,FMSY ,Catch=768t 
 sol.27.7a,KeyPoints,2020,FMSY Range Upper,Not Appropriate (bycatch)
 sol.27.7a,KeyPoints,2020,Landing Obligation,From 2019. No derogation or exemptions
 sol.27.7bc,KeyPoints,2020,ICES Assessment Category,6 (Bycatch-only Assessment)
@@ -2151,8 +2143,8 @@ sol.27.7bc,KeyPoints,2020,Landing Obligation,From 2019. No derogations or exempt
 sol.27.7fg,KeyPoints,2020,ICES Assessment Category,1 (Quantitative Assessment) 
 sol.27.7fg,KeyPoints,2020,Management Plan,WWMAP (target)
 sol.27.7fg,KeyPoints,2020,Advice Basis,"ICES MSY approach  Catch=1,413 t"
-sol.27.7fg,KeyPoints,2020,FMSY Range Lower,"Catch=1,413 t"
-sol.27.7fg,KeyPoints,2020,FMSY ,Catch=811 t
+sol.27.7fg,KeyPoints,2020,FMSY Range Lower,"Catch=811 t"
+sol.27.7fg,KeyPoints,2020,FMSY ,Catch=1,413 t
 sol.27.7fg,KeyPoints,2020,FMSY Range Upper,"Catch=2,364 t"
 sol.27.7fg,KeyPoints,2020,Landing Obligation,From 2016. De minimis up to 3%
 sol.27.7h-k,KeyPoints,2020,ICES Assessment Category,5 (Landings-only Assessment)
@@ -2222,7 +2214,6 @@ nep.fu.13,KeyPoints,2020,  FMSY Range Upper,Catch=634 t
 nep.fu.13,KeyPoints,2020,Landing Obligation ,From 2016. Gear specific high survivability exemption*
 nep.fu.13,KeyPoints,2020,MSY Btrigger (million individuals),160
 hom.27.3a4bc7d,Footnotes,2020,"* Commission delegated regulations 2019/2239 & 2018/190
-",
 hom.27.2a4a5b6a7a-ce-k8,Footnotes,2020,* Commission delegated regulation 2019/2239 ,
 mac.27.nea,Footnotes,2020,"* Management plan is not agreed by all parties and is thus not used as the basis of advice by ICES.
 <p>** Commission delegated regulations 2019/2239 and 2018/190</p>",
@@ -2235,16 +2226,15 @@ nep.fu.16,KeyPoints,2020,MSY Btrigger (million individuals),Not defined
 nep.fu.17,KeyPoints,2020,MSY Btrigger (million individuals),540
 nep.fu.2021,KeyPoints,2020,MSY Btrigger (million individuals),Not defined
 ple.27.7a,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239)",
-ple.27.7bc,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239). ",
-ple.27.7fg,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239).",
-ple.27.7h-k,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239). ",
+ple.27.7bc,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239)",
+ple.27.7fg,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239)",
+ple.27.7h-k,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/2239)",
 whb.27.1-91214,Footnotes,2020,* Commission delegated regulation 2018/190,
 whg.27.7b-ce-k,Footnotes,2020,"* The de minimis exemption, caught using bottom trawls and seines with mesh &#8805 80mm, pelagic trawls and beam trawls with mesh 80-119 mm and requiring reporting to STECF (EU 2019\2239).",
 BFT-E,Footnotes,2020,* Recommendation by ICCAT Establishing a Multi-Annual Management Plan for Bluefin Tuna in the Eastern Atlantic and the Mediterranean Sea 18-02.,
 hke.27.3a46-8abd,Footnotes,2020,"* For vessels with catches of more than 55% combined hake, anglerfish and megrim, there is a derogation for additional gear options in the Celtic Sea Protection Zone (NWW Discard Plan EU 2019/2239).",
 nep.fu.11,KeyPoints,2020,MSY Btrigger (million individuals),540
 nep.fu.11,Footnotes,2019,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & 2019/2239).
-",
 nep.fu.12,KeyPoints,2020,MSY Btrigger (million individuals),1020
 nep.fu.11,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
 nep.fu.12,Footnotes,2020,"* Described below under Key Stock Considerations, details in (EC 2019/7048 & EU 2019/2239).",
