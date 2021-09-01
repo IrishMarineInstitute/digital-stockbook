@@ -8,7 +8,7 @@ library(DT)
 library(ggplot2)
 library(reshape2)
 
-availableYears<- list("2020", "2019","2018", "2017", "2016", "2015")
+availableYears<- list("2021", "2020", "2019","2018", "2017", "2016", "2015")
 
 ui <- fluidPage(
   tags$head(includeScript("google-analytics.js")),
