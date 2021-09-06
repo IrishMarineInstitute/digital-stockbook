@@ -2,8 +2,9 @@
 ######################################################
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-### USING FILEPATH IN 2020_GIT ############################################
+### USING FILEPATH IN 2021_GIT ############################################
 #Original code written by Oksana Kalinina Oct 2019 
+#Modified by Siobhan Moran Sep 2021, for 2021 issues ######################
 #Modified by Siobhan Moran Oct 2020, for 2020 issues ######################
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 rm(list=ls())
@@ -20,29 +21,38 @@ library(png)
 #1. Copy this folder across to the Informatics folder: 'Z:\InformaticsProject\Phase1\Stockbook Handover\2020_Git\www\Quota'
 #2. Make a copy of this folder for editing - '..Ireland Relevant Quota Pie Charts_edited'
 #3. Cross reference the list of plots in this folder against the list in the csv file - 'QSimagesNames.csv'. Progress can be tracked in an Excel file similar to 'QSimagesNames_SMOctEdits.xlsx' 
+#3.1SAve the csv file with only the common plots, remove anything thats not in the list or the code will stop outputting png's at that point
 #4. Add plot names if necessary (in 2020 a spurdog plot was present) and re-save the csv file
 #5. Create a new folder named with the current year
 #6. Update the year in the loop in the R script 
 #7. The png files are read from the edited script and pasted into the current year folder with the required names. 
 #8. The extra folder can be deleted: '2020_wrongNames' 
 
+##  2021 Specifics  ## 
+##~~~~~~~~~~~~~~~~~~~~
+## 
+##
+
 ##  2020 Specifics  ## 
 ##~~~~~~~~~~~~~~~~~~~~
-#There is a new plot for spurdog 
-#
+##There is a new plot for spurdog 
+##
 
-##  2020 Run Code  ## 
+##  2021 Run Code  ## 
 ##~~~~~~~~~~~~~~~~~~~~
 #if 'setwd'doesn't work, do 'Session/Set Working Directory/Choose Directory' and browse to the folder
-setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/Quota")
+setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/Quota")
 
 #read in csvfile with TACcode and corresponding Stock names 
-n<-read.csv("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/Quota/QSimagesNames.csv")
+n<-read.csv("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/Quota/QSimagesNames.csv")
+#2021 53 stocks
+#2020 59 stocks
 
 #Go to the edited folder to pull the png's 
-setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/Quota/Ireland Relevant Quota Pie Charts_edited")
+setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/Quota/Ireland Relevant Quota Pie Charts_edited")
 
 #create a folder for the current year and run the loop to save the plots with the required names 
 for(i in 1:dim(n)[1]){
   img<-readPNG(list.files(pattern=paste(n[1][i,])))
-  writePNG(img,paste0("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/Quota/2020/",n[4][i,],".png"))}
+  writePNG(img,paste0("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/Quota/2021/",n[2][i,],".png"))} 
+#the original code had [4] but gave errors of: Error in `[.data.frame`(n, 4) : undefined columns selected
