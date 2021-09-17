@@ -15,7 +15,7 @@ ui <- fluidPage(
   theme = shinytheme("journal"),
   titlePanel("The Stock Book"),
   selectInput("year", h3("Select Stock Book Year"),
-              choices = availableYears),
+              choices = availableYears), #this used to be "choices = list("2018", "2017", "2016", "2015"), selected = "2018"),"
   navlistPanel(id="mainpanel", widths=c(2,10), 
               tabPanel("Introduction", 
                        tabsetPanel(type="tabs",
@@ -553,6 +553,29 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$text.IrishLandings <- renderText({
     
+    #2021 uses a different year range (SM Sep2021)
+    if(input$year == "2021"){
+      
+      if(input$speciesfilter=="Nephrops"){      
+        paste0("The distribution of <em>", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               "</em> landings by Irish Vessels between 2015 - 2019", sep="")
+      } 
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+        paste0("The distribution of <em>", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               "</em> landings by Irish Vessels during 2020", sep="")
+      }
+      else{
+        paste0("The distribution of ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               " landings by Irish Vessels between 2015 - 2019 ", sep="")
+      }
+    }
+    
+    
+    
+    
     #2020 uses a different year range (SM Nov2020)
     if(input$year == "2020"){
       
@@ -714,7 +737,10 @@ server <- function(input, output, session) {
   
   #Links
   output$Stockbooklink <-renderUI({
-    if(input$year==2020){
+    if(input$year==2021){
+      a(href=paste0("http:"),
+        "The Stock Book 2021",target="_blank")
+    }else if(input$year==2020){
       a(href=paste0("http://hdl.handle.net/10793/1660"),
         "The Stock Book 2020",target="_blank")
     }else if(input$year==2019){

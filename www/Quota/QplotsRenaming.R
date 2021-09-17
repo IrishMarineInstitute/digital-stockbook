@@ -30,8 +30,21 @@ library(png)
 
 ##  2021 Specifics  ## 
 ##~~~~~~~~~~~~~~~~~~~~
+## 15/09/21: From HG
+## "The pie plots of the quota are now updated so for stocks where there is no full coastal states agreement (mac, whb, her12, cod12 and albacore), 
+## we only show EU quota F:\StockBooks\_Stockbook2021\Plots\Quota pie plots\plots
 ## 
-##
+# Strangely, there are quite a few stocks where the sum of the quota does not add up to the TAC (e.g. celtic sea whiting) - this is probably to do with the timing of agreeing the TAC and the EU and UK shares but quite odd
+# 3: HAD 7X7A34 sum of quota:14383 not same as TAC:15000
+# 6: LEZ 07. sum of quota:18139 not same as TAC:18365
+# 8: PLE 07A. sum of quota:2632 not same as TAC:2846
+# 9: PLE 7FG. sum of quota:1728 not same as TAC:1911
+# 10: SOL 07A. sum of quota:754 not same as TAC:768
+# 11: SOL 7FG. sum of quota:1388 not same as TAC:1413
+# 13: WHG 07A. sum of quota:720 not same as TAC:721
+# 14: WHG 7X7A-C sum of quota:9826 not same as TAC:10259
+
+
 
 ##  2020 Specifics  ## 
 ##~~~~~~~~~~~~~~~~~~~~
@@ -49,7 +62,9 @@ n<-read.csv("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/Quota/
 #2020 59 stocks
 
 #Go to the edited folder to pull the png's 
-setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/Quota/Ireland Relevant Quota Pie Charts_edited")
+#setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/Quota/Ireland Relevant Quota Pie Charts_edited")
+#2021
+setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/Quota/plots")
 
 #create a folder for the current year and run the loop to save the plots with the required names 
 for(i in 1:dim(n)[1]){
