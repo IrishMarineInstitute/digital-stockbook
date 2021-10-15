@@ -6,6 +6,19 @@
 #install.packages("icesSAG")
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#2021  ##
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Installed package 'icesVocab'
+#click on 'icesVocab' in the list to the right to give
+    #library("icesVocab", lib.loc="~/R/win-library/4.0")
+#click on 'png' in the list to the right to give
+    #library("png", lib.loc="~/R/win-library/4.0")
+#click on 'icesSAG' in the list to the right to give
+    #library("icesSAG", lib.loc="~/R/win-library/4.0")
+#OR See Step 1 below. 
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #2020 warning  !!   ##
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Warning in install.packages :
@@ -34,19 +47,21 @@ library(icesSAG)
 
 #update wd Oct 2019 - SM
 #setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES")
-setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES")
+#setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES")
+setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES")
 
 IrishStocks=read.csv("stock_lookupV2.csv", header=TRUE)
 dim(IrishStocks)
 head(IrishStocks)
 colnames(IrishStocks) <- c("ecoregion","Old","species type" ,"New","x")
 
-#~~ NOTE ~~
-#update wd Oct 2019 - SM - and 2020
+#~~ SM NOTE ~~
+#update wd Oct 2019, and 2020, and 2020
 #create a new loop, for the new years plot generation - 
-#            2020 lines 247 to 300
+#            2021 lines 318 to 368
+#            2020 lines 264 to 314
 #            2019 lines 172 to 220  
-#skip down to the start of this new section (for 2020 - line 247), to run the code to generate the required plots
+#skip down to the start of this new section (for 2021 - line 318), to run the code to generate the required plots
 #make sure the path ends in '/' so the plots go into the required folder
 #~~~~~~~~~~
 
@@ -301,3 +316,93 @@ for(i in  IrishStocks$New){
 
 
 
+#~~~~~~  2021  ~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~
+#Sep 06th - changed the file path to '....2021_Git' 
+#Manually add a 2021 folder in each ICES folder, for the downloaded png's to be saved into
+
+#Stock Development Over Time
+for(i in  IrishStocks$New){
+  graphs <- getSAGGraphs(findAssessmentKey(i, 2021)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES/SAG/2021/", i, ".png", sep=""),
+      width = 850, height = 650)
+  plot(graphs)
+  dev.off()
+}
+#22/09
+#Long list of GETing...., then
+#Error in png::readPNG(out) : libpng error: IDAT: CRC error
+#In addition: There were 50 or more warnings (use warnings() to see the first 50)
+
+#Graphs in folder but a lot are blank
+
+
+#06/09
+# GETing ... http://sg.ices.dk/StandardGraphsWebServices.asmx/getListStocks?year=2021
+# Error in UseMethod("as.raster") : 
+#   no applicable method for 'as.raster' applied to an object of class "c('ices_standardgraph_list', 'list')"
+# In addition: Warning messages:
+#   1: http status message: Server error: (500) Internal Server Error 
+# 2: in SAG API - Missing parameter: token.
+
+
+#Stock and Exploitation status
+for(i in  IrishStocks$New){
+  graphs <- getStockStatusTable(findAssessmentKey(i, 2021)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES/Status/2021/", i, ".png", sep=""),
+      width = 950, height = 215)
+  plot(graphs)
+  dev.off()
+}
+#22/09
+#Long list of GETing...., then a warning
+#Graphs in folder but a lot are blank
+
+
+
+#Quality of Assessment
+for(i in  IrishStocks$New){
+  graphs <- getSSBHistoricalPerformance(findAssessmentKey(i, 2021)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES/SSB/2021/", i, ".png", sep=""),
+      width = 450, height = 350)
+  plot(graphs)
+  dev.off()
+}
+#22/09
+#Long list of GETing...., then
+# Error in png::readPNG(out) : libpng error: IDAT: CRC error
+# In addition: Warning messages:
+#   1: http status message: Server error: (500) Internal Server Error 
+# 2: in SAG API - Cannot convert NA to System.Int32.
+# Parameter name: type ---> Input string was not in a correct format
+
+#Only 4 graphs in folder - one is blank
+
+
+#Fishing mortality
+for(i in  IrishStocks$New){
+  graphs <- getFishingMortalityHistoricalPerformance(findAssessmentKey(i, 2021)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES/Fishmort/2021/", i, ".png", sep=""),
+      width = 450, height = 350)
+  plot(graphs)
+  dev.off()
+}
+#22/09
+#Error in png::readPNG(out) : libpng error: IDAT: CRC error
+#Only 2 graphs in folder 
+
+#RecruitHist
+for(i in  IrishStocks$New){
+  graphs <- getRecruitmentHistoricalPerformance(findAssessmentKey(i, 2021)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES/RecruitHist/2021/", i, ".png", sep=""),
+      width = 450, height = 350)
+  plot(graphs)
+  dev.off()
+}
+#GETing ... http://sg.ices.dk/StandardGraphsWebServices.asmx/getRecruitmentHistoricalPerformance?assessmentKey=14557
+#GETing ... http://sg.ices.dk/StandardGraphsWebServices.asmx/getListStocks?year=2021
+# is this address correct??
+
+#22/09
+#Long list of GETing...., then a warning
+#Graphs in folder but a ALL BLANK

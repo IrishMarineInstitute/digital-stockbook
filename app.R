@@ -15,7 +15,7 @@ ui <- fluidPage(
   theme = shinytheme("journal"),
   titlePanel("The Stock Book"),
   selectInput("year", h3("Select Stock Book Year"),
-              choices = availableYears),
+              choices = availableYears), #this used to be "choices = list("2018", "2017", "2016", "2015"), selected = "2018"),"
   navlistPanel(id="mainpanel", widths=c(2,10), 
               tabPanel("Introduction", 
                        tabsetPanel(type="tabs",
@@ -135,7 +135,7 @@ server <- function(input, output, session) {
       
       #print(stockParameterDiv)
 
-      # create the DescSelector input
+      # create the DescSelector input~~~~~~~~~~
       output$DescSelector <- renderUI({
         SpeciesbyDiv=filter(ICEStable, Fish %in% c(input$speciesfilter))
         Descriptions <- unique(SpeciesbyDiv$SpeciesByDiv)
@@ -164,7 +164,8 @@ server <- function(input, output, session) {
       
     }
     
-    # YEAR
+    # YEAR 
+    # ~~~~
     # If we have a valid year parameter - change the year input selection to the relevent value
     if (!is.null(urlParameters[['year']])) {
       
@@ -183,7 +184,8 @@ server <- function(input, output, session) {
   })
   
   
-  #Introduction
+  #Introduction 
+  #~~~~~~~~~~~~
   Introduction=read.csv('Introduction.csv', header=TRUE)
   output$Introtext <- renderText({
     paste0(Introduction[1, which(colnames(Introduction)==paste0("X", input$year))])
@@ -193,6 +195,7 @@ server <- function(input, output, session) {
   })
 
   #Introduction Table
+  #~~~~~~~~~~~~~~~~~~
   IntroductionTable=read.csv('IntroductionTable.csv', header=TRUE)
   IntroductionTable$Est..Value.of.Irl.Quota=paste("\u20ac", IntroductionTable$Est..Value.of.Irl.Quota)
   IntroductionTable$Est..Value.of.EU.TAC=paste("\u20ac", IntroductionTable$Est..Value.of.EU.TAC)
@@ -231,6 +234,7 @@ server <- function(input, output, session) {
   })
   
   #Rationale
+  #~~~~~~~~~
   output$Rationaletext <- renderText({
     paste0(Introduction[3, which(colnames(Introduction)==paste0("X", input$year))])
   })
@@ -247,7 +251,9 @@ server <- function(input, output, session) {
     image_file <- paste0("www/Introduction/DataQuality",input$year,".png")
     return(list(src = image_file, filetype = "image/png", height = 700))
   }, deleteFile = FALSE)
+  
   #Management Plan
+  #~~~~~~~~~~~~~~~
   output$LongTermManagementtext <- renderText({
     if(input$year>2017){
     paste0(Introduction[8, which(colnames(Introduction)==paste0("X", input$year))])
@@ -264,6 +270,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
 
   #Summary of Advice
+  #~~~~~~~~~~~~~~~~~
   output$AdviceSummtable1 <- renderImage({
     image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table1.PNG")
     return(list(src = image_file, filetype = "image/png", width = 1100))
@@ -278,6 +285,7 @@ server <- function(input, output, session) {
   })
 
   #Sustainability
+  #~~~~~~~~~~~~~~
   output$Sustainabilitytext <- renderText({
     paste0(Introduction[4, which(colnames(Introduction)==paste0("X", input$year))])
   })
@@ -303,6 +311,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   #Definitions
+  #~~~~~~~~~~~
   output$Defns <- renderText({
     paste0(Introduction[5, 3])
   })
@@ -311,6 +320,7 @@ server <- function(input, output, session) {
   })
   
   #Mixed Fisheries Outputs
+  #~~~~~~~~~~~~~~~~~~~~~~~
   MixedFish=read.csv('MixedFish.csv', header=TRUE)
   output$SummaryText <- renderText({
     paste0(MixedFish[1, which(colnames(MixedFish)==paste0("X", input$year))])
@@ -349,7 +359,7 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", height = 550))
   }, deleteFile = FALSE)
   
-  #2017 Specific
+  ## 2017 Specific ##
   output$guild2017 <- renderImage({
     image_file <- paste0("www/MixedFisheries/2017/cs_guild.png")
     return(list(src = image_file, filetype = "image/png", width = 650))
@@ -375,7 +385,7 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", width = 600))
   }, deleteFile = FALSE)
   
-  #2018 Specific
+  ## 2018 Specific ##
   output$D3table1a <- renderImage({
     image_file <- paste0("www/MixedFisheries/2018/D3Table1a.PNG")
     return(list(src = image_file, filetype = "image/png", width = 550))
@@ -401,7 +411,7 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", width = 550))
   }, deleteFile = FALSE)
   
-  #Mixed Fisheries
+  ## Mixed Fisheries ##
   output$MixedFish_1 <-renderText({
     paste0(MixedFish[6, which(colnames(MixedFish)==paste0("X", input$year))])
   })
@@ -413,7 +423,7 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", height = 250))
   }, deleteFile = FALSE)
   
-  #2016 Specific
+  ## 2016 Specific ##
   output$IrishSea <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IrishSea-Pressure-State.png")
     return(list(src = image_file, filetype = "image/png", height = 350))
@@ -470,10 +480,13 @@ server <- function(input, output, session) {
   # Species Summary #
   ###################
   #Biology Text
+  #~~~~~~~~~~~~
   output$biology_text <- renderText({
     paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Description"])
   })
+  
   #Fish sketch
+  #~~~~~~~~~~~
   output$display.fish <- renderImage({
     image_file <- paste0("www/FishSketches/", 
                         ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], ".png")
@@ -481,6 +494,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   #International Landings
+  #~~~~~~~~~~~~~~~~~~~~~~
   output$display.InternationalLandings <- renderImage({
     image_file <- paste0("www/Internationallandings/", input$year, "/Rect",
                         ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"FAQCode"], 
@@ -489,8 +503,27 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$text.InternationalLandings <- renderText({
     
-    #2020 uses a different year range (SM Nov2020)
-    if(input$year == "2020"){
+    ## 2021 uses a different year range (SM Sep2021)
+    if(input$year == "2021"){
+      
+      if(input$speciesfilter=="Nephrops"){      
+        paste0("The distribution of international landings of <em>",
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], "</em>  between 2015 - 2019", sep="")
+      }
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+        paste0("The distribution of international landings of ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               " during 2019", sep="")
+      }
+      else{
+        paste0("The distribution of international landings of ",
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " between 2015 - 2019 ", sep="")
+      }
+    } 
+    
+    
+    ## 2020 uses a different year range (SM Nov2020)
+    else if(input$year == "2020"){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
@@ -508,7 +541,7 @@ server <- function(input, output, session) {
     } 
     
     
-    #2019 uses a different text pattern
+    ## 2019 uses a different text pattern
     else if(input$year == "2019"){
       
       if(input$speciesfilter=="Nephrops"){      
@@ -526,7 +559,7 @@ server <- function(input, output, session) {
       }
     } 
     
-    # 2018 and earlier
+    ## 2018 and earlier
     else {
       
       if(input$speciesfilter=="Nephrops"){      
@@ -538,13 +571,12 @@ server <- function(input, output, session) {
                ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " during ", 
                (as.numeric(as.character(input$year))-1), sep="")
       }
-      
     }
-
   })
   
   
   #Irish Landings
+  #~~~~~~~~~~~~~~
   output$display.IrishLandings <- renderImage({
     image_file <- paste0("www/Irishlandings/", input$year, "/Land",
                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"FAQCode"], 
@@ -553,8 +585,29 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$text.IrishLandings <- renderText({
     
-    #2020 uses a different year range (SM Nov2020)
-    if(input$year == "2020"){
+    ## 2021 uses a different year range (SM Sep2021)
+    if(input$year == "2021"){
+      
+      if(input$speciesfilter=="Nephrops"){      
+        paste0("The distribution of <em>", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               "</em> landings by Irish Vessels between 2015 - 2019", sep="")
+      } 
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+        paste0("The distribution of ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               " landings by Irish Vessels during 2020", sep="")
+      }
+      else{
+        paste0("The distribution of ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
+               " landings by Irish Vessels between 2015 - 2019 ", sep="")
+      }
+    }
+    
+    
+    ## 2020 uses a different year range (SM Nov2020)
+    else if(input$year == "2020"){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
@@ -562,9 +615,9 @@ server <- function(input, output, session) {
                "</em> landings by Irish Vessels between 2015 - 2018", sep="")
       } 
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
-        paste0("The distribution of <em>", 
+        paste0("The distribution of ", 
                ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
-               "</em> landings by Irish Vessels during 2019", sep="")
+               " landings by Irish Vessels during 2019", sep="")
       }
       else{
         paste0("The distribution of ", 
@@ -574,7 +627,7 @@ server <- function(input, output, session) {
     }
     
     
-    #2019 uses a different text pattern
+    ## 2019 uses a different text pattern
     else if(input$year == "2019"){
       
       if(input$speciesfilter=="Nephrops"){      
@@ -583,9 +636,9 @@ server <- function(input, output, session) {
                "</em> landings by Irish Vessels between 2014 - 2018", sep="")
       } 
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
-        paste0("The distribution of <em>", 
+        paste0("The distribution of ", 
                ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
-               "</em> landings by Irish Vessels during 2018", sep="")
+               " landings by Irish Vessels during 2018", sep="")
       }
       else{
         paste0("The distribution of ", 
@@ -594,7 +647,7 @@ server <- function(input, output, session) {
       }
     }
     
-    # 2018 and earlier
+    ## 2018 and earlier
     else {
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
@@ -607,7 +660,10 @@ server <- function(input, output, session) {
       }
     }
   })
+  
+  
   #Landings text
+  #~~~~~~~~~~~~~
   output$LandingsText <- renderText({
     paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
                      paste0("TAC", as.numeric(as.character(input$year)), sep="")])
@@ -636,6 +692,7 @@ server <- function(input, output, session) {
   })
   
   #Landings by division
+  #~~~~~~~~~~~~~~~~~~~~
   output$display.LandingsbyDiv <- renderImage({
     image_file <- paste0("www/LandingsByDivision/", input$year, "/",
                         ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"],".png")
@@ -670,6 +727,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
 
   #Pie Chart
+  #~~~~~~~~~
   output$TACtext <-renderText({
     if(input$speciesfilter=="Seabass" | input$speciesfilter=="Sprat"){
       paste0("")
@@ -683,6 +741,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   #Catch/Discards plot
+  #~~~~~~~~~~~~~~~~~~~
   output$display.CatchDiscards <- renderImage({
     image_file <- paste0("www/CatchDiscards/", input$year, "/", 
                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],".png", sep="")
@@ -691,6 +750,7 @@ server <- function(input, output, session) {
   
   
   #Key Points table
+  #~~~~~~~~~~~~~~~~
   KeyPoints=read.csv("KeyPoints.csv", header=TRUE)
   output$KPtable = renderTable({
     if(input$year==2015){
@@ -713,8 +773,12 @@ server <- function(input, output, session) {
   
   
   #Links
+  #~~~~~
   output$Stockbooklink <-renderUI({
-    if(input$year==2020){
+    if(input$year==2021){
+      a(href=paste0("http:"),
+        "The Stock Book 2021",target="_blank")
+    }else if(input$year==2020){
       a(href=paste0("http://hdl.handle.net/10793/1660"),
         "The Stock Book 2020",target="_blank")
     }else if(input$year==2019){
@@ -758,6 +822,7 @@ server <- function(input, output, session) {
   })
   
   #Management Advice/Additional Information
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$ManagementAdviceHeader = renderText({
     paste("Management Advice in ", input$year, sep="")
   }) 
@@ -783,6 +848,7 @@ server <- function(input, output, session) {
   }) 
 
   #Nephrops
+  #~~~~~~~~
   output$nephrops <- renderImage({
     image_file <- paste0("www/Nephrops/advicechangeplot",input$year,".png", sep="")
     return(list(src = image_file, filetype = "image/png", height = 500))
@@ -866,6 +932,7 @@ server <- function(input, output, session) {
   })
   
   #Stock Development Over Time
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$display.Stock_Dev <- renderImage({
     if(input$year<2017){
       image_file <- paste0("www/ICES/SAG/", input$year, "/", 
@@ -882,6 +949,7 @@ server <- function(input, output, session) {
   })
 
   #Stock and Exploitation status
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$display.ICESStatus <- renderImage({
     if(input$year<2017){
       image_file <- paste0("www/ICES/Status/", input$year, "/", 
@@ -899,6 +967,7 @@ server <- function(input, output, session) {
   })
 
   #Quality of Assessment
+  #~~~~~~~~~~~~~~~~~~~~~
   output$Text.Quality <- renderText({
     paste0(input$speciesfilter, " in ", input$speciesbydiv,
            ". Historical assessment results.")
@@ -985,10 +1054,11 @@ server <- function(input, output, session) {
     #ssb2 <- filter(ssb, Basis %in% c('F=FMSY'))
     ssb3 <- rbind(ssb1, ssb2)#, ssb2018
     
-    if (length(ssb3[ssb3$Year==2020 & ssb3$Basis=="Assessment",][,5])>0){
-      ssb3[ssb3$Year==2020 & ssb3$Basis=="Assessment",][,5] <- head(ssb3[ssb3$Year==2020 & ssb3$Basis=="ICES Advice",][,5],1)
+    if (length(ssb3[ssb3$Year==2021 & ssb3$Basis=="Assessment",][,5])>0){
+      ssb3[ssb3$Year==2021 & ssb3$Basis=="Assessment",][,5] <- head(ssb3[ssb3$Year==2021 & ssb3$Basis=="ICES Advice",][,5],1)
     }
-    # SM  Nov2020: Changed 2019 to 2020
+    # SM Oct2021: Changed 2020 to 2021
+    # SM Nov2020: Changed 2019 to 2020
     # SM this is the 2019 line 
     #ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- head(ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5],1)
     # DJC ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5]
@@ -1022,10 +1092,11 @@ server <- function(input, output, session) {
     #      f=rbind(f, f2018)
     #}else{
     
-    if (length(f[f$Year==2020 & f$Basis=="Assessment",][,5])>0){
-      f[f$Year==2020 & f$Basis=="Assessment",][,5] <- head(f[f$Year==2020 & f$Basis=="ICES Advice",][,5],1)
+    if (length(f[f$Year==2021 & f$Basis=="Assessment",][,5])>0){
+      f[f$Year==2021 & f$Basis=="Assessment",][,5] <- head(f[f$Year==2021 & f$Basis=="ICES Advice",][,5],1)
     }
-    # SM  Nov2020: Changed 2019 to 2020
+    # SM Oct2021: Changed 2020 to 2021
+    # SM Nov2020: Changed 2019 to 2020
     # DJC f[f$Year==2019 & f$Basis=="Assessment",][,5] <- f[f$Year==2019 & f$Basis=="ICES Advice",][,5]
     # DJC f[f$Year==2018 & f$Basis=="Assessment",][,5] <- f[f$Year==2018 & f$Basis=="ICES Advice",][,5]
     #}
@@ -1058,25 +1129,29 @@ server <- function(input, output, session) {
     sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     la <- filter(sbl, var %in% c("Landings", "TAC"))
     yaxislabel="Landings"
-    if(dim(la[la$Year==2020 & la$Basis=="Assessment",])[1]==0){
+    if(dim(la[la$Year==2021 & la$Basis=="Assessment",])[1]==0){
+    # SM Oct2021: Changed 2020 to 2021
     # SM Nov2020: Changed 2019 to 2020
     # DJC if(dim(la[la$Year==2018 & la$Basis=="Assessment",])[1]==0){
-      la2020= data.frame(FishStock=la[1,1], Year=2020, Basis="Assessment", 
-                         var="Landings", value=la[la$Year==2020 & la$Basis=="ICES Advice",][,5])
-      la=rbind(la, la2020)
+      la2021= data.frame(FishStock=la[1,1], Year=2021, Basis="Assessment", 
+                         var="Landings", value=la[la$Year==2021 & la$Basis=="ICES Advice",][,5])
+      la=rbind(la, la2021)
+      # SM Oct2021: Changed 2020 to 2021
       # SM Nov2020: Changed 2019 to 2020
       # DJC la2018= data.frame(FishStock=la[1,1], Year=2018, Basis="Assessment", 
       # DJC                   var="Landings", value=la[la$Year==2018 & la$Basis=="ICES Advice",][,5])
       # DJC la=rbind(la, la2018)
     }else{
-      la[la$Year==2020 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2020 & la$Basis=="F=F2020" & la$var =="Landings",][,5]
+      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2021 & la$Basis=="F=F2020" & la$var =="Landings",][,5]
+      # SM Oct2021: Changed 2020 to 2021
       # SM Nov2020: Changed 2019 to 2020
       # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Landings",][,5]
     }
     if(is.na(la[which(la$Basis=="ICES Advice"),"value"])[1]){
       la <- filter(sbl, var %in% c("Catch", "TAC"))
       yaxislabel="Total Catch"
-      la[la$Year==2020 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2020 & la$Basis=="F=F2020" & la$var =="Catch",][,5]
+      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2021 & la$Basis=="F=F2020" & la$var =="Catch",][,5]
+      # SM Oct2021: Changed 2020 to 2021
       # SM Nov2020: Changed 2019 to 2020
       # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Catch",][,5]
     }
@@ -1094,19 +1169,21 @@ server <- function(input, output, session) {
   })
   
   #Forecasting table
+  #~~~~~~~~~~~~~~~~~
   ForecastingTable=read.csv('ForecastOptionsV2.csv', header=TRUE)
   # DJC Get rid of the X column - we don't need it
   ForecastingTable$X <- NULL
   ForecastingTable=ForecastingTable[,c(1,3,4,5,6,7,10,11,12)]#3 missing)]#
-  ForecastingTable$Catch...2021=formatC(as.numeric(as.character(ForecastingTable$Catch...2021)), format="d", big.mark=",")
-  ForecastingTable$Landings...2021=formatC(as.numeric(as.character(ForecastingTable$Landings...2021)), format="d", big.mark=",")
-  ForecastingTable$Discards...2021=formatC(as.numeric(as.character(ForecastingTable$Discards...2021)), format="d", big.mark=",")
-  ForecastingTable$SSB...2022=formatC(as.numeric(as.character(ForecastingTable$SSB...2022)), format="d", big.mark=",")
+  ForecastingTable$Catch...2022=formatC(as.numeric(as.character(ForecastingTable$Catch...2022)), format="d", big.mark=",")
+  ForecastingTable$Landings...2022=formatC(as.numeric(as.character(ForecastingTable$Landings...2022)), format="d", big.mark=",")
+  ForecastingTable$Discards...2022=formatC(as.numeric(as.character(ForecastingTable$Discards...2022)), format="d", big.mark=",")
+  ForecastingTable$SSB...2023=formatC(as.numeric(as.character(ForecastingTable$SSB...2023)), format="d", big.mark=",")
   colnames(ForecastingTable)=c("FishStock", "Basis", 
-                               "Total Catch (2021)", 
-                               "Wanted Catch (2021)", "Unwanted Catch (2021)", 
-                               "F total (2021)", "SSB (2022)",
+                               "Total Catch (2022)", 
+                               "Wanted Catch (2022)", "Unwanted Catch (2022)", 
+                               "F total (2022)", "SSB (2023)",
                                "% SSB change*", "% TAC change**")
+  # SM Oct2021: Updated year dates by +1
   # SM Nov2020: Updated year dates by +1
   # DJC ForecastingTable$Catch...2019=formatC(as.numeric(as.character(ForecastingTable$Catch...2019)), format="d", big.mark=",")
   # DJC ForecastingTable$Landings...2019=formatC(as.numeric(as.character(ForecastingTable$Landings...2019)), format="d", big.mark=",")
@@ -1304,11 +1381,12 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   
     
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2020"){
+    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2021"){
     # DJC}else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
       # DJC panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
+      # SM Oct2021 Changed input$year from 2020 to 2021 (row 1384) and changed "Forecasting 2021" (row 1389) to "Forecasting 2022"
       # SM Nov2020 Changed input$year from 2019 to 2020 (row 12320) and changed "Forecasting 2020" (row 1236) to "Forecasting 2021"
-      panels[[4]]=tabPanel("Forecasting 2021", value="ForecastingTab",
+      panels[[4]]=tabPanel("Forecasting 2022", value="ForecastingTab",
                            uiOutput("ForecastOptionsSelector"),
                            #plotlyOutput("plotforecasting"),
                            fluidRow(column(width = 3 ,plotlyOutput("plotSSB", width = "100%")), 
@@ -1318,8 +1396,9 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                            tags$head(
                              tags$style("td:nth-child(1) {background: #f2f2f2;}")),
                            tableOutput("Forecasting_Table"),
-                           "* SSB 2022 relative to SSB 2021",p(),
-                           "** Landings in 2021 relative to TAC in 2020", HTML("<br><br>")
+                           "* SSB 2023 relative to SSB 2022",p(),
+                           "** Landings in 2022 relative to TAC in 2021", HTML("<br><br>")
+                           # SM Oct2021: Updated year dates by +1 
                            # SM Nov2020: Updated year dates by +1 
                            # DJC"* SSB 2020 relative to SSB 2019",p(),
                            # DJC"** Landings in 2019 relative to TAC in 2018", HTML("<br><br>")
@@ -1389,6 +1468,8 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     #tabsetPanel(panels)
   })
   
+  #Ecosystem Overview
+  #~~~~~~~~~~~~~~~~~
   output$EcosystemOverview <-renderUI({
     if(input$year=="2015"){
       tagList(h3("Ecosystem Overview and Mixed Fisheries was introduced in 2016"))
