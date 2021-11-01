@@ -919,8 +919,11 @@ server <- function(input, output, session) {
     HTML("<hr>"),
     h4("ICES Advice Basis:"),
     textOutput("ICESAdviceBasis"),
-    a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2016/2016/Introduction_to_advice_2016.pdf"),
+    #SM updated on Oct 28th 2021 with latest document found. (None for 2020 or 2021)
+    a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2019/2019/Introduction_to_advice_2019.pdf"),
       "Link to description of ICES Advice Basis",target="_blank"),
+    #a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2016/2016/Introduction_to_advice_2016.pdf"),
+    #  "Link to description of ICES Advice Basis",target="_blank"),
     HTML("<hr>"),
     h4("ICES Advice Frequency:"),
     textOutput("ICESFrequency"),
@@ -1201,36 +1204,34 @@ server <- function(input, output, session) {
     columnDefs = list(list(width = '200px', targets = c(1)))), 
   colnames = TRUE, bordered = TRUE)
   
-  ForecastingStocks= c("Cod Divisions 7.e-k (eastern English Channel and southern Celtic Seas)",
+  #SM: Oct 2021 Updated list of forecast stocks
+  ForecastingStocks= c("Seabass Divisions 4.b-c  7.a  and 7.d-h (central and southern North Sea  Irish Sea  English Channel  Bristol Channel  and Celtic Sea)",
+                       "Cod Subareas 1 and 2 (Northeast Arctic)",
                        "Cod Division 6.a (West of Scotland)",
-                       #"Cod Division 7.a (Irish Sea)",
-                       "Haddock  Division 6.b (Rockall) ",
-                       "Haddock  Division 7.a (Irish Sea) ",
+                       "Cod Divisions 7.e-k (eastern English Channel and southern Celtic Seas)",
+                       "Spurdog Sub-areas 1-14",
+                       "Haddock Subarea 4  Division 6.a  and Subdivision 20  (North Sea  West of Scotland  Skagerrak)",
+                       "Haddock Division 6.b (Rockall) ",
+                       "Haddock Division7.a (Irish Sea) ",
                        "Haddock Divisions 7.b-k (southern Celtic Seas and English Channel)",
+                       "Herring Subareas 1  2  5 and Divisions 4.a and 14.a (the Northeast Atlantic and Arctic Ocean)",
                        "Herring Divisions 7.a South of 52 30N  7.g-h  and 7.j-k (Irish Sea  Celtic Sea  and southwest of Ireland)",
-                       "Herring Divisions Division 7.a North of 52 30N (Irish Sea)",
-                       "Hake Subareas 4 6 and 7 and Divisions 3.a  8.a-b  and 8.d  Northern stock (Greater North Sea  Celtic Seas  and the northern Bay of Biscay)",
+                       "Herring Division 7.a North of 52 30N (Irish Sea)",
+                       "Hake Subareas 4  6  and 7  and Divisions 3.a  8.a-b  and 8.d  Northern stock (Greater North Sea  Celtic Seas  and the northern Bay of Biscay)",
                        "Horse Mackerel Subarea 8 and Divisions 2.a  4.a  5.b  6.a  7.a-c e-k (the Northeast Atlantic)",
+                       "Megrim Divisions 4.a and 6.a (northern North Sea  West of Scotland)",
                        "Mackerel Subareas 1-8 and 14 and Division 9.a (the Northeast Atlantic and adjacent waters)",
-                       "Megrim  Divisions 7.b-k  8.a-b  and 8.d (west and southwest of Ireland  Bay of Biscay)",
-                       "Plaice Division 7.a (Irish Sea)",
-                       "Saithe Subareas 4 6 and Division 3.a (North Sea  Rockall and West of Scotland  Skagerrak and Kattegat)",
-                       "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea)  ",
-                       "Blue Whiting Subareas 1-9  12  and 14 (Northeast Atlantic and adjacent waters)",
-                       "Whiting  Division 7.a (Irish Sea)",
-                       "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)",
+                       "Megrim Divisions 7.b-k  8.a-b  and 8.d (west and southwest of Ireland  Bay of Biscay)",
                        "Anglerfish Lophius piscatorius in Divisions 7.b-k, 8.a-b, and 8.d (southern Celtic Seas and Bay of Biscay)",
-                        # Added in 2020
-                       "Seabass Divisions 4.b-c  7.a  and 7.d-h (central and southern North Sea  Irish Sea  English Channel  Bristol Channel  and Celtic Sea)",
-                       "Cod (Gadus morhua) in subareas 1 and 2 (Northeast Arctic)",
-                       "Haddock	Subarea 4  Division 6.a  and Subdivision 20  (North Sea  West of Scotland  Skagerrak)",
-                       "Herring	Subareas 1  2  5 and Divisions 4.a and 14.a (the Northeast Atlantic and Arctic Ocean)",
-                       "Megrim	 Divisions 4.a and 6.a (northern North Sea  West of Scotland)",
-                       "Sole	Divisions 7.b and 7.c (West of Ireland)",
-                       "Sole	Division 7.a (Irish Sea)",
-                       "Spurdog (Squalus acanthias) in Subareas 1-10, 12 and 14 (the Northeast Atlantic and adjacent waters)"
-                         )
-  
+                       "Plaice Division 7.a (Irish Sea)",
+                       "Saithe Subareas 4  6 and Division 3.a (North Sea  Rockall and West of Scotland  Skagerrak and Kattegat)",   
+                       "Sole Division 7.a (Irish Sea) ",
+                       "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea) ", 
+                       "Blue Whiting Subareas 1-9  12  and 14 (Northeast Atlantic and adjacent waters)",
+                       "Whiting Division 7.a (Irish Sea)",
+                       "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)")
+                         
+  #SM Note Oct 2021: Have not updated this yet
   NephropsStock=c("Division 7.a  Functional Unit 14 (Irish Sea  East)", 
                   "Division 7.a  Functional Unit 15 (Irish Sea  West)",
                   "Divisions 7.b-c and 7.j-k  Functional Unit 16 (west and southwest of Ireland  Porcupine Bank)",
@@ -1384,7 +1385,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2021"){
     # DJC}else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
       # DJC panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
-      # SM Oct2021 Changed input$year from 2020 to 2021 (row 1384) and changed "Forecasting 2021" (row 1389) to "Forecasting 2022"
+      # SM Oct2021 Changed input$year from 2020 to 2021 (row 1385) and changed "Forecasting 2021" (row 1390) to "Forecasting 2022"
       # SM Nov2020 Changed input$year from 2019 to 2020 (row 12320) and changed "Forecasting 2020" (row 1236) to "Forecasting 2021"
       panels[[4]]=tabPanel("Forecasting 2022", value="ForecastingTab",
                            uiOutput("ForecastOptionsSelector"),
