@@ -93,7 +93,9 @@ server <- function(input, output, session) {
   #setwd("H:/Stockbook/shiny/WIP") #If needing to run it
   ICEStable=read.csv('ICES-New-Old - extra species.csv', header=TRUE)
   ICEStable$Fish=as.character(ICEStable$Fish)
+  ICEStable$Fish <- trimws(ICEStable$Fish)
   ICEStable$SpeciesByDiv=as.character(ICEStable$SpeciesByDiv)
+  ICEStable$SpeciesByDiv <- trimws(ICEStable$SpeciesByDiv)
   Speciesfilter <- unique(ICEStable$Fish)
 
   
@@ -1019,8 +1021,16 @@ server <- function(input, output, session) {
   Forecasting$Year <- as.numeric(Forecasting$Year)
   Forecasting = Forecasting[,2:6]
   output$ForecastOptionsSelector <- renderUI({
-    sbl <- filter(Forecasting, 
-                  FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
+    #sbl <- filter(Forecasting, 
+    #              FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
+    if (length(stockToFilter) == 0){
+      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
+      # when you move between species with different valid areas
+      return(NULL)
+    }
+    sbl <- filter(Forecasting, FishStock==stockToFilter)
     #print(input$speciesbydiv)
     #print(paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     #print(unique(Forecasting$FishStock))
@@ -1042,14 +1052,22 @@ server <- function(input, output, session) {
   
   #output$plotforecasting <- renderPlotly({
   output$plotSSB <- renderPlotly({
-    sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
+    # sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
+    if (length(stockToFilter) == 0){
+      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
+      # when you move between species with different valid areas
+      return(NULL)
+    }
+    sbl <- filter(Forecasting, FishStock==stockToFilter)
     ## djc
     #sbl <- filter(Forecasting, FishStock=='cod.27.6a')
     ssb <- filter(sbl, var=="SSB")
     Blim <- filter(sbl, var=="Blim")[1,5]
     Bpa <- filter(sbl, var=="Bpa")[1,5]
     ssb1 <- filter(ssb, Basis %in% c("Assessment", "ICES Advice"))
-    print(ssb1)
+    #print(ssb1)
     #ssb2018= data.frame(FishStock=ssb1[1,1], Year=2018, Basis="Assessment", 
     #                    var="SSB", value=ssb1[ssb1$Year==2018 & ssb1$Basis=="ICES Advice",][,5])
     ssb2 <- filter(ssb, Basis %in% c(input$forecastoptionselection))
@@ -1087,7 +1105,15 @@ server <- function(input, output, session) {
   })
   
   output$plotF <- renderPlotly({
-    sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
+    #sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
+    if (length(stockToFilter) == 0){
+      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
+      # when you move between species with different valid areas
+      return(NULL)
+    }
+    sbl <- filter(Forecasting, FishStock==stockToFilter)
     f <- filter(sbl, var=="F")
     #if(dim(f[f$Year==2018 & f$Basis=="Assessment",])[1]==0){
     #      f2018= data.frame(FishStock=f[1,1], Year=2018, Basis="Assessment", 
@@ -1129,8 +1155,17 @@ server <- function(input, output, session) {
   })
   
   output$plotLandings <- renderPlotly({
-    sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
+    #sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
+    if (length(stockToFilter) == 0){
+      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
+      # when you move between species with different valid areas
+      return(NULL)
+    }
+    sbl <- filter(Forecasting, FishStock==stockToFilter)
     la <- filter(sbl, var %in% c("Landings", "TAC"))
+    #print(la)
     yaxislabel="Landings"
     if(dim(la[la$Year==2021 & la$Basis=="Assessment",])[1]==0){
     # SM Oct2021: Changed 2020 to 2021
@@ -1145,7 +1180,7 @@ server <- function(input, output, session) {
       # DJC                   var="Landings", value=la[la$Year==2018 & la$Basis=="ICES Advice",][,5])
       # DJC la=rbind(la, la2018)
     }else{
-      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2021 & la$Basis=="F=F2020" & la$var =="Landings",][,5]
+      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2021 & la$Basis=="F=F2021" & la$var =="Landings",][,5]
       # SM Oct2021: Changed 2020 to 2021
       # SM Nov2020: Changed 2019 to 2020
       # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Landings",][,5]
@@ -1153,7 +1188,7 @@ server <- function(input, output, session) {
     if(is.na(la[which(la$Basis=="ICES Advice"),"value"])[1]){
       la <- filter(sbl, var %in% c("Catch", "TAC"))
       yaxislabel="Total Catch"
-      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2021 & la$Basis=="F=F2020" & la$var =="Catch",][,5]
+      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2021 & la$Basis=="F=F2021" & la$var =="Catch",][,5]
       # SM Oct2021: Changed 2020 to 2021
       # SM Nov2020: Changed 2019 to 2020
       # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Catch",][,5]
@@ -1198,7 +1233,15 @@ server <- function(input, output, session) {
   # DJC                             "F (2019)", "SSB (2020)",
   # DJC                             "% SSB change*", "% TAC change**")
   output$Forecasting_Table <- renderTable({
-    ForecastingFilter=filter(ForecastingTable, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
+    # ForecastingFilter=filter(ForecastingTable, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
+    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
+    if (length(stockToFilter) == 0){
+      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
+      # when you move between species with different valid areas
+      return(NULL)
+    }
+    ForecastingFilter <- filter(ForecastingTable, FishStock==stockToFilter)
     ForecastingFilter[,c(-1)]
   }, options = list(autoWidth = TRUE,
     columnDefs = list(list(width = '200px', targets = c(1)))), 
@@ -1211,8 +1254,8 @@ server <- function(input, output, session) {
                        "Cod Divisions 7.e-k (eastern English Channel and southern Celtic Seas)",
                        "Spurdog Sub-areas 1-14",
                        "Haddock Subarea 4  Division 6.a  and Subdivision 20  (North Sea  West of Scotland  Skagerrak)",
-                       "Haddock Division 6.b (Rockall) ",
-                       "Haddock Division7.a (Irish Sea) ",
+                       "Haddock Division 6.b (Rockall)",
+                       "Haddock Division7.a (Irish Sea)",
                        "Haddock Divisions 7.b-k (southern Celtic Seas and English Channel)",
                        "Herring Subareas 1  2  5 and Divisions 4.a and 14.a (the Northeast Atlantic and Arctic Ocean)",
                        "Herring Divisions 7.a South of 52 30N  7.g-h  and 7.j-k (Irish Sea  Celtic Sea  and southwest of Ireland)",
@@ -1224,9 +1267,9 @@ server <- function(input, output, session) {
                        "Megrim Divisions 7.b-k  8.a-b  and 8.d (west and southwest of Ireland  Bay of Biscay)",
                        "Anglerfish Lophius piscatorius in Divisions 7.b-k, 8.a-b, and 8.d (southern Celtic Seas and Bay of Biscay)",
                        "Plaice Division 7.a (Irish Sea)",
-                       "Saithe Subareas 4  6 and Division 3.a (North Sea  Rockall and West of Scotland  Skagerrak and Kattegat)",   
-                       "Sole Division 7.a (Irish Sea) ",
-                       "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea) ", 
+                       "Saithe Subareas 4  6 and Division 3.a (North Sea  Rockall and West of Scotland  Skagerrak and Kattegat)",  
+                       "Sole Division 7.a (Irish Sea)",
+                       "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea)", 
                        "Blue Whiting Subareas 1-9  12  and 14 (Northeast Atlantic and adjacent waters)",
                        "Whiting Division 7.a (Irish Sea)",
                        "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)")
@@ -1382,7 +1425,9 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   
     
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2021"){
+    }else 
+      #print (paste(input$speciesfilter, input$speciesbydiv, sep=" "))
+      if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2021"){
     # DJC}else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
       # DJC panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
       # SM Oct2021 Changed input$year from 2020 to 2021 (row 1385) and changed "Forecasting 2021" (row 1390) to "Forecasting 2022"
