@@ -93,9 +93,7 @@ server <- function(input, output, session) {
   #setwd("H:/Stockbook/shiny/WIP") #If needing to run it
   ICEStable=read.csv('ICES-New-Old - extra species.csv', header=TRUE)
   ICEStable$Fish=as.character(ICEStable$Fish)
-  ICEStable$Fish <- trimws(ICEStable$Fish)
   ICEStable$SpeciesByDiv=as.character(ICEStable$SpeciesByDiv)
-  ICEStable$SpeciesByDiv <- trimws(ICEStable$SpeciesByDiv)
   Speciesfilter <- unique(ICEStable$Fish)
 
   
@@ -314,12 +312,11 @@ server <- function(input, output, session) {
   
   #Definitions
   #~~~~~~~~~~~
-  # 2021: Changed the column from '3' to '2' so that the second cell is also displayed ) 
   output$Defns <- renderText({
-    paste0(Introduction[5, 2])
+    paste0(Introduction[5, 3])
   })
   output$Defns2 <- renderText({
-    paste0(Introduction[6, 2])
+    paste0(Introduction[6, 3])
   })
   
   #Mixed Fisheries Outputs
@@ -485,54 +482,42 @@ server <- function(input, output, session) {
   #Biology Text
   #~~~~~~~~~~~~
   output$biology_text <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Description"])
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Description" ])
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Description"])
   })
   
   #Fish sketch
   #~~~~~~~~~~~
   output$display.fish <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #image_file <- paste0("www/FishSketches/", 
-    #       ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], ".png")
     image_file <- paste0("www/FishSketches/", 
-                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], ".png")
+                        ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], ".png")
     return(list(src = image_file, filetype = "image/png",width = 200))
   }, deleteFile = FALSE)
   
   #International Landings
   #~~~~~~~~~~~~~~~~~~~~~~
   output$display.InternationalLandings <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #image_file <- paste0("www/Internationallandings/", input$year, "/Rect",
-    #                    ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"FAQCode"], 
-    #                    ".png", sep="")
     image_file <- paste0("www/Internationallandings/", input$year, "/Rect",
-                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"FAQCode"], 
-                         ".png", sep="")
+                        ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"FAQCode"], 
+                        ".png", sep="")
     return(list(src = image_file, width = 350))#
   }, deleteFile = FALSE)
-  
   output$text.InternationalLandings <- renderText({
-    
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
     ## 2021 uses a different year range (SM Sep2021)
     if(input$year == "2021"){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2015 - 2019", sep="")
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], "</em>  between 2015 - 2019", sep="")
       }
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
         paste0("The distribution of international landings of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " during 2019", sep="")
       }
       else{
         paste0("The distribution of international landings of ",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2015 - 2019 ", sep="")
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " between 2015 - 2019 ", sep="")
       }
     } 
     
@@ -542,16 +527,16 @@ server <- function(input, output, session) {
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2015 - 2018", sep="")
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], "</em>  between 2015 - 2018", sep="")
       }
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
         paste0("The distribution of international landings of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " during 2019", sep="")
       }
       else{
         paste0("The distribution of international landings of ",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2015 - 2018 ", sep="")
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " between 2015 - 2018 ", sep="")
       }
     } 
     
@@ -561,16 +546,16 @@ server <- function(input, output, session) {
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2012 - 2016", sep="")
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], "</em>  between 2012 - 2016", sep="")
       }
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
         paste0("The distribution of international landings of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " during 2018", sep="")
       }
       else{
         paste0("The distribution of international landings of ",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2012 - 2016 ", sep="")
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " between 2012 - 2016 ", sep="")
       }
     } 
     
@@ -579,11 +564,11 @@ server <- function(input, output, session) {
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em> during ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], "</em> during ", 
                (as.numeric(as.character(input$year))-1), sep="")
       }else{
         paste0("The distribution of international landings of ",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " during ", 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], " during ", 
                (as.numeric(as.character(input$year))-1), sep="")
       }
     }
@@ -593,37 +578,29 @@ server <- function(input, output, session) {
   #Irish Landings
   #~~~~~~~~~~~~~~
   output$display.IrishLandings <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #image_file <- paste0("www/Irishlandings/", input$year, "/Land",
-    #                     ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"FAQCode"], 
-    #                     ".png", sep="")
-    
     image_file <- paste0("www/Irishlandings/", input$year, "/Land",
-                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"FAQCode"], 
+                         ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"FAQCode"], 
                          ".png", sep="")
     return(list(src = image_file, width = 350))
   }, deleteFile = FALSE)
-  
   output$text.IrishLandings <- renderText({
-    
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
     ## 2021 uses a different year range (SM Sep2021)
     if(input$year == "2021"){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                "</em> landings by Irish Vessels between 2015 - 2019", sep="")
       } 
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
         paste0("The distribution of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " landings by Irish Vessels during 2020", sep="")
       }
       else{
         paste0("The distribution of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " landings by Irish Vessels between 2015 - 2019 ", sep="")
       }
     }
@@ -634,17 +611,17 @@ server <- function(input, output, session) {
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                "</em> landings by Irish Vessels between 2015 - 2018", sep="")
       } 
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
         paste0("The distribution of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " landings by Irish Vessels during 2019", sep="")
       }
       else{
         paste0("The distribution of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " landings by Irish Vessels between 2015 - 2018 ", sep="")
       }
     }
@@ -655,17 +632,17 @@ server <- function(input, output, session) {
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                "</em> landings by Irish Vessels between 2014 - 2018", sep="")
       } 
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
         paste0("The distribution of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " landings by Irish Vessels during 2018", sep="")
       }
       else{
         paste0("The distribution of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " landings by Irish Vessels between 2014 - 2018 ", sep="")
       }
     }
@@ -674,11 +651,11 @@ server <- function(input, output, session) {
     else {
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                "</em> landings by Irish Vessels during ", (as.numeric(as.character(input$year))-1), sep="")
       }else{
         paste0("The distribution of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
                " landings by Irish Vessels during ", (as.numeric(as.character(input$year))-1), sep="")
       }
     }
@@ -688,36 +665,28 @@ server <- function(input, output, session) {
   #Landings text
   #~~~~~~~~~~~~~
   output$LandingsText <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
-    #                 paste0("TAC", as.numeric(as.character(input$year)), sep="")])
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
                      paste0("TAC", as.numeric(as.character(input$year)), sep="")])
   })
   output$DivisionsText <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$speciesfilter=="Nephrops"){      
       paste0("The distribution of <em>", 
-             ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+             ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
              "</em> landings by Irish vessels by division for the last three years.", sep="")
     }else{
       paste0("The distribution of ", 
-             ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+             ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
              " landings by Irish vessels by division for the last three years.", sep="")
     }
   })
-  
   output$ValueText <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$speciesfilter=="Nephrops"){      
       paste0("A historical view of the value of <em>", 
-             ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+             ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
              "</em> landings", sep="")
     }else{
       paste0("A historical view of the value of ", 
-             ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+             ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"], 
              " landings.", sep="")
     }
   })
@@ -725,21 +694,14 @@ server <- function(input, output, session) {
   #Landings by division
   #~~~~~~~~~~~~~~~~~~~~
   output$display.LandingsbyDiv <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #image_file <- paste0("www/LandingsByDivision/", input$year, "/",
-    #                    ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"],".png")
     image_file <- paste0("www/LandingsByDivision/", input$year, "/",
-                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"],".png")
+                        ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"],".png")
     return(list(src = image_file, filetype = "image/png", height = 300))
   }, deleteFile = FALSE)
-  
   #Value of TAC
   output$display.TACValue <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #image_file <- paste0("www/ValueTimeSeries/", input$year, "/", 
-    #                    ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"],".png")
     image_file <- paste0("www/ValueTimeSeries/", input$year, "/", 
-                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"],".png")
+                        ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"],".png")
     return(list(src = image_file, filetype = "image/png", height = 300))
   }, deleteFile = FALSE)
   
@@ -748,39 +710,32 @@ server <- function(input, output, session) {
   # Adding MI Summary #
   #####################
   output$display.assarea <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #image_file <- paste0("www/maps/",ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],
-    #                    ".png", sep="")
-    image_file <- paste0("www/maps/",ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],
-                         ".png", sep="")
+    image_file <- paste0("www/maps/",ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],
+                        ".png", sep="")
     return(list(src = image_file, filetype = "image/png", height = 250))
   }, deleteFile = FALSE)
   
   output$display.landingsbygear <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$year==2016){
       image_file <- paste0("www/Landingsbygear/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],".png")
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],".png")
       return(list(src = image_file, filetype = "image/png", height = 250))
     }else{
       image_file <- paste0("www/Landingsbygear/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png")
+                        ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],".png")
     return(list(src = image_file, filetype = "image/png", height = 250))}
   }, deleteFile = FALSE)
 
   #Pie Chart
   #~~~~~~~~~
   output$TACtext <-renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$speciesfilter=="Seabass" | input$speciesfilter=="Sprat"){
       paste0("")
     }else{
     paste0(input$year, " Quota Allocations", sep="")}
   })
   output$display.TAC <- renderImage({
-    image_file <- paste0("www/Quota/",input$year,"/",ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],
+    image_file <- paste0("www/Quota/",input$year,"/",ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],
                         ".png", sep="")
     return(list(src = image_file, filetype = "image/png", height = 250))
   }, deleteFile = FALSE)
@@ -788,12 +743,8 @@ server <- function(input, output, session) {
   #Catch/Discards plot
   #~~~~~~~~~~~~~~~~~~~
   output$display.CatchDiscards <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
-    #image_file <- paste0("www/CatchDiscards/", input$year, "/", 
-    #                     ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],".png", sep="")
     image_file <- paste0("www/CatchDiscards/", input$year, "/", 
-                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png", sep="")
+                         ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],".png", sep="")
     return(list(src = image_file, filetype = "image/png", height = 100))
   }, deleteFile = FALSE)
   
@@ -802,23 +753,21 @@ server <- function(input, output, session) {
   #~~~~~~~~~~~~~~~~
   KeyPoints=read.csv("KeyPoints.csv", header=TRUE)
   output$KPtable = renderTable({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$year==2015){
       paste0("There was no Key Points table in the 2015 Stock Book")
     }else{
     KPFilter=filter(KeyPoints, Year==input$year & 
                       Group == "KeyPoints" &
-                      FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
+                      FishStock %in% paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% 
+                                                             input$speciesbydiv),"New"]))
     KPFilter[,4:5]}
   }, colnames = FALSE, bordered = TRUE) 
   
   output$KPtableFootnote = renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     KPFilter=filter(KeyPoints, Year==input$year & 
                       Group == "Footnotes" &
-                      FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
+                      FishStock %in% paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% 
+                                                              input$speciesbydiv),"New"]))
     paste0(KPFilter[,4])
   }) 
   
@@ -853,25 +802,21 @@ server <- function(input, output, session) {
   })
 
   output$ICESlink <-renderUI({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
-    if(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
+    if(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),
                  paste0("ICESCode",input$year, sep="")]=="Not Available"){
       paste0("No Link Available")
     }else{
-      a(href=paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
+      a(href=paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),
                               paste0("ICESCode",input$year, sep="")]),
         "ICES Advice",target="_blank")}
   })
   
   output$ICESlinkpdf <-renderUI({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
-    if(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
+    if(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),
                  paste0("ICESCode",input$year, sep="")]=="Not Available"){
       paste0("No Link Available")
     }else{
-      a(href=paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
+      a(href=paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),
                               paste0("ICESLink",input$year, sep="")]),
         "ICES Advisory Sheet",target="_blank")}
   })
@@ -883,17 +828,12 @@ server <- function(input, output, session) {
   }) 
   ManagementAdvice=read.csv("ManagementAdvice.csv", header=TRUE)#, encoding = 'ASCII'
   output$ManagementAdvice = renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     MAFilter=filter(ManagementAdvice, Year==input$year)
-    #MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% 
-    #                                                                   input$speciesbydiv),"New"]))
-    MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
+    MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% 
+                                                                       input$speciesbydiv),"New"]))
     paste(MAFilter2[,3], sep="")
   }) 
   output$AddInfoHeader = renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$year<2018){
       "Additional Information"
     }else{
@@ -902,9 +842,8 @@ server <- function(input, output, session) {
     }) 
   output$Addinfo = renderText({
     MAFilter=filter(ManagementAdvice, Year==input$year)
-    #MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% 
-    #                                                                   input$speciesbydiv),"New"]))
-    MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
+    MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% 
+                                                                       input$speciesbydiv),"New"]))
     paste(MAFilter2[,4], sep="")
   }) 
 
@@ -931,19 +870,16 @@ server <- function(input, output, session) {
     paste0("Advice for ", as.numeric(as.character(input$year))+1)
   })
   output$ICESAdviceTextMI2 <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$year<2018){
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
                     paste0("ICESAdvice", as.numeric(as.character(input$year)), sep="")])
     }else{
-      paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
+      paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
                        paste0("FEASAdvice", as.numeric(as.character(input$year)), sep="")])
       }
   })
   output$ICESAdviceText <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
                            paste0("ICESAdvice", as.numeric(as.character(input$year)), sep="")])
   })
   output$ices_ref <- renderText({
@@ -952,28 +888,23 @@ server <- function(input, output, session) {
   })
   
   output$ICESCategory <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
                      paste0("Category", as.numeric(as.character(input$year)), sep="")])
   })
   output$ICESFrequency <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
                      "Frequency"])
   })
   output$ManagementPlan <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
                      "ManagementPlan"])
   })
   output$ICESAdviceBasis <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
                      "ICESAdviceBasis"])
   })
   output$Text.Stock <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"SpeciesByDivOrig"])
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"SpeciesByDivOrig"])
   })
   
   output$ICESinfo <- renderUI(
@@ -988,11 +919,8 @@ server <- function(input, output, session) {
     HTML("<hr>"),
     h4("ICES Advice Basis:"),
     textOutput("ICESAdviceBasis"),
-    #SM updated on Oct 28th 2021 with latest document found. (None for 2020 or 2021)
-    a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2019/2019/Introduction_to_advice_2019.pdf"),
+    a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2016/2016/Introduction_to_advice_2016.pdf"),
       "Link to description of ICES Advice Basis",target="_blank"),
-    #a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2016/2016/Introduction_to_advice_2016.pdf"),
-    #  "Link to description of ICES Advice Basis",target="_blank"),
     HTML("<hr>"),
     h4("ICES Advice Frequency:"),
     textOutput("ICESFrequency"),
@@ -1006,34 +934,29 @@ server <- function(input, output, session) {
   #Stock Development Over Time
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$display.Stock_Dev <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     if(input$year<2017){
       image_file <- paste0("www/ICES/SAG/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],".png")
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],".png")
     }else{
       image_file <- paste0("www/ICES/SAG/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png")}
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],".png")}
     return(list(src = image_file, filetype = "image/png", height = 400))
   }, deleteFile = FALSE)
   
   output$Text.Stock_Dev <- renderText({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
-    paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
+    paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),
                      paste0("StockDev",input$year, sep="")])
   })
 
   #Stock and Exploitation status
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$display.ICESStatus <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$year<2017){
       image_file <- paste0("www/ICES/Status/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],".png")}
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],".png")}
     else{
       image_file <- paste0("www/ICES/Status/", input$year, "/",
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png")
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],".png")
       }
     return(list(src = image_file, filetype = "image/png", width = 750))
   }, deleteFile = FALSE)
@@ -1051,39 +974,33 @@ server <- function(input, output, session) {
   })
   
   output$display.SSB_Hist <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$year<2017){
       image_file <- paste0("www/ICES/SSB/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],".png")}
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],".png")}
     else{
       image_file <- paste0("www/ICES/SSB/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png")}
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],".png")}
     return(list(src = image_file, filetype = "image/png", height = 250))
   }, deleteFile = FALSE)
   
   output$display.Fish_Mort <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$year<2017){
       image_file <- paste0("www/ICES/Fishmort/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],".png")
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],".png")
       }else{
         image_file <- paste0("www/ICES/Fishmort/", input$year, "/", 
-                             ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],
+                            ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],
                             ".png")}
     return(list(src = image_file, filetype = "image/png", height = 250))
   }, deleteFile = FALSE)
   
   output$display.Recruit_Hist <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
     if(input$year<2017){
       image_file <- paste0("www/ICES/RecruitHist/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],".png")
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],".png")
     }else{
       image_file <- paste0("www/ICES/RecruitHist/", input$year, "/", 
-                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png")}
+                          ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],".png")}
     return(list(src = image_file, filetype = "image/png", height = 250))
   }, deleteFile = FALSE)
   
@@ -1099,16 +1016,8 @@ server <- function(input, output, session) {
   Forecasting$Year <- as.numeric(Forecasting$Year)
   Forecasting = Forecasting[,2:6]
   output$ForecastOptionsSelector <- renderUI({
-    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
-    #sbl <- filter(Forecasting, 
-    #              FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
-    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
-    if (length(stockToFilter) == 0){
-      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
-      # when you move between species with different valid areas
-      return(NULL)
-    }
-    sbl <- filter(Forecasting, FishStock==stockToFilter)
+    sbl <- filter(Forecasting, 
+                  FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     #print(input$speciesbydiv)
     #print(paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     #print(unique(Forecasting$FishStock))
@@ -1130,22 +1039,14 @@ server <- function(input, output, session) {
   
   #output$plotforecasting <- renderPlotly({
   output$plotSSB <- renderPlotly({
-    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
-    # sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
-    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
-    if (length(stockToFilter) == 0){
-      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
-      # when you move between species with different valid areas
-      return(NULL)
-    }
-    sbl <- filter(Forecasting, FishStock==stockToFilter)
+    sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     ## djc
     #sbl <- filter(Forecasting, FishStock=='cod.27.6a')
     ssb <- filter(sbl, var=="SSB")
     Blim <- filter(sbl, var=="Blim")[1,5]
     Bpa <- filter(sbl, var=="Bpa")[1,5]
     ssb1 <- filter(ssb, Basis %in% c("Assessment", "ICES Advice"))
-    #print(ssb1)
+    print(ssb1)
     #ssb2018= data.frame(FishStock=ssb1[1,1], Year=2018, Basis="Assessment", 
     #                    var="SSB", value=ssb1[ssb1$Year==2018 & ssb1$Basis=="ICES Advice",][,5])
     ssb2 <- filter(ssb, Basis %in% c(input$forecastoptionselection))
@@ -1183,15 +1084,7 @@ server <- function(input, output, session) {
   })
   
   output$plotF <- renderPlotly({
-    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
-    #sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
-    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
-    if (length(stockToFilter) == 0){
-      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
-      # when you move between species with different valid areas
-      return(NULL)
-    }
-    sbl <- filter(Forecasting, FishStock==stockToFilter)
+    sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     f <- filter(sbl, var=="F")
     #if(dim(f[f$Year==2018 & f$Basis=="Assessment",])[1]==0){
     #      f2018= data.frame(FishStock=f[1,1], Year=2018, Basis="Assessment", 
@@ -1233,17 +1126,8 @@ server <- function(input, output, session) {
   })
   
   output$plotLandings <- renderPlotly({
-    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
-    #sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
-    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
-    if (length(stockToFilter) == 0){
-      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
-      # when you move between species with different valid areas
-      return(NULL)
-    }
-    sbl <- filter(Forecasting, FishStock==stockToFilter)
+    sbl <- filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     la <- filter(sbl, var %in% c("Landings", "TAC"))
-    #print(la)
     yaxislabel="Landings"
     if(dim(la[la$Year==2021 & la$Basis=="Assessment",])[1]==0){
     # SM Oct2021: Changed 2020 to 2021
@@ -1258,7 +1142,7 @@ server <- function(input, output, session) {
       # DJC                   var="Landings", value=la[la$Year==2018 & la$Basis=="ICES Advice",][,5])
       # DJC la=rbind(la, la2018)
     }else{
-      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2021 & la$Basis=="F=F2021" & la$var =="Landings",][,5]
+      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2021 & la$Basis=="F=F2020" & la$var =="Landings",][,5]
       # SM Oct2021: Changed 2020 to 2021
       # SM Nov2020: Changed 2019 to 2020
       # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Landings",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Landings",][,5]
@@ -1266,7 +1150,7 @@ server <- function(input, output, session) {
     if(is.na(la[which(la$Basis=="ICES Advice"),"value"])[1]){
       la <- filter(sbl, var %in% c("Catch", "TAC"))
       yaxislabel="Total Catch"
-      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2021 & la$Basis=="F=F2021" & la$var =="Catch",][,5]
+      la[la$Year==2021 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2021 & la$Basis=="F=F2020" & la$var =="Catch",][,5]
       # SM Oct2021: Changed 2020 to 2021
       # SM Nov2020: Changed 2019 to 2020
       # DJC la[la$Year==2018 & la$Basis=="Assessment" & la$var =="Catch",][,5] <- la[la$Year==2018 & la$Basis=="F = F2018" & la$var =="Catch",][,5]
@@ -1311,48 +1195,42 @@ server <- function(input, output, session) {
   # DJC                             "F (2019)", "SSB (2020)",
   # DJC                             "% SSB change*", "% TAC change**")
   output$Forecasting_Table <- renderTable({
-    # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
-    # ForecastingFilter=filter(ForecastingTable, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
-    stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
-    if (length(stockToFilter) == 0){
-      # djc 9/11/21 Leave the function if we can't find a match - stops error messages
-      # when you move between species with different valid areas
-      return(NULL)
-    }
-    ForecastingFilter <- filter(ForecastingTable, FishStock==stockToFilter)
+    ForecastingFilter=filter(ForecastingTable, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     ForecastingFilter[,c(-1)]
   }, options = list(autoWidth = TRUE,
     columnDefs = list(list(width = '200px', targets = c(1)))), 
   colnames = TRUE, bordered = TRUE)
   
-  #SM: Oct 2021 Updated list of forecast stocks
-  ForecastingStocks= c("Seabass Divisions 4.b-c  7.a  and 7.d-h (central and southern North Sea  Irish Sea  English Channel  Bristol Channel  and Celtic Sea)",
-                       "Cod Subareas 1 and 2 (Northeast Arctic)",
+  ForecastingStocks= c("Cod Divisions 7.e-k (eastern English Channel and southern Celtic Seas)",
                        "Cod Division 6.a (West of Scotland)",
-                       "Cod Divisions 7.e-k (eastern English Channel and southern Celtic Seas)",
-                       "Spurdog Sub-areas 1-14",
-                       "Haddock Subarea 4  Division 6.a  and Subdivision 20  (North Sea  West of Scotland  Skagerrak)",
-                       "Haddock Division 6.b (Rockall)",
-                       "Haddock Division7.a (Irish Sea)",
+                       #"Cod Division 7.a (Irish Sea)",
+                       "Haddock  Division 6.b (Rockall) ",
+                       "Haddock  Division 7.a (Irish Sea) ",
                        "Haddock Divisions 7.b-k (southern Celtic Seas and English Channel)",
-                       "Herring Subareas 1  2  5 and Divisions 4.a and 14.a (the Northeast Atlantic and Arctic Ocean)",
                        "Herring Divisions 7.a South of 52 30N  7.g-h  and 7.j-k (Irish Sea  Celtic Sea  and southwest of Ireland)",
-                       "Herring Division 7.a North of 52 30N (Irish Sea)",
-                       "Hake Subareas 4  6  and 7  and Divisions 3.a  8.a-b  and 8.d  Northern stock (Greater North Sea  Celtic Seas  and the northern Bay of Biscay)",
+                       "Herring Divisions Division 7.a North of 52 30N (Irish Sea)",
+                       "Hake Subareas 4 6 and 7 and Divisions 3.a  8.a-b  and 8.d  Northern stock (Greater North Sea  Celtic Seas  and the northern Bay of Biscay)",
                        "Horse Mackerel Subarea 8 and Divisions 2.a  4.a  5.b  6.a  7.a-c e-k (the Northeast Atlantic)",
-                       "Megrim Divisions 4.a and 6.a (northern North Sea  West of Scotland)",
                        "Mackerel Subareas 1-8 and 14 and Division 9.a (the Northeast Atlantic and adjacent waters)",
-                       "Megrim Divisions 7.b-k  8.a-b  and 8.d (west and southwest of Ireland  Bay of Biscay)",
-                       "Anglerfish Lophius piscatorius in Divisions 7.b-k, 8.a-b, and 8.d (southern Celtic Seas and Bay of Biscay)",
+                       "Megrim  Divisions 7.b-k  8.a-b  and 8.d (west and southwest of Ireland  Bay of Biscay)",
                        "Plaice Division 7.a (Irish Sea)",
-                       "Saithe Subareas 4  6 and Division 3.a (North Sea  Rockall and West of Scotland  Skagerrak and Kattegat)",  
-                       "Sole Division 7.a (Irish Sea)",
-                       "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea)", 
+                       "Saithe Subareas 4 6 and Division 3.a (North Sea  Rockall and West of Scotland  Skagerrak and Kattegat)",
+                       "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea)  ",
                        "Blue Whiting Subareas 1-9  12  and 14 (Northeast Atlantic and adjacent waters)",
-                       "Whiting Division 7.a (Irish Sea)",
-                       "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)")
-                         
-  #SM Note Oct 2021: Have not updated this yet
+                       "Whiting  Division 7.a (Irish Sea)",
+                       "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)",
+                       "Anglerfish Lophius piscatorius in Divisions 7.b-k, 8.a-b, and 8.d (southern Celtic Seas and Bay of Biscay)",
+                        # Added in 2020
+                       "Seabass Divisions 4.b-c  7.a  and 7.d-h (central and southern North Sea  Irish Sea  English Channel  Bristol Channel  and Celtic Sea)",
+                       "Cod (Gadus morhua) in subareas 1 and 2 (Northeast Arctic)",
+                       "Haddock	Subarea 4  Division 6.a  and Subdivision 20  (North Sea  West of Scotland  Skagerrak)",
+                       "Herring	Subareas 1  2  5 and Divisions 4.a and 14.a (the Northeast Atlantic and Arctic Ocean)",
+                       "Megrim	 Divisions 4.a and 6.a (northern North Sea  West of Scotland)",
+                       "Sole	Divisions 7.b and 7.c (West of Ireland)",
+                       "Sole	Division 7.a (Irish Sea)",
+                       "Spurdog (Squalus acanthias) in Subareas 1-10, 12 and 14 (the Northeast Atlantic and adjacent waters)"
+                         )
+  
   NephropsStock=c("Division 7.a  Functional Unit 14 (Irish Sea  East)", 
                   "Division 7.a  Functional Unit 15 (Irish Sea  West)",
                   "Divisions 7.b-c and 7.j-k  Functional Unit 16 (west and southwest of Ireland  Porcupine Bank)",
@@ -1503,12 +1381,10 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   
     
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-    }else 
-      #print (paste(input$speciesfilter, input$speciesbydiv, sep=" "))
-      if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2021"){
+    }else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2021"){
     # DJC}else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
       # DJC panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
-      # SM Oct2021 Changed input$year from 2020 to 2021 (row 1385) and changed "Forecasting 2021" (row 1390) to "Forecasting 2022"
+      # SM Oct2021 Changed input$year from 2020 to 2021 (row 1384) and changed "Forecasting 2021" (row 1389) to "Forecasting 2022"
       # SM Nov2020 Changed input$year from 2019 to 2020 (row 12320) and changed "Forecasting 2020" (row 1236) to "Forecasting 2021"
       panels[[4]]=tabPanel("Forecasting 2022", value="ForecastingTab",
                            uiOutput("ForecastOptionsSelector"),
