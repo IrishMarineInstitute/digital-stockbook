@@ -8,13 +8,24 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #2021  ##
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#2021 October: Download latest version of icesSAG from GitHub so that the RecruitHist, F and SSb historical graphs can be downloaded successfully
+#How to install a package from GitHub
+#1. First, you need to install the devtools package. You can do this from CRAN. ... #install.packages("devtools") (package 'devtools' was built under R version 4.0.5) Remote desktop is 4.0.3
+#2. Load the devtools package. library(devtools) #library(devtools)
+#3. In most cases, you just use install_github("author/package") .  #devtools::install_github("ices-tools-prod/icesSAG") 
+#Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding
+
+
+#had issues downloading devtools. Updated R Studio to 4.1.1 on 20/10/2021
+#rlang appeared in 'user library the next day.
+#Devtools looking for 'rtools' but cannot find that package in Cran.... #Please download and install Rtools 4.0 from https://cran.r-project.org/bin/windows/Rtools/. 
+
+
+#2021 September
 #Installed package 'icesVocab'
-#click on 'icesVocab' in the list to the right to give
-    #library("icesVocab", lib.loc="~/R/win-library/4.0")
-#click on 'png' in the list to the right to give
-    #library("png", lib.loc="~/R/win-library/4.0")
-#click on 'icesSAG' in the list to the right to give
-    #library("icesSAG", lib.loc="~/R/win-library/4.0")
+#click on 'icesVocab' in the list to the right to give  #library("icesVocab", lib.loc="~/R/win-library/4.0")
+#click on 'png' in the list to the right to give  #library("png", lib.loc="~/R/win-library/4.0")
+#click on 'icesSAG' in the list to the right to give  #library("icesSAG", lib.loc="~/R/win-library/4.0")
 #OR See Step 1 below. 
 
 
@@ -40,12 +51,11 @@
 #install 'png' package, then repeat STEP 1 and continue
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+library(devtools)
 library(icesSAG)
+library(icesVocab)
 
-#setwd("H:/Stockbook/2018/2018_V1/www/ICES")
-
-#update wd Oct 2019 - SM
+#update wd 
 #setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES")
 #setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES")
 setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES")
@@ -329,6 +339,11 @@ for(i in  IrishStocks$New){
   plot(graphs)
   dev.off()
 }
+#19/10
+#An extra 6 graphs were downloaded (26 vs 20 on 22nd Sep)
+#8 more were added manually. 
+#list now matches what is in the ICES site
+
 #22/09
 #Long list of GETing...., then
 #Error in png::readPNG(out) : libpng error: IDAT: CRC error
@@ -354,6 +369,10 @@ for(i in  IrishStocks$New){
   plot(graphs)
   dev.off()
 }
+#19/10 Was 27 pngs in Sept now 33
+#2 more were added manually. 
+#list now matches what is in the ICES site
+
 #22/09
 #Long list of GETing...., then a warning
 #Graphs in folder but a lot are blank
@@ -368,6 +387,15 @@ for(i in  IrishStocks$New){
   plot(graphs)
   dev.off()
 }
+#19/10
+# Error in png::readPNG(out) : libpng error: IDAT: CRC error
+# In addition: Warning messages:
+#   1: http status message: Server error: (500) Internal Server Error 
+# 2: in SAG API - Cannot convert NA to System.Int32.
+# Parameter name: type ---> Input string was not in a correct format.
+
+## SM note:  check ?getSSBHistoricalPerformance()
+
 #22/09
 #Long list of GETing...., then
 # Error in png::readPNG(out) : libpng error: IDAT: CRC error
@@ -399,6 +427,10 @@ for(i in  IrishStocks$New){
   plot(graphs)
   dev.off()
 }
+#19/10
+#An extra 6 graphs were downloaded (26 vs 20 on 22nd Sep)
+
+#23/09?
 #GETing ... http://sg.ices.dk/StandardGraphsWebServices.asmx/getRecruitmentHistoricalPerformance?assessmentKey=14557
 #GETing ... http://sg.ices.dk/StandardGraphsWebServices.asmx/getListStocks?year=2021
 # is this address correct??
@@ -406,3 +438,5 @@ for(i in  IrishStocks$New){
 #22/09
 #Long list of GETing...., then a warning
 #Graphs in folder but a ALL BLANK
+
+
