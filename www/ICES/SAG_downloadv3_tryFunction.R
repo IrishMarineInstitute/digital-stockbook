@@ -44,6 +44,7 @@
 library(icesSAG)
 
 #setwd("H:/Stockbook/2018/2018_V1/www/ICES")
+#setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES/_NephropsNov")
 
 #update wd Oct 2019 - SM
 #setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES")
