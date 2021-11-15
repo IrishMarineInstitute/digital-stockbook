@@ -1,4 +1,4 @@
-FROM rocker/shiny:3.5.1
+FROM rocker/shiny:4.0.5
 MAINTAINER Marine Institute
 # install ssl
 # and gdal
