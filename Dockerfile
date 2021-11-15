@@ -15,8 +15,8 @@ RUN Rscript -e "install.packages(c('ggplot2','colorRamps','DT','reshape2'), repo
 # copy shiny-server config file
 #COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
 COPY www /srv/shiny-server/stockbook/www
-COPY .RData /srv/shiny-server/stockbook/
-COPY .Rhistory /srv/shiny-server/stockbook/
+#COPY .RData /srv/shiny-server/stockbook/
+#COPY .Rhistory /srv/shiny-server/stockbook/
 COPY app.R /srv/shiny-server/stockbook/
 COPY ForecastingData.csv /srv/shiny-server/stockbook/
 COPY ForecastOptionsV2.csv /srv/shiny-server/stockbook/
@@ -30,4 +30,4 @@ COPY MixedFish.csv /srv/shiny-server/stockbook/
 COPY README.md /srv/shiny-server/stockbook/
 
 EXPOSE 3838
-CMD ["/usr/bin/shiny-server.sh"]
+#CMD ["/usr/bin/shiny-server.sh"]
