@@ -1286,7 +1286,8 @@ server <- function(input, output, session) {
   
   #Forecasting table
   #~~~~~~~~~~~~~~~~~
-  ForecastingTable=read.csv('ForecastOptionsV2.csv', header=TRUE)
+  # djc 15/11/21 - don't convert strings to factors
+  ForecastingTable=read.csv('ForecastOptionsV2.csv', header=TRUE, stringsAsFactors = FALSE)
   # DJC Get rid of the X column - we don't need it
   ForecastingTable$X <- NULL
   ForecastingTable=ForecastingTable[,c(1,3,4,5,6,7,10,11,12)]#3 missing)]#
