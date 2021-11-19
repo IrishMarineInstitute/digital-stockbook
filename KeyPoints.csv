@@ -2139,8 +2139,7 @@ ank.27.78ab,KeyPoints,2021,Advice Basis,"Precautionary approach, Catch= 18,661 t
 ank.27.78ab,KeyPoints,2021,FMSY Range Lower,Not Available
 ank.27.78ab,KeyPoints,2021,FMSY,Not Available
 ank.27.78ab,KeyPoints,2021,FMSY Range Upper,Not Available
-ank.27.78ab,KeyPoints,2021,Landing Obligation,From 2019. Area and gear specific derogation*
-ank.27.78ab,Footnotes,2021,"* For vessels with catches of more than 55% combined hake, anglerfish and megrim, there is a derogation for additional gear options in the Celtic Sea Protection Zone (EU 2019/2239).",
+ank.27.78ab,KeyPoints,2021,Landing Obligation,From 2019. Area and gear specific derogation
 BFT-E,KeyPoints,2021,ICCAT Advice Basis,Previous advice and indicators
 BFT-E,KeyPoints,2021,Management Plan,"ICCAT Management Strategy Evaluation (Rec. 18-02*). Catch = 36,000 t"
 BFT-E,KeyPoints,2021,ICCAT MSY Lower,Not available
@@ -2325,7 +2324,7 @@ mon.27.78ab,KeyPoints,2021,Advice Basis,"MSY approach, Catch= 34,275 t"
 mon.27.78ab,KeyPoints,2021,FMSY Range Lower,"Catch= 23,162 t"
 mon.27.78ab,KeyPoints,2021,FMSY,"Catch= 34,275 t"
 mon.27.78ab,KeyPoints,2021,FMSY Range Upper,Not Appropriate
-mon.27.78ab,KeyPoints,2021,Landing Obligation,From 2019. Area and gear specific derogation*
+mon.27.78ab,KeyPoints,2021,Landing Obligation,From 2019. Area and gear specific derogation
 nep.27.7outfu,KeyPoints,2021,ICES Assessment Category,5 (Landings only)
 nep.27.7outfu,KeyPoints,2021,Management Plan,WWMAP
 nep.27.7outfu,KeyPoints,2021,Advice Basis,ICES PA approach
@@ -2501,9 +2500,9 @@ sol.27.7bc,KeyPoints,2021,Landing Obligation,From 2019. No derogations or exempt
 sol.27.7fg,KeyPoints,2021,ICES Assessment Category,1 (Quantitative Assessment)
 sol.27.7fg,KeyPoints,2021,Management Plan,WWMAP (target)
 sol.27.7fg,KeyPoints,2021,Advice Basis,"ICES MSY approach Catch= 1,320 t"
-sol.27.7fg,KeyPoints,2021,FMSY Range Lower,Catch= 753 t
-sol.27.7fg,KeyPoints,2021,FMSY,"Catch= 1,320 t"
-sol.27.7fg,KeyPoints,2021,FMSY Range Upper,"Catch= 2,190 t"
+sol.27.7fg,KeyPoints,2021,FMSY Range Lower,Catch= 765 t
+sol.27.7fg,KeyPoints,2021,FMSY,"Catch= 1,337 t"
+sol.27.7fg,KeyPoints,2021,FMSY Range Upper,"Catch= 2,227 t"
 sol.27.7fg,KeyPoints,2021,Landing Obligation,From 2016. De minimis up to 3%*
 sol.27.7h-k,KeyPoints,2021,ICES Assessment Category,5 (Landings-only Assessment)
 sol.27.7h-k,KeyPoints,2021,Management Plan,WWMAP (target)
@@ -2561,7 +2560,6 @@ hom.27.3a4bc7d,Footnotes,2021,* Commission delegated regulations 2020/2014,
 hom.27.2a4a5b6a7a-ce-k8,Footnotes,2021,* Commission delegated regulation 2020/2015,
 mac.27.nea,Footnotes,2021,* Commission delegated regulation 2020/2015,
 meg.27.7b-k8abd,Footnotes,2021,"* For vessels with catches of more than 55% combined hake, anglerfish and megrim, there is a derogation for additional gear options in the Celtic Sea Protection Zone (EU 2019/2239).",
-mon.27.78ab,Footnotes,2021,"* For vessels with catches of more than 55% combined hake, anglerfish and megrim, there is a derogation for additional gear options in the Celtic Sea Protection Zone (EU 2019/2239).",
 ple.27.7bc,Footnotes,2021,"* Described below under Key Stock Considerations, details in (EC 2020/2015).",
 ple.27.7fg,Footnotes,2021,"* Described below under Key Stock Considerations, details in (EC 2020/2015).",
 ple.27.7h-k,Footnotes,2021,"* Described below under Key Stock Considerations, details in (EC 2020/2015).",
