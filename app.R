@@ -560,6 +560,13 @@ server <- function(input, output, session) {
                    ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                    " in 2020", sep="")
           }
+          #SM added Nov 24th 2021
+          else if(input$speciesfilter=="Boarfish"){      
+            paste0("The distribution of Irish ", 
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+                   " landings in 2020", sep="")
+          }
+      
       # SM added in Nov 2021
           else if(input$speciesfilter=="Anglerfish"){      
             paste0("The distribution of EU landings of ", 
@@ -659,6 +666,15 @@ server <- function(input, output, session) {
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                " catches from Irish Vessels in 2020", sep="")
       }
+      
+      #SM added Nov 24th 2021
+      else if(input$speciesfilter=="Boarfish"){      
+        paste0("The distribution of Irish ", 
+               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               " landings between 2018-2020", sep="")
+      }
+      
+      
       # SM added in Nov 2021
       else if(input$speciesfilter=="Anglerfish"){      
         paste0("The distribution of Irish ", 
@@ -1033,9 +1049,12 @@ server <- function(input, output, session) {
     HTML("<hr>"),
     h4("ICES Advice Basis:"),
     textOutput("ICESAdviceBasis"),
-    #SM updated on Oct 28th 2021 with latest document found. (None for 2020 or 2021)
-    a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2019/2019/Introduction_to_advice_2019.pdf"),
+    #SM updated on Nov 22nd 2021 with latest document found. 
+    a(href=paste0("https://www.ices.dk/sites/pub/Publication%20Reports/Advice/2021/2021/Advice_on_fishing_opportunities.pdf"),
       "Link to description of ICES Advice Basis",target="_blank"),
+    #SM updated on Oct 28th 2021 with latest document found. (None for 2020 or 2021)
+    #a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2019/2019/Introduction_to_advice_2019.pdf"),
+     # "Link to description of ICES Advice Basis",target="_blank"),
     #a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2016/2016/Introduction_to_advice_2016.pdf"),
     #  "Link to description of ICES Advice Basis",target="_blank"),
     HTML("<hr>"),
@@ -1163,6 +1182,8 @@ server <- function(input, output, session) {
     Options <- Options[Options!= "Assessment"]
     Options <- Options[Options!= "ICES Advice"]
     Options <- Options[Options!= "TAC"]
+    # djc 23/11/21 Sort the options alphabetically - shoudl match forecast table then
+    Options <- sort(Options)
     checkboxGroupInput("forecastoptionselection", h3("Select Forecast Options"), as.list(Options) ,
                        inline = TRUE) #, selected = "F = F2017"
   })
@@ -1171,7 +1192,11 @@ server <- function(input, output, session) {
   #  filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
   #})
 
-  mypalette<-primary.colors(length(factor(Forecasting$Basis)))
+  # djc 23/11/21
+  #mypalette<-primary.colors(length(factor(Forecasting$Basis)))
+  mypalette<-primary.colors(length(unique(Forecasting$Basis)))
+  #print(mypalette)
+  
   
   #output$plotforecasting <- renderPlotly({
   output$plotSSB <- renderPlotly({
@@ -1207,6 +1232,11 @@ server <- function(input, output, session) {
     #ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- head(ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5],1)
     # DJC ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5]
     # DJC ssb3[ssb3$Year==2018 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2018 & ssb3$Basis=="ICES Advice",][,5]
+    
+    # djc 23/11/21 Use a defined ordering for the plots to stop the lines changing color
+    myCustomOrder <- unlist(lapply(sbl$Basis, FUN = function(x) switch(x, "Assessment" = 1, "ICES Advice" = 2, "TAC" = 3, 4)))
+    myPlotFactorOrder <- unique(sbl[order(myCustomOrder,sbl$Basis),"Basis"])
+    ssb3$Basis <- factor(ssb3$Basis, levels = myPlotFactorOrder)
     
     p1 <- plot_ly(ssb3, x = ~Year, y = ~value, type = 'scatter', mode = 'lines', showlegend = F, #linetype = ~Basis,
             color = ~Basis, colors=mypalette, height=375) %>% 
@@ -1257,6 +1287,12 @@ server <- function(input, output, session) {
     f1 <- filter(f, Basis %in% c("Assessment", "ICES Advice"))
     f2 <- filter(f, Basis %in% c(input$forecastoptionselection))
     f3 <- rbind(f1,f2) 
+    
+    # djc 23/11/21 Use a defined ordering for the plots to stop the lines changing color
+    myCustomOrder <- unlist(lapply(sbl$Basis, FUN = function(x) switch(x, "Assessment" = 1, "ICES Advice" = 2, "TAC" = 3, 4)))
+    myPlotFactorOrder <- unique(sbl[order(myCustomOrder,sbl$Basis),"Basis"])
+    f3$Basis <- factor(f3$Basis, levels = myPlotFactorOrder)
+    
     p2 <- plot_ly(f3, x = ~Year, y = ~value, type = 'scatter', mode = 'lines', showlegend = F,# linetype = ~Basis,
             color = ~Basis, colors=mypalette, height=375) %>% 
       layout(hovermode="FALSE", #showlegend = TRUE,
@@ -1319,6 +1355,12 @@ server <- function(input, output, session) {
     la1 <- filter(la, Basis %in% c("Assessment", "ICES Advice", "TAC"))
     la2 <- filter(la, Basis %in% c(input$forecastoptionselection))
     la3 <- rbind(la1, la2)
+    
+    # djc 23/11/21 Use a defined ordering for the plots to stop the lines changing color
+    myCustomOrder <- unlist(lapply(sbl$Basis, FUN = function(x) switch(x, "Assessment" = 1, "ICES Advice" = 2, "TAC" = 3, 4)))
+    myPlotFactorOrder <- unique(sbl[order(myCustomOrder,sbl$Basis),"Basis"])
+    la3$Basis <- factor(la3$Basis, levels = myPlotFactorOrder)
+    
     p3 <- plot_ly(la3, x = ~Year, y = ~value, type = 'scatter', mode = 'lines', showlegend = T, #linetype = ~factor(var), 
             color = ~Basis, colors=mypalette, height=375) %>% 
       layout(hovermode="FALSE", #showlegend = TRUE,
@@ -1332,6 +1374,10 @@ server <- function(input, output, session) {
   #Forecasting table
   #~~~~~~~~~~~~~~~~~
   ForecastingTable=read.csv('ForecastOptionsV2.csv', header=TRUE)
+  
+  # djc 23/11/21 Sort to ensure ICES advice is always first for each stock
+  ForecastingTable <- ForecastingTable[order(ForecastingTable$FishStock,ForecastingTable$Options,ForecastingTable$Basis),]
+  
   # DJC Get rid of the X column - we don't need it
   ForecastingTable$X <- NULL
   ForecastingTable=ForecastingTable[,c(1,3,4,5,6,7,10,11,12)]#3 missing)]#
@@ -1590,6 +1636,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                     column(width = 3 ,plotlyOutput("plotF", width = "100%")), 
                                     column(width = 5 ,plotlyOutput("plotLandings", width = "100%"))), HTML("<br><br>"),
                            h3("Annual Catch Options"),
+                           "The first row in the table corresponds to the ICES Advice",p(),
                            tags$head(
                              tags$style("td:nth-child(1) {background: #f2f2f2;}")),
                            tableOutput("Forecasting_Table"),
