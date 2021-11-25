@@ -1373,7 +1373,9 @@ server <- function(input, output, session) {
   
   #Forecasting table
   #~~~~~~~~~~~~~~~~~
-  ForecastingTable=read.csv('ForecastOptionsV2.csv', header=TRUE)
+
+  # djc 15/11/21 - don't convert strings to factors
+  ForecastingTable=read.csv('ForecastOptionsV2.csv', header=TRUE, stringsAsFactors = FALSE)
   
   # djc 23/11/21 Sort to ensure ICES advice is always first for each stock
   ForecastingTable <- ForecastingTable[order(ForecastingTable$FishStock,ForecastingTable$Options,ForecastingTable$Basis),]
