@@ -2332,7 +2332,7 @@ nep.27.7outfu,KeyPoints,2021,Ranges,Not available
 nep.27.7outfu,KeyPoints,2021,Landing Obligation,From 2016. Gear specific high survivability exemption*
 nep.fu.11,KeyPoints,2021,ICES Assessment Category,1 (Quantitative Assessment)
 nep.fu.11,KeyPoints,2021,Management Plan,WWMAP (target); No management plan has been agreed between all the relevant management authorities.
-nep.fu.11,KeyPoints,2021,Advice Basis,"ICES?MSY approach. Catch= 3,853 t"
+nep.fu.11,KeyPoints,2021,Advice Basis,"ICES MSY approach. Catch= 3,853 t"
 nep.fu.11,KeyPoints,2021,FMSY Range Lower,"Total catch= 2,977 t"
 nep.fu.11,KeyPoints,2021,FMSY,"Total catch= 3,853 t"
 nep.fu.11,KeyPoints,2021,FMSY Range Upper,"Total catch= 3,853 t"
@@ -2340,7 +2340,7 @@ nep.fu.11,KeyPoints,2021,Landing Obligation,From 2016. Gear specific high surviv
 nep.fu.11,KeyPoints,2021,MSY Btrigger (million individuals),540
 nep.fu.12,KeyPoints,2021,ICES Assessment Category,1 (Quantitative Assessment)
 nep.fu.12,KeyPoints,2021,Management Plan,WWMAP (target); No management plan has been agreed between all the relevant management authorities.
-nep.fu.12,KeyPoints,2021,Advice Basis,"ICES?MSY approach. Catch= 3,977 t"
+nep.fu.12,KeyPoints,2021,Advice Basis,"ICES MSY approach. Catch= 3,977 t"
 nep.fu.12,KeyPoints,2021,FMSY Range Lower,"Total catch= 3,161 t"
 nep.fu.12,KeyPoints,2021,FMSY,"Total catch= 3,977 t"
 nep.fu.12,KeyPoints,2021,FMSY Range Upper,"Total catch= 3,977 t"
@@ -2349,7 +2349,7 @@ nep.fu.12,KeyPoints,2021,MSY Btrigger (million individuals),1020
 nep.fu.13,KeyPoints,2021,,13 Clyde
 nep.fu.13,KeyPoints,2021,ICES Assessment Category,1 (Quantitative Assessment)
 nep.fu.13,KeyPoints,2021,Management Plan,WWMAP (target); No management plan has been agreed between all the relevant management authorities.
-nep.fu.13,KeyPoints,2021,Advice Basis,"ICES?MSY approach. Catch= 3,607 t"
+nep.fu.13,KeyPoints,2021,Advice Basis,"ICES MSY approach. Catch= 3,607 t"
 nep.fu.13,KeyPoints,2021,FMSY Range Lower,"Catch= 2,364 t"
 nep.fu.13,KeyPoints,2021,FMSY,"Catch= 3,607 t"
 nep.fu.13,KeyPoints,2021,FMSY Range Upper,"Catch= 3,607 t"
@@ -2358,7 +2358,7 @@ nep.fu.13,KeyPoints,2021,MSY Btrigger (million individuals),580
 nep.fu.13,KeyPoints,2021,,13 Jura
 nep.fu.13,KeyPoints,2021,ICES Assessment Category,1 (Quantitative Assessment)
 nep.fu.13,KeyPoints,2021,Management Plan,WWMAP (target); No management plan has been agreed between all the relevant management authorities.
-nep.fu.13,KeyPoints,2021,Advice Basis,ICES?MSY approach. Catch= 628 t
+nep.fu.13,KeyPoints,2021,Advice Basis,ICES MSY approach. Catch= 628 t
 nep.fu.13,KeyPoints,2021,FMSY Range Lower,Catch= 493 t
 nep.fu.13,KeyPoints,2021,FMSY,Catch= 628 t
 nep.fu.13,KeyPoints,2021,FMSY Range Upper,Catch= 628 t
@@ -2387,7 +2387,7 @@ nep.fu.16,KeyPoints,2021,FMSY Range Lower,"Catch= 2,261 t"
 nep.fu.16,KeyPoints,2021,FMSY,"Catch= 2,804 t"
 nep.fu.16,KeyPoints,2021,FMSY Range Upper,"Catch= 2,804 t"
 nep.fu.16,KeyPoints,2021,Landing Obligation,From 2016 Gear specific high survivability exemption*
-nep.fu.16,KeyPoints,2021,MSY Btrigger (million individuals),Not defined
+nep.fu.16,KeyPoints,2021,MSY Btrigger ,Not defined
 nep.fu.17,KeyPoints,2021,ICES Assessment Category,1 (Quantitative Assessment)
 nep.fu.17,KeyPoints,2021,Management Plan,WWMAP (target)
 nep.fu.17,KeyPoints,2021,Advice Basis,Management Plan Catch= 360 t
@@ -2414,7 +2414,7 @@ nep.fu.2021,KeyPoints,2021,Landing Obligation,From 2016. Gear specific high surv
 nep.fu.2021,KeyPoints,2021,MSY Btrigger (million individuals),450
 nep.fu.22,KeyPoints,2021,ICES Assessment Category,1 (Quantitative Assessment)
 nep.fu.22,KeyPoints,2021,Management Plan,WWMAP (target); No management plan has been agreed between all the relevant management authorities.
-nep.fu.22,KeyPoints,2021,Advice Basis,
+nep.fu.22,KeyPoints,2021,Advice Basis,"ICES MSY approach. Catch= 1,257 t"
 nep.fu.22,KeyPoints,2021,FMSY Range Lower,"Catch= 1,008 t"
 nep.fu.22,KeyPoints,2021,FMSY,"Catch= 1,257 t"
 nep.fu.22,KeyPoints,2021,FMSY Range Upper,"Catch= 1,257 t"

@@ -25,7 +25,8 @@ ui <- fluidPage(
                          tabPanel("Organisation of the Stock Book",htmlOutput("Introtext2"),
                                   HTML("<br><br>")),
                          tabPanel("Ireland's TAC", 
-                                  "Ireland's Share of the EU TAC",
+                                  textOutput("TACsubheading"),
+                                  #"Ireland's Share of the EU TAC",
                                   HTML("<br><br>"),
                                   tags$head(tags$style(type="text/css", ".test_type {font-size: 11px;}")),
                                   div(class="test_type", tableOutput("IntroTable")),
@@ -206,8 +207,13 @@ server <- function(input, output, session) {
                              "Est. Value of Irl. Quota", "Est. Value of EU TAC", "Ireland", "Other", "Stock")
   output$IntroTable = renderTable({
     IntroTable1=filter(IntroductionTable, Year==input$year)
-    IntroTable1[,2:6]
-  }, colnames = TRUE, bordered = TRUE,height=1600)#,width = '100%')#, height="50%", width = "60%") 
+    #IntroTable1[,2:6] # now replaced with lines 225 to 229 (SM)
+    
+    ###SM ADDED 2021--> Due to Brexit, the final column is deleted###
+    if(input$year==2021){
+      IntroTable1[,2:5]
+    }else IntroTable1[,2:6]  
+  }, colnames = TRUE, bordered = TRUE,height=1600)#,width = '100%')#, height="50%", width = "60%")
   
   output$Introplot= renderPlot({
     FilterbyYear=filter(IntroductionTable, Year==input$year & Species!="Total")
@@ -226,14 +232,36 @@ server <- function(input, output, session) {
       theme(axis.title.y=element_blank(),
             axis.title.x=element_blank(),
             legend.title=element_blank())
-    p4})
+    p4
+    
+    ###SM ADDED 2021--> Due to Brexit, the plot is deleted###
+    if(input$year==2021){
+      p4=FALSE
+    }
+      
+      })
+  
+  # djc 19/11/2021 Change the TAC sub-heading based on the year selected
+  output$TACsubheading=renderText({
+    if(input$year==2021){
+      paste0(input$year," Irish quota in tonnes and approximate value")
+    } else {
+      "Ireland's Share of the EU TAC"
+    }
+  })
   
   output$TACtext1=renderText({
     paste0("% Share of ", input$year, " EU TAC by Ireland and Other EU members and approximate value of Irish Quota")
+    ###SM ADDED 2021--> Due to Brexit, the heading of the plot is deleted###
+    if(input$year==2021){
+      output$TACtext1=NULL
+    }
   })
   output$TACtext2=renderText({
     paste0("2 Estimated value per tonne based on ", as.numeric(input$year)-1, " average values of Irish landings in Irish ports")
   })
+
+  
   
   #Rationale
   #~~~~~~~~~
@@ -241,6 +269,8 @@ server <- function(input, output, session) {
     paste0(Introduction[3, which(colnames(Introduction)==paste0("X", input$year))])
   })
   
+  #Data Quality
+  #~~~~~~~~~~~~
   output$DataQualitytext <- renderText({
     if(input$year>2017){
       paste0(Introduction[7, which(colnames(Introduction)==paste0("X", input$year))])
@@ -293,7 +323,7 @@ server <- function(input, output, session) {
   })
   output$SustainabilityTabletext <- renderText({
     paste0("Table 4: Stocks with a status change between the ", as.numeric(input$year)-1, 
-           " and ", input$year, " Stock Books.")
+           " and ", input$year, " assessments.") # SM Nov: changed in 2021 from 'Stock Books'
   })
   output$Sustainabilitytable1 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table1.png")
@@ -521,71 +551,86 @@ server <- function(input, output, session) {
     ## 2021 uses a different year range (SM Sep2021)
     if(input$year == "2021"){
       
-      if(input$speciesfilter=="Nephrops"){      
-        paste0("The distribution of international landings of <em>",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2015 - 2019", sep="")
-      }
-      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
-        paste0("The distribution of international landings of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " during 2019", sep="")
-      }
-      else{
-        paste0("The distribution of international landings of ",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2015 - 2019 ", sep="")
-      }
+          if(input$speciesfilter=="Nephrops"){      
+            paste0("The distribution of international landings of <em>",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2015 - 2019", sep="")
+          }
+          else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel" | input$speciesfilter=="Blue Whiting"){      
+            paste0("The distribution of international landings of ", 
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+                   " in 2020", sep="")
+          }
+          #SM added Nov 24th 2021
+          else if(input$speciesfilter=="Boarfish"){      
+            paste0("The distribution of Irish ", 
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+                   " landings in 2020", sep="")
+          }
+      
+      # SM added in Nov 2021
+          else if(input$speciesfilter=="Anglerfish"){      
+            paste0("The distribution of EU landings of ", 
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+                   " between 2015 - 2019 (both species combined)", sep="")
+          }
+          
+          else{
+            paste0("The distribution of international landings of ",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2015 - 2019 ", sep="")
+          }
+          
     } 
     
     
     ## 2020 uses a different year range (SM Nov2020)
     else if(input$year == "2020"){
       
-      if(input$speciesfilter=="Nephrops"){      
-        paste0("The distribution of international landings of <em>",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2015 - 2018", sep="")
-      }
-      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
-        paste0("The distribution of international landings of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " during 2019", sep="")
-      }
-      else{
-        paste0("The distribution of international landings of ",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2015 - 2018 ", sep="")
-      }
+          if(input$speciesfilter=="Nephrops"){      
+            paste0("The distribution of international landings of <em>",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2015 - 2018", sep="")
+          }
+          else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+            paste0("The distribution of international landings of ", 
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+                   " during 2019", sep="")
+          }
+          else{
+            paste0("The distribution of international landings of ",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2015 - 2018 ", sep="")
+          }
     } 
     
     
     ## 2019 uses a different text pattern
     else if(input$year == "2019"){
       
-      if(input$speciesfilter=="Nephrops"){      
-        paste0("The distribution of international landings of <em>",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2012 - 2016", sep="")
-      }
-      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
-        paste0("The distribution of international landings of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " during 2018", sep="")
-      }
-      else{
-        paste0("The distribution of international landings of ",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2012 - 2016 ", sep="")
-      }
+          if(input$speciesfilter=="Nephrops"){      
+            paste0("The distribution of international landings of <em>",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2012 - 2016", sep="")
+          }
+          else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+            paste0("The distribution of international landings of ", 
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+                   " during 2018", sep="")
+          }
+          else{
+            paste0("The distribution of international landings of ",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2012 - 2016 ", sep="")
+          }
     } 
     
     ## 2018 and earlier
     else {
       
-      if(input$speciesfilter=="Nephrops"){      
-        paste0("The distribution of international landings of <em>",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em> during ", 
-               (as.numeric(as.character(input$year))-1), sep="")
-      }else{
-        paste0("The distribution of international landings of ",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " during ", 
-               (as.numeric(as.character(input$year))-1), sep="")
-      }
+          if(input$speciesfilter=="Nephrops"){      
+            paste0("The distribution of international landings of <em>",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em> during ", 
+                   (as.numeric(as.character(input$year))-1), sep="")
+          }else{
+            paste0("The distribution of international landings of ",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " during ", 
+                   (as.numeric(as.character(input$year))-1), sep="")
+          }
     }
   })
   
@@ -616,11 +661,27 @@ server <- function(input, output, session) {
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                "</em> landings by Irish Vessels between 2015 - 2019", sep="")
       } 
-      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel" | input$speciesfilter=="Blue Whiting"){      
         paste0("The distribution of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " landings by Irish Vessels during 2020", sep="")
+               " catches from Irish Vessels in 2020", sep="")
       }
+      
+      #SM added Nov 24th 2021
+      else if(input$speciesfilter=="Boarfish"){      
+        paste0("The distribution of Irish ", 
+               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               " landings between 2018-2020", sep="")
+      }
+      
+      
+      # SM added in Nov 2021
+      else if(input$speciesfilter=="Anglerfish"){      
+        paste0("The distribution of Irish ", 
+               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               " landings between 2015 - 2019 (both species combined)", sep="")
+      }
+      
       else{
         paste0("The distribution of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
@@ -988,9 +1049,12 @@ server <- function(input, output, session) {
     HTML("<hr>"),
     h4("ICES Advice Basis:"),
     textOutput("ICESAdviceBasis"),
-    #SM updated on Oct 28th 2021 with latest document found. (None for 2020 or 2021)
-    a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2019/2019/Introduction_to_advice_2019.pdf"),
+    #SM updated on Nov 22nd 2021 with latest document found. 
+    a(href=paste0("https://www.ices.dk/sites/pub/Publication%20Reports/Advice/2021/2021/Advice_on_fishing_opportunities.pdf"),
       "Link to description of ICES Advice Basis",target="_blank"),
+    #SM updated on Oct 28th 2021 with latest document found. (None for 2020 or 2021)
+    #a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2019/2019/Introduction_to_advice_2019.pdf"),
+     # "Link to description of ICES Advice Basis",target="_blank"),
     #a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2016/2016/Introduction_to_advice_2016.pdf"),
     #  "Link to description of ICES Advice Basis",target="_blank"),
     HTML("<hr>"),
@@ -1118,6 +1182,8 @@ server <- function(input, output, session) {
     Options <- Options[Options!= "Assessment"]
     Options <- Options[Options!= "ICES Advice"]
     Options <- Options[Options!= "TAC"]
+    # djc 23/11/21 Sort the options alphabetically - shoudl match forecast table then
+    Options <- sort(Options)
     checkboxGroupInput("forecastoptionselection", h3("Select Forecast Options"), as.list(Options) ,
                        inline = TRUE) #, selected = "F = F2017"
   })
@@ -1126,7 +1192,11 @@ server <- function(input, output, session) {
   #  filter(Forecasting, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
   #})
 
-  mypalette<-primary.colors(length(factor(Forecasting$Basis)))
+  # djc 23/11/21
+  #mypalette<-primary.colors(length(factor(Forecasting$Basis)))
+  mypalette<-primary.colors(length(unique(Forecasting$Basis)))
+  #print(mypalette)
+  
   
   #output$plotforecasting <- renderPlotly({
   output$plotSSB <- renderPlotly({
@@ -1162,6 +1232,11 @@ server <- function(input, output, session) {
     #ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- head(ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5],1)
     # DJC ssb3[ssb3$Year==2019 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2019 & ssb3$Basis=="ICES Advice",][,5]
     # DJC ssb3[ssb3$Year==2018 & ssb3$Basis=="Assessment",][,5] <- ssb3[ssb3$Year==2018 & ssb3$Basis=="ICES Advice",][,5]
+    
+    # djc 23/11/21 Use a defined ordering for the plots to stop the lines changing color
+    myCustomOrder <- unlist(lapply(sbl$Basis, FUN = function(x) switch(x, "Assessment" = 1, "ICES Advice" = 2, "TAC" = 3, 4)))
+    myPlotFactorOrder <- unique(sbl[order(myCustomOrder,sbl$Basis),"Basis"])
+    ssb3$Basis <- factor(ssb3$Basis, levels = myPlotFactorOrder)
     
     p1 <- plot_ly(ssb3, x = ~Year, y = ~value, type = 'scatter', mode = 'lines', showlegend = F, #linetype = ~Basis,
             color = ~Basis, colors=mypalette, height=375) %>% 
@@ -1212,6 +1287,12 @@ server <- function(input, output, session) {
     f1 <- filter(f, Basis %in% c("Assessment", "ICES Advice"))
     f2 <- filter(f, Basis %in% c(input$forecastoptionselection))
     f3 <- rbind(f1,f2) 
+    
+    # djc 23/11/21 Use a defined ordering for the plots to stop the lines changing color
+    myCustomOrder <- unlist(lapply(sbl$Basis, FUN = function(x) switch(x, "Assessment" = 1, "ICES Advice" = 2, "TAC" = 3, 4)))
+    myPlotFactorOrder <- unique(sbl[order(myCustomOrder,sbl$Basis),"Basis"])
+    f3$Basis <- factor(f3$Basis, levels = myPlotFactorOrder)
+    
     p2 <- plot_ly(f3, x = ~Year, y = ~value, type = 'scatter', mode = 'lines', showlegend = F,# linetype = ~Basis,
             color = ~Basis, colors=mypalette, height=375) %>% 
       layout(hovermode="FALSE", #showlegend = TRUE,
@@ -1274,6 +1355,12 @@ server <- function(input, output, session) {
     la1 <- filter(la, Basis %in% c("Assessment", "ICES Advice", "TAC"))
     la2 <- filter(la, Basis %in% c(input$forecastoptionselection))
     la3 <- rbind(la1, la2)
+    
+    # djc 23/11/21 Use a defined ordering for the plots to stop the lines changing color
+    myCustomOrder <- unlist(lapply(sbl$Basis, FUN = function(x) switch(x, "Assessment" = 1, "ICES Advice" = 2, "TAC" = 3, 4)))
+    myPlotFactorOrder <- unique(sbl[order(myCustomOrder,sbl$Basis),"Basis"])
+    la3$Basis <- factor(la3$Basis, levels = myPlotFactorOrder)
+    
     p3 <- plot_ly(la3, x = ~Year, y = ~value, type = 'scatter', mode = 'lines', showlegend = T, #linetype = ~factor(var), 
             color = ~Basis, colors=mypalette, height=375) %>% 
       layout(hovermode="FALSE", #showlegend = TRUE,
@@ -1286,8 +1373,13 @@ server <- function(input, output, session) {
   
   #Forecasting table
   #~~~~~~~~~~~~~~~~~
+
   # djc 15/11/21 - don't convert strings to factors
   ForecastingTable=read.csv('ForecastOptionsV2.csv', header=TRUE, stringsAsFactors = FALSE)
+  
+  # djc 23/11/21 Sort to ensure ICES advice is always first for each stock
+  ForecastingTable <- ForecastingTable[order(ForecastingTable$FishStock,ForecastingTable$Options,ForecastingTable$Basis),]
+  
   # DJC Get rid of the X column - we don't need it
   ForecastingTable$X <- NULL
   ForecastingTable=ForecastingTable[,c(1,3,4,5,6,7,10,11,12)]#3 missing)]#
@@ -1299,7 +1391,8 @@ server <- function(input, output, session) {
                                "Total Catch (2022)", 
                                "Wanted Catch (2022)", "Unwanted Catch (2022)", 
                                "F total (2022)", "SSB (2023)",
-                               "% SSB change*", "% TAC change**")
+                               "% SSB change*", "% Advice change**")
+  # SM Nov2021: Changed "% TAC change**" to "% Advice change**"
   # SM Oct2021: Updated year dates by +1
   # SM Nov2020: Updated year dates by +1
   # DJC ForecastingTable$Catch...2019=formatC(as.numeric(as.character(ForecastingTable$Catch...2019)), format="d", big.mark=",")
@@ -1435,7 +1528,7 @@ server <- function(input, output, session) {
       list(tabPanel("Species Summary", value="species_summ",
                           h3("Biology"), 
                           fluidRow(column(width = 9, htmlOutput("biology_text")), 
-                                   column(width = 3, imageOutput("display.fish", height = "50%"))),
+                                   column(width = 3, imageOutput("display.fish", height = "50%"))),   
                           h3("Landings Distribution"),
                           if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
                           }else if(input$speciesfilter=="Seabass"){
@@ -1545,11 +1638,13 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                     column(width = 3 ,plotlyOutput("plotF", width = "100%")), 
                                     column(width = 5 ,plotlyOutput("plotLandings", width = "100%"))), HTML("<br><br>"),
                            h3("Annual Catch Options"),
+                           "The first row in the table corresponds to the ICES Advice",p(),
                            tags$head(
                              tags$style("td:nth-child(1) {background: #f2f2f2;}")),
                            tableOutput("Forecasting_Table"),
                            "* SSB 2023 relative to SSB 2022",p(),
-                           "** Landings in 2022 relative to TAC in 2021", HTML("<br><br>")
+                           "** Advice value for 2022 relative to Advice value for 2021", HTML("<br><br>") 
+                           # SM Nov2021: Changed "** Landings in 2022 relative to TAC in 2021" to the above line 
                            # SM Oct2021: Updated year dates by +1 
                            # SM Nov2020: Updated year dates by +1 
                            # DJC"* SSB 2020 relative to SSB 2019",p(),
@@ -1623,7 +1718,10 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   #Ecosystem Overview
   #~~~~~~~~~~~~~~~~~
   output$EcosystemOverview <-renderUI({
-    if(input$year=="2015"){
+    #SM added Nov 2021
+    if(input$year=="2021"){
+      tagList(h3("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2021"))
+    }else if(input$year=="2015"){
       tagList(h3("Ecosystem Overview and Mixed Fisheries was introduced in 2016"))
     }else if(input$year>2016){
       panelsEO= list(
