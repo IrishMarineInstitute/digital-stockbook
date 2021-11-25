@@ -301,22 +301,22 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", height = 700))
   }, deleteFile = FALSE)
 
-  #Summary of Advice
+  #Summary of Advice  # width = 1100
   #~~~~~~~~~~~~~~~~~
   output$AdviceSummtable1 <- renderImage({
     image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table1.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 1100))
+    return(list(src = image_file, filetype = "image/png", width = 550))
   }, deleteFile = FALSE)
   output$AdviceSummtable2 <- renderImage({
     image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table2.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 1100))
+    return(list(src = image_file, filetype = "image/png", width = 550))
   }, deleteFile = FALSE)
   output$AdviceSummtext<- renderText({
     paste0("Marine Institute Summary on the Status, Scientific Advice for ", as.numeric(input$year)+1,
          " for those Stocks of Interest to Ireland")
   })
 
-  #Sustainability
+  #Sustainability #table 3 was width=800
   #~~~~~~~~~~~~~~
   output$Sustainabilitytext <- renderText({
     paste0(Introduction[4, which(colnames(Introduction)==paste0("X", input$year))])
@@ -335,7 +335,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$Sustainabilitytable3 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table3.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 800))
+    return(list(src = image_file, filetype = "image/png", width = 700))
   }, deleteFile = FALSE)
   output$Sustainabilitytable4 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table4.PNG")
@@ -835,8 +835,10 @@ server <- function(input, output, session) {
   output$TACtext <-renderText({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
+    #SM Seabass and Sprat have no Quota pie-chart
     if(input$speciesfilter=="Seabass" | input$speciesfilter=="Sprat"){
       paste0("")
+      
     }else{
     paste0(input$year, " Quota Allocations", sep="")}
   })
