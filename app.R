@@ -830,13 +830,16 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", height = 250))}
   }, deleteFile = FALSE)
 
+ 
+  
   #Pie Chart
   #~~~~~~~~~
   output$TACtext <-renderText({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
     #SM Seabass and Sprat have no Quota pie-chart
-    if(input$speciesfilter=="Seabass" | input$speciesfilter=="Sprat"){
+    #SM Nov 2021: Nephrops has specific Quota titles, so images were snipped from the pdf. The automatic title was therefore hidden.
+    if(input$speciesfilter=="Seabass" | input$speciesfilter=="Sprat" | input$speciesfilter=="Nephrops"){
       paste0("")
       
     }else{
