@@ -571,7 +571,7 @@ server <- function(input, output, session) {
           else if(input$speciesfilter=="Anglerfish"){      
             paste0("The distribution of EU landings of ", 
                    ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-                   " between 2015 - 2019 (both species combined)", sep="")
+                   " between 2015 - 2019 (black and white Anglerfish combined)", sep="")
           }
           
           else{
@@ -679,7 +679,7 @@ server <- function(input, output, session) {
       else if(input$speciesfilter=="Anglerfish"){      
         paste0("The distribution of Irish ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " landings between 2015 - 2019 (both species combined)", sep="")
+               " landings between 2015 - 2019 (black and white Anglerfish combined)", sep="")
       }
       
       else{
@@ -1107,11 +1107,17 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", width = 750))
   }, deleteFile = FALSE)
   
+  #SM Nov 2021: Nephrops cannot be italicised 
   output$Text.ICESStatus <- renderText({
-    paste0(input$speciesfilter, " in ", input$speciesbydiv,
+  paste0(input$speciesfilter, " in ", input$speciesbydiv,
            ". State of Stock and fishery relative to reference points.")
   })
 
+  
+  
+    
+    
+    
   #Quality of Assessment
   #~~~~~~~~~~~~~~~~~~~~~
   output$Text.Quality <- renderText({
@@ -1393,10 +1399,10 @@ server <- function(input, output, session) {
   ForecastingTable$SSB...2023=formatC(as.numeric(as.character(ForecastingTable$SSB...2023)), format="d", big.mark=",")
   colnames(ForecastingTable)=c("FishStock", "Basis", 
                                "Total Catch (2022)", 
-                               "Wanted Catch (2022)", "Unwanted Catch (2022)", 
+                               "Projected Landings (2022)", "Projected Discards (2022)", 
                                "F total (2022)", "SSB (2023)",
                                "% SSB change*", "% Advice change**")
-  # SM Nov2021: Changed "% TAC change**" to "% Advice change**"
+  # SM Nov2021: Changed "% TAC change**" to "% Advice change**", also changed 'Wanted Catch' and 'Unwanted Catch' to 'Projected Landings','Projected Discards'
   # SM Oct2021: Updated year dates by +1
   # SM Nov2020: Updated year dates by +1
   # DJC ForecastingTable$Catch...2019=formatC(as.numeric(as.character(ForecastingTable$Catch...2019)), format="d", big.mark=",")
@@ -1477,16 +1483,16 @@ server <- function(input, output, session) {
   #                      "Whiting Division 7.a (Irish Sea)",
   #                      "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)")
   
-  #SM Note Oct 2021: Have not updated this yet
-  NephropsStock=c("Division 7.a  Functional Unit 14 (Irish Sea  East)", 
-                  "Division 7.a  Functional Unit 15 (Irish Sea  West)",
-                  "Divisions 7.b-c and 7.j-k  Functional Unit 16 (west and southwest of Ireland  Porcupine Bank)",
-                  "Division 7.b  Functional Unit 17 (west of Ireland  Aran grounds)",
-                  "Divisions 7.a  7.g  and 7.j  Functional Unit 19 (Irish Sea  Celtic Sea  eastern part of southwest of Ireland)",
-                  "Divisions 7.g and 7.h  Functional Units 20 and 21 (Celtic Sea)",
-                  "Divisions 7.g and 7.f  Functional Unit 22 (Celtic Sea  Bristol Channel)",
-                  "Subarea 7 - Functional Unit 18 and rectangles outside the functional units (Southern Celtic Seas, Southwest of Ireland)")
-   
+  #SM Note Nov 29th 2021: Updated the following list. (Extra spaces removed in 2021)
+  NephropsStock=c("Division 7.a Functional Unit 14 (Irish Sea East)",
+                  "Division 7.a Functional Unit 15 (Irish Sea West)",
+                  "Divisions 7.b-c and 7.j-k Functional Unit 16 (west and southwest of Ireland Porcupine Bank)",
+                  "Division 7.b Functional Unit 17 (west of Ireland Aran grounds)",
+                  "Divisions 7.a 7.g and 7.j Functional Unit 19 (Irish Sea Celtic Sea eastern part of southwest of Ireland)",
+                  "Divisions 7.g and 7.h Functional Units 20 and 21 (Celtic Sea)",
+                  "Divisions 7.g and 7.f Functional Unit 22 (Celtic Sea Bristol Channel)",
+                  "Subarea 7, outside the Functional Units (southern Celtic Seas, southwest of Ireland)")
+   # this used to be:  "Subarea 7 - Functional Unit 18 and rectangles outside the functional units (Southern Celtic Seas, Southwest of Ireland)")
   
   output$tabstest <- renderUI({
     panels= if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
@@ -1675,44 +1681,53 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                          "FU22 The Smalls"),
                                   column(width = 3 ,
                                          h4("Links to the UWTV Surveys"),
-                                         "No Link Available",p(),
-                                         a(href=paste0(
-                                           if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
-                                           else if(input$year==2017){"http://hdl.handle.net/10793/1333"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1378"}
-                                           else if(input$year==2019){"http://hdl.handle.net/10793/1451"}),"Link to UWTV for FU15",target="_blank"),p(),
-                                           "No Link Available",p(),
+                                         "No Link Available",p(), #FU14
+                                         
+                                         #SM/DC In 2021 the code was changed to reflect FU's that have no links in some years, i.e. FU15, FU19, FU2021 and FU22
+                                      
+                                         if (input$year==2017){a(href="http://hdl.handle.net/10793/1333","Link to UWTV for FU15",target="_blank")}
+                                         else if (input$year==2018){a(href="https://oar.marine.ie/handle/10793/1378","Link to UWTV for FU15",target="_blank")}
+                                         else if (input$year==2019){a(href="http://hdl.handle.net/10793/1451","Link to UWTV for FU15",target="_blank")}
+                                         else{"No Link Available"},p(),
+                                         
+                                         #FU 16 and FU17 are the only ones to have a report published in 2016
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/1185"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1334"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1379"}
                                            else if(input$year==2019){"https://oar.marine.ie/handle/10793/1431"}
-                                           else if(input$year==2020){"http://hdl.handle.net/10793/1655"}),"Link to UWTV for FU16",target="_blank"),p(),
+                                           else if(input$year==2020){"http://hdl.handle.net/10793/1655"}
+                                           else if(input$year==2021){"https://oar.marine.ie/handle/10793/1718"}),"Link to UWTV for FU16",target="_blank"),p(),
                                          a(href=paste0(
                                            if(input$year==2016){"https://oar.marine.ie/handle/10793/1184"}
                                            else if(input$year==2017){"http://hdl.handle.net/10793/1335"}
                                            else if(input$year==2018){"https://oar.marine.ie/handle/10793/1374"}
                                            else if(input$year==2019){"https://oar.marine.ie/handle/10793/1427"}
-                                           else if(input$year==2020){"http://hdl.handle.net/10793/1656"}),"Link to UWTV for FU17",target="_blank"),p(),
-                                         "No Link Available",p(),
-                                         a(href=paste0(
-                                           if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
-                                           else if(input$year==2017){"http://hdl.handle.net/10793/1332"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1375"}
-                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1429"}
-                                           else if(input$year==2020){"http://hdl.handle.net/10793/1654"}),"Link to UWTV for FU19",target="_blank"),p(),
-                                         a(href=paste0(
-                                           if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
-                                           else if(input$year==2017){"http://hdl.handle.net/10793/1330"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1377"}
-                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1430"}
-                                           else if(input$year==2020){"https://oar.marine.ie/handle/10793/1430"}),"Link to UWTV for FU2021",target="_blank"),p(),
-                                         a(href=paste0(
-                                           if(input$year==2016){"https://oar.marine.ie/handle/10793/59/recent-submissions"}
-                                           else if(input$year==2017){"http://oar.marine.ie/handle/10793/1331"}
-                                           else if(input$year==2018){"https://oar.marine.ie/handle/10793/1376"}
-                                           else if(input$year==2019){"https://oar.marine.ie/handle/10793/1428"}
-                                           else if(input$year==2020){"http://hdl.handle.net/10793/1658"}),"Link to UWTV for FU22",target="_blank")
+                                           else if(input$year==2020){"http://hdl.handle.net/10793/1656"}
+                                           else if(input$year==2021){"https://oar.marine.ie/handle/10793/1721"}),"Link to UWTV for FU17",target="_blank"),p(),
+                                         
+                                         "No Link Available",p(), #this lists 'No Link' for outFU
+                                      
+                                         if (input$year==2017){a(href="http://hdl.handle.net/10793/1332","Link to UWTV for FU19",target="_blank")}
+                                         else if (input$year==2018){a(href="https://oar.marine.ie/handle/10793/1375","Link to UWTV for FU19",target="_blank")}
+                                         else if (input$year==2019){a(href="https://oar.marine.ie/handle/10793/1429","Link to UWTV for FU19",target="_blank")}
+                                         else if (input$year==2020){a(href="http://hdl.handle.net/10793/1654","Link to UWTV for FU19",target="_blank")}
+                                         else if (input$year==2021){a(href="https://oar.marine.ie/handle/10793/1722","Link to UWTV for FU19",target="_blank")}
+                                         else{"No Link Available"},p(),
+                                         
+                                         if(input$year==2017){a(href="http://hdl.handle.net/10793/1330","Link to UWTV for FU2021",target="_blank")}
+                                         else if(input$year==2018){a(href="https://oar.marine.ie/handle/10793/1377","Link to UWTV for FU2021",target="_blank")}
+                                         else if(input$year==2019){a(href="https://oar.marine.ie/handle/10793/1430","Link to UWTV for FU2021",target="_blank")}
+                                         else if(input$year==2020){a(href="https://oar.marine.ie/handle/10793/1430","Link to UWTV for FU2021",target="_blank")}
+                                         else if(input$year==2021){a(href="https://oar.marine.ie/handle/10793/1724","Link to UWTV for FU2021",target="_blank")}
+                                         else{"No Link Available"},p(),
+
+                                         if(input$year==2017){a(href="http://oar.marine.ie/handle/10793/1331","Link to UWTV for FU22",target="_blank")}
+                                         else if(input$year==2018){a(href="https://oar.marine.ie/handle/10793/1376","Link to UWTV for FU22",target="_blank")}
+                                         else if(input$year==2019){a(href="https://oar.marine.ie/handle/10793/1428","Link to UWTV for FU22",target="_blank")}
+                                         else if(input$year==2020){a(href="http://hdl.handle.net/10793/1658","Link to UWTV for FU22",target="_blank")}
+                                         else if(input$year==2021){a(href="https://oar.marine.ie/handle/10793/1723","Link to UWTV for FU22",target="_blank")}
+                                         else{"No Link Available"},p(),
                                   )),
                          HTML("<br><br>"))}}
     do.call(tabsetPanel, panels)
