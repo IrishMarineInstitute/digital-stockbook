@@ -301,15 +301,15 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", height = 700))
   }, deleteFile = FALSE)
 
-  #Summary of Advice  # width = 1100
+  #Summary of Advice  #original width (too big)--> # width = 1100
   #~~~~~~~~~~~~~~~~~
   output$AdviceSummtable1 <- renderImage({
     image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table1.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 550))
+    return(list(src = image_file, filetype = "image/png", width = 825))
   }, deleteFile = FALSE)
   output$AdviceSummtable2 <- renderImage({
     image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table2.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 550))
+    return(list(src = image_file, filetype = "image/png", width = 825))
   }, deleteFile = FALSE)
   output$AdviceSummtext<- renderText({
     paste0("Marine Institute Summary on the Status, Scientific Advice for ", as.numeric(input$year)+1,
@@ -335,7 +335,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$Sustainabilitytable3 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table3.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 700))
+    return(list(src = image_file, filetype = "image/png", width = 800))
   }, deleteFile = FALSE)
   output$Sustainabilitytable4 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table4.PNG")
@@ -1625,7 +1625,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                               fluidRow(column(width = 4, imageOutput("display.SSB_Hist")),
                                                        column(width = 4, imageOutput("display.Fish_Mort")),
                                                        column(width = 4, imageOutput("display.Recruit_Hist"))))),
-                         "*Images may be missing due to ICES Stock Data Category or Frequency of Advice",p(),
+                         "*Images may be missing due to ICES Stock Data Category or Frequency of Advice.Some tables/graphs may be missing because they are not available for all stocks",p(),
                          textOutput("ices_ref"),
                          HTML("<br><br>"))}
   
