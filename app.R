@@ -1113,9 +1113,6 @@ server <- function(input, output, session) {
            ". State of Stock and fishery relative to reference points.")
   })
 
-  
-  
-    
     
     
   #Quality of Assessment

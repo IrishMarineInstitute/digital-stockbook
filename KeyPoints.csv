@@ -2224,10 +2224,10 @@ had.27.6b,KeyPoints,2021,FMSY Range Upper,"Catch= 8,944 t"
 had.27.6b,KeyPoints,2021,Landing Obligation,From 2016. No derogations or exemptions
 had.27.7a,KeyPoints,2021,ICES Assessment Category,1 (Quantitative Assessment)
 had.27.7a,KeyPoints,2021,Management Plan,WWMAP (target); No management plan has been agreed between all the relevant management authorities.
-had.27.7a,KeyPoints,2021,Advice Basis,"MSY approach. Catch= 2,761 t"
-had.27.7a,KeyPoints,2021,FMSY Range Lower,"Catch= 2,044 t"
-had.27.7a,KeyPoints,2021,FMSY,"Catch= 2,761 t"
-had.27.7a,KeyPoints,2021,FMSY Range Upper,"Catch= 3,346 t"
+had.27.7a,KeyPoints,2021,Advice Basis,"MSY approach. Catch= 3,038 t"
+had.27.7a,KeyPoints,2021,FMSY Range Lower,"Catch= 2,245 t"
+had.27.7a,KeyPoints,2021,FMSY,"Catch= 3,038 t"
+had.27.7a,KeyPoints,2021,FMSY Range Upper,"Catch= 3,689 t"
 had.27.7a,KeyPoints,2021,Landing Obligation,From 2016. Specific technical measures in 7a under the landings obligation plan*
 had.27.7b-k,KeyPoints,2021,ICES Assessment Category,1 (Quantitative Assessment)
 had.27.7b-k,KeyPoints,2021,Management Plan,WWMAP (target); No management plan has been agreed between all the relevant management authorities.
@@ -2586,3 +2586,5 @@ nep.fu.19,Footnotes,2021,"* Described below under Key Stock Considerations, deta
 nep.fu.2021,Footnotes,2021,"* Described below under Key Stock Considerations, details in (EU 2020/2015).",
 nep.fu.22,Footnotes,2021,"* Described below under Key Stock Considerations, details in (EU 2020/2015).",
 whg.27.7b-ce-k,Footnotes,2021,"* The de minimis exemption, caught using bottom trawls and seines with mesh &#8805 80mm, pelagic trawls and beam trawls with mesh 80-119 mm and requiring reporting to STECF (EU 2020/2015).",
+,,,,
+,,,,
