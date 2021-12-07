@@ -893,7 +893,7 @@ server <- function(input, output, session) {
   #~~~~~
   output$Stockbooklink <-renderUI({
     if(input$year==2021){
-      a(href=paste0("http:"),
+      a(href=paste0("http://hdl.handle.net/10793/1726"),
         "The Stock Book 2021",target="_blank")
     }else if(input$year==2020){
       a(href=paste0("http://hdl.handle.net/10793/1660"),
