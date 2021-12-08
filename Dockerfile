@@ -27,6 +27,7 @@ COPY IntroductionTable.csv /srv/shiny-server/stockbook/
 COPY KeyPoints.csv /srv/shiny-server/stockbook/
 COPY ManagementAdvice.csv /srv/shiny-server/stockbook/
 COPY MixedFish.csv /srv/shiny-server/stockbook/
+COPY ExtraChapters.csv /srv/shiny-server/stockbook/
 COPY README.md /srv/shiny-server/stockbook/
 
 EXPOSE 3838
