@@ -66,6 +66,12 @@ ui <- fluidPage(
                        imageOutput("Sustainabilitytable4", height="100%"), HTML("<br>")),
               tabPanel("Ecosystem Overview", uiOutput("EcosystemOverview"),
                        HTML("<br><br>")),
+              tabPanel("Recent Ecosystem Advice", uiOutput("RecentAdvice"),
+                       HTML("<br><br>")),
+              tabPanel("Brexit Impacts", htmlOutput("Brexit_Text")),
+              tabPanel("Covid Response", htmlOutput("AtSea2020"), p(), HTML("<br>"),
+                       imageOutput("AtSea2020_1", height="100%"),
+                       "Figure 1. At sea Self-Sampling Datasheet",HTML("<br><br>")),
               tabPanel("Stock Advice", value="StockAdvice_tab",
                        sidebarLayout(fluidRow(column(3,uiOutput("speciesSelector")),
                                               column(5,uiOutput("DescSelector"))),
@@ -99,7 +105,6 @@ server <- function(input, output, session) {
   ICEStable$SpeciesByDiv <- trimws(ICEStable$SpeciesByDiv)
   Speciesfilter <- unique(ICEStable$Fish)
 
-  
   
   ## Read parameter strings from the URL and change the selection appropriately
   observe({
@@ -180,10 +185,7 @@ server <- function(input, output, session) {
                           choices= availableYears,
                           selected= yearURLParameter )
       }
-      
     }
-    
-      
   })
   
   
@@ -209,9 +211,9 @@ server <- function(input, output, session) {
     IntroTable1=filter(IntroductionTable, Year==input$year)
     #IntroTable1[,2:6] # now replaced with lines 225 to 229 (SM)
     
-    ###SM ADDED 2021--> Due to Brexit, the final column is deleted###
+    ###SM ADDED 2021--> Due to Brexit, the final two columns are deleted###
     if(input$year==2021){
-      IntroTable1[,2:5]
+      IntroTable1[,2:4]
     }else IntroTable1[,2:6]  
   }, colnames = TRUE, bordered = TRUE,height=1600)#,width = '100%')#, height="50%", width = "60%")
   
@@ -354,6 +356,7 @@ server <- function(input, output, session) {
   
   #Mixed Fisheries Outputs
   #~~~~~~~~~~~~~~~~~~~~~~~
+  #TEXT
   MixedFish=read.csv('MixedFish.csv', header=TRUE)
   output$SummaryText <- renderText({
     paste0(MixedFish[1, which(colnames(MixedFish)==paste0("X", input$year))])
@@ -371,6 +374,88 @@ server <- function(input, output, session) {
     paste0(MixedFish[5, which(colnames(MixedFish)==paste0("X", input$year))])
   }) 
   
+  ## 2021 'MixedFish' Text: tab in Ecosystem Overview section. Extra cells for control over long text## (SM)
+  output$MixedFish_1 <-renderText({
+    paste0(MixedFish[6, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  output$MixedFish_2 <-renderText({
+    paste0(MixedFish[7, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  output$MixedFish_3 <-renderText({
+    paste0(MixedFish[8, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  output$MixedFish_4 <-renderText({
+    paste0(MixedFish[9, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  output$MixedFish_5 <-renderText({
+    paste0(MixedFish[10, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  output$MixedFish_6 <-renderText({
+    paste0(MixedFish[11, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  
+  ## 2021 'Fisheries Overview' Text: tab in Ecosystem Overview section. ## SM 
+  output$Fisheries_1 <-renderText({
+    paste0(MixedFish[12, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  
+  #IMAGES
+  ##Ecosystem Overview IMAGES ## 
+  ## 2021 IMAGES for the new MixedFish tab, in 2021 Ecosystems Section
+  output$MF_Fig1_caption <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig1_caption.png")
+    return(list(src = image_file, filetype = "image/png", height = 400))
+  }, deleteFile = FALSE)
+  output$MF_Fig2_caption <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig2_caption.png")
+    return(list(src = image_file, filetype = "image/png", height = 400))
+  }, deleteFile = FALSE)
+  output$MF_Fig3_caption <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig3_caption.png")
+    return(list(src = image_file, filetype = "image/png"))
+  }, deleteFile = FALSE)
+  output$MF_Fig4_caption <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig4_caption.png")
+    return(list(src = image_file, filetype = "image/png", height = 400))
+  }, deleteFile = FALSE)
+  output$MF_Fig5 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig5.png")
+    return(list(src = image_file, filetype = "image/png", height = 255))
+  }, deleteFile = FALSE)
+  output$MF_Tbl1 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl1.png")
+    return(list(src = image_file, filetype = "image/png", height = 400))
+  }, deleteFile = FALSE)
+  output$MF_Tbl2 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl2.png")
+    return(list(src = image_file, filetype = "image/png", height = 175))
+  }, deleteFile = FALSE)
+  output$MF_Tbl3 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl3.png")
+    return(list(src = image_file, filetype = "image/png", height = 400))
+  }, deleteFile = FALSE)
+  output$MF_Tbl4 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl4.png")
+    return(list(src = image_file, filetype = "image/png", height = 400))
+  }, deleteFile = FALSE)
+  output$MF_Tbl5 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl5.png")
+    return(list(src = image_file, filetype = "image/png", height = 300))
+  }, deleteFile = FALSE)
+  output$MF_Tbl6 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl6.png")
+    return(list(src = image_file, filetype = "image/png", height = 300))
+  }, deleteFile = FALSE)
+  output$MF_Tbl7 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl7.png")
+    return(list(src = image_file, filetype = "image/png", height = 200))
+  }, deleteFile = FALSE)
+  output$MF_Tbl8 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl8.png")
+    return(list(src = image_file, filetype = "image/png", height = 200))
+  }, deleteFile = FALSE)
+
+  ## Specific Images ##
   output$SurfaceArea <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/SurfaceArea.png")
     return(list(src = image_file, filetype = "image/png", height = 300))
@@ -392,33 +477,7 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", height = 550))
   }, deleteFile = FALSE)
   
-  ## 2017 Specific ##
-  output$guild2017 <- renderImage({
-    image_file <- paste0("www/MixedFisheries/2017/cs_guild.png")
-    return(list(src = image_file, filetype = "image/png", width = 650))
-  }, deleteFile = FALSE)
-  output$D3table <- renderImage({
-    image_file <- paste0("www/MixedFisheries/2017/D3TablePart1.png")
-    return(list(src = image_file, filetype = "image/png", width = 550))
-  }, deleteFile = FALSE)
-  output$D3table2 <- renderImage({
-    image_file <- paste0("www/MixedFisheries/2017/D3TablePart2.png")
-    return(list(src = image_file, filetype = "image/png", width = 550))
-  }, deleteFile = FALSE)
-  output$D3results1 <- renderImage({
-    image_file <- paste0("www/MixedFisheries/2017/Results1.png")
-    return(list(src = image_file, filetype = "image/png", width = 600))
-  }, deleteFile = FALSE)
-  output$D3results2 <- renderImage({
-    image_file <- paste0("www/MixedFisheries/2017/Results2.png")
-    return(list(src = image_file, filetype = "image/png", width = 600))
-  }, deleteFile = FALSE)
-  output$D3results3 <- renderImage({
-    image_file <- paste0("www/MixedFisheries/2017/Results3.png")
-    return(list(src = image_file, filetype = "image/png", width = 600))
-  }, deleteFile = FALSE)
-  
-  ## 2018 Specific ##
+  ## 2018 Specific Images ##
   output$D3table1a <- renderImage({
     image_file <- paste0("www/MixedFisheries/2018/D3Table1a.PNG")
     return(list(src = image_file, filetype = "image/png", width = 550))
@@ -444,19 +503,38 @@ server <- function(input, output, session) {
     return(list(src = image_file, filetype = "image/png", width = 550))
   }, deleteFile = FALSE)
   
-  ## Mixed Fisheries ##
-  output$MixedFish_1 <-renderText({
-    paste0(MixedFish[6, which(colnames(MixedFish)==paste0("X", input$year))])
-  })
-  output$MixedFish_2 <-renderText({
-    paste0(MixedFish[7, which(colnames(MixedFish)==paste0("X", input$year))])
-  })
   output$MixedFishimage <- renderImage({
     image_file <- paste0("www/MixedFisheries/", input$year, "/MixedFish.PNG")
     return(list(src = image_file, filetype = "image/png", height = 250))
   }, deleteFile = FALSE)
   
-  ## 2016 Specific ##
+  ## 2017 Specific Images ##
+  output$guild2017 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/2017/cs_guild.png")
+    return(list(src = image_file, filetype = "image/png", width = 650))
+  }, deleteFile = FALSE)
+  output$D3table <- renderImage({
+    image_file <- paste0("www/MixedFisheries/2017/D3TablePart1.png")
+    return(list(src = image_file, filetype = "image/png", width = 550))
+  }, deleteFile = FALSE)
+  output$D3table2 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/2017/D3TablePart2.png")
+    return(list(src = image_file, filetype = "image/png", width = 550))
+  }, deleteFile = FALSE)
+  output$D3results1 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/2017/Results1.png")
+    return(list(src = image_file, filetype = "image/png", width = 600))
+  }, deleteFile = FALSE)
+  output$D3results2 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/2017/Results2.png")
+    return(list(src = image_file, filetype = "image/png", width = 600))
+  }, deleteFile = FALSE)
+  output$D3results3 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/2017/Results3.png")
+    return(list(src = image_file, filetype = "image/png", width = 600))
+  }, deleteFile = FALSE)
+  
+  ## 2016 Specific Images ##
   output$IrishSea <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IrishSea-Pressure-State.png")
     return(list(src = image_file, filetype = "image/png", height = 350))
@@ -489,6 +567,47 @@ server <- function(input, output, session) {
     image_file <- paste0("www/MixedFisheries/2016/DistSpecies-F-SSB.png")
     return(list(src = image_file, filetype = "image/png", height = 350))
   }, deleteFile = FALSE)
+  
+  #2021 Extra Chapters Added: Recent Advice, Brexit Impacts, AtSea2020 Outputs
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ExtraChapters=read.csv('ExtraChapters.csv', header=TRUE)
+  output$Recent_Beginning <- renderText({
+    paste0(ExtraChapters[1, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  })
+  output$Recent_Middle <- renderText({
+    paste0(ExtraChapters[2, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  })
+  output$Recent_End<- renderText({
+    paste0(ExtraChapters[3, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  })  
+  # output$Brexit_Text<- renderText({
+  #   paste0(ExtraChapters[4, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  # }) 
+  output$AtSea2020<- renderText({
+    paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  }) 
+  output$AtSeaFootnote<- renderText({
+    paste0(ExtraChapters[6, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  }) 
+  
+  #2021 Specific - IMAGES added for the three extra chapters
+  output$RecentAdvice1 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice1.png")
+    return(list(src = image_file, filetype = "image/png", height = 350))
+  }, deleteFile = FALSE)
+  output$RecentAdviceColours <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdviceColours.png")
+    return(list(src = image_file, filetype = "image/png", height = 50))
+  }, deleteFile = FALSE)
+  output$RecentAdvice2 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice2.png")
+    return(list(src = image_file, filetype = "image/png", height = 350))
+  }, deleteFile = FALSE)
+  output$AtSea2020_1 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/AtSea2020_1.png")
+    return(list(src = image_file, filetype = "image/png", height = 700))
+  }, deleteFile = FALSE)
+  
   
   # Code moved to the start of the server function because we need it to handle URL parameters
   # ####################
@@ -1732,14 +1851,17 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   })
   
   #Ecosystem Overview
-  #~~~~~~~~~~~~~~~~~
+  #~~~~~~~~~~~~~~~~~~~
   output$EcosystemOverview <-renderUI({
     #SM added Nov 2021
-    if(input$year=="2021"){
-      tagList(h3("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2021"))
-    }else if(input$year=="2015"){
+    # if(input$year=="2021"){
+    #   tagList(h3("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2021"))
+    #}else 
+    if(input$year=="2015"){
       tagList(h3("Ecosystem Overview and Mixed Fisheries was introduced in 2016"))
-    }else if(input$year>2016){
+    }
+    #}else if(input$year>2016){  #changed this is 2021 to facilitate the changed format for that year - three tabs
+    else if(input$year==2017 |input$year==2018 |input$year==2019 |input$year==2020 |input$year==2021){  
       panelsEO= list(
                   tabPanel("Ecosystem Overview",
                            h2("Ecosystem Overview"),
@@ -1754,7 +1876,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                            (SSB to Bmsy trigger ratio) by fish guild. Mean F and mean SSB is by total number of 
                            stocks with reference points."))
       panelsD3MF= list(
-        tabPanel("D3 Assessment", 
+                  tabPanel("D3 Assessment", 
                            htmlOutput("D3summ"),
                            htmlOutput("D3text"),p(),
                           if(input$year==2017){
@@ -1818,10 +1940,56 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                            htmlOutput("MixedFish_1"),
                            htmlOutput("MixedFish_2"),
                            imageOutput("MixedFishimage", height="50%"), HTML("<br><br>")))
+      #SM: Inserted for 2021 as the Ecosystems tab above was linked to D3 also
+      panelsEO_MF= list(
+        
+        tabPanel("Fisheries Overview",
+                 htmlOutput("Fisheries_1")),        
+        
+        tabPanel("Mixed Fisheries",
+                 list(   htmlOutput("MixedFish_1"),
+                         htmlOutput("MixedFish_2"),
+                         fluidRow( column(width = 6, imageOutput("MF_Fig1_caption",height = "50%")),
+                                   column(width = 6, imageOutput("MF_Fig2_caption", height="50%"))), 
+                         HTML("<br><br>"),
+                         htmlOutput("MixedFish_3"),
+                         fluidRow( column(width = 6, imageOutput("MF_Tbl1",height = "50%"))), 
+                         imageOutput("MF_Tbl2", height="50%"),
+                         HTML("<br><br>"),
+                         fluidRow( column(width = 6, imageOutput("MF_Tbl3",height = "40%")), 
+                                   column(width = 6, imageOutput("MF_Tbl4", height="50%"))),
+                         HTML("<br><br>"),
+                         fluidRow( column(width = 10, imageOutput("MF_Fig3_caption", height="90%"))),
+                         #imageOutput("MF_Fig3_caption", height="400px"),
+                         HTML("<br><br>"),
+                         fluidRow( column(width = 5, imageOutput("MF_Fig4_caption")), 
+                                   column(width = 6, imageOutput("MF_Fig5"))),
+                         HTML("<br><br>"),
+                         fluidRow( column(width = 5, imageOutput("MF_Tbl5",height = "50%")), 
+                                   column(width = 7, imageOutput("MF_Tbl6", height="50%"))),
+                         HTML("<br><br>"),
+                         htmlOutput("MixedFish_4"),         
+                         fluidRow( column(width = 6, imageOutput("MF_Tbl7",height = "25%")), 
+                                   column(width = 6, imageOutput("MF_Tbl8", height="25%"))),
+                         htmlOutput("MixedFish_5"), 
+                         htmlOutput("MixedFish_6") 
+                 )), #end of list and tab panel 'Mixed Fisheries'
+        
+        tabPanel("Ecosystem Overview",
+                 htmlOutput("SummaryText")))  # end of 'panelsEO_MF'
       
-      panelstest=if(input$year>=2018 ){panelsD3MF}else{c(panelsEO, panelsD3MF)}#changed in 2020 
+      
+      #this was the code in 2020. Needed to be changed for 2021
+      #panelstest=if(input$year>=2018 ){panelsD3MF}else{c(panelsEO, panelsD3MF)}#changed in 2020 
+      #do.call(tabsetPanel, panelstest)
+      
+      panelstest=if(input$year==2021) {c(panelsEO_MF)}
+      else if(input$year==2018 |input$year==2019 |input$year==2020 )
+      {panelsD3MF}
+      else if(input$year==2017) {c(panelsEO, panelsD3MF)}#changed in 2020 
       
       do.call(tabsetPanel, panelstest)
+      
   }else if(input$year=="2016"){
     tagList(h2("Ecosystem Overview & Mixed Fisheries"),
     h3("Summary"),
@@ -1857,7 +2025,44 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     h5("Link to the ICES Advice pdf:"), 
     a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2016/2016/mix-celt.pdf"),
       "2016 ICES Advice for Mixed Fisheries",target="_blank"))}
+      
+  })#closing brackets of output$EcosystemOverview <-renderUI({
+  
+  
+  #EXTRA CHAPTERS ADDED IN 2021
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  output$RecentAdvice <-renderUI({
+    if(input$year<2021){
+      tagList(h3("Recent Advice on Ecosystem Services and Effects was introduced in 2021"))
+    }
+    else if(input$year==2021){
+      tagList(
+        fluidRow(column(width = 10, htmlOutput("Recent_Beginning")),
+                 column(width = 10, imageOutput("RecentAdvice1",height = "50%"),
+                        "Figure 1. Average Swept Area Ratio (SAR) between 2013-2018 for the waters around Ireland"),
+                 column(width = 10, imageOutput("RecentAdviceColours",height = "50%"))),
+        htmlOutput("Recent_Middle"),
+        fluidRow(column(width = 5, imageOutput("RecentAdvice2", height="50%"),
+                        "Figure 2. New VME habitat and indicator records for the Irish continental slope and Porcupine Bank and Seabight within EU waters. 
+                            Note that other existing VME records from the VME database are not displayed for this area. In addition, it is not possible to spatially resolve all records in the map due to their close proximity.
+                                 The Belgica Mound Province SAC is shown as the furthest south SAC in the Irish EEZ between the 600-1000 m depth contours.")),
+        htmlOutput("Recent_End"),
+      )                             # end of taglist
+    }                                  #end of 2021 content
+  })                                  # end of output$RecentAdvice
+  
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+  output$Brexit_Text <- renderText({
+    if(input$year<2021){
+      tagList(h3("Brexit Impacts on Fisheries Management, Science and Advice was introduced in 2021"))
+    }else if(input$year==2021){
+      paste0(ExtraChapters[4, which(colnames(ExtraChapters)==paste0("X", input$year))])
+    }
+    
   })
-}
+  
+  #The 'Covid Response' section is dealt with in the set up at line 72
+  
+} #closing bracket of server <- function(input, output, session) {     (line 87)
 
 shinyApp(ui, server)
