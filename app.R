@@ -64,7 +64,7 @@ ui <- fluidPage(
                        imageOutput("Sustainabilitytable3", height="100%"),HTML("<br>"),
                        textOutput("SustainabilityTabletext"),
                        imageOutput("Sustainabilitytable4", height="100%"), HTML("<br>")),
-              tabPanel("Ecosystem Overview", uiOutput("EcosystemOverview"),
+              tabPanel("Overviews and Mixed Fisheries", uiOutput("OverviewsAndMF"),
                        HTML("<br><br>")),
               tabPanel("Recent Ecosystem Advice", uiOutput("RecentAdvice"),
                        HTML("<br><br>")),
@@ -448,7 +448,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$MF_Tbl7 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl7.png")
-    return(list(src = image_file, filetype = "image/png", height = 200))
+    return(list(src = image_file, filetype = "image/png", height = 190))
   }, deleteFile = FALSE)
   output$MF_Tbl8 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl8.png")
@@ -1546,11 +1546,12 @@ server <- function(input, output, session) {
   colnames = TRUE, bordered = TRUE)
   
   # djc 15/11/21 - Fixed some issues with spaces
+  # removed these tabs due to no data: "Cod Division 6.a (West of Scotland)", "Spurdog Sub-areas 1-14",
   ForecastingStocks= c("Seabass Divisions 4.b-c 7.a and 7.d-h (central and southern North Sea Irish Sea English Channel Bristol Channel and Celtic Sea)",
                        "Cod Subareas 1 and 2 (Northeast Arctic)",
-                       "Cod Division 6.a (West of Scotland)",
+                       
                        "Cod Divisions 7.e-k (eastern English Channel and southern Celtic Seas)",
-                       "Spurdog Sub-areas 1-14",
+                       
                        "Haddock Subarea 4 Division 6.a and Subdivision 20 (North Sea West of Scotland Skagerrak)",
                        "Haddock Division 6.b (Rockall)",
                        "Haddock Division7.a (Irish Sea)",
@@ -1852,7 +1853,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   
   #Ecosystem Overview
   #~~~~~~~~~~~~~~~~~~~
-  output$EcosystemOverview <-renderUI({
+  output$OverviewsAndMF <-renderUI({
     #SM added Nov 2021
     # if(input$year=="2021"){
     #   tagList(h3("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2021"))
@@ -1954,6 +1955,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                          HTML("<br><br>"),
                          htmlOutput("MixedFish_3"),
                          fluidRow( column(width = 6, imageOutput("MF_Tbl1",height = "50%"))), 
+                         HTML("<br><br>"),
                          imageOutput("MF_Tbl2", height="50%"),
                          HTML("<br><br>"),
                          fluidRow( column(width = 6, imageOutput("MF_Tbl3",height = "40%")), 
@@ -2026,7 +2028,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     a(href=paste0("http://www.ices.dk/sites/pub/Publication%20Reports/Advice/2016/2016/mix-celt.pdf"),
       "2016 ICES Advice for Mixed Fisheries",target="_blank"))}
       
-  })#closing brackets of output$EcosystemOverview <-renderUI({
+  })#closing brackets of output$OverviewsAndMF <-renderUI({
   
   
   #EXTRA CHAPTERS ADDED IN 2021
