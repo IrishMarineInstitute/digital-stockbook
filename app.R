@@ -962,12 +962,23 @@ server <- function(input, output, session) {
   output$ValueText <- renderText({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
-    if(input$speciesfilter=="Nephrops"){      
+    ## 2022 uses landings instead of values (SM Oct2022)
+    ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    if(input$year == "2022" && input$speciesfilter=="Nephrops"){      
+      paste0("A historical view of <em>", 
+             ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+             "</em> landings", sep="")
+      
+    }else if(input$speciesfilter=="Nephrops"){      
       paste0("A historical view of the value of <em>", 
              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
              "</em> landings", sep="")
-    }else{
-      paste0("A historical view of the value of ", 
+      
+    }else if(input$year == "2022"){
+      paste0("A historical view of ", 
+             ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+             " landings.", sep="")
+    }else{paste0("A historical view of the value of ", 
              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
              " landings.", sep="")
     }
@@ -979,6 +990,8 @@ server <- function(input, output, session) {
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     #image_file <- paste0("www/LandingsByDivision/", input$year, "/",
     #                    ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Fish"],".png")
+    
+    
     image_file <- paste0("www/LandingsByDivision/", input$year, "/",
                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"],".png")
     return(list(src = image_file, filetype = "image/png", height = 300))
@@ -996,15 +1009,32 @@ server <- function(input, output, session) {
   
  
   #####################
-  # Adding MI Summary #
+  # Adding MI Summary #  
   #####################
   output$display.assarea <- renderImage({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     #image_file <- paste0("www/maps/",ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],
     #                    ".png", sep="")
+    
+    #image_file <- paste0("")
+    #image_file <- "" 
+    
+    ## 2022 shows an image of this years pdf page, rather than the TAC map (SM Oct2022)
+  if(input$year == "2022"){
+    image_file <- paste0("www/StockbookSummary/", input$year, "/",
+                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png", sep="")
+    return(list(src = image_file, filetype = "image/png", height = 700))}
+    
+    # ## 2022 shows an image of this years pdf page, rather than the TAC map (SM Oct2022)
+    # if(input$year == "2022"){
+    #   image_file <- paste0("www/StockbookSummaryDocs/", input$year, "/", 
+    #                        ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png", sep="")
+    #   return(list(src = image_file, filetype = "document/pdf", height = 700))}
+  
+  else{
     image_file <- paste0("www/maps/",ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],
                          ".png", sep="")
-    return(list(src = image_file, filetype = "image/png", height = 250))
+    return(list(src = image_file, filetype = "image/png", height = 250))}
   }, deleteFile = FALSE)
   
   
@@ -1091,34 +1121,22 @@ server <- function(input, output, session) {
   
   
   
-  # #2022 Addition: LINK TO PDF PAGE
-  # #~~~~~~~~~~~~~~~~
-  # KeyPoints=read.csv("LinkToPDFpages.csv", header=TRUE)
-  # output$KPtable = renderTable({
-  #   # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #   
-  #   
-  #   if(input$year==2015){
-  #     paste0("There was no Key Points table in the 2015 Stock Book")
-  #   }else{
-  #     KPFilter=filter(KeyPoints, Year==input$year & 
-  #                       Group == "KeyPoints" &
-  #                       FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
-  #     KPFilter[,4:5]}
-  # }, colnames = FALSE, bordered = TRUE) 
-  # 
-  # output$KPtableFootnote = renderText({
-  #   # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #   
-  #   KPFilter=filter(KeyPoints, Year==input$year & 
-  #                     Group == "Footnotes" &
-  #                     FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
-  #   paste0(KPFilter[,4])
-  # }) 
-  
-  
   #Links
-  #~~~~~
+  #~~~~~  
+  #Added 2022 for individual MI Stockbook Summary pages in the main pdf (MI post plenary) SM Oct2022
+    output$SummaryPageLink <-renderUI({
+    
+    if(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
+                 paste0("ICESCode",input$year, sep="")]=="Not Available"){
+      paste0("No Summary Page is available")
+    }else{
+      a(href=paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
+                              paste0("PDFpage",input$year, sep="")]),
+        "Stockbook Summary PDF page",target="_blank")}
+  })
+
+
+
   output$Stockbooklink <-renderUI({
     if(input$year==2022){
       a(href=paste0("http://hdl.handle.net/10793/1726"), #THIS IS THE 2021 LINK UNTIL THE 2022 LINK IS READY
@@ -1576,7 +1594,7 @@ server <- function(input, output, session) {
     # SM Oct2021: Changed 2020 to 2021
     # SM Nov2020: Changed 2019 to 2020
     # DJC if(dim(la[la$Year==2018 & la$Basis=="Assessment",])[1]==0){
-      la2021= data.frame(FishStock=la[1,1], Year=2022, Basis="Assessment", 
+      la2022= data.frame(FishStock=la[1,1], Year=2022, Basis="Assessment", 
                          var="Landings", value=la[la$Year==2022 & la$Basis=="ICES Advice",][,5])
       la=rbind(la, la2022)
       # SM Sep2022: Changed 2021 to 2022
@@ -1671,12 +1689,13 @@ server <- function(input, output, session) {
   # djc 15/11/21 - Fixed some issues with spaces
   # removed these tabs due to no data: "Cod Division 6.a (West of Scotland)", "Spurdog Sub-areas 1-14",
   ForecastingStocks= c("Seabass Divisions 4.b-c 7.a and 7.d-h (central and southern North Sea Irish Sea English Channel Bristol Channel and Celtic Sea)",
-                       "Cod Subareas 1 and 2 (Northeast Arctic)",
-                       
+                       #"Cod Subareas 1 and 2 (Northeast Arctic)",
+                       "Cod Division 6.a (West of Scotland)",
+                       "Cod Division 7.a (Irish Sea)",
                        "Cod Divisions 7.e-k (eastern English Channel and southern Celtic Seas)",
-                       
+                       "Spurdog Sub-areas 1-14",
                        "Haddock Subarea 4 Division 6.a and Subdivision 20 (North Sea West of Scotland Skagerrak)",
-                       "Haddock Division 6.b (Rockall)",
+                       
                        "Haddock Division7.a (Irish Sea)",
                        "Haddock Divisions 7.b-k (southern Celtic Seas and English Channel)",
                        "Herring Subareas 1 2 5 and Divisions 4.a and 14.a (the Northeast Atlantic and Arctic Ocean)",
@@ -1693,7 +1712,7 @@ server <- function(input, output, session) {
                        "Sole Division 7.a (Irish Sea)",
                        "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea)", 
                        "Blue Whiting Subareas 1-9 12 and 14 (Northeast Atlantic and adjacent waters)",
-                       "Whiting Division 7.a (Irish Sea)",
+                       
                        "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)")
   
   #SM: Oct 2021 Updated list of forecast stocks
@@ -1815,9 +1834,9 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                           fluidRow(column(width = 3, imageOutput("display.assarea", height = "50%")),
                                    column(width = 6, imageOutput("display.landingsbygear", height = "50%"))),
                           fluidRow(column(width = 6, 
-                                          ##2022## Remove 'Key Points' heading##
-                                          #h3("Key Points"),
-                                          if(input$year==2022){h3("")}else{h3("Key Points")},
+                                          ##2022## Remove 'Key Points' heading##    if (input$year==2017){a(href="http://hdl.handle.net/10793/1333","Link to UWTV for FU15",target="_blank")}
+                                          #h3("Key Points"), 2022_ h3("")
+                                          if(input$year==2022){h4("To see a larger version of this page, click below on the link: 'Stockbook Summary PDF page' ")}else{h3("Key Points")},
                                           tags$head(
                                             tags$style("td:nth-child(1) {font-weight: bold;}
                                                        td:nth-child(1) {background: #f2f2f2;}")),
@@ -1838,6 +1857,8 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                       tabPanel(textOutput("AddInfoHeader"), #"Additional Information", 
                                                htmlOutput("Addinfo"),p())),
                           h3("Links"),
+                          h5("Link to the Stockbook Summary PDF page:"), 
+                          uiOutput("SummaryPageLink"),
                           h5("Link to the Stock Book PDF:"), 
                           uiOutput("Stockbooklink"),
                           h5("Link to the ICES Species Advice page:"), 
