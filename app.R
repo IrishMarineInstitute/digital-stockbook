@@ -1023,7 +1023,7 @@ server <- function(input, output, session) {
   if(input$year == "2022"){
     image_file <- paste0("www/StockbookSummary/", input$year, "/",
                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png", sep="")
-    return(list(src = image_file, filetype = "image/png", height = 700))}
+    return(list(src = image_file, filetype = "image/png", height = 500))}
     
     # ## 2022 shows an image of this years pdf page, rather than the TAC map (SM Oct2022)
     # if(input$year == "2022"){
@@ -1123,17 +1123,17 @@ server <- function(input, output, session) {
   
   #Links
   #~~~~~  
-  #Added 2022 for individual MI Stockbook Summary pages in the main pdf (MI post plenary) SM Oct2022
-    output$SummaryPageLink <-renderUI({
-    
-    if(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
-                 paste0("ICESCode",input$year, sep="")]=="Not Available"){
-      paste0("No Summary Page is available")
-    }else{
-      a(href=paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
-                              paste0("PDFpage",input$year, sep="")]),
-        "Stockbook Summary PDF page",target="_blank")}
-  })
+  #Added 2022 (lines 1126 to 1136) for individual MI Stockbook Summary pages in the main pdf (MI post plenary) SM Oct2022
+  #   output$SummaryPageLink <-renderUI({
+  #   
+  #   if(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
+  #                paste0("ICESCode",input$year, sep="")]=="Not Available"){
+  #     paste0("No Summary Page is available")
+  #   }else{
+  #     a(href=paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
+  #                             paste0("PDFpage",input$year, sep="")]),
+  #       "Stockbook Summary PDF page",target="_blank")}
+  # })
 
 
 
@@ -1652,6 +1652,7 @@ server <- function(input, output, session) {
   ForecastingTable$Catch...2023=formatC(as.numeric(as.character(ForecastingTable$Catch...2023)), format="d", big.mark=",")
   ForecastingTable$Landings...2023=formatC(as.numeric(as.character(ForecastingTable$Landings...2023)), format="d", big.mark=",")
   ForecastingTable$Discards...2023=formatC(as.numeric(as.character(ForecastingTable$Discards...2023)), format="d", big.mark=",")
+  #ForecastingTable$SSB...2024=formatC(as.numeric(as.character(ForecastingTable[,"SSB.2024"])), format="d", big.mark=",") #ForecastingTable$SSB...2024
   ForecastingTable$SSB...2024=formatC(as.numeric(as.character(ForecastingTable$SSB...2024)), format="d", big.mark=",")
   colnames(ForecastingTable)=c("FishStock", "Basis", 
                                "Total Catch (2023)", 
@@ -1836,7 +1837,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                           fluidRow(column(width = 6, 
                                           ##2022## Remove 'Key Points' heading##    if (input$year==2017){a(href="http://hdl.handle.net/10793/1333","Link to UWTV for FU15",target="_blank")}
                                           #h3("Key Points"), 2022_ h3("")
-                                          if(input$year==2022){h4("To see a larger version of this page, click below on the link: 'Stockbook Summary PDF page' ")}else{h3("Key Points")},
+                                          if(input$year==2022){h3("")}else{h3("Key Points")},
                                           tags$head(
                                             tags$style("td:nth-child(1) {font-weight: bold;}
                                                        td:nth-child(1) {background: #f2f2f2;}")),
