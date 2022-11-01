@@ -14,6 +14,8 @@ ui <- fluidPage(
   tags$head(includeScript("google-analytics.js")),
   theme = shinytheme("journal"),
   titlePanel("The Stock Book"),
+  # textInput("pdfurl", "PDF URL")
+  # htmlOutput('pdfviewer')
   selectInput("year", h3("Select Stock Book Year"),
               choices = availableYears), #this used to be "choices = list("2018", "2017", "2016", "2015"), selected = "2018"),"
   navlistPanel(id="mainpanel", widths=c(2,10), 
@@ -346,6 +348,7 @@ server <- function(input, output, session) {
   
   #Definitions
   #~~~~~~~~~~~
+  # 2022: SM Oct. The definition list was updated by HG. Additions, Deletions and updates have been applied
   # 2021: Changed the column from '3' to '2' so that the second cell is also displayed ) 
   output$Defns <- renderText({
     paste0(Introduction[5, 2])
@@ -1011,30 +1014,34 @@ server <- function(input, output, session) {
   #####################
   # Adding MI Summary #  
   #####################
-  output$display.assarea <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #image_file <- paste0("www/maps/",ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"Old"],
-    #                    ".png", sep="")
+  #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked (see lines ~1810)
+  output$display.SummaryPage <- renderImage({
+    #Call the thumbnail png of the Summary page here. (Lines ~1810 calls the pdf)
+    req(input$year == 2022)
+      image_file <- paste0("www/SummaryPage/", input$year, "/",
+                           ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png") #, sep=""
+      #print(image_file)
+      return(list(src = image_file, filetype = "image/png", height = 400))
     
-    #image_file <- paste0("")
-    #image_file <- "" 
-    
-    ## 2022 shows an image of this years pdf page, rather than the TAC map (SM Oct2022)
-  if(input$year == "2022"){
-    image_file <- paste0("www/StockbookSummary/", input$year, "/",
-                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png", sep="")
-    return(list(src = image_file, filetype = "image/png", height = 500))}
-    
-    # ## 2022 shows an image of this years pdf page, rather than the TAC map (SM Oct2022)
-    # if(input$year == "2022"){
-    #   image_file <- paste0("www/StockbookSummaryDocs/", input$year, "/", 
-    #                        ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png", sep="")
-    #   return(list(src = image_file, filetype = "document/pdf", height = 700))}
+  }, deleteFile = FALSE)
   
-  else{
+  
+  # output$display.SummaryPDF <- renderImage({
+  #   #Call the pdf of the Summary page here. (Lines ~1810 calls the pdf)
+  #   req(input$year == 2022)
+  #   image_file <- paste0("www/SummaryPDF/", input$year, "/",
+  #                        ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".pdf") #, sep=""
+  #   #print(image_file)
+  #   return(list(src = image_file, filetype = "image/pdf", height = 400))
+  #   
+  # }, deleteFile = FALSE)
+  
+
+  output$display.assarea <- renderImage({
+    req(input$year < 2022)
     image_file <- paste0("www/maps/",ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],
                          ".png", sep="")
-    return(list(src = image_file, filetype = "image/png", height = 250))}
+    return(list(src = image_file, filetype = "image/png", height = 250))
   }, deleteFile = FALSE)
   
   
@@ -1057,13 +1064,7 @@ server <- function(input, output, session) {
   #~~~~~~~~~
   output$TACtext <-renderText({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
-    ###2022 - Remove the image title 'YYYY Quota Allocations'####
-    #~~~~~~~
-    if (input$year==2022){
-      paste0("")
-    }else if (input$year<2022){
-    
+ 
     #SM Seabass and Sprat have no Quota pie-chart
     #SM Nov 2021: Nephrops has specific Quota titles, so images were snipped from the pdf. The automatic title was therefore hidden.
     if(input$speciesfilter=="Seabass" | input$speciesfilter=="Sprat" | input$speciesfilter=="Nephrops"){
@@ -1071,7 +1072,9 @@ server <- function(input, output, session) {
       
     }else{
     paste0(input$year, " Quota Allocations", sep="")}
-  }})
+  })
+  
+  
   output$display.TAC <- renderImage({
     image_file <- paste0("www/Quota/",input$year,"/",ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],
                         ".png", sep="")
@@ -1100,7 +1103,6 @@ server <- function(input, output, session) {
   output$KPtable = renderTable({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
-
     if(input$year==2015){
       paste0("There was no Key Points table in the 2015 Stock Book")
     }else{
@@ -1123,20 +1125,6 @@ server <- function(input, output, session) {
   
   #Links
   #~~~~~  
-  #Added 2022 (lines 1126 to 1136) for individual MI Stockbook Summary pages in the main pdf (MI post plenary) SM Oct2022
-  #   output$SummaryPageLink <-renderUI({
-  #   
-  #   if(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
-  #                paste0("ICESCode",input$year, sep="")]=="Not Available"){
-  #     paste0("No Summary Page is available")
-  #   }else{
-  #     a(href=paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
-  #                             paste0("PDFpage",input$year, sep="")]),
-  #       "Stockbook Summary PDF page",target="_blank")}
-  # })
-
-
-
   output$Stockbooklink <-renderUI({
     if(input$year==2022){
       a(href=paste0("http://hdl.handle.net/10793/1726"), #THIS IS THE 2021 LINK UNTIL THE 2022 LINK IS READY
@@ -1194,10 +1182,8 @@ server <- function(input, output, session) {
   #Management Advice/Additional Information
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$ManagementAdviceHeader = renderText({
-    if(input$year==2022){paste("")
-    }else if(input$year<2022){
     paste("Management Advice in ", input$year, sep="")
-  }}) 
+  }) 
   ManagementAdvice=read.csv("ManagementAdvice.csv", header=TRUE)#, encoding = 'ASCII'
   output$ManagementAdvice = renderText({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
@@ -1210,10 +1196,7 @@ server <- function(input, output, session) {
   }) 
   output$AddInfoHeader = renderText({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
-    if(input$year==2022){
-      ("")
-    }else if(input$year<2018){
+    if(input$year<2018){
       ("Additional Information")
     }else{
       ("Key Stock Considerations")
@@ -1832,34 +1815,55 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                           h3(textOutput("ICESAdviceTextMI")),
                           htmlOutput("ICESAdviceTextMI2"),p(),
                           HTML("<br><br>"),#Adding white space
-                          fluidRow(column(width = 3, imageOutput("display.assarea", height = "50%")),
-                                   column(width = 6, imageOutput("display.landingsbygear", height = "50%"))),
-                          fluidRow(column(width = 6, 
-                                          ##2022## Remove 'Key Points' heading##    if (input$year==2017){a(href="http://hdl.handle.net/10793/1333","Link to UWTV for FU15",target="_blank")}
-                                          #h3("Key Points"), 2022_ h3("")
-                                          if(input$year==2022){h3("")}else{h3("Key Points")},
-                                          tags$head(
-                                            tags$style("td:nth-child(1) {font-weight: bold;}
-                                                       td:nth-child(1) {background: #f2f2f2;}")),
-                                          tableOutput("KPtable"),
-                                          if(input$year>2017){
-                                            list(tags$head(tags$style(HTML("
-                                                                      #KPtableFootnote{
-                                                                      font-size: 11px;}"))),
-                                                 htmlOutput("KPtableFootnote"))
-                                          }),
-                                   column(width = 6, h3(textOutput("TACtext")),
-                                          imageOutput("display.TAC", height = "50%"),
-                                          if(input$year>2017){
-                                            imageOutput("display.CatchDiscards", height = "25%")})),
-                          tabsetPanel(id="MgtAdvice", type="pills",
-                                      tabPanel(textOutput("ManagementAdviceHeader"), 
-                                               htmlOutput("ManagementAdvice"),p()),
-                                      tabPanel(textOutput("AddInfoHeader"), #"Additional Information", 
-                                               htmlOutput("Addinfo"),p())),
-                          h3("Links"),
-                          h5("Link to the Stockbook Summary PDF page:"), 
-                          uiOutput("SummaryPageLink"),
+                          
+                          #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked (see lines ~1015)
+                          #Click here and open the summary page in pdf format
+                          if(input$year==2022){
+                            
+                            list(
+                              fluidRow (column(width = 3,
+                                              HTML("<br><br>"),
+                                              HTML("<br><br>"),
+                                              a(h4("To see the stock advice page for 2023 click here"),target="_blank",href=paste0("SummaryPage/", input$year, "/",
+                                                                                                                                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".pdf")),
+                                              HTML("<br><br>")#Adding white space
+                                              ),
+                                        column(width = 6, imageOutput("display.SummaryPage")),  #, height = "50%"
+                                        )#end of two columns
+                                )#end of list
+                            
+                            
+                          }else{ 
+                            #SM Oct 2022: Years prior to 2022 need the original page set-up
+                            list(
+                              fluidRow(column(width = 3, imageOutput("display.assarea", height = "50%")),
+                                       column(width = 6, imageOutput("display.landingsbygear", height = "50%"))),
+                              fluidRow(column(width = 6, 
+                                              h3("Key Points"),
+                                              tags$head(
+                                                tags$style("td:nth-child(1) {font-weight: bold;}
+                                                         td:nth-child(1) {background: #f2f2f2;}")),
+                                              tableOutput("KPtable"),
+                                              if(input$year>2017){
+                                                list(tags$head(tags$style(HTML("
+                                                                        #KPtableFootnote{
+                                                                        font-size: 11px;}"))),
+                                                     htmlOutput("KPtableFootnote"))
+                                              }),
+                                       column(width = 6, h3(textOutput("TACtext")),
+                                              imageOutput("display.TAC", height = "50%"),
+                                              if(input$year>2017){
+                                                imageOutput("display.CatchDiscards", height = "25%")})),
+                            
+                              tabsetPanel(id="MgtAdvice", type="pills",
+                                          tabPanel(textOutput("ManagementAdviceHeader"), 
+                                                   htmlOutput("ManagementAdvice"),p()),
+                                          tabPanel(textOutput("AddInfoHeader"), #"Additional Information", 
+                                                   htmlOutput("Addinfo"),p()))
+                            )
+                          }
+                          
+                          ,h3("Links"),
                           h5("Link to the Stock Book PDF:"), 
                           uiOutput("Stockbooklink"),
                           h5("Link to the ICES Species Advice page:"), 
@@ -1900,7 +1904,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
     }else 
       #print (paste(input$speciesfilter, input$speciesbydiv, sep=" "))
-      if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == "2022"){
+      if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks & input$year == 2022){
     # DJC}else if(paste(input$speciesfilter, input$speciesbydiv, sep=" ") %in% ForecastingStocks){
       # DJC panels[[4]]=tabPanel("Forecasting 2019", value="ForecastingTab",
       # SM Sep2022 Changed input$year from 2021 to 2022 (row 1837) and changed "Forecasting 2022" (row 1843) to "Forecasting 2023"
