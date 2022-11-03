@@ -110,24 +110,24 @@
 4132,ank.27.78abd,2020,Assessment,Catch,9601
 4133,ank.27.78abd,2021,Assessment,Catch,9708
 4134,ank.27.78abd,2022,Assessment,Catch,NA
-16993,ank.27.78abd,2022,F = 0,Catch,14455
-16994,ank.27.78abd,2022,F = F2022,Catch,14455
-16995,ank.27.78abd,2022,FMSY lower,Catch,14455
-16996,ank.27.78abd,2022,FMSY upper,Catch,14455
-16997,ank.27.78abd,2022,Fpa,Catch,14455
-16992,ank.27.78abd,2022,MSY approach = FMSY,Catch,14455
-16998,ank.27.78abd,2022,SSB 2024 = Blim,Catch,14455
-16999,ank.27.78abd,2022,SSB 2024 = Bpa = MSY Btrigger,Catch,14455
-17000,ank.27.78abd,2022,SSB 2024 = SSB 2023,Catch,14455
+16993,ank.27.78abd,2022,F = 0,Catch,14606
+16994,ank.27.78abd,2022,F = F2022,Catch,14606
+16995,ank.27.78abd,2022,FMSY lower,Catch,14606
+16996,ank.27.78abd,2022,FMSY upper,Catch,14606
+16997,ank.27.78abd,2022,Fpa,Catch,14606
+16992,ank.27.78abd,2022,MSY approach = FMSY,Catch,14606
+16998,ank.27.78abd,2022,SSB 2024 = Blim,Catch,14606
+16999,ank.27.78abd,2022,SSB 2024 = Bpa = MSY Btrigger,Catch,14606
+17000,ank.27.78abd,2022,SSB 2024 = SSB 2023,Catch,14606
 14858,ank.27.78abd,2023,F = 0,Catch,0
-14859,ank.27.78abd,2023,F = F2022,Catch,14312
-14860,ank.27.78abd,2023,FMSY lower,Catch,16849
-14861,ank.27.78abd,2023,FMSY upper,Catch,34704
-14862,ank.27.78abd,2023,Fpa,Catch,36209
-14857,ank.27.78abd,2023,MSY approach = FMSY,Catch,23958
-14863,ank.27.78abd,2023,SSB 2024 = Blim,Catch,132807
-14864,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,Catch,118624
-14865,ank.27.78abd,2023,SSB 2024 = SSB 2023,Catch,25350
+14859,ank.27.78abd,2023,F = F2022,Catch,14536
+14860,ank.27.78abd,2023,FMSY lower,Catch,16483
+14861,ank.27.78abd,2023,FMSY upper,Catch,33948
+14862,ank.27.78abd,2023,Fpa,Catch,35420
+14857,ank.27.78abd,2023,MSY approach = FMSY,Catch,23436
+14863,ank.27.78abd,2023,SSB 2024 = Blim,Catch,129513
+14864,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,Catch,115519
+14865,ank.27.78abd,2023,SSB 2024 = SSB 2023,Catch,25712
 5336,ank.27.78abd,1986,Assessment,Discards,NA
 5337,ank.27.78abd,1987,Assessment,Discards,NA
 5338,ank.27.78abd,1988,Assessment,Discards,NA
@@ -202,33 +202,33 @@
 6608,ank.27.78abd,2020,Assessment,F,0.09279
 6609,ank.27.78abd,2021,Assessment,F,0.0826
 6610,ank.27.78abd,2022,Assessment,F,NA
-16383,ank.27.78abd,2022,F = 0,F,0.094
-16384,ank.27.78abd,2022,F = F2022,F,0.094
-16385,ank.27.78abd,2022,FMSY lower,F,0.094
-16386,ank.27.78abd,2022,FMSY upper,F,0.094
-16387,ank.27.78abd,2022,Fpa,F,0.094
-16382,ank.27.78abd,2022,MSY approach = FMSY,F,0.094
-16388,ank.27.78abd,2022,SSB 2024 = Blim,F,0.094
-16389,ank.27.78abd,2022,SSB 2024 = Bpa = MSY Btrigger,F,0.094
-16390,ank.27.78abd,2022,SSB 2024 = SSB 2023,F,0.094
+16383,ank.27.78abd,2022,F = 0,F,0.098
+16384,ank.27.78abd,2022,F = F2022,F,0.098
+16385,ank.27.78abd,2022,FMSY lower,F,0.098
+16386,ank.27.78abd,2022,FMSY upper,F,0.098
+16387,ank.27.78abd,2022,Fpa,F,0.098
+16382,ank.27.78abd,2022,MSY approach = FMSY,F,0.098
+16388,ank.27.78abd,2022,SSB 2024 = Blim,F,0.098
+16389,ank.27.78abd,2022,SSB 2024 = Bpa = MSY Btrigger,F,0.098
+16390,ank.27.78abd,2022,SSB 2024 = SSB 2023,F,0.098
 15468,ank.27.78abd,2023,F = 0,F,0
-15469,ank.27.78abd,2023,F = F2022,F,0.094
+15469,ank.27.78abd,2023,F = F2022,F,0.098
 15470,ank.27.78abd,2023,FMSY lower,F,0.112
 15471,ank.27.78abd,2023,FMSY upper,F,0.24
 15472,ank.27.78abd,2023,Fpa,F,0.26
 15467,ank.27.78abd,2023,MSY approach = FMSY,F,0.163
-15473,ank.27.78abd,2023,SSB 2024 = Blim,F,1.6
-15474,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,F,1.27
-15475,ank.27.78abd,2023,SSB 2024 = SSB 2023,F,0.173
+15473,ank.27.78abd,2023,SSB 2024 = Blim,F,1.59
+15474,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,F,1.26
+15475,ank.27.78abd,2023,SSB 2024 = SSB 2023,F,0.18
 15773,ank.27.78abd,2023,F = 0,Flandings,0
-15774,ank.27.78abd,2023,F = F2022,Flandings,0.082
-15775,ank.27.78abd,2023,FMSY lower,Flandings,0.097
-15776,ank.27.78abd,2023,FMSY upper,Flandings,0.21
-15777,ank.27.78abd,2023,Fpa,Flandings,0.22
-15772,ank.27.78abd,2023,MSY approach = FMSY,Flandings,0.142
-15778,ank.27.78abd,2023,SSB 2024 = Blim,Flandings,1.39
-15779,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,Flandings,1.11
-15780,ank.27.78abd,2023,SSB 2024 = SSB 2023,Flandings,0.151
+15774,ank.27.78abd,2023,F = F2022,Flandings,0.094
+15775,ank.27.78abd,2023,FMSY lower,Flandings,0.107
+15776,ank.27.78abd,2023,FMSY upper,Flandings,0.23
+15777,ank.27.78abd,2023,Fpa,Flandings,0.25
+15772,ank.27.78abd,2023,MSY approach = FMSY,Flandings,0.156
+15778,ank.27.78abd,2023,SSB 2024 = Blim,Flandings,1.52
+15779,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,Flandings,1.21
+15780,ank.27.78abd,2023,SSB 2024 = SSB 2023,Flandings,0.173
 12764,ank.27.78abd,1986,Assessment,Flim,NA
 12765,ank.27.78abd,1987,Assessment,Flim,NA
 12766,ank.27.78abd,1988,Assessment,Flim,NA
@@ -377,33 +377,33 @@
 2894,ank.27.78abd,2020,Assessment,Landings,8676
 2895,ank.27.78abd,2021,Assessment,Landings,7646
 2896,ank.27.78abd,2022,Assessment,Landings,NA
-17298,ank.27.78abd,2022,F = 0,Landings,10111
-17299,ank.27.78abd,2022,F = F2022,Landings,10111
-17300,ank.27.78abd,2022,FMSY lower,Landings,10111
-17301,ank.27.78abd,2022,FMSY upper,Landings,10111
-17302,ank.27.78abd,2022,Fpa,Landings,10111
-17297,ank.27.78abd,2022,MSY approach = FMSY,Landings,10111
-17303,ank.27.78abd,2022,SSB 2024 = Blim,Landings,10111
-17304,ank.27.78abd,2022,SSB 2024 = Bpa = MSY Btrigger,Landings,10111
-17305,ank.27.78abd,2022,SSB 2024 = SSB 2023,Landings,10111
+17298,ank.27.78abd,2022,F = 0,Landings,10458
+17299,ank.27.78abd,2022,F = F2022,Landings,10458
+17300,ank.27.78abd,2022,FMSY lower,Landings,10458
+17301,ank.27.78abd,2022,FMSY upper,Landings,10458
+17302,ank.27.78abd,2022,Fpa,Landings,10458
+17297,ank.27.78abd,2022,MSY approach = FMSY,Landings,10458
+17303,ank.27.78abd,2022,SSB 2024 = Blim,Landings,10458
+17304,ank.27.78abd,2022,SSB 2024 = Bpa = MSY Btrigger,Landings,10458
+17305,ank.27.78abd,2022,SSB 2024 = SSB 2023,Landings,10458
 15163,ank.27.78abd,2023,F = 0,Landings,0
 21000,ank.27.78abd,2023,F = 0,Landings,0
-15164,ank.27.78abd,2023,F = F2022,Landings,11274
-31000,ank.27.78abd,2023,F = F2022,Landings,11274
-15165,ank.27.78abd,2023,FMSY lower,Landings,13272
-41000,ank.27.78abd,2023,FMSY lower,Landings,13272
-15166,ank.27.78abd,2023,FMSY upper,Landings,27319
-51000,ank.27.78abd,2023,FMSY upper,Landings,27319
-15167,ank.27.78abd,2023,Fpa,Landings,28502
-61000,ank.27.78abd,2023,Fpa,Landings,28502
-15162,ank.27.78abd,2023,MSY approach = FMSY,Landings,18867
-17907,ank.27.78abd,2023,MSY approach = FMSY,Landings,18867
-15168,ank.27.78abd,2023,SSB 2024 = Blim,Landings,103933
-71000,ank.27.78abd,2023,SSB 2024 = Blim,Landings,103933
-15169,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,Landings,92952
-81000,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,Landings,92952
-15170,ank.27.78abd,2023,SSB 2024 = SSB 2023,Landings,19963
-91000,ank.27.78abd,2023,SSB 2024 = SSB 2023,Landings,19963
+15164,ank.27.78abd,2023,F = F2022,Landings,11660
+31000,ank.27.78abd,2023,F = F2022,Landings,11660
+15165,ank.27.78abd,2023,FMSY lower,Landings,13220
+41000,ank.27.78abd,2023,FMSY lower,Landings,13220
+15166,ank.27.78abd,2023,FMSY upper,Landings,27211
+51000,ank.27.78abd,2023,FMSY upper,Landings,27211
+15167,ank.27.78abd,2023,Fpa,Landings,28390
+61000,ank.27.78abd,2023,Fpa,Landings,28390
+15162,ank.27.78abd,2023,MSY approach = FMSY,Landings,18793
+17907,ank.27.78abd,2023,MSY approach = FMSY,Landings,18793
+15168,ank.27.78abd,2023,SSB 2024 = Blim,Landings,103228
+71000,ank.27.78abd,2023,SSB 2024 = Blim,Landings,103228
+15169,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,Landings,92189
+81000,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,Landings,92189
+15170,ank.27.78abd,2023,SSB 2024 = SSB 2023,Landings,20616
+91000,ank.27.78abd,2023,SSB 2024 = SSB 2023,Landings,20616
 384,ank.27.78abd,1986,Assessment,R,130190
 385,ank.27.78abd,1987,Assessment,R,78841
 386,ank.27.78abd,1988,Assessment,R,92863
@@ -487,24 +487,24 @@
 17608,ank.27.78abd,2022,SSB 2024 = Blim,SSB,NA
 17609,ank.27.78abd,2022,SSB 2024 = Bpa = MSY Btrigger,SSB,NA
 17610,ank.27.78abd,2022,SSB 2024 = SSB 2023,SSB,NA
-16688,ank.27.78abd,2023,F = 0,SSB,50317
-16689,ank.27.78abd,2023,F = F2022,SSB,50317
-16690,ank.27.78abd,2023,FMSY lower,SSB,50317
-16691,ank.27.78abd,2023,FMSY upper,SSB,50317
-16692,ank.27.78abd,2023,Fpa,SSB,50317
-16687,ank.27.78abd,2023,MSY approach = FMSY,SSB,50317
-16693,ank.27.78abd,2023,SSB 2024 = Blim,SSB,50317
-16694,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,SSB,50317
-16695,ank.27.78abd,2023,SSB 2024 = SSB 2023,SSB,50317
-16078,ank.27.78abd,2024,F = 0,SSB,59836
-16079,ank.27.78abd,2024,F = F2022,SSB,54449
-16080,ank.27.78abd,2024,FMSY lower,SSB,53497
-16081,ank.27.78abd,2024,FMSY upper,SSB,46835
-16082,ank.27.78abd,2024,Fpa,SSB,46276
-16077,ank.27.78abd,2024,MSY approach = FMSY,SSB,50837
+16688,ank.27.78abd,2023,F = 0,SSB,49454
+16689,ank.27.78abd,2023,F = F2022,SSB,49454
+16690,ank.27.78abd,2023,FMSY lower,SSB,49454
+16691,ank.27.78abd,2023,FMSY upper,SSB,49454
+16692,ank.27.78abd,2023,Fpa,SSB,49454
+16687,ank.27.78abd,2023,MSY approach = FMSY,SSB,49454
+16693,ank.27.78abd,2023,SSB 2024 = Blim,SSB,49454
+16694,ank.27.78abd,2023,SSB 2024 = Bpa = MSY Btrigger,SSB,49454
+16695,ank.27.78abd,2023,SSB 2024 = SSB 2023,SSB,49454
+16078,ank.27.78abd,2024,F = 0,SSB,59220
+16079,ank.27.78abd,2024,F = F2022,SSB,53685
+16080,ank.27.78abd,2024,FMSY lower,SSB,52946
+16081,ank.27.78abd,2024,FMSY upper,SSB,46353
+16082,ank.27.78abd,2024,Fpa,SSB,45800
+16077,ank.27.78abd,2024,MSY approach = FMSY,SSB,50314
 16083,ank.27.78abd,2024,SSB 2024 = Blim,SSB,12073
 16084,ank.27.78abd,2024,SSB 2024 = Bpa = MSY Btrigger,SSB,16776
-16085,ank.27.78abd,2024,SSB 2024 = SSB 2023,SSB,50317
+16085,ank.27.78abd,2024,SSB 2024 = SSB 2023,SSB,49454
 14002,ank.27.78abd,1986,TAC,TAC,NA
 14003,ank.27.78abd,1987,TAC,TAC,39080
 14004,ank.27.78abd,1988,TAC,TAC,42990
@@ -1064,19 +1064,19 @@
 2152,bss.27.4bc7ad-h,2020,Assessment,SSB,10369.4
 2153,bss.27.4bc7ad-h,2021,Assessment,SSB,11490.8
 2154,bss.27.4bc7ad-h,2022,Assessment,SSB,12384.1
-17612,bss.27.4bc7ad-h,2022,EU MAP: FMSY x SSB 2023/MSY Btrigger,SSB,511
-17613,bss.27.4bc7ad-h,2022,EU MAP: FMSY lower x SSB 2023/MSY Btrigger,SSB,511
-17614,bss.27.4bc7ad-h,2022,EU MAP: FMSY upper x SSB 2023/MSY Btrigger,SSB,511
-17615,bss.27.4bc7ad-h,2022,F = FMSY,SSB,511
-17616,bss.27.4bc7ad-h,2022,F = 0,SSB,511
-17617,bss.27.4bc7ad-h,2022,F = F2022,SSB,511
-17618,bss.27.4bc7ad-h,2022,Flim,SSB,511
-17619,bss.27.4bc7ad-h,2022,Fpa,SSB,511
-17611,bss.27.4bc7ad-h,2022,MSY approach: F = FMSY x SSB 2023/MSY Btrigger,SSB,511
-17620,bss.27.4bc7ad-h,2022,SSB 2024 = Blim,SSB,511
-17621,bss.27.4bc7ad-h,2022,SSB 2024 = Bpa,SSB,511
-17622,bss.27.4bc7ad-h,2022,SSB 2024 = MSY Btrigger,SSB,511
-17623,bss.27.4bc7ad-h,2022,SSB 2024 = SSB 2023,SSB,511
+17612,bss.27.4bc7ad-h,2022,EU MAP: FMSY x SSB 2023/MSY Btrigger,SSB,
+17613,bss.27.4bc7ad-h,2022,EU MAP: FMSY lower x SSB 2023/MSY Btrigger,SSB,
+17614,bss.27.4bc7ad-h,2022,EU MAP: FMSY upper x SSB 2023/MSY Btrigger,SSB,
+17615,bss.27.4bc7ad-h,2022,F = FMSY,SSB,
+17616,bss.27.4bc7ad-h,2022,F = 0,SSB,
+17617,bss.27.4bc7ad-h,2022,F = F2022,SSB,
+17618,bss.27.4bc7ad-h,2022,Flim,SSB,
+17619,bss.27.4bc7ad-h,2022,Fpa,SSB,
+17611,bss.27.4bc7ad-h,2022,MSY approach: F = FMSY x SSB 2023/MSY Btrigger,SSB,
+17620,bss.27.4bc7ad-h,2022,SSB 2024 = Blim,SSB,
+17621,bss.27.4bc7ad-h,2022,SSB 2024 = Bpa,SSB,
+17622,bss.27.4bc7ad-h,2022,SSB 2024 = MSY Btrigger,SSB,
+17623,bss.27.4bc7ad-h,2022,SSB 2024 = SSB 2023,SSB,
 16697,bss.27.4bc7ad-h,2023,EU MAP: FMSY x SSB 2023/MSY Btrigger,SSB,12899
 16698,bss.27.4bc7ad-h,2023,EU MAP: FMSY lower x SSB 2023/MSY Btrigger,SSB,12899
 16699,bss.27.4bc7ad-h,2023,EU MAP: FMSY upper x SSB 2023/MSY Btrigger,SSB,12899
@@ -10748,7 +10748,7 @@
 16237,hom.27.2a4a5b6a7a-ce-k8,2024,F = FP05 = Fpa,SSB,733196
 16233,hom.27.2a4a5b6a7a-ce-k8,2024,MSY approach: F = 0,SSB,805946
 16238,hom.27.2a4a5b6a7a-ce-k8,2024,Pel AC proposed HCR,SSB,791583
-16239,hom.27.2a4a5b6a7a-ce-k8,2024,SSB 2024 = SSB 2023,SSB,754102
+16239,hom.27.2a4a5b6a7a-ce-k8,2024,SSB 2024 = SSB 2023,SSB,754 102
 16240,hom.27.2a4a5b6a7a-ce-k8,2024,SSB 2024 = MSY Btrigger or Bpa or Blim,SSB,NA
 14738,hom.27.2a4a5b6a7a-ce-k8,1982,TAC,TAC,NA
 14739,hom.27.2a4a5b6a7a-ce-k8,1983,TAC,TAC,NA
@@ -12089,30 +12089,30 @@
 4545,meg.27.7b-k8abd,2020,Assessment,Catch,13625.88385
 4546,meg.27.7b-k8abd,2021,Assessment,Catch,15020.37757
 4547,meg.27.7b-k8abd,2022,Assessment,Catch,NA
-17176,meg.27.7b-k8abd,2022,EU MAP: FMSY,Catch,19994
-17177,meg.27.7b-k8abd,2022,F = F2022,Catch,19994
-17178,meg.27.7b-k8abd,2022,F = MAP FMSY lower,Catch,19994
-17179,meg.27.7b-k8abd,2022,F = MAP FMSY upper,Catch,19994
-17180,meg.27.7b-k8abd,2022,F=0,Catch,19994
-17181,meg.27.7b-k8abd,2022,Flim,Catch,19994
-17182,meg.27.7b-k8abd,2022,Fpa,Catch,19994
-17175,meg.27.7b-k8abd,2022,MSY approach: FMSY,Catch,19994
-17183,meg.27.7b-k8abd,2022,SSB 2024 = Bpa = MSY Btrigger,Catch,19994
-17184,meg.27.7b-k8abd,2022,SSB 2024 = SSB 2023,Catch,19994
-17185,meg.27.7b-k8abd,2022,SSB 2024 = Blim,Catch,19994
-17186,meg.27.7b-k8abd,2022,SSB 2024 = Bpa,Catch,19994
-15041,meg.27.7b-k8abd,2023,EU MAP: FMSY,Catch,24176
-15042,meg.27.7b-k8abd,2023,F = F2022,Catch,20437
-15043,meg.27.7b-k8abd,2023,F = MAP FMSY lower,Catch,15475
-15044,meg.27.7b-k8abd,2023,F = MAP FMSY upper,Catch,39116
+17176,meg.27.7b-k8abd,2022,EU MAP: FMSY,Catch,19412
+17177,meg.27.7b-k8abd,2022,F = F2022,Catch,19412
+17178,meg.27.7b-k8abd,2022,F = MAP FMSY lower,Catch,19412
+17179,meg.27.7b-k8abd,2022,F = MAP FMSY upper,Catch,19412
+17180,meg.27.7b-k8abd,2022,F=0,Catch,19412
+17181,meg.27.7b-k8abd,2022,Flim,Catch,19412
+17182,meg.27.7b-k8abd,2022,Fpa,Catch,19412
+17175,meg.27.7b-k8abd,2022,MSY approach: FMSY,Catch,19412
+17183,meg.27.7b-k8abd,2022,SSB 2024 = Bpa = MSY Btrigger,Catch,19412
+17184,meg.27.7b-k8abd,2022,SSB 2024 = SSB 2023,Catch,19412
+17185,meg.27.7b-k8abd,2022,SSB 2024 = Blim,Catch,19412
+17186,meg.27.7b-k8abd,2022,SSB 2024 = Bpa,Catch,19412
+15041,meg.27.7b-k8abd,2023,EU MAP: FMSY,Catch,23596
+15042,meg.27.7b-k8abd,2023,F = F2022,Catch,19945
+15043,meg.27.7b-k8abd,2023,F = MAP FMSY lower,Catch,15101
+15044,meg.27.7b-k8abd,2023,F = MAP FMSY upper,Catch,38191
 15045,meg.27.7b-k8abd,2023,F=0,Catch,0
-15046,meg.27.7b-k8abd,2023,Flim,Catch,51395
-15047,meg.27.7b-k8abd,2023,Fpa,Catch,40597
-15040,meg.27.7b-k8abd,2023,MSY approach: FMSY,Catch,24176
-15048,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,Catch,75471
-15049,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,Catch,18563
-15050,meg.27.7b-k8abd,2023,SSB 2024 = Blim,Catch,80715
-15051,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,Catch,75471
+15046,meg.27.7b-k8abd,2023,Flim,Catch,50197
+15047,meg.27.7b-k8abd,2023,Fpa,Catch,39638
+15040,meg.27.7b-k8abd,2023,MSY approach: FMSY,Catch,23596
+15048,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,Catch,73241
+15049,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,Catch,18629
+15050,meg.27.7b-k8abd,2023,SSB 2024 = Blim,Catch,78477
+15051,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,Catch,73241
 5747,meg.27.7b-k8abd,1984,Assessment,Discards,2169
 5748,meg.27.7b-k8abd,1985,Assessment,Discards,1732
 5749,meg.27.7b-k8abd,1986,Assessment,Discards,2321
@@ -12208,13 +12208,13 @@
 15653,meg.27.7b-k8abd,2023,F = MAP FMSY lower,F,0.14
 15654,meg.27.7b-k8abd,2023,F = MAP FMSY upper,F,0.41
 15655,meg.27.7b-k8abd,2023,F=0,F,0
-15656,meg.27.7b-k8abd,2023,Flim,F,0.59
+15656,meg.27.7b-k8abd,2023,Flim,F,0.591
 15657,meg.27.7b-k8abd,2023,Fpa,F,0.43
 15650,meg.27.7b-k8abd,2023,MSY approach: FMSY,F,0.23
-15658,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,F,1.2
-15659,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,F,0.171
-15660,meg.27.7b-k8abd,2023,SSB 2024 = Blim,F,1.25
-15661,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,F,1.2
+15658,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,F,1.084
+15659,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,F,0.176
+15660,meg.27.7b-k8abd,2023,SSB 2024 = Blim,F,1.241
+15661,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,F,1.084
 15956,meg.27.7b-k8abd,2023,EU MAP: FMSY,Flandings,NA
 15957,meg.27.7b-k8abd,2023,F = F2022,Flandings,NA
 15958,meg.27.7b-k8abd,2023,F = MAP FMSY lower,Flandings,NA
@@ -12383,42 +12383,42 @@
 3307,meg.27.7b-k8abd,2020,Assessment,Landings,11141.01419
 3308,meg.27.7b-k8abd,2021,Assessment,Landings,12417.52322
 3309,meg.27.7b-k8abd,2022,Assessment,Landings,NA
-17481,meg.27.7b-k8abd,2022,EU MAP: FMSY,Landings,17124
-17482,meg.27.7b-k8abd,2022,F = F2022,Landings,17124
-17483,meg.27.7b-k8abd,2022,F = MAP FMSY lower,Landings,17124
-17484,meg.27.7b-k8abd,2022,F = MAP FMSY upper,Landings,17124
-17485,meg.27.7b-k8abd,2022,F=0,Landings,17124
-17486,meg.27.7b-k8abd,2022,Flim,Landings,17124
-17487,meg.27.7b-k8abd,2022,Fpa,Landings,17124
-17480,meg.27.7b-k8abd,2022,MSY approach: FMSY,Landings,17124
-17488,meg.27.7b-k8abd,2022,SSB 2024 = Bpa = MSY Btrigger,Landings,17124
-17489,meg.27.7b-k8abd,2022,SSB 2024 = SSB 2023,Landings,17124
-17490,meg.27.7b-k8abd,2022,SSB 2024 = Blim,Landings,17124
-17491,meg.27.7b-k8abd,2022,SSB 2024 = Bpa,Landings,17124
-15346,meg.27.7b-k8abd,2023,EU MAP: FMSY,Landings,20782
-18510,meg.27.7b-k8abd,2023,EU MAP: FMSY,Landings,20782
-15347,meg.27.7b-k8abd,2023,F = F2022,Landings,17575
-18610,meg.27.7b-k8abd,2023,F = F2022,Landings,17575
-15348,meg.27.7b-k8abd,2023,F = MAP FMSY lower,Landings,13315
-18710,meg.27.7b-k8abd,2023,F = MAP FMSY lower,Landings,13315
-15349,meg.27.7b-k8abd,2023,F = MAP FMSY upper,Landings,33558
-18810,meg.27.7b-k8abd,2023,F = MAP FMSY upper,Landings,33558
+17481,meg.27.7b-k8abd,2022,EU MAP: FMSY,Landings,16612
+17482,meg.27.7b-k8abd,2022,F = F2022,Landings,16612
+17483,meg.27.7b-k8abd,2022,F = MAP FMSY lower,Landings,16612
+17484,meg.27.7b-k8abd,2022,F = MAP FMSY upper,Landings,16612
+17485,meg.27.7b-k8abd,2022,F=0,Landings,16612
+17486,meg.27.7b-k8abd,2022,Flim,Landings,16612
+17487,meg.27.7b-k8abd,2022,Fpa,Landings,16612
+17480,meg.27.7b-k8abd,2022,MSY approach: FMSY,Landings,16612
+17488,meg.27.7b-k8abd,2022,SSB 2024 = Bpa = MSY Btrigger,Landings,16612
+17489,meg.27.7b-k8abd,2022,SSB 2024 = SSB 2023,Landings,16612
+17490,meg.27.7b-k8abd,2022,SSB 2024 = Blim,Landings,16612
+17491,meg.27.7b-k8abd,2022,SSB 2024 = Bpa,Landings,16612
+15346,meg.27.7b-k8abd,2023,EU MAP: FMSY,Landings,20264
+18510,meg.27.7b-k8abd,2023,EU MAP: FMSY,Landings,20264
+15347,meg.27.7b-k8abd,2023,F = F2022,Landings,17136
+18610,meg.27.7b-k8abd,2023,F = F2022,Landings,17136
+15348,meg.27.7b-k8abd,2023,F = MAP FMSY lower,Landings,12982
+18710,meg.27.7b-k8abd,2023,F = MAP FMSY lower,Landings,12982
+15349,meg.27.7b-k8abd,2023,F = MAP FMSY upper,Landings,32733
+18810,meg.27.7b-k8abd,2023,F = MAP FMSY upper,Landings,32733
 15350,meg.27.7b-k8abd,2023,F=0,Landings,0
 18910,meg.27.7b-k8abd,2023,F=0,Landings,0
-15351,meg.27.7b-k8abd,2023,Flim,Landings,44007
-19010,meg.27.7b-k8abd,2023,Flim,Landings,44007
-15352,meg.27.7b-k8abd,2023,Fpa,Landings,34821
-19110,meg.27.7b-k8abd,2023,Fpa,Landings,34821
-15345,meg.27.7b-k8abd,2023,MSY approach: FMSY,Landings,20782
-18410,meg.27.7b-k8abd,2023,MSY approach: FMSY,Landings,20782
-15353,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,Landings,64282
-19210,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,Landings,64282
-15354,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,Landings,15967
-19310,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,Landings,15967
-15355,meg.27.7b-k8abd,2023,SSB 2024 = Blim,Landings,68641
-19410,meg.27.7b-k8abd,2023,SSB 2024 = Blim,Landings,68641
-15356,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,Landings,64282
-19510,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,Landings,64282
+15351,meg.27.7b-k8abd,2023,Flim,Landings,42939
+19010,meg.27.7b-k8abd,2023,Flim,Landings,42939
+15352,meg.27.7b-k8abd,2023,Fpa,Landings,33966
+19110,meg.27.7b-k8abd,2023,Fpa,Landings,33966
+15345,meg.27.7b-k8abd,2023,MSY approach: FMSY,Landings,20264
+18410,meg.27.7b-k8abd,2023,MSY approach: FMSY,Landings,20264
+15353,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,Landings,62327
+19210,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,Landings,62327
+15354,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,Landings,16008
+19310,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,Landings,16008
+15355,meg.27.7b-k8abd,2023,SSB 2024 = Blim,Landings,66677
+19410,meg.27.7b-k8abd,2023,SSB 2024 = Blim,Landings,66677
+15356,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,Landings,62327
+19510,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,Landings,62327
 795,meg.27.7b-k8abd,1984,Assessment,R,230208.7158
 796,meg.27.7b-k8abd,1985,Assessment,R,218021.9659
 797,meg.27.7b-k8abd,1986,Assessment,R,209635.1119
@@ -12509,28 +12509,28 @@
 17794,meg.27.7b-k8abd,2022,SSB 2024 = SSB 2023,SSB,NA
 17795,meg.27.7b-k8abd,2022,SSB 2024 = Blim,SSB,NA
 17796,meg.27.7b-k8abd,2022,SSB 2024 = Bpa,SSB,NA
-16871,meg.27.7b-k8abd,2023,EU MAP: FMSY,SSB,98527
-16872,meg.27.7b-k8abd,2023,F = F2022,SSB,98527
-16873,meg.27.7b-k8abd,2023,F = MAP FMSY lower,SSB,98527
-16874,meg.27.7b-k8abd,2023,F = MAP FMSY upper,SSB,98527
-16875,meg.27.7b-k8abd,2023,F=0,SSB,98527
-16876,meg.27.7b-k8abd,2023,Flim,SSB,98527
-16877,meg.27.7b-k8abd,2023,Fpa,SSB,98527
-16870,meg.27.7b-k8abd,2023,MSY approach: FMSY,SSB,98527
-16878,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,SSB,98527
-16879,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,SSB,98527
-16880,meg.27.7b-k8abd,2023,SSB 2024 = Blim,SSB,98527
-16881,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,SSB,98527
-16261,meg.27.7b-k8abd,2024,EU MAP: FMSY,SSB,92640
-16262,meg.27.7b-k8abd,2024,F = F2022,SSB,96559
-16263,meg.27.7b-k8abd,2024,F = MAP FMSY lower,SSB,101774
-16264,meg.27.7b-k8abd,2024,F = MAP FMSY upper,SSB,77093
-16265,meg.27.7b-k8abd,2024,F=0,SSB,118131
-16266,meg.27.7b-k8abd,2024,Flim,SSB,64481
-16267,meg.27.7b-k8abd,2024,Fpa,SSB,75563
-16260,meg.27.7b-k8abd,2024,MSY approach: FMSY,SSB,92640
+16871,meg.27.7b-k8abd,2023,EU MAP: FMSY,SSB,96184
+16872,meg.27.7b-k8abd,2023,F = F2022,SSB,96184
+16873,meg.27.7b-k8abd,2023,F = MAP FMSY lower,SSB,96184
+16874,meg.27.7b-k8abd,2023,F = MAP FMSY upper,SSB,96184
+16875,meg.27.7b-k8abd,2023,F=0,SSB,96184
+16876,meg.27.7b-k8abd,2023,Flim,SSB,96184
+16877,meg.27.7b-k8abd,2023,Fpa,SSB,96184
+16870,meg.27.7b-k8abd,2023,MSY approach: FMSY,SSB,96184
+16878,meg.27.7b-k8abd,2023,SSB 2024 = Bpa = MSY Btrigger,SSB,96184
+16879,meg.27.7b-k8abd,2023,SSB 2024 = SSB 2023,SSB,96184
+16880,meg.27.7b-k8abd,2023,SSB 2024 = Blim,SSB,96184
+16881,meg.27.7b-k8abd,2023,SSB 2024 = Bpa,SSB,96184
+16261,meg.27.7b-k8abd,2024,EU MAP: FMSY,SSB,90976
+16262,meg.27.7b-k8abd,2024,F = F2022,SSB,94803
+16263,meg.27.7b-k8abd,2024,F = MAP FMSY lower,SSB,99893
+16264,meg.27.7b-k8abd,2024,F = MAP FMSY upper,SSB,75788
+16265,meg.27.7b-k8abd,2024,F=0,SSB,115855
+16266,meg.27.7b-k8abd,2024,Flim,SSB,63458
+16267,meg.27.7b-k8abd,2024,Fpa,SSB,74293
+16260,meg.27.7b-k8abd,2024,MSY approach: FMSY,SSB,90976
 16268,meg.27.7b-k8abd,2024,SSB 2024 = Bpa = MSY Btrigger,SSB,40444
-16269,meg.27.7b-k8abd,2024,SSB 2024 = SSB 2023,SSB,98527
+16269,meg.27.7b-k8abd,2024,SSB 2024 = SSB 2023,SSB,96184
 16270,meg.27.7b-k8abd,2024,SSB 2024 = Blim,SSB,35398
 16271,meg.27.7b-k8abd,2024,SSB 2024 = Bpa,SSB,40444
 14413,meg.27.7b-k8abd,1984,TAC,TAC,NA
