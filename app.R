@@ -1970,14 +1970,16 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                                else if(input$year==2018){"https://oar.marine.ie/handle/10793/1379"}
                                                else if(input$year==2019){"https://oar.marine.ie/handle/10793/1431"}
                                                else if(input$year==2020){"http://hdl.handle.net/10793/1655"}
-                                               else if(input$year==2021){"https://oar.marine.ie/handle/10793/1718"}),"Link to UWTV for FU16",target="_blank"),p(),
+                                               else if(input$year==2021){"https://oar.marine.ie/handle/10793/1718"}
+                                               else if(input$year==2022){"https://oar.marine.ie/handle/10793/1794"}),"Link to UWTV for FU16",target="_blank"),p(),
                                              a(href=paste0(
                                                if(input$year==2016){"https://oar.marine.ie/handle/10793/1184"}
                                                else if(input$year==2017){"http://hdl.handle.net/10793/1335"}
                                                else if(input$year==2018){"https://oar.marine.ie/handle/10793/1374"}
                                                else if(input$year==2019){"https://oar.marine.ie/handle/10793/1427"}
                                                else if(input$year==2020){"http://hdl.handle.net/10793/1656"}
-                                               else if(input$year==2021){"https://oar.marine.ie/handle/10793/1721"}),"Link to UWTV for FU17",target="_blank"),p(),
+                                               else if(input$year==2021){"https://oar.marine.ie/handle/10793/1721"}
+                                               else if(input$year==2022){"https://oar.marine.ie/handle/10793/1793"}),"Link to UWTV for FU17",target="_blank"),p(),
                                              
                                              "No Link Available",p(), #this lists 'No Link' for outFU
                                              
@@ -1986,6 +1988,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                              else if (input$year==2019){a(href="https://oar.marine.ie/handle/10793/1429","Link to UWTV for FU19",target="_blank")}
                                              else if (input$year==2020){a(href="http://hdl.handle.net/10793/1654","Link to UWTV for FU19",target="_blank")}
                                              else if (input$year==2021){a(href="https://oar.marine.ie/handle/10793/1722","Link to UWTV for FU19",target="_blank")}
+                                             else if (input$year==2022){a(href="https://oar.marine.ie/handle/10793/1795","Link to UWTV for FU19",target="_blank")}
                                              else{"No Link Available"},p(),
                                              
                                              if(input$year==2017){a(href="http://hdl.handle.net/10793/1330","Link to UWTV for FU2021",target="_blank")}
@@ -1993,6 +1996,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                              else if(input$year==2019){a(href="https://oar.marine.ie/handle/10793/1430","Link to UWTV for FU2021",target="_blank")}
                                              else if(input$year==2020){a(href="https://oar.marine.ie/handle/10793/1430","Link to UWTV for FU2021",target="_blank")}
                                              else if(input$year==2021){a(href="https://oar.marine.ie/handle/10793/1724","Link to UWTV for FU2021",target="_blank")}
+                                             else if(input$year==2022){a(href="https://oar.marine.ie/handle/10793/1798","Link to UWTV for FU2021",target="_blank")}
                                              else{"No Link Available"},p(),
                                              
                                              if(input$year==2017){a(href="http://oar.marine.ie/handle/10793/1331","Link to UWTV for FU22",target="_blank")}
@@ -2000,6 +2004,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                              else if(input$year==2019){a(href="https://oar.marine.ie/handle/10793/1428","Link to UWTV for FU22",target="_blank")}
                                              else if(input$year==2020){a(href="http://hdl.handle.net/10793/1658","Link to UWTV for FU22",target="_blank")}
                                              else if(input$year==2021){a(href="https://oar.marine.ie/handle/10793/1723","Link to UWTV for FU22",target="_blank")}
+                                             else if(input$year==2022){a(href="https://oar.marine.ie/handle/10793/1797","Link to UWTV for FU22",target="_blank")}
                                              else{"No Link Available"},p(),
                                       )),
                              HTML("<br><br>"))}}
@@ -2187,33 +2192,35 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   })#closing brackets of output$OverviewsAndMF <-renderUI({
   
   
-  #EXTRA CHAPTERS ADDED IN 2021
+  #EXTRA CHAPTERS ADDED IN 2021 and continued in 2022
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$RecentAdvice <-renderUI({
     if(input$year<2021){
       tagList(h3("Recent Advice on Ecosystem Services and Effects was introduced in 2021"))
     }
-    else if(input$year==2021){
+    else if(input$year>=2021){
       tagList(
         fluidRow(column(width = 10, htmlOutput("Recent_Beginning")),
                  column(width = 10, imageOutput("RecentAdvice1",height = "50%"),
-                        "Figure 1. Average Swept Area Ratio (SAR) between 2013-2018 for the waters around Ireland"),
-                 column(width = 10, imageOutput("RecentAdviceColours",height = "50%"))),
+                        if(input$year==2021){"Figure 1. Average Swept Area Ratio (SAR) between 2013-2018 for the waters around Ireland"}
+                        else if (input$year==2022){"Figure 1. NEAFC Regulatory Area 1 with NEAFC bottom-fishing closures for VME protection (NEAFC closed areas) and NEAFC bottom-fishing areas."})),
+                 column(width = 10, imageOutput("RecentAdviceColours",height = "50%")),
         htmlOutput("Recent_Middle"),
-        fluidRow(column(width = 5, imageOutput("RecentAdvice2", height="50%"),
-                        "Figure 2. New VME habitat and indicator records for the Irish continental slope and Porcupine Bank and Seabight within EU waters. 
+        fluidRow(column(width = 10, imageOutput("RecentAdvice2", height="50%"),
+                        if(input$year==2021){"Figure 2. New VME habitat and indicator records for the Irish continental slope and Porcupine Bank and Seabight within EU waters. 
                             Note that other existing VME records from the VME database are not displayed for this area. In addition, it is not possible to spatially resolve all records in the map due to their close proximity.
-                                 The Belgica Mound Province SAC is shown as the furthest south SAC in the Irish EEZ between the 600-1000 m depth contours.")),
+                                 The Belgica Mound Province SAC is shown as the furthest south SAC in the Irish EEZ between the 600-1000 m depth contours."}
+                          else if (input$year==2022){"Figure 2. Shellfish and finfish aquaculture sites around the coast of Ireland."})),
         htmlOutput("Recent_End"),
       )                             # end of taglist
-    }                                  #end of 2021 content
+    }                                  #end of 2021 and 2022 content
   })                                  # end of output$RecentAdvice
   
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
   output$Brexit_Text <- renderText({
     if(input$year<2021){
       tagList(h3("Brexit Impacts on Fisheries Management, Science and Advice was introduced in 2021"))
-    }else if(input$year==2021){
+    }else if(input$year>=2021){
       paste0(ExtraChapters[4, which(colnames(ExtraChapters)==paste0("X", input$year))])
     }
     
