@@ -70,12 +70,11 @@ ui <- fluidPage(
                         HTML("<br><br>")),
                tabPanel("Recent Ecosystem Advice", uiOutput("RecentAdvice"),
                         HTML("<br><br>")),
-               #list (if(input$year==2021){
                tabPanel("Brexit Impacts", htmlOutput("Brexit_Text")),
-                #                        }), 
-               tabPanel("Covid Response", htmlOutput("AtSea2020"), p(), HTML("<br>"),
-                        imageOutput("AtSea2020_1", height="100%"),
-                        "Figure 1. At sea Self-Sampling Datasheet",HTML("<br><br>")),
+               tabPanel("Covid Response", uiOutput("CovidResponse"), #p(), HTML("<br>"),
+                        HTML("<br><br>")),
+                        # imageOutput("AtSea2020_1", height="100%"),
+                        # "Figure 1. At sea Self-Sampling Datasheet",HTML("<br><br>")),
                tabPanel("Stock Advice", value="StockAdvice_tab",
                         sidebarLayout(fluidRow(column(3,uiOutput("speciesSelector")),
                                                column(5,uiOutput("DescSelector"))),
@@ -353,10 +352,12 @@ server <- function(input, output, session) {
   #~~~~~~~~~~~
   # 2022: SM Oct. The definition list was updated by HG. Additions, Deletions and updates have been applied
   # 2021: Changed the column from '3' to '2' so that the second cell is also displayed ) 
-  output$Defns <- renderText({
-    paste0(Introduction[5, 2])
-  })
+   output$Defns <- renderText({
+  #   #print(Introduction[5, 2])
+     paste0(Introduction[5, 2])
+   })
   output$Defns2 <- renderText({
+    #print(Introduction[6, 2])
     paste0(Introduction[6, 2])
   })
   
@@ -2216,17 +2217,51 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     }                                  #end of 2021 and 2022 content
   })                                  # end of output$RecentAdvice
   
-  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$Brexit_Text <- renderText({
+        if(input$year<2021){
+          "<h4>Brexit Impacts on Fisheries Management, Science and Advice was introduced in 2021</h4>"
+        }else if(input$year==2022){
+          "<h4>Brexit Impacts on Fisheries Management, Science and Advice is discussed in 2021</h4>"
+        }
+        else if(input$year==2021){
+          paste0(ExtraChapters[4, which(colnames(ExtraChapters)==paste0("X", input$year))])
+        }
+
+    })
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+  # output$AtSea2020 <- renderText({ 
+  #       if(input$year<2021){
+  #         "<h4>The Covid Response was introduced in 2021</h4>"
+  #       }else if(input$year==2021){     
+  #         paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  #         #paste0(ExtraChapters[6, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  #         imageOutput("AtSea2020_1", height="100%")
+  #         "Figure 1. At sea Self-Sampling Datasheet"
+  #       }else if(input$year==2022){     
+  #         paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  #         #paste0(ExtraChapters[6, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  #       }
+  #  })
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  output$CovidResponse <-renderUI({
     if(input$year<2021){
-      tagList(h3("Brexit Impacts on Fisheries Management, Science and Advice was introduced in 2021"))
-    }else if(input$year>=2021){
-      paste0(ExtraChapters[4, which(colnames(ExtraChapters)==paste0("X", input$year))])
+      tagList(h4("The Covid Response was introduced in 2021"))
     }
-    
-  })
+    else if(input$year==2021){
+      tagList(
+        htmlOutput("AtSea2020"),
+        fluidRow(column(width = 10, imageOutput("AtSea2020_1",height = "100%"),
+                        "Figure 1. At sea Self-Sampling Datasheet")),
+    )}                   
+    else if (input$year==2022){
+      tagList(
+        htmlOutput("AtSea2020")
+      )}                            
+                                     
+  })                                  
   
-  #The 'Covid Response' section is dealt with in the set up at line 72
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
   
 } #closing bracket of server <- function(input, output, session) {     (line 87)
 
