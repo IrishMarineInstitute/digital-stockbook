@@ -1695,12 +1695,13 @@ server <- function(input, output, session) {
                        "Mackerel Subareas 1-8 and 14 and Division 9.a (the Northeast Atlantic and adjacent waters)",
                        "Megrim Divisions 7.b-k 8.a-b and 8.d (west and southwest of Ireland Bay of Biscay)",
                        "Anglerfish Lophius piscatorius in Divisions 7.b-k, 8.a-b, and 8.d (southern Celtic Seas and Bay of Biscay)",
+                       "Anglerfish Lophius budegassa Divisions 7.b-k 8.a-b and 8.d (west and southwest of Ireland and Bay of Biscay)",
                        "Plaice Division 7.a (Irish Sea)",
                        "Saithe Subareas 4 6 and Division 3.a (North Sea Rockall and West of Scotland Skagerrak and Kattegat)",  
                        "Sole Division 7.a (Irish Sea)",
                        "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea)", 
                        "Blue Whiting Subareas 1-9 12 and 14 (Northeast Atlantic and adjacent waters)",
-                       
+                       "Spurdog Sub-areas 1-14",
                        "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)")
   
   #SM: Oct 2021 Updated list of forecast stocks
