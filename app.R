@@ -675,8 +675,7 @@ server <- function(input, output, session) {
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
     ## 2022 uses a different year range (SM Sep2022)
-    if(input$year == "2022"){
-      
+    if(input$year == 2022){
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2016 - 2020", sep="")
@@ -692,24 +691,20 @@ server <- function(input, output, session) {
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                " landings in 2021", sep="")
       }
-      
       # SM added in Nov 2021
       else if(input$speciesfilter=="Anglerfish"){      
         paste0("The distribution of EU landings of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                " between 2016 - 2020 (black and white Anglerfish combined)", sep="")
       }
-      
       else{
         paste0("The distribution of international landings of ",
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2016 - 2020 ", sep="")
       }
       
     } 
-    
-    
     ## 2021 uses a different year range (SM Sep2021)
-    else if(input$year == "2021"){
+    else if(input$year==2021){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
@@ -848,7 +843,7 @@ server <- function(input, output, session) {
       }
     }
     ## 2021 uses a different year range (SM Sep2021)
-    else if(input$year == 2021){
+    else if(input$year==2021){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
@@ -860,21 +855,18 @@ server <- function(input, output, session) {
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                " catches from Irish Vessels in 2020", sep="")
       }
-      
       #SM added Nov 24th 2021
       else if(input$speciesfilter=="Boarfish"){      
         paste0("The distribution of Irish ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                " landings between 2018-2020", sep="")
       }
-      
       # SM added in Nov 2021
       else if(input$speciesfilter=="Anglerfish"){      
         paste0("The distribution of Irish ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                " landings between 2015 - 2019 (black and white Anglerfish combined)", sep="")
       }
-      
       else{
         paste0("The distribution of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
@@ -882,7 +874,7 @@ server <- function(input, output, session) {
       }
     }
     ## 2020 uses a different year range (SM Nov2020)
-    else if(input$year == 2020){
+    else if(input$year==2020){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
@@ -903,7 +895,7 @@ server <- function(input, output, session) {
     
     
     ## 2019 uses a different text pattern
-    else if(input$year == 2019){
+    else if(input$year==2019){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
@@ -965,7 +957,7 @@ server <- function(input, output, session) {
     
     ## 2022 uses landings instead of values (SM Oct2022)
     ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if(input$year == 2022 && input$speciesfilter=="Nephrops"){      
+    if(input$year==2022 && input$speciesfilter=="Nephrops"){      
       paste0("A historical view of <em>", 
              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
              "</em> landings", sep="")
@@ -975,7 +967,7 @@ server <- function(input, output, session) {
              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
              "</em> landings", sep="")
       
-    }else if(input$year == 2022){
+    }else if(input$year==2022){
       paste0("A historical view of ", 
              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
              " landings.", sep="")
@@ -1015,7 +1007,7 @@ server <- function(input, output, session) {
   #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked (see lines ~1810)
   output$display.SummaryPage <- renderImage({
     #Call the thumbnail png of the Summary page here. (Lines ~1810 calls the pdf)
-    req(input$year == 2022)
+    req(input$year==2022)
     image_file <- paste0("www/SummaryPage/", input$year, "/",
                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png") #, sep=""
     #print(image_file)
@@ -2013,10 +2005,10 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   #Ecosystem Overview
   #~~~~~~~~~~~~~~~~~~~
   output$OverviewsAndMF <-renderUI({
-    #SM added Nov 2021
-    # if(input$year=="2021"){
-    #   tagList(h3("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2021"))
-    #}else 
+    #SM added Nov 2021 and Nov 2022
+     if(input$year==2021){
+       tagList(h3("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2022"))
+    }else 
     if(input$year=="2015"){
       tagList(h3("Ecosystem Overview and Mixed Fisheries was introduced in 2016"))
     }
