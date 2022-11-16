@@ -675,7 +675,7 @@ server <- function(input, output, session) {
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
     ## 2022 uses a different year range (SM Sep2022)
-    if(input$year == 2022){
+    if(input$year==2022){
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2016 - 2020", sep="")
@@ -695,7 +695,7 @@ server <- function(input, output, session) {
       else if(input$speciesfilter=="Anglerfish"){      
         paste0("The distribution of EU landings of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " between 2016 - 2020 (black and white Anglerfish combined)", sep="")
+               " between 2016 - 2020 (both species combined)", sep="")
       }
       else{
         paste0("The distribution of international landings of ",
@@ -833,7 +833,7 @@ server <- function(input, output, session) {
       else if(input$speciesfilter=="Anglerfish"){      
         paste0("The distribution of Irish ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " landings between 2016 - 2020 (black and white Anglerfish combined)", sep="")
+               " landings between 2016 - 2020 (both species combined)", sep="")
       }
       
       else{
@@ -1784,11 +1784,12 @@ the majority of adults are believed to move offshore to feed and spawn where res
 a relatively clustered distribution in the eastern Celtic Sea.",
                            fluidRow(column(width= 4, 
                                            imageOutput("display.InternationalLandings",height = "100%")),#
+                                    #SM Nov 2022: the year range was added in 2022 but will show for all previous years
                                     column(width= 4,
                                            "The distribution of sea bass sampled during
                                                  research surveys in offshore waters shows
                                                  clustering in the eastern Celtic Sea and Bristol
-                                                 Channel region.")),
+                                                 Channel region between 2003 and 2021.")),
                            h3("Irish Landings and Value of TAC"),
                            htmlOutput("LandingsText"))
                     }else{
@@ -2006,10 +2007,9 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   #~~~~~~~~~~~~~~~~~~~
   output$OverviewsAndMF <-renderUI({
     #SM added Nov 2021 and Nov 2022
-     if(input$year==2021){
+     if(input$year==2022){
        tagList(h3("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2022"))
-    }else 
-    if(input$year=="2015"){
+    }else if(input$year==2015){
       tagList(h3("Ecosystem Overview and Mixed Fisheries was introduced in 2016"))
     }
     #}else if(input$year>2016){  #changed this is 2021 to facilitate the changed format for that year - three tabs
