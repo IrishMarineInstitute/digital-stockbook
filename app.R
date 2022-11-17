@@ -1154,19 +1154,19 @@ server <- function(input, output, session) {
     }else{
       a(href=paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
                               paste0("ICESCode",input$year, sep="")]),
-        "ICES Advice",target="_blank")}
+        "ICES Advice ",target="_blank")}
   })
   
   output$ICESlinkpdf <-renderUI({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
     if(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
-                 paste0("ICESCode",input$year, sep="")]=="Not Available"){
+                 paste0("ICESLink",input$year, sep="")]=="Not Available"){
       paste0("No Link Available")
     }else{
       a(href=paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
                               paste0("ICESLink",input$year, sep="")]),
-        "ICES Advisory Sheet",target="_blank")}
+        "ICES Advisory Sheet ",target="_blank")}
   })
   
   #Management Advice/Additional Information
@@ -1733,35 +1733,72 @@ server <- function(input, output, session) {
   output$tabstest <- renderUI({
     panels= if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
       list(tabPanel("Stockbook Summary"))
+    } else if (input$year==2022 && input$speciesfilter=="Herring" && input$speciesbydiv=="Divisions 6.a and 7.b-c (West of Scotland West of Ireland)"  ){
+      # 17/11/22 - no advice for this stock in 2022 because it has been split into 2 new stocks
+      list(tabPanel("Stockbook Summary", value="stockbook_summ",
+                    
+                    HTML("<br><br><p>From 2015 to 2021 this stock was jointly assessed with herring in 6.a North because it was not possible to segregate 
+                    the two stocks in commercial catches or surveys. </p><p>The development of a genetic method to split the Malin shelf herring acoustic survey (MSHAS) 
+                    into the component stocks means that separate advice is now possible. </p><p> Following a benchmark in 2022 advice is given for herring in 6a South, 
+                    7b,c and herring in 6a North.</p> <br><br><p> Information on the two new stocks has been added to the Stock Area list (above) since 2022. 
+                    <li> Herring Division 6.a North (West of Scotland) and </li>
+                    <li> Herring in Divisions 6.a and 7.b-c (West of Scotland West of Ireland)</li><br> </p><br><br>
+                    <p> Use the year filter above to see historic information on the previous stock Herring in Divisions 6.a and 7.b-c 
+                    (west of Scotland West of Ireland) from 2015 to 2021</p><br><br>")))
+        
     }else if(input$speciesfilter=="Spurdog"){
       list(tabPanel("Stockbook Summary", value="stockbook_summ",
                     h3(textOutput("ICESAdviceTextMI")),
                     htmlOutput("ICESAdviceTextMI2"),p(),
                     HTML("<br><br>"),#Adding white space
-                    fluidRow(column(width = 3, imageOutput("display.assarea", height = "50%")),
-                             column(width = 6, imageOutput("display.landingsbygear", height = "50%"))),
-                    fluidRow(column(width = 6, 
-                                    h3("Key Points"),
-                                    tags$head(
-                                      tags$style("td:nth-child(1) {font-weight: bold;}
-                                                 td:nth-child(1) {background: #f2f2f2;}")),
-                                    tableOutput("KPtable"),
-                                    if(input$year>2017){
-                                      list(tags$head(tags$style(HTML("
-                                                                      #KPtableFootnote{
-                                                                      font-size: 11px;}"))),
-                                           htmlOutput("KPtableFootnote"))
-                                    }),
-                             column(width = 6, h3(textOutput("TACtext")),
-                                    imageOutput("display.TAC", height = "50%"),
-                                    if(input$year>2017){
-                                      imageOutput("display.CatchDiscards", height = "25%")})),
-                    tabsetPanel(id="MgtAdvice", type="pills",
-                                tabPanel(textOutput("ManagementAdviceHeader"), 
-                                         htmlOutput("ManagementAdvice"),p()),
-                                tabPanel(textOutput("AddInfoHeader"), #"Additional Information", 
-                                         htmlOutput("Addinfo"),p())),
-                    h3("Links"),
+
+                    #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked (see lines ~1015)
+                    #Click here and open the summary page in pdf format
+                    if(input$year==2022){
+                      
+                      list(
+                        fluidRow (column(width = 3,
+                                         HTML("<br><br>"),
+                                         HTML("<br><br>"),
+                                         a(h4("To see the stock advice page for 2023 click here"),target="_blank",href=paste0("SummaryPage/", input$year, "/",
+                                                                                                                              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".pdf")),
+                                         HTML("<br><br>")#Adding white space
+                        ),
+                        column(width = 6, imageOutput("display.SummaryPage")),  #, height = "50%"
+                        )#end of two columns
+                      )#end of list
+                      
+                      
+                    }else{ 
+                      #SM Oct 2022: Years prior to 2022 need the original page set-up
+                      list(                    
+                        fluidRow(column(width = 3, imageOutput("display.assarea", height = "50%")),
+                                 column(width = 6, imageOutput("display.landingsbygear", height = "50%"))),
+                        fluidRow(column(width = 6, 
+                                        h3("Key Points"),
+                                        tags$head(
+                                          tags$style("td:nth-child(1) {font-weight: bold;}
+                                                     td:nth-child(1) {background: #f2f2f2;}")),
+                                        tableOutput("KPtable"),
+                                        if(input$year>2017){
+                                          list(tags$head(tags$style(HTML("
+                                                                          #KPtableFootnote{
+                                                                          font-size: 11px;}"))),
+                                               htmlOutput("KPtableFootnote"))
+                                        }),
+                                 column(width = 6, h3(textOutput("TACtext")),
+                                        imageOutput("display.TAC", height = "50%"),
+                                        if(input$year>2017){
+                                          imageOutput("display.CatchDiscards", height = "25%")})),
+                        tabsetPanel(id="MgtAdvice", type="pills",
+                                    tabPanel(textOutput("ManagementAdviceHeader"), 
+                                             htmlOutput("ManagementAdvice"),p()),
+                                    tabPanel(textOutput("AddInfoHeader"), #"Additional Information", 
+                                             htmlOutput("Addinfo"),p()))
+                      )
+                    }
+                    
+                    ,h3("Links"),
                     h5("Link to the Stock Book PDF:"), 
                     uiOutput("Stockbooklink"),
                     h5("Link to the ICES Species Advice page:"), 
@@ -1868,7 +1905,10 @@ a relatively clustered distribution in the eastern Celtic Sea.",
            ))}
     
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-    }else if(!(input$speciesfilter %in% c("Albacore Tuna", "Bluefin Tuna", "Swordfish"))){
+    } else if(input$year==2022 && input$speciesfilter=="Herring" && input$speciesbydiv=="Divisions 6.a and 7.b-c (West of Scotland West of Ireland)" ){
+      # 17/11/22 - no advice for this stock in 2022 because it has been split into 2 new stocks
+     #do nothing!
+    } else if(!(input$speciesfilter %in% c("Albacore Tuna", "Bluefin Tuna", "Swordfish"))){
       panels[[length(panels)+1]]=tabPanel("ICES Advice", value="ices_summ",
                                           h3("ICES Stock Advice"),
                                           textOutput("ICESAdviceText"),
@@ -2195,6 +2235,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                         if(input$year==2021){"Figure 1. Average Swept Area Ratio (SAR) between 2013-2018 for the waters around Ireland"}
                         else if (input$year==2022){"Figure 1. NEAFC Regulatory Area 1 with NEAFC bottom-fishing closures for VME protection (NEAFC closed areas) and NEAFC bottom-fishing areas."})),
                  column(width = 10, imageOutput("RecentAdviceColours",height = "50%")),
+        HTML("<br><br>"),
         htmlOutput("Recent_Middle"),
         fluidRow(column(width = 10, imageOutput("RecentAdvice2", height="50%"),
                         if(input$year==2021){"Figure 2. New VME habitat and indicator records for the Irish continental slope and Porcupine Bank and Seabight within EU waters. 
