@@ -1119,14 +1119,16 @@ server <- function(input, output, session) {
     paste0(KPFilter[,4])
   }) 
   
-  
-  
+
+    
   #Links
   #~~~~~  
   output$Stockbooklink <-renderUI({
     if(input$year==2022){
-      a(href=paste0("http://hdl.handle.net/10793/1726"), #THIS IS THE 2021 LINK UNTIL THE 2022 LINK IS READY
-        "The Stock Book 2022",target="_blank")
+       a(href=paste0("The Stock Book 2022.pdf"), #CONNECT TO A PDF UNTIL THE 2022 LINK IS READY
+         "The Stock Book 2022",target="_blank")
+      # a(href=paste0("http://hdl.handle.net/10793/1726"), #THIS IS THE 2021 LINK UNTIL THE 2022 LINK IS READY
+      #   "The Stock Book 2022",target="_blank")
     }else if(input$year==2021){
       a(href=paste0("http://hdl.handle.net/10793/1726"),
         "The Stock Book 2021",target="_blank")
@@ -1744,6 +1746,8 @@ server <- function(input, output, session) {
   output$tabstest <- renderUI({
     panels= if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
       list(tabPanel("Stockbook Summary"))
+      
+      #HERRING 6a7bc was split in 2022 into two new stocks
     } else if (input$year==2022 && input$speciesfilter=="Herring" && input$speciesbydiv=="Divisions 6.a and 7.b-c (West of Scotland West of Ireland)"  ){
       # 17/11/22 - no advice for this stock in 2022 because it has been split into 2 new stocks
       list(tabPanel("Stockbook Summary", value="stockbook_summ",
@@ -1756,7 +1760,17 @@ server <- function(input, output, session) {
                     <li> Herring in Divisions 6.a and 7.b-c (West of Scotland West of Ireland)</li><br> </p><br><br>
                     <p> Use the year filter above to see historic information on the previous stock Herring in Divisions 6.a and 7.b-c 
                     (west of Scotland West of Ireland) from 2015 to 2021</p><br><br>")))
-        
+     
+      #ARCTIC COD does not appear in the 2022 stockbook, but historic information needs to be retained
+    } else if (input$year==2022 && input$speciesfilter=="Cod" && input$speciesbydiv=="Subareas 1 and 2 (Northeast Arctic)"  ){
+      # 18/11/22 - no advice for this stock in 2022 
+      list(tabPanel("Stockbook Summary", value="stockbook_summ",
+                    
+                    HTML("<br><br><p>In 2022 there is no ICES advice for Cod in Subareas 1 and 2 (Northeast Arctic) </p> <br><br>
+                    
+                    <p> Use the year filter above to see historic information on Arctic Cod from 2015 to 2021</p><br><br>")))
+      
+      
     }else if(input$speciesfilter=="Spurdog"){
       list(tabPanel("Stockbook Summary", value="stockbook_summ",
                     h3(textOutput("ICESAdviceTextMI")),
@@ -1914,11 +1928,14 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                     uiOutput("ICESlinkpdf"), 
                     HTML("<br><br>")
            ))}
-    
+      
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-    } else if(input$year==2022 && input$speciesfilter=="Herring" && input$speciesbydiv=="Divisions 6.a and 7.b-c (West of Scotland West of Ireland)" ){
-      # 17/11/22 - no advice for this stock in 2022 because it has been split into 2 new stocks
+     }else if(input$year==2022 && input$speciesfilter=="Herring" && input$speciesbydiv=="Divisions 6.a and 7.b-c (West of Scotland West of Ireland)" ){
+      # 17/11/22 - no advice for this stock of herring in 2022 because it has been split into 2 new stocks
      #do nothing!
+    } else if(input$year==2022 && input$speciesfilter=="Cod" && input$speciesbydiv=="Subareas 1 and 2 (Northeast Arctic)" ){
+      # 18/11/22 - no advice for Arctic Cod in 2022
+      #do nothing!
     } else if(!(input$speciesfilter %in% c("Albacore Tuna", "Bluefin Tuna", "Swordfish"))){
       panels[[length(panels)+1]]=tabPanel("ICES Advice", value="ices_summ",
                                           h3("ICES Stock Advice"),
