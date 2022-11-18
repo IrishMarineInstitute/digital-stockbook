@@ -1649,6 +1649,7 @@ server <- function(input, output, session) {
   # DJC                             "F (2019)", "SSB (2020)",
   # DJC                             "% SSB change*", "% TAC change**")
   output$Forecasting_Table <- renderTable({
+    #print("test1")
     # djc 9/11/21 Filtering was previously only done by area description! - Fixed to filter by species and area
     # ForecastingFilter=filter(ForecastingTable, FishStock==paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"]))
     stockToFilter <- ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New" ]
@@ -1657,7 +1658,9 @@ server <- function(input, output, session) {
       # when you move between species with different valid areas
       return(NULL)
     }
+    #print("test2")
     ForecastingFilter <- filter(ForecastingTable, FishStock==stockToFilter)
+    #print("test3")
     ForecastingFilter[,c(-1)]
   }, options = list(autoWidth = TRUE,
                     columnDefs = list(list(width = '200px', targets = c(1)))), 
