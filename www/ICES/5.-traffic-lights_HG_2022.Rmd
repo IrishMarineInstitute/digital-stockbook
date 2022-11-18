@@ -1,0 +1,48 @@
+---
+title: "traffic lights"
+author: "Hans Gerritsen"
+date: '2022-06-14'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=F)
+library(icesSAG)
+library(RODBC)
+```
+
+```{r gettoken, eval=FALSE}
+# Example of how to register a token
+# You can generate a token like this:
+# * first log in on  https://standardgraphs.ices.dk/manage
+# * then go to sg.ices.dk/manage/CreateToken.aspx
+# * paste the token below after SG_PAT=
+
+cat("# Standard Graphs personal access token",
+    "SG_PAT=cfab6390-10fd-421e-9512-398f9908be38",
+    sep = "\n",
+    file = "~/.Renviron_SG")
+```
+
+```{r usetoken}
+options(icesSAG.use_token = TRUE)
+```
+
+```{r getstocks}
+# need to run in 32 bit for this to work
+channel <- odbcConnectAccess2007("Z:/StockBooks/_Stockbook2022/MiSummaryOfAdvice/MiSummaryOfAdvice - 2022.accdb")
+  stocktab <- sqlFetch(channel,'Stock')
+close(channel)
+stocks <- stocktab$StockCode
+```
+
+
+```{r plotloop, fig.height=214/72, fig.width=991/72}
+# this takes quite a while
+for(stock in stocks){
+  cat(stock,'\n')
+  year <- 2022
+  key <- findAssessmentKey(stock, year, regex = TRUE, full = FALSE)
+  a <- getStockStatusTable(key)
+  plot(a)
+}

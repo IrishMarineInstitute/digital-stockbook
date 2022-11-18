@@ -680,7 +680,14 @@ server <- function(input, output, session) {
         paste0("The distribution of international landings of <em>",
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2016 - 2020", sep="")
       }
-      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel" | input$speciesfilter=="Blue Whiting"){      
+      #Discussed with AC Nov 14th
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Blue Whiting"){      
+        paste0("The distribution of international landings of ", 
+               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               " in 2021 (excluding Russia)", sep="")
+      }
+      #Discussed with AC Nov 14th
+      else if(input$speciesfilter=="Horse Mackerel"){      
         paste0("The distribution of international landings of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                " in 2021", sep="")
@@ -815,10 +822,11 @@ server <- function(input, output, session) {
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                "</em> landings by Irish Vessels between 2016 - 2020", sep="")
       } 
+      #Discussed with AC Nov 14th
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel" | input$speciesfilter=="Blue Whiting"){      
-        paste0("The distribution of ", 
+        paste0("The distribution of Irish landings of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " catches from Irish Vessels in 2021", sep="")
+               " in 2021", sep="")
       }
       
       #SM added Nov 24th 2021 and updated in 2022
@@ -1624,7 +1632,7 @@ server <- function(input, output, session) {
   
   # DJC Get rid of the X column - we don't need it
   ForecastingTable$X <- NULL
-  ForecastingTable=ForecastingTable[,c(1,3,4,5,6,7,10,11,12)]#3 missing)]#
+  ForecastingTable=ForecastingTable[,c(1,3,4,5,6,7,10,11,13)]#3 missing)]#  was col 12 but that is '%TAC change'. Col 13 '% Advice Change' is needed
   ForecastingTable$Catch...2023=formatC(as.numeric(as.character(ForecastingTable$Catch...2023)), format="d", big.mark=",")
   ForecastingTable$Landings...2023=formatC(as.numeric(as.character(ForecastingTable$Landings...2023)), format="d", big.mark=",")
   ForecastingTable$Discards...2023=formatC(as.numeric(as.character(ForecastingTable$Discards...2023)), format="d", big.mark=",")
