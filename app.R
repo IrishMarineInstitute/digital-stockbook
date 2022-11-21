@@ -1757,8 +1757,8 @@ server <- function(input, output, session) {
                     into the component stocks means that separate advice is now possible. </p><p> Following a benchmark in 2022 advice is given for herring in 6a South, 
                     7b,c and herring in 6a North.</p> <br><br><p> Information on the two new stocks has been added to the Stock Area list (above) since 2022. 
                     <li> Herring Division 6.a North (West of Scotland) and </li>
-                    <li> Herring in Divisions 6.a and 7.b-c (West of Scotland West of Ireland)</li><br> </p><br><br>
-                    <p> Use the year filter above to see historic information on the previous stock Herring in Divisions 6.a and 7.b-c 
+                    <li> Herring in Divisions 6.a and 7.b-c (West of Scotland West of Ireland)</li><br> </p>
+                    <p> <h4>Use the year filter above to see historic information on the previous stock Herring in Divisions 6.a and 7.b-c 
                     (west of Scotland West of Ireland) from 2015 to 2021</p><br><br>")))
      
       #ARCTIC COD does not appear in the 2022 stockbook, but historic information needs to be retained
@@ -1768,7 +1768,7 @@ server <- function(input, output, session) {
                     
                     HTML("<br><br><p>In 2022 there is no ICES advice for Cod in Subareas 1 and 2 (Northeast Arctic) </p> <br><br>
                     
-                    <p> Use the year filter above to see historic information on Arctic Cod from 2015 to 2021</p><br><br>")))
+                    <p> <h4>Use the year filter above to see historic information on Arctic Cod from 2015 to 2021</p><br><br>")))
       
       
     }else if(input$speciesfilter=="Spurdog"){
@@ -2076,9 +2076,9 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   output$OverviewsAndMF <-renderUI({
     #SM added Nov 2021 and Nov 2022
      if(input$year==2022){
-       tagList(h3("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2022"))
+       tagList(h4("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2022"))
     }else if(input$year==2015){
-      tagList(h3("Ecosystem Overview and Mixed Fisheries was introduced in 2016"))
+      tagList(h4("Ecosystem Overview and Mixed Fisheries was introduced in 2016"))
     }
     #}else if(input$year>2016){  #changed this is 2021 to facilitate the changed format for that year - three tabs
     else if(input$year==2017 |input$year==2018 |input$year==2019 |input$year==2020 |input$year==2021){  
