@@ -39,8 +39,8 @@
 #STEP 2
 #install 'png' package, then repeat STEP 1 and continue
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
+library(icesVocab)
+library(png)
 library(icesSAG)
 
 #setwd("H:/Stockbook/2018/2018_V1/www/ICES")
@@ -49,7 +49,8 @@ library(icesSAG)
 #update wd Oct 2019 - SM
 #setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2019_V1/www/ICES")
 #setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2020_Git/www/ICES")
-setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES")
+#setwd("Z:/InformaticsProject/Phase1/Stockbook Handover/2021_Git/www/ICES")
+setwd("Z::/InformaticsProject/Phase1/Stockbook Handover/2021_Git/digital-stockbook/www/ICES")
 
 IrishStocks=read.csv("stock_lookupV2.csv", header=TRUE)
 dim(IrishStocks)
@@ -57,12 +58,13 @@ head(IrishStocks)
 colnames(IrishStocks) <- c("ecoregion","Old","species type" ,"New","x")
 
 #~~ SM NOTE ~~
-#update wd Oct 2019, and 2020, and 2020
+#update wd Oct 2019, and 2020, and 2021
 #create a new loop, for the new years plot generation - 
+#            2022 lines 485 to  
 #            2021 lines 318 to 368
 #            2020 lines 264 to 314
 #            2019 lines 172 to 220  
-#skip down to the start of this new section (for 2021 - line 318), to run the code to generate the required plots
+#skip down to the start of this new section (for 2022 - line 485), to run the code to generate the required plots
 #make sure the path ends in '/' so the plots go into the required folder
 #~~~~~~~~~~
 
@@ -469,6 +471,123 @@ for(i in  IrishStocks$New){
 #22/09
 #Long list of GETing...., then a warning
 #Graphs in folder but a ALL BLANK
+
+
+
+assessmentKeys <- findAssessmentKey("had", 2015)
+landings_img <- getLandingsGraph(assessmentKeys[1])
+plot(landings_img)
+
+landings_plots <- getLandingsGraph(assessmentKeys)
+plot(landings_plots)
+
+
+
+#~~~~~~  2022  ~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~
+#Sep 02nd - changed the file path to '....2022_Git\digital-stockbook\' 
+#Manually add a 2022 folder in each ICES folder, for the downloaded png's to be saved into
+
+#UPDATE PATHS
+
+#Stock Development Over Time (SAG) 
+#completed Oct xxth and committed to GitHub. Added x manual graphs from ICES 8
+for(i in  IrishStocks$New){
+  graphs <- getSAGGraphs(findAssessmentKey(i, 2022)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2022_Git/digital-stockbook/www/ICES/SAG/2022/", i, ".png", sep=""),
+      width = 850, height = 650)
+  plot(graphs)
+  dev.off()
+}
+
+#Adapted from HG code
+if(F){
+  cat("# Standard Graphs personal access token",
+      "SG_PAT=cfab6390-10fd-421e-9512-398f9908be38",
+      sep = "\n",
+      file = "~/.Renviron_SG")
+}
+options(icesSAG.use_token = TRUE)
+
+for(i in  IrishStocks$New){
+  cat(IrishStocks$New,'\n')
+  year <- 2022
+  key <- findAssessmentKey(IrishStocks$New, year, regex = TRUE, full = FALSE)
+  if(length(key)>0) {
+    a <- try(getStockStatusTable(key))
+    #HG png(paste0('./SAG plots/status_',stock,'.png'),width=dim(a[[1]])[2],height=dim(a[[1]])[1])
+    #SM png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2022_Git/digital-stockbook/www/ICES/SAG/2022/", i, ".png", sep=""),
+        #width = 850, height = 650)
+    png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2022_Git/digital-stockbook/www/ICES/SAG/2022/", i, ".png", sep=""),
+        width=dim(a[[1]])[2],height=dim(a[[1]])[1])
+    
+    plot(a)
+    dev.off()}}
+    
+#     b <- try(getSAGGraphs(key))
+#     if(class(b)=='try-error') next()
+#     try(png(paste0('./SAG plots/summary_',stock,'.png'),width=dim(b[[1]])[2]*4,height=dim(b[[1]])[1]*4))
+#     plot(b)  
+#     dev.off()
+#   }
+# }
+
+
+
+#Stock and Exploitation status (Status)
+#completed Oct xxth and committed to GitHub. Added x manual graphs from ICES 2
+for(i in  IrishStocks$New){
+  graphs <- getStockStatusTable(findAssessmentKey(i, 2022)[1])
+  png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2022_Git/digital-stockbook/www/ICES/Status/2022/", i, ".png", sep=""),
+      width = 950, height = 215)
+  plot(graphs)
+  dev.off()
+}
+
+
+
+#Quality of Assessment (SSB) 
+for(i in  IrishStocks$New){
+  print (i)
+  graphs <- NA
+  try (graphs <- getSSBHistoricalPerformance(findAssessmentKey(i, 2022)[1]))
+  if (! is.na(graphs)) {
+    png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2022_Git/digital-stockbook/www/ICES/SSB/2022/", i, ".png", sep=""),
+        width = 450, height = 350)
+    plot(graphs)
+    dev.off()
+  }
+}
+
+
+
+for(i in  IrishStocks$New){
+  print (i)
+  graphs <- NA
+  try (graphs <- getFishingMortalityHistoricalPerformance(findAssessmentKey(i, 2022)[1]))
+  if (! is.na(graphs)) {
+    png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2022_Git/digital-stockbook/www/ICES/Fishmort/2022/", i, ".png", sep=""),
+        width = 450, height = 350)
+    plot(graphs)
+    dev.off()
+  }
+}
+
+
+
+
+for(i in  IrishStocks$New){
+  print (i)
+  graphs <- NA
+  try (graphs <- getRecruitmentHistoricalPerformance(findAssessmentKey(i, 2022)[1]))
+  if (! is.na(graphs)) {
+    png(file=paste("Z:/InformaticsProject/Phase1/Stockbook Handover/2022_Git/digital-stockbook/www/ICES/RecruitHist/2022/", i, ".png", sep=""),
+        width = 450, height = 350)
+    plot(graphs)
+    dev.off()
+  }
+}
+
 
 
 
