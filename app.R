@@ -1677,7 +1677,6 @@ server <- function(input, output, session) {
   colnames = TRUE, bordered = TRUE)
   
   # djc 15/11/21 - Fixed some issues with spaces
-  # removed these tabs due to no data: "Cod Division 6.a (West of Scotland)", "Spurdog Sub-areas 1-14",
   ForecastingStocks= c("Seabass Divisions 4.b-c 7.a and 7.d-h (central and southern North Sea Irish Sea English Channel Bristol Channel and Celtic Sea)",
                        #"Cod Subareas 1 and 2 (Northeast Arctic)",
                        "Cod Division 6.a (West of Scotland)",
@@ -1972,7 +1971,11 @@ a relatively clustered distribution in the eastern Celtic Sea.",
         # SM Sep2022 Changed input$year from 2021 to 2022 (row 1837) and changed "Forecasting 2022" (row 1843) to "Forecasting 2023"
         # SM Oct2021 Changed input$year from 2020 to 2021 (row 1385) and changed "Forecasting 2021" (row 1390) to "Forecasting 2022"
         # SM Nov2020 Changed input$year from 2019 to 2020 (row 12320) and changed "Forecasting 2020" (row 1236) to "Forecasting 2021"
-        panels[[4]]=tabPanel("Forecasting 2023", value="ForecastingTab",
+        
+        # In 2022 in Spurdog, a 'ghost' panel appeared between tabs number 2 and 3 when test deployed. (The issue did not show when run locally in the browser.)
+        # This was because Spurdog has no biology page, but '4' was hard-coded: panels[[4]] 
+        # The number '4' was replaced with 'length(panels)+1' to fix the issue
+        panels[[length(panels)+1]]=tabPanel("Forecasting 2023", value="ForecastingTab",
                              uiOutput("ForecastOptionsSelector"),
                              #plotlyOutput("plotforecasting"),
                              fluidRow(column(width = 3 ,plotlyOutput("plotSSB", width = "100%")), 
