@@ -45,7 +45,9 @@ ui <- fluidPage(
                tabPanel("Long Term Management Plans", 
                         htmlOutput("LongTermManagementtext"),
                         p(),
-                        imageOutput("MgtPlan", height="100%"),
+                        imageOutput("MgtPlan", height="100%"), 
+                        fluidRow(column(width = 5, imageOutput("MgtPlan2", height="100%")),
+                                 column(width = 5, imageOutput("MgtPlan3", height="100%"))),
                         HTML("<br><br>")),
                tabPanel("Advice Summary", textOutput("AdviceSummtext"),p(),
                         imageOutput("AdviceSummtable1", height="100%"),p(),
@@ -304,8 +306,19 @@ server <- function(input, output, session) {
       paste0("www/Introduction/ManagementPlan",input$year,".png")
     }else{
       paste0("www/Introduction/ManagementPlan",input$year,".PNG")}
-    return(list(src = image_file, filetype = "image/png", height = 700))
+    return(list(src = image_file, filetype = "image/png", height = 800))
   }, deleteFile = FALSE)
+  
+  output$MgtPlan2 <- renderImage({
+    image_file <- paste0("www/Introduction/ManPlanAppIX_Stocks_1_",input$year,".png")
+    return(list(src = image_file, filetype = "image/png", height = 950))
+  }, deleteFile = FALSE)
+  
+  output$MgtPlan3 <- renderImage({
+    image_file <- paste0("www/Introduction/ManPlanAppIX_Stocks_2_",input$year,".png")
+    return(list(src = image_file, filetype = "image/png", height = 950))
+  }, deleteFile = FALSE)
+  
   
   #Summary of Advice  #original width (too big)--> # width = 1100
   #~~~~~~~~~~~~~~~~~
@@ -1125,10 +1138,11 @@ server <- function(input, output, session) {
   #~~~~~  
   output$Stockbooklink <-renderUI({
     if(input$year==2022){
-       a(href=paste0("The Stock Book 2022.pdf"), #CONNECT TO A PDF UNTIL THE 2022 LINK IS READY
+       #a(href=paste0("The Stock Book 2022.pdf"), #CONNECT TO A PDF UNTIL THE 2022 LINK IS READY
+       #  "The Stock Book 2022",target="_blank")
+      #The OAR link became live on 23/11/2022 
+       a(href=paste0("http://hdl.handle.net/10793/1805"), 
          "The Stock Book 2022",target="_blank")
-      # a(href=paste0("http://hdl.handle.net/10793/1726"), #THIS IS THE 2021 LINK UNTIL THE 2022 LINK IS READY
-      #   "The Stock Book 2022",target="_blank")
     }else if(input$year==2021){
       a(href=paste0("http://hdl.handle.net/10793/1726"),
         "The Stock Book 2021",target="_blank")
@@ -1696,6 +1710,7 @@ server <- function(input, output, session) {
                        "Mackerel Subareas 1-8 and 14 and Division 9.a (the Northeast Atlantic and adjacent waters)",
                        "Megrim Divisions 7.b-k 8.a-b and 8.d (west and southwest of Ireland Bay of Biscay)",
                        "Anglerfish Lophius piscatorius in Divisions 7.b-k, 8.a-b, and 8.d (southern Celtic Seas and Bay of Biscay)",
+                       "Anglerfish Lophius budegassa Divisions 7.b-k 8.a-b and 8.d (west and southwest of Ireland and Bay of Biscay)",
                        "Plaice Division 7.a (Irish Sea)",
                        "Saithe Subareas 4 6 and Division 3.a (North Sea Rockall and West of Scotland Skagerrak and Kattegat)",  
                        "Sole Division 7.a (Irish Sea)",

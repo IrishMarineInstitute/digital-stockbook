@@ -3178,7 +3178,7 @@
 3182,cod.27.7e-k,2023,F = F2022,Landings,NA
 3183,cod.27.7e-k,2023,FMSY x SSB 2023/MSY Btrigger,Landings,NA
 3184,cod.27.7e-k,2023,FMSY x SSB 2023/MSY Btrigger,Landings,NA
-3185,cod.27.7e-k,2023,ICES Advice,Landings,NA
+3185,cod.27.7e-k,2023,ICES Advice,Landings,0
 3186,cod.27.7e-k,2023,MSY approach: F = 0,Landings,NA
 3187,cod.27.7e-k,2023,MSY approach: F = 0,Landings,NA
 3188,cod.27.7e-k,2023,SSB 2024 = SSB 2023,Landings,NA
@@ -6950,7 +6950,7 @@
 6961,her.27.1-24a514a,2023,Flim,Landings,NA
 6962,her.27.1-24a514a,2023,Fpa,Landings,NA
 6963,her.27.1-24a514a,2023,Fpa,Landings,NA
-6964,her.27.1-24a514a,2023,ICES Advice,Landings,NA
+6964,her.27.1-24a514a,2023,ICES Advice,Landings,0
 6965,her.27.1-24a514a,2023,MSY approach: FMSY,Landings,NA
 6966,her.27.1-24a514a,2023,MSY approach: FMSY,Landings,NA
 6967,her.27.1-24a514a,2023,SSB 2024 = Blim,Landings,NA
@@ -18901,3 +18901,5 @@
 18934,whg.27.7b-ce-k,2020,TAC,TAC,10863
 18935,whg.27.7b-ce-k,2021,TAC,TAC,10259
 18936,whg.27.7b-ce-k,2022,TAC,TAC,8352
+,cod.27.7e-k,2022,ICES Advice,Landings,0
+,her.27.1-24a514a,2022,ICES Advice,Landings,0
