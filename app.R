@@ -53,21 +53,9 @@ ui <- fluidPage(
                         imageOutput("AdviceSummtable1", height="100%"),p(),
                         imageOutput("AdviceSummtable2", height="100%"),
                         HTML("<br><br>")),
-               tabPanel("Sustainability Assessment", 
-                        htmlOutput("Sustainabilitytext"),
-                        "Table 1: Summary of FEAS evaluation of fishing mortality in relation 
-                       to FMSY for Stocks of interest to Ireland", 
-                        imageOutput("Sustainabilitytable1", height="100%"),
-                        HTML("<br>"),
-                        "Table 2: Summary of FEAS evaluation of SSB in 
-                       relation to biomass reference points for stocks of interest to Ireland.",
-                        imageOutput("Sustainabilitytable2", height="100%"),
-                        HTML("<br>"),
-                        "Table 3: Details of FEAS evaluation of fishing mortality in relation to FMSY and SSB 
-                       in relation to biomass reference points for stocks of interest to Ireland.",
-                        imageOutput("Sustainabilitytable3", height="100%"),HTML("<br>"),
-                        textOutput("SustainabilityTabletext"),
-                        imageOutput("Sustainabilitytable4", height="100%"), HTML("<br>")),
+               #Nov 2022 moved the Sustainability Ass. set-up to a uiOutput() to avoid 'Navigation Containers' warning
+               tabPanel("Sustainability Assessment", uiOutput("SustainAss"),
+                        HTML("<br><br>")),
                tabPanel("Overviews and Mixed Fisheries", uiOutput("OverviewsAndMF"),
                         HTML("<br><br>")),
                tabPanel("Recent Ecosystem Advice", uiOutput("RecentAdvice"),
@@ -306,7 +294,7 @@ server <- function(input, output, session) {
       paste0("www/Introduction/ManagementPlan",input$year,".png")
     }else{
       paste0("www/Introduction/ManagementPlan",input$year,".PNG")}
-    return(list(src = image_file, filetype = "image/png", height = 800))
+    return(list(src = image_file, filetype = "image/png", height = 850))
   }, deleteFile = FALSE)
   
   output$MgtPlan2 <- renderImage({
@@ -324,18 +312,18 @@ server <- function(input, output, session) {
   #~~~~~~~~~~~~~~~~~
   output$AdviceSummtable1 <- renderImage({
     image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table1.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 825))
+    return(list(src = image_file, filetype = "image/png", width = 750))
   }, deleteFile = FALSE)
   output$AdviceSummtable2 <- renderImage({
     image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table2.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 825))
+    return(list(src = image_file, filetype = "image/png", width = 750))
   }, deleteFile = FALSE)
   output$AdviceSummtext<- renderText({
     paste0("Marine Institute Summary on the Status, Scientific Advice for ", as.numeric(input$year)+1,
            " for those Stocks of Interest to Ireland")
   })
   
-  #Sustainability #table 3 was width=800
+  #Sustainability #table 3 was width=800 
   #~~~~~~~~~~~~~~
   output$Sustainabilitytext <- renderText({
     paste0(Introduction[4, which(colnames(Introduction)==paste0("X", input$year))])
@@ -344,6 +332,11 @@ server <- function(input, output, session) {
     paste0("Table 4: Stocks with a status change between the ", as.numeric(input$year)-1, 
            " and ", input$year, " assessments.") # SM Nov: changed in 2021 from 'Stock Books'
   })
+  # Figure 1 text added in 2022
+  output$SustainabilityFigText <- renderText({
+    paste0("Figure 1: Number of stocks assessed to be fished below Fmsy and where SSB is above MSY Btrigger in the Stock Book each year, with trends indicated.") 
+  })
+  # SM Nov: changed in 2021 from 'Stock Books'
   output$Sustainabilitytable1 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table1.png")
     return(list(src = image_file, filetype = "image/png", width = 700))
@@ -358,6 +351,11 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$Sustainabilitytable4 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table4.PNG")
+    return(list(src = image_file, filetype = "image/png", width = 800))
+  }, deleteFile = FALSE)
+  #Added in 2022
+  output$SustainabilityFig <- renderImage({
+    image_file <- paste0("www/Introduction/Sustain",input$year,"Fig1.png")
     return(list(src = image_file, filetype = "image/png", width = 800))
   }, deleteFile = FALSE)
   
@@ -2267,6 +2265,38 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     
   })#closing brackets of output$OverviewsAndMF <-renderUI({
   
+
+  #SUSTAINABILITY ASSESSMENT 2022 (output code removed from 'tabpanel' (line ~54) to here)
+  # to avoid 'Navigation Containers' warning
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  output$SustainAss <-renderUI({
+    
+      tagList(
+        
+        htmlOutput("Sustainabilitytext"),
+        "Table 1: Summary of FEAS evaluation of fishing mortality in relation 
+                       to FMSY for Stocks of interest to Ireland", 
+        imageOutput("Sustainabilitytable1", height="100%"),
+        HTML("<br>"),
+        "Table 2: Summary of FEAS evaluation of SSB in 
+                       relation to biomass reference points for stocks of interest to Ireland.",
+        imageOutput("Sustainabilitytable2", height="100%"),
+        HTML("<br>"),
+        # SM added Fig 1 image and caption in Nov 2022
+        imageOutput("SustainabilityFig", height="100%"),
+        textOutput("SustainabilityFigText"),
+        HTML("<br>"),
+        "Table 3: Details of FEAS evaluation of fishing mortality in relation to FMSY and SSB 
+                       in relation to biomass reference points for stocks of interest to Ireland.",
+        imageOutput("Sustainabilitytable3", height="100%"),HTML("<br>"),
+        textOutput("SustainabilityTabletext"),
+        imageOutput("Sustainabilitytable4", height="100%"), HTML("<br>"),  
+    
+        
+      )                             # end of taglist
+  })                                  # end of output$SustainAss
+  
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
   #EXTRA CHAPTERS ADDED IN 2021 and continued in 2022
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2277,18 +2307,18 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     else if(input$year>=2021){
       tagList(
         fluidRow(column(width = 10, htmlOutput("Recent_Beginning")),
+                 column(width = 10, htmlOutput("Recent_Middle")),
                  column(width = 10, imageOutput("RecentAdvice1",height = "50%"),
                         if(input$year==2021){"Figure 1. Average Swept Area Ratio (SAR) between 2013-2018 for the waters around Ireland"}
                         else if (input$year==2022){"Figure 1. NEAFC Regulatory Area 1 with NEAFC bottom-fishing closures for VME protection (NEAFC closed areas) and NEAFC bottom-fishing areas."})),
-                 column(width = 10, imageOutput("RecentAdviceColours",height = "50%")),
+        column(width = 10, imageOutput("RecentAdviceColours",height = "50%")),
         HTML("<br><br>"),
-        htmlOutput("Recent_Middle"),
-        fluidRow(column(width = 10, imageOutput("RecentAdvice2", height="50%"),
+        fluidRow(column(width = 10, htmlOutput("Recent_End")),
+                 column(width = 10, imageOutput("RecentAdvice2", height="50%"),
                         if(input$year==2021){"Figure 2. New VME habitat and indicator records for the Irish continental slope and Porcupine Bank and Seabight within EU waters. 
                             Note that other existing VME records from the VME database are not displayed for this area. In addition, it is not possible to spatially resolve all records in the map due to their close proximity.
                                  The Belgica Mound Province SAC is shown as the furthest south SAC in the Irish EEZ between the 600-1000 m depth contours."}
-                          else if (input$year==2022){"Figure 2. Shellfish and finfish aquaculture sites around the coast of Ireland."})),
-        htmlOutput("Recent_End"),
+                        else if (input$year==2022){"Figure 2. Shellfish and finfish aquaculture sites around the coast of Ireland."})),
       )                             # end of taglist
     }                                  #end of 2021 and 2022 content
   })                                  # end of output$RecentAdvice
@@ -2306,20 +2336,6 @@ a relatively clustered distribution in the eastern Celtic Sea.",
 
     })
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-  # output$AtSea2020 <- renderText({ 
-  #       if(input$year<2021){
-  #         "<h4>The Covid Response was introduced in 2021</h4>"
-  #       }else if(input$year==2021){     
-  #         paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
-  #         #paste0(ExtraChapters[6, which(colnames(ExtraChapters)==paste0("X", input$year))])
-  #         imageOutput("AtSea2020_1", height="100%")
-  #         "Figure 1. At sea Self-Sampling Datasheet"
-  #       }else if(input$year==2022){     
-  #         paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
-  #         #paste0(ExtraChapters[6, which(colnames(ExtraChapters)==paste0("X", input$year))])
-  #       }
-  #  })
-  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$CovidResponse <-renderUI({
     if(input$year<2021){
       tagList(h4("The Covid Response was introduced in 2021"))
