@@ -436,8 +436,8 @@ server <- function(input, output, session) {
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig4_caption.png")
     return(list(src = image_file, filetype = "image/png", height = 400))
   }, deleteFile = FALSE)
-  output$MF_Fig5 <- renderImage({
-    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig5.png")
+  output$MF_Fig5_caption <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig5_caption.png")
     return(list(src = image_file, filetype = "image/png", height = 255))
   }, deleteFile = FALSE)
   output$MF_Tbl1 <- renderImage({
@@ -454,11 +454,11 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$MF_Tbl4 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl4.png")
-    return(list(src = image_file, filetype = "image/png", height = 400))
+    return(list(src = image_file, filetype = "image/png", height = 450)) #2021 height = 400
   }, deleteFile = FALSE)
   output$MF_Tbl5 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl5.png")
-    return(list(src = image_file, filetype = "image/png", height = 300))
+    return(list(src = image_file, filetype = "image/png", height = 350)) #2021 height = 300
   }, deleteFile = FALSE)
   output$MF_Tbl6 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl6.png")
@@ -2212,7 +2212,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                          #imageOutput("MF_Fig3_caption", height="400px"),
                          HTML("<br><br>"),
                          fluidRow( column(width = 5, imageOutput("MF_Fig4_caption")), 
-                                   column(width = 6, imageOutput("MF_Fig5"))),
+                                   column(width = 6, imageOutput("MF_Fig5_caption"))),
                          HTML("<br><br>"),
                          fluidRow( column(width = 5, imageOutput("MF_Tbl5",height = "50%")), 
                                    column(width = 7, imageOutput("MF_Tbl6", height="50%"))),
@@ -2226,8 +2226,8 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                  else if (input$year==2022){
                    list( htmlOutput("MixedFish_1"),
                          htmlOutput("MixedFish_2"),
-                         fluidRow( column(width = 6, imageOutput("MF_Fig1_caption",height = "80%")),
-                                   column(width = 6, imageOutput("MF_Tbl1", height="50%"))), 
+                         fluidRow( column(width = 5, imageOutput("MF_Fig1_caption",height = "50%")), #,height = "100%"
+                                   column(width = 7, imageOutput("MF_Tbl1"))),  #, height="50%"
                          HTML("<br><br>"),
                          htmlOutput("MixedFish_3"),
                          fluidRow( column(width = 6, imageOutput("MF_Tbl2",height = "50%")), 
@@ -2235,14 +2235,20 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                          HTML("<br><br>"),
                          fluidRow( column(width = 6, imageOutput("MF_Tbl4",height = "50%")), 
                                    column(width = 6, imageOutput("MF_Tbl5", height="50%"))), 
-                         imageOutput("MF_Fig2_caption", height="50%"),
-                         imageOutput("MF_Fig3_caption", height="50%"),
-                         imageOutput("MF_Tbl6", height="50%"),
+                         #In 2022 image names were aligned with 2021 names so that sizes are stable. Therefore there is no Fig2
+                         imageOutput("MF_Fig3_caption", height="50%"), #
+                         HTML("<br><br>"),
+                         fluidRow( column(width = 5, imageOutput("MF_Fig4_caption",height = "50%")), 
+                                   column(width = 7, imageOutput("MF_Tbl6", height="50%"))), 
+                         #imageOutput("MF_Fig4_caption", height="80%"), #
+                         #imageOutput("MF_Tbl6", height="50%"),
                          HTML("<br><br>"),
                          htmlOutput("MixedFish_4"),         
-                         fluidRow( column(width = 6, imageOutput("MF_Tbl7",height = "25%")), 
+                         fluidRow( column(width = 6, imageOutput("MF_Tbl7",height = "20%")), 
                                    column(width = 6, imageOutput("MF_Tbl8", height="25%"))),
-                         imageOutput("MF_Fig4_caption", height="50%"),
+                         HTML("<br><br>"),
+                         imageOutput("MF_Fig5_caption", height="50%"),
+                         HTML("<br><br>"),
                          htmlOutput("MixedFish_5"), 
                          htmlOutput("MixedFish_6")
                    
