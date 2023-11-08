@@ -9,7 +9,7 @@ library(ggplot2)
 library(reshape2)
 
 
-availableYears<- list("2023")
+availableYears<- list("2023", "2022")
 
 ui <- fluidPage(
   tags$head(includeScript("google-analytics.js")),
@@ -38,17 +38,14 @@ ui <- fluidPage(
                                              "1 Only TAC areas where Ireland has share of the TAC>0t are included",p(),
                                              textOutput("TACtext2"),
                                              HTML("<br><br>")),
-                                    #conditionalPanel(condition = "input.year == '2018'",
-                                    tabPanel("Data Quality", htmlOutput("DataQualitytext"),
-                                             imageOutput("DataQualityimage", height="50%")),
+                                    #Nov 2023 moved the Data Quality set-up to a uiOutput() to avoid 'Navigation Containers' warning
+                                    tabPanel("Data Quality", uiOutput("DataQuality"),
+                                             HTML("<br><br>")),
                                     tabPanel("ICES Rationale",htmlOutput("Rationaletext"),
                                              HTML("<br><br>")))),
-               tabPanel("Long Term Management Plans", 
-                        htmlOutput("LongTermManagementtext"),
-                        p(),
-                        imageOutput("MgtPlan", height="100%"), 
-                        fluidRow(column(width = 5, imageOutput("MgtPlan2", height="100%")),
-                                 column(width = 5, imageOutput("MgtPlan3", height="100%"))),
+               tabPanel("Long Term Management Plans", htmlOutput("LongTermManagementtext"),p(),
+                        imageOutput("MgtPlanFlow", height="30%"),p(),
+                        imageOutput("MgtPlan", height="100%"),
                         HTML("<br><br>")),
                tabPanel("Advice Summary", textOutput("AdviceSummtext"),p(),
                         imageOutput("AdviceSummtable1", height="100%"),p(),
@@ -61,11 +58,7 @@ ui <- fluidPage(
                         HTML("<br><br>")),
                tabPanel("Recent Ecosystem Advice", uiOutput("RecentAdvice"),
                         HTML("<br><br>")),
-               tabPanel("Brexit Impacts", htmlOutput("Brexit_Text")),
-               tabPanel("Covid Response", uiOutput("CovidResponse"), #p(), HTML("<br>"),
-                        HTML("<br><br>")),
-               # imageOutput("AtSea2020_1", height="100%"),
-               # "Figure 1. At sea Self-Sampling Datasheet",HTML("<br><br>")),
+               tabPanel("MI At-Sea Sampling", htmlOutput("AtSea_Text")),
                tabPanel("Stock Advice", value="StockAdvice_tab",
                         sidebarLayout(fluidRow(column(3,uiOutput("speciesSelector")),
                                                column(5,uiOutput("DescSelector"))),
@@ -203,7 +196,7 @@ server <- function(input, output, session) {
   IntroductionTable$Est..Value.of.Irl.Quota=paste("\u20ac", IntroductionTable$Est..Value.of.Irl.Quota)
   IntroductionTable$Est..Value.of.EU.TAC=paste("\u20ac", IntroductionTable$Est..Value.of.EU.TAC)
   IntroductionTable$Stock= paste(IntroductionTable$Species, IntroductionTable$TAC.Area, sep=' ')
-  names(IntroductionTable)=c("Year", "Species", "TAC Area", "Irl. Tonnes", 
+  names(IntroductionTable)=c("Year", "Species", "TAC Area", "Irl. Tonnes",
                              "Est. Value of Irl. Quota", "Est. Value of EU TAC", "Ireland", "Other", "Stock")
   output$IntroTable = renderTable({
     IntroTable1=filter(IntroductionTable, Year==input$year)
@@ -234,58 +227,45 @@ server <- function(input, output, session) {
             legend.title=element_blank())
     p4
     
-    # ###SM ADDED 2021--> Due to Brexit, the plot is deleted###
-    # if(input$year==2021){
-    #   p4=FALSE
-    # }
-    
   })
+  
+  #SM Nov23: Since Brexit, the TAC Tab is only using 4 columns (year is hidden) "Year", "Species", "TAC Area", "Irl. Tonnes"
+  # This code deals with 2023+
+  # If anything changes in future years please see the code in 2022_Git app.R. Previous years requirements have been deleted here
   
   # djc 19/11/2021 Change the TAC sub-heading based on the year selected
   output$TACsubheading=renderText({
-    # if(input$year==2021){
-    #   paste0(input$year," Irish quota in tonnes and approximate value")
-    # } else {
-    "Ireland's Share of the EU TAC"
-    #}
-  })
-  
-  output$TACtext1=renderText({
-    paste0("% Share of ", input$year, " EU TAC by Ireland and Other EU members and approximate value of Irish Quota")
-    ###SM ADDED 2021--> Due to Brexit, the heading of the plot is deleted###
-    # if(input$year==2021){
-    #   output$TACtext1=NULL
-    # }
-  })
-  output$TACtext2=renderText({
-    paste0("2 Estimated value per tonne based on ", as.numeric(input$year)-1, " average values of Irish landings in Irish ports")
+       paste0(input$year," Irish quota in tonnes")
   })
   
   
   #Data Quality
   #~~~~~~~~~~~~
-  output$DataQualitytext <- renderText({
-    if(input$year>2022){
+    output$DataQualitytext1 <- renderText({
       paste0(Introduction[7, which(colnames(Introduction)==paste0("X", input$year))])
-    }
-    #else{
-    #paste0("Data Quality Section introduced in 2018 Stockbook")
-    #}
+      })
+  
+    output$DataQualitytext2 <- renderText({
+        paste0(Introduction[8, which(colnames(Introduction)==paste0("X", input$year))])
+      })
+  
+    output$DataQualityimage1 <- renderImage({
+      image_file <- paste0("www/Introduction/DataQuality",input$year,".png")
+      return(list(src = image_file, filetype = "image/png", height = 500))
+    }, deleteFile = FALSE) 
     
-  })
-  
-  
+    output$DataQualityimage2 <- renderImage({
+      image_file <- paste0("www/Introduction/DataQualityPrinciples",input$year,".png")
+      return(list(src = image_file, filetype = "image/png", height = 700))
+    }, deleteFile = FALSE) 
+    
+    
+    
   #ICES Rationale
   #~~~~~~~~~~~~~~
   output$Rationaletext <- renderText({
     paste0(Introduction[3, which(colnames(Introduction)==paste0("X", input$year))])
   })
-  
-  
-  output$DataQualityimage <- renderImage({
-    image_file <- paste0("www/Introduction/DataQuality",input$year,".png")
-    return(list(src = image_file, filetype = "image/png", height = 700))
-  }, deleteFile = FALSE)
   
   
   ##############################
@@ -297,21 +277,16 @@ server <- function(input, output, session) {
     
   })
   output$MgtPlan <- renderImage({
-    
-    paste0("www/Introduction/ManagementPlan",input$year,".PNG")#}
+    image_file <- paste0("www/Introduction/ManagementPlan",input$year,".PNG")
     return(list(src = image_file, filetype = "image/png", height = 850))
   }, deleteFile = FALSE)
   
-  output$MgtPlan2 <- renderImage({
-    image_file <- paste0("www/Introduction/ManPlanAppIX_Stocks_1_",input$year,".png")
-    return(list(src = image_file, filetype = "image/png", height = 950))
+  output$MgtPlanFlow <- renderImage({
+    image_file <- paste0("www/Introduction/ManPlanFlow",input$year,".png")
+    return(list(src = image_file, filetype = "image/png", height = 300))
   }, deleteFile = FALSE)
   
-  output$MgtPlan3 <- renderImage({
-    image_file <- paste0("www/Introduction/ManPlanAppIX_Stocks_2_",input$year,".png")
-    return(list(src = image_file, filetype = "image/png", height = 950))
-  }, deleteFile = FALSE)
-  
+
   ##################
   # Advice Summary #   #original width (too big)--> # width = 1100
   ##################
@@ -530,12 +505,13 @@ server <- function(input, output, session) {
   output$Recent_End<- renderText({
     paste0(ExtraChapters[3, which(colnames(ExtraChapters)==paste0("X", input$year))])
   })  
-  # output$Brexit_Text<- renderText({
-  #   paste0(ExtraChapters[4, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  #SMNov2023: if more than text is used in future years, then see the 2022 app.R "CovidResponse"
+   output$AtSea_Text<- renderText({
+     paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
+   })
+  # output$AtSea2020<- renderText({
+  #   paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
   # }) 
-  output$AtSea2020<- renderText({
-    paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
-  }) 
   output$AtSeaFootnote<- renderText({
     paste0(ExtraChapters[6, which(colnames(ExtraChapters)==paste0("X", input$year))])
   }) 
@@ -965,7 +941,7 @@ server <- function(input, output, session) {
   #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked (see lines ~1810)
   output$display.SummaryPage <- renderImage({
     #Call the thumbnail png of the Summary page here. (Lines ~1810 calls the pdf)
-    req(input$year>2021)
+    req(input$year>=2022)
     image_file <- paste0("www/SummaryPage/", input$year, "/",
                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png") #, sep=""
     #print(image_file)
@@ -974,15 +950,15 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   
-  # output$display.SummaryPDF <- renderImage({
-  #   #Call the pdf of the Summary page here. (Lines ~1810 calls the pdf)
-  #   req(input$year == 2022)
-  #   image_file <- paste0("www/SummaryPDF/", input$year, "/",
-  #                        ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".pdf") #, sep=""
-  #   #print(image_file)
-  #   return(list(src = image_file, filetype = "image/pdf", height = 400))
-  #   
-  # }, deleteFile = FALSE)
+  output$display.SummaryPDF <- renderImage({
+    #Call the pdf of the Summary page here. (Lines ~1810 calls the pdf)
+    req(input$year >=2022)
+    image_file <- paste0("www/SummaryPDF/", input$year, "/",
+                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".pdf") #, sep=""
+    #print(image_file)
+    return(list(src = image_file, filetype = "image/pdf", height = 400))
+
+  }, deleteFile = FALSE)
   
   
   # output$display.assarea <- renderImage({
@@ -1074,7 +1050,7 @@ server <- function(input, output, session) {
   #Links
   #~~~~~  
   output$Stockbooklink <-renderUI({
-    if(input$year==2022){
+    if(input$year>2022){
       #a(href=paste0("The Stock Book 2022.pdf"), #CONNECT TO A PDF UNTIL THE 2022 LINK IS READY
       #  "The Stock Book 2022",target="_blank")
       #The OAR link became live on 23/11/2022 
@@ -1594,12 +1570,13 @@ server <- function(input, output, session) {
   colnames = TRUE, bordered = TRUE)
   
   # djc 15/11/21 - Fixed some issues with spaces
+  #SM Nov23: This list needs to be updated annually
   ForecastingStocks= c("Seabass Divisions 4.b-c 7.a and 7.d-h (central and southern North Sea Irish Sea English Channel Bristol Channel and Celtic Sea)",
-                       #"Cod Subareas 1 and 2 (Northeast Arctic)",
-                       "Cod Division 6.a (West of Scotland)",
+                       ##"Cod Subareas 1 and 2 (Northeast Arctic)",
+                       ##"Cod Division 6.a (West of Scotland)",
                        "Cod Division 7.a (Irish Sea)",
                        "Cod Divisions 7.e-k (eastern English Channel and southern Celtic Seas)",
-                       "Spurdog Sub-areas 1-14",
+                       ##"Spurdog Sub-areas 1-14",
                        "Haddock Subarea 4 Division 6.a and Subdivision 20 (North Sea West of Scotland Skagerrak)",
                        
                        "Haddock Division7.a (Irish Sea)",
@@ -1619,7 +1596,7 @@ server <- function(input, output, session) {
                        "Sole Division 7.a (Irish Sea)",
                        "Sole Divisions 7.f and 7.g (Bristol Channel and Celtic Sea)", 
                        "Blue Whiting Subareas 1-9 12 and 14 (Northeast Atlantic and adjacent waters)",
-                       
+                       "Whiting Division 7.a (Irish Sea)",
                        "Whiting Divisions 7.b -c and 7.e-k (southern Celtic Seas and eastern English Channel)")
   
   #SM Note Nov 29th 2021: Updated the following list. (Extra spaces removed in 2021)
@@ -1735,13 +1712,10 @@ server <- function(input, output, session) {
                     h3("Biology"), 
                     fluidRow(column(width = 9, htmlOutput("biology_text")), 
                              column(width = 3, imageOutput("display.fish", height = "50%"))),   
-                    h3("Landings Distribution"),
+                    h3("Distribution in Irish Waters"),
                     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
                     }else if(input$speciesfilter=="Seabass"){
-                      list("Though distributed around the entire coastline of Ireland, sea bass are 
-predominately concentrated along the southwest, south and south-east coasts. During colder periods however, 
-the majority of adults are believed to move offshore to feed and spawn where research surveys have found 
-a relatively clustered distribution in the eastern Celtic Sea.",
+                      list("While found along all Irish coasts, the primary concentration of sea bass can be found in divisions 7.j, 7.g. and 7.a. Annual Marine Institute research surveys have found a clustered distribution of sea bass in the eastern Celtic Sea, particularly during the late autumn/early winter period, which are believed to be pre-spawning aggregations foraging opportunistically.",
                            fluidRow(column(width= 4, 
                                            imageOutput("display.InternationalLandings",height = "100%")),#
                                     #SM Nov 2022: the year range was added in 2022 but will show for all previous years
@@ -1750,7 +1724,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
                                                  research surveys in offshore waters shows
                                                  clustering in the eastern Celtic Sea and Bristol
                                                  Channel region between 2003 and 2021.")),
-                           h3("Irish Landings and Value of TAC"),
+                           h3("Irish Landings and Fishery"),
                            htmlOutput("LandingsText"))
                     }else{
                       list(fluidRow(column(width = 6, htmlOutput("text.InternationalLandings"), HTML("<br>"),
@@ -2097,8 +2071,27 @@ a relatively clustered distribution in the eastern Celtic Sea.",
   })                                  # end of output$SustainAss
   
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  output$DataQuality <-renderUI({
+    
+    tagList(
+      
+      htmlOutput("DataQualitytext1"),
+      imageOutput("DataQualityimage1", height="100%"),
+      "Figure 1: Data Management Quality Management Framework Model", 
+      HTML("<br>"),
+      p(),p(),p(),
+      htmlOutput("DataQualitytext2"),
+      imageOutput("DataQualityimage2", height="100%"),
+      "10 principles of the ICES advice",
+      HTML("<br>"),
+      
+    )                             # end of taglist
+  })                                  # end of output$DataQuality
   
-  #EXTRA CHAPTERS ADDED IN 2021 and continued in 2022
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+  
+  #EXTRA CHAPTERS ADDED IN 2021 and continued in 2022, 2023
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$RecentAdvice <-renderUI({
     # if(input$year<2021){
@@ -2127,38 +2120,7 @@ a relatively clustered distribution in the eastern Celtic Sea.",
     }                                  #end of 2021 and 2022 content
   })                                  # end of output$RecentAdvice
   
-  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  output$Brexit_Text <- renderText({
-    if(input$year<2021){
-      "<h4>Brexit Impacts on Fisheries Management, Science and Advice was introduced in 2021</h4>"
-    }else if(input$year==2022){
-      "<h4>Brexit Impacts on Fisheries Management, Science and Advice is discussed in 2021</h4>"
-    }
-    else if(input$year==2021){
-      paste0(ExtraChapters[4, which(colnames(ExtraChapters)==paste0("X", input$year))])
-    }
     
-  })
-  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-  output$CovidResponse <-renderUI({
-    if(input$year<2021){
-      tagList(h4("The Covid Response was introduced in 2021"))
-    }
-    else if(input$year==2021){
-      tagList(
-        htmlOutput("AtSea2020"),
-        fluidRow(column(width = 10, imageOutput("AtSea2020_1",height = "100%"),
-                        "Figure 1. At sea Self-Sampling Datasheet")),
-      )}                   
-    else if (input$year==2022){
-      tagList(
-        htmlOutput("AtSea2020")
-      )}                            
-    
-  })                                  
-  
-  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
-  
 } #closing bracket of server <- function(input, output, session) {     (line 87)
 
 shinyApp(ui, server)
