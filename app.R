@@ -46,6 +46,8 @@ ui <- fluidPage(
                tabPanel("Long Term Management Plans", htmlOutput("LongTermManagementtext"),p(),
                         imageOutput("MgtPlanFlow", height="30%"),p(),
                         imageOutput("MgtPlan", height="100%"),
+                        fluidRow(column(width = 5, imageOutput("MgtPlan2", height="100%")),
+                                 column(width = 5, imageOutput("MgtPlan3", height="100%"))),
                         HTML("<br><br>")),
                tabPanel("Advice Summary", textOutput("AdviceSummtext"),p(),
                         imageOutput("AdviceSummtable1", height="100%"),p(),
@@ -273,7 +275,7 @@ server <- function(input, output, session) {
   ##############################
   output$LongTermManagementtext <- renderText({
     
-    paste0(Introduction[8, which(colnames(Introduction)==paste0("X", input$year))])
+    paste0(Introduction[9, which(colnames(Introduction)==paste0("X", input$year))])
     
   })
   output$MgtPlan <- renderImage({
@@ -284,6 +286,16 @@ server <- function(input, output, session) {
   output$MgtPlanFlow <- renderImage({
     image_file <- paste0("www/Introduction/ManPlanFlow",input$year,".png")
     return(list(src = image_file, filetype = "image/png", height = 300))
+  }, deleteFile = FALSE)
+  
+  output$MgtPlan2 <- renderImage({
+    image_file <- paste0("www/Introduction/ManPlanAppIX_Stocks_1_",input$year,".png")
+    return(list(src = image_file, filetype = "image/png", height = 950))
+  }, deleteFile = FALSE)
+  
+  output$MgtPlan3 <- renderImage({
+    image_file <- paste0("www/Introduction/ManPlanAppIX_Stocks_2_",input$year,".png")
+    return(list(src = image_file, filetype = "image/png", height = 950))
   }, deleteFile = FALSE)
   
 
@@ -544,24 +556,6 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   
-  # Code moved to the start of the server function because we need it to handle URL parameters
-  # ####################
-  # # Stock Advice Tab #
-  # ####################
-  # #Species Table for mapping different codes
-  # #setwd("H:/Stockbook/shiny/WIP") #If needing to run it
-  # ICEStable=read.csv('ICES-New-Old - extra species.csv', header=TRUE)
-  # ICEStable$Fish=as.character(ICEStable$Fish)
-  # ICEStable$SpeciesByDiv=as.character(ICEStable$SpeciesByDiv)
-  # Speciesfilter <- unique(ICEStable$Fish)
-  # output$speciesSelector <- renderUI({
-  #   selectInput("speciesfilter", h3("Select Species"), as.list(Speciesfilter), selected = "Cod") 
-  # })
-  # output$DescSelector <- renderUI({
-  #   SpeciesbyDiv=filter(ICEStable, Fish %in% c(input$speciesfilter))
-  #   Descriptions <- unique(SpeciesbyDiv$SpeciesByDiv)
-  #   selectInput("speciesbydiv", h3("Select Stock Area"), as.list(Descriptions), selected = Descriptions[1])
-  # })
   
   ################
   # Stock Advice #    
@@ -587,55 +581,84 @@ server <- function(input, output, session) {
   
   #International Landings
   #~~~~~~~~~~~~~~~~~~~~~~
+  
+  
   output$display.InternationalLandings <- renderImage({
-    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #image_file <- paste0("www/Internationallandings/", input$year, "/Rect",
-    #                    ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"FAQCode"], 
-    #                    ".png", sep="")
     image_file <- paste0("www/Internationallandings/", input$year, "/Rect",
                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"FAQCode"], 
                          ".png", sep="")
-    return(list(src = image_file, width = 350))#
+    return(list(src = image_file, width = 350))
   }, deleteFile = FALSE)
+
+    
+  output$display.IntlLdgs_x2Seabass <- renderImage({
+    # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
+    image_file <- paste0("www/Internationallandings/", input$year, "/Satellite",
+                         ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"FAQCode"], 
+                         ".png", sep="")
+    return(list(src = image_file, width = 750))#
+  }, deleteFile = FALSE)
+  
+  
   
   output$text.InternationalLandings <- renderText({
     
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
-    ## 2022 uses a different year range (SM Sep2022)
-    if(input$year>2021){
+    ## 2023 uses a different year range (SM Nov2023)
+    if(input$year>2022){
       
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of international landings of <em>",
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2016 - 2020", sep="")
+               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2017 - 2021", sep="")
       }
-      #Discussed with AC Nov 14th
-      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Blue Whiting"){      
+      #hom_mac_whb
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Blue Whiting" | input$speciesfilter=="Horse Mackerel"){      
         paste0("The distribution of international landings of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " in 2021 (excluding Russia)", sep="")
+               " in 2022", sep="")
       }
-      #Discussed with AC Nov 14th
-      else if(input$speciesfilter=="Horse Mackerel"){      
-        paste0("The distribution of international landings of ", 
-               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " in 2021", sep="")
-      }
-      #SM added Nov 24th 2021
+      # #HOM incl. with above in 2023
+      # else if(input$speciesfilter=="Horse Mackerel"){      
+      #   paste0("The distribution of international landings of ", 
+      #          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+      #          " in 2021", sep="")
+      # }
+      #boc_
       else if(input$speciesfilter=="Boarfish"){      
         paste0("The distribution of Irish ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " landings in 2021", sep="")
+               " landings in 2022", sep="")
       }
-      #   # SM added in Nov 2021
-      #   else if(input$speciesfilter=="Anglerfish"){      
-      #     paste0("The distribution of EU landings of ", 
-      #            ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-      #            " between 2016 - 2020 (both species combined)", sep="")
-        
+        # SM added in Nov 2021
+        else if(input$speciesfilter=="Anglerfish"){
+          paste0("The distribution of EU landings of ",
+                 ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"],
+                 " between 2017 - 2021 (both species combined)", sep="")
+        }
+          
+        else if(input$speciesfilter=="Megrim"){
+          paste0("The distribution of EU landings of ",
+                  ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"],
+                  " (mostly <em>L. whiffiagonis</em>) between 2017 - 2021", sep="")
+        }
+            
+        else if(input$speciesfilter=="Saithe"){
+           paste0("The distribution of EU landings of ",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"],
+                  " between 2017 - 2021", sep="")
+        }
+      
+      #in 2023 Albacore & Bluefin Tuna had different year ranges
+      else if(input$speciesfilter=="Albacore Tuna" | input$speciesfilter=="Bluefin Tuna"){      
+        paste0("The distribution of international landings of ", 
+               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               " between 2017 - 2022", sep="")
+      }
+
         else{
           paste0("The distribution of international landings of ",
-                 ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2016 - 2020 ", sep="")
+                 ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2017 - 2021 ", sep="")
         }
      }
     })
@@ -672,67 +695,12 @@ server <- function(input, output, session) {
     #   
     # } 
     
-    
-    #   ## 2020 uses a different year range (SM Nov2020)
-    #   else if(input$year == "2020"){
-    #     
-    #     if(input$speciesfilter=="Nephrops"){      
-    #       paste0("The distribution of international landings of <em>",
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2015 - 2018", sep="")
-    #     }
-    #     else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
-    #       paste0("The distribution of international landings of ", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              " during 2019", sep="")
-    #     }
-    #     else{
-    #       paste0("The distribution of international landings of ",
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2015 - 2018 ", sep="")
-    #     }
-    #   } 
-    #   
-    #   
-    #   ## 2019 uses a different text pattern
-    #   else if(input$year == "2019"){
-    #     
-    #     if(input$speciesfilter=="Nephrops"){      
-    #       paste0("The distribution of international landings of <em>",
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em>  between 2012 - 2016", sep="")
-    #     }
-    #     else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
-    #       paste0("The distribution of international landings of ", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              " during 2018", sep="")
-    #     }
-    #     else{
-    #       paste0("The distribution of international landings of ",
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " between 2012 - 2016 ", sep="")
-    #     }
-    #   } 
-    #   
-    #   ## 2018 and earlier
-    #   else {
-    #     
-    #     if(input$speciesfilter=="Nephrops"){      
-    #       paste0("The distribution of international landings of <em>",
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], "</em> during ", 
-    #              (as.numeric(as.character(input$year))-1), sep="")
-    #     }else{
-    #       paste0("The distribution of international landings of ",
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], " during ", 
-    #              (as.numeric(as.character(input$year))-1), sep="")
-    #    }
-    #   }
-  
   
   
   #Irish Landings
   #~~~~~~~~~~~~~~
   output$display.IrishLandings <- renderImage({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #image_file <- paste0("www/Irishlandings/", input$year, "/Land",
-    #                     ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"FAQCode"], 
-    #                     ".png", sep="")
     
     image_file <- paste0("www/Irishlandings/", input$year, "/Land",
                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"FAQCode"], 
@@ -744,39 +712,59 @@ server <- function(input, output, session) {
     
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
-    ## 2022 uses a different year range (SM Sep2022)
-    if(input$year > 2021){
+    ## 2023 uses a different year range (SM Nov2023)
+    if(input$year > 2022){
       if(input$speciesfilter=="Nephrops"){      
         paste0("The distribution of <em>", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               "</em> landings by Irish Vessels between 2016 - 2020", sep="")
+               "</em> landings by Irish Vessels between 2017 - 2021", sep="")
       } 
-      #Discussed with AC Nov 14th
+      # #hom_mac_whb
       else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel" | input$speciesfilter=="Blue Whiting"){      
         paste0("The distribution of Irish landings of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " in 2021", sep="")
+               " in 2022", sep="")
       }
       
-      #SM added Nov 24th 2021 and updated in 2022
+      #SM added Nov 24th 2021 and updated in 2022/2023
       else if(input$speciesfilter=="Boarfish"){      
         paste0("The distribution of Irish ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-               " landings between 2019-2021", sep="")
+               " landings between 2020-2022", sep="")
       }
       
       
-          # SM added in Nov 2021 and updated in 2022
+          # SM added in Nov 2021 and updated in 2022/2023
           else if(input$speciesfilter=="Anglerfish"){
             paste0("The distribution of Irish ",
                    ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"],
-                   " landings between 2016 - 2020 (both species combined)", sep="")
+                   " landings between 2017 - 2021 (both species combined)", sep="")
           }
+      
+          #in 2023 Albacore Tuna had a different year range
+          else if(input$speciesfilter=="Albacore Tuna"){      
+            paste0("The distribution of ", 
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+                   " landings by Irish Vessels between 2017 - 2022", sep="")
+          }
+      
+          #in 2023 Bluefin Tuna had a different sentence
+          else if(input$speciesfilter=="Bluefin Tuna"){      
+            paste0("The distribution of ", 
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+                   " bycatches by Irish commercial vessels (mainly pelagic otter trawls), between 2017-2022.", sep="")
+          }      
 
+          else if(input$speciesfilter=="Megrim"){
+            paste0("The distribution of ",
+                   ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"],
+                   " landings by Irish vessels (nearly exclusively <em>L. whiffiagonis</em>) between 2017 - 2021", sep="")
+          }
+      
           else{
             paste0("The distribution of ",
                    ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"],
-                   " landings by Irish Vessels between 2016 - 2020 ", sep="")
+                   " landings by Irish Vessels between 2017 - 2021", sep="")
           }
     }
     #   ## 2021 uses a different year range (SM Sep2021)
@@ -810,68 +798,15 @@ server <- function(input, output, session) {
     #              " landings by Irish Vessels between 2015 - 2019 ", sep="")
     #     }
     #   }
-    #   ## 2020 uses a different year range (SM Nov2020)
-    #   else if(input$year==2020){
-    #     
-    #     if(input$speciesfilter=="Nephrops"){      
-    #       paste0("The distribution of <em>", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              "</em> landings by Irish Vessels between 2015 - 2018", sep="")
-    #     } 
-    #     else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
-    #       paste0("The distribution of ", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              " landings by Irish Vessels during 2019", sep="")
-    #     }
-    #     else{
-    #       paste0("The distribution of ", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              " landings by Irish Vessels between 2015 - 2018 ", sep="")
-    #     }
-    #   }
-    #   
-    #   
-    #   ## 2019 uses a different text pattern
-    #   else if(input$year==2019){
-    #     
-    #     if(input$speciesfilter=="Nephrops"){      
-    #       paste0("The distribution of <em>", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              "</em> landings by Irish Vessels between 2014 - 2018", sep="")
-    #     } 
-    #     else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
-    #       paste0("The distribution of ", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              " landings by Irish Vessels during 2018", sep="")
-    #     }
-    #     else{
-    #       paste0("The distribution of ", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              " landings by Irish Vessels between 2014 - 2018 ", sep="")
-    #     }
-    #   }
-    #   
-    #   ## 2018 and earlier
-    #   else {
-    #     if(input$speciesfilter=="Nephrops"){      
-    #       paste0("The distribution of <em>", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              "</em> landings by Irish Vessels during ", (as.numeric(as.character(input$year))-1), sep="")
-    #     }else{
-    #       paste0("The distribution of ", 
-    #              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-    #              " landings by Irish Vessels during ", (as.numeric(as.character(input$year))-1), sep="")
-    #     }
-    #   }
+    
   })
   
   
-  #Landings text
-  #~~~~~~~~~~~~~
+  #Landings by division & Value Time Series Text
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$LandingsText <- renderText({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    #paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),  
-    #                 paste0("TAC", as.numeric(as.character(input$year)), sep="")])
+
     paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
                      paste0("TAC", as.numeric(as.character(input$year)), sep="")])
   })
@@ -892,31 +827,20 @@ server <- function(input, output, session) {
   output$ValueText <- renderText({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
-    ## 2022 uses landings instead of values (SM Oct2022) In 2023 changed ==2022 to >2021
-    ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if(input$year>2021 && input$speciesfilter=="Nephrops"){      
+    ## 2022 onwards uses landings instead of values (SM Oct2022) ## See 2022_Git if 'value needs to be re-used
+    if (input$speciesfilter=="Nephrops"){      
       paste0("A historical view of <em>", 
              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
              "</em> landings", sep="")
-      
-    }else if(input$speciesfilter=="Nephrops"){      
-      paste0("A historical view of the value of <em>", 
-             ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-             "</em> landings", sep="")
-      
-    }else if(input$year>2021){
+    }else{
       paste0("A historical view of ", 
              ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
              " landings.", sep="")
-      
-    }else{paste0("A historical view of the value of ", 
-                 ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
-                 " landings.", sep="")
     }
   })
   
-  #Landings by division
-  #~~~~~~~~~~~~~~~~~~~~
+  #Landings by division & Value Time Series Images
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$display.LandingsbyDiv <- renderImage({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
@@ -938,9 +862,9 @@ server <- function(input, output, session) {
   #####################
   # Adding MI Summary #  
   #####################
-  #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked (see lines ~1810)
+  #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked 
   output$display.SummaryPage <- renderImage({
-    #Call the thumbnail png of the Summary page here. (Lines ~1810 calls the pdf)
+    #Call the thumbnail png of the Summary page here. (Lines below calls the pdf)
     req(input$year>=2022)
     image_file <- paste0("www/SummaryPage/", input$year, "/",
                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png") #, sep=""
@@ -951,7 +875,7 @@ server <- function(input, output, session) {
   
   
   output$display.SummaryPDF <- renderImage({
-    #Call the pdf of the Summary page here. (Lines ~1810 calls the pdf)
+    #Call the pdf of the Summary page here. 
     req(input$year >=2022)
     image_file <- paste0("www/SummaryPDF/", input$year, "/",
                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".pdf") #, sep=""
@@ -961,101 +885,17 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   
-  # output$display.assarea <- renderImage({
-  #   req(input$year < 2022)
-  #   image_file <- paste0("www/maps/",ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],
-  #                        ".png", sep="")
-  #   return(list(src = image_file, filetype = "image/png", height = 250))
-  # }, deleteFile = FALSE)
-  # 
-  # 
-  # output$display.landingsbygear <- renderImage({
-  #   # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #   
-  #   if(input$year==2016){
-  #     image_file <- paste0("www/Landingsbygear/", input$year, "/", 
-  #                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],".png")
-  #     return(list(src = image_file, filetype = "image/png", height = 250))
-  #   }else{
-  #     image_file <- paste0("www/Landingsbygear/", input$year, "/", 
-  #                          ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png")
-  #     return(list(src = image_file, filetype = "image/png", height = 250))}
-  # }, deleteFile = FALSE)
-  # 
-  
-  # #06/10/2023. The stock advice page was linked in 2022 rather than re-constructed. Can comment out  
-  #   #Pie Chart
-  #   #~~~~~~~~~
-  #   output$TACtext <-renderText({
-  #     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #     
-  #     #SM Seabass and Sprat have no Quota pie-chart
-  #     #SM Nov 2021: Nephrops has specific Quota titles, so images were snipped from the pdf. The automatic title was therefore hidden.
-  #     if(input$speciesfilter=="Seabass" | input$speciesfilter=="Sprat" | input$speciesfilter=="Nephrops"){
-  #       paste0("")
-  #       
-  #     }else{
-  #       paste0(input$year, " Quota Allocations", sep="")}
-  #   })
-  #   
-  #   
-  #   output$display.TAC <- renderImage({
-  #     image_file <- paste0("www/Quota/",input$year,"/",ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],
-  #                          ".png", sep="")
-  #     return(list(src = image_file, filetype = "image/png", height = 250))
-  #   }, deleteFile = FALSE)
-  #   
-  
-  # # #06/10/2023. The stock advice page was linked in 2022 rather than re-constructed. Can comment out 
-  # #Catch/Discards plot
-  # #~~~~~~~~~~~~~~~~~~~
-  # output$display.CatchDiscards <- renderImage({
-  #   # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #   
-  #   #image_file <- paste0("www/CatchDiscards/", input$year, "/", 
-  #   #                     ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% input$speciesbydiv),"New"],".png", sep="")
-  #   image_file <- paste0("www/CatchDiscards/", input$year, "/", 
-  #                        ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png", sep="")
-  #   return(list(src = image_file, filetype = "image/png", height = 100))
-  # }, deleteFile = FALSE)
-  # 
-  # 
-  # # #06/10/2023. The stock advice page was linked in 2022 rather than re-constructed. Can comment out
-  # #Key Points table
-  # #~~~~~~~~~~~~~~~~
-  # KeyPoints=read.csv("KeyPoints.csv", header=TRUE)
-  # output$KPtable = renderTable({
-  #   # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #   
-  #   if(input$year==2015){
-  #     paste0("There was no Key Points table in the 2015 Stock Book")
-  #   }else{
-  #     KPFilter=filter(KeyPoints, Year==input$year & 
-  #                       Group == "KeyPoints" &
-  #                       FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
-  #     KPFilter[,4:5]}
-  # }, colnames = FALSE, bordered = TRUE) 
-  # 
-  # output$KPtableFootnote = renderText({
-  #   # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #   
-  #   KPFilter=filter(KeyPoints, Year==input$year & 
-  #                     Group == "Footnotes" &
-  #                     FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
-  #   paste0(KPFilter[,4])
-  # }) 
-  
-  
   
   #Links
   #~~~~~  
   output$Stockbooklink <-renderUI({
-    if(input$year>2022){
-      #a(href=paste0("The Stock Book 2022.pdf"), #CONNECT TO A PDF UNTIL THE 2022 LINK IS READY
-      #  "The Stock Book 2022",target="_blank")
+    if(input$year==2023){
+      a(href=paste0("The Stock Book 2023.pdf"), #CONNECT TO A PDF UNTIL THE 2023 LINK IS READY
+        "The Stock Book 2023",target="_blank")
+      
       #The OAR link became live on 23/11/2022 
-      a(href=paste0("http://hdl.handle.net/10793/1805"), 
-        "The Stock Book 2022",target="_blank")
+     # a(href=paste0("http://hdl.handle.net/10793/1805"), 
+     #   "The Stock Book 2023",target="_blank")
     }
     # }else if(input$year==2021){
     #   a(href=paste0("http://hdl.handle.net/10793/1726"),
@@ -1108,38 +948,6 @@ server <- function(input, output, session) {
   })
   
   
-  # # # #06/10/2023. The stock advice page was linked in 2022 rather than re-constructed. Can comment out 
-  # #Management Advice/Additional Information
-  # #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  # output$ManagementAdviceHeader = renderText({
-  #   paste("Management Advice in ", input$year, sep="")
-  # }) 
-  # ManagementAdvice=read.csv("ManagementAdvice.csv", header=TRUE)#, encoding = 'ASCII'
-  # output$ManagementAdvice = renderText({
-  #   # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #   
-  #   MAFilter=filter(ManagementAdvice, Year==input$year)
-  #   #MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% 
-  #   #                                                                   input$speciesbydiv),"New"]))
-  #   MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
-  #   paste(MAFilter2[,3], sep="")
-  # }) 
-  # output$AddInfoHeader = renderText({
-  #   # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #   if(input$year<2018){
-  #     ("Additional Information")
-  #   }else{
-  #     ("Key Stock Considerations")
-  #   }
-  # }) 
-  # output$Addinfo = renderText({
-  #   MAFilter=filter(ManagementAdvice, Year==input$year)
-  #   #MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[which(ICEStable[,"SpeciesByDiv"] %in% 
-  #   #                                                                   input$speciesbydiv),"New"]))
-  #   MAFilter2=filter(MAFilter, FishStock %in% paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"]))
-  #   paste(MAFilter2[,4], sep="")
-  # }) 
-  
   #Nephrops
   #~~~~~~~~
   output$nephrops <- renderImage({
@@ -1164,11 +972,7 @@ server <- function(input, output, session) {
   })
   output$ICESAdviceTextMI2 <- renderText({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    
-    # if(input$year<2018){
-    #   paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
-    #                    paste0("ICESAdvice", as.numeric(as.character(input$year)), sep="")])
-    # }else
+  
     {
       paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,  
                        paste0("FEASAdvice", as.numeric(as.character(input$year)), sep="")])
@@ -1248,12 +1052,9 @@ server <- function(input, output, session) {
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$display.Stock_Dev <- renderImage({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-    # if(input$year<2017){
-    #   image_file <- paste0("www/ICES/SAG/", input$year, "/", 
-    #                        ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Old"],".png")
-    # }else
+
     #OCT 2023 SM: In 2023 Hans copied 'summary_' (SAG) and 'status_' images to one folder. Initially SM wrote code to remove those appendages
-    #SM then decided to add the appendages to the file path in case HG repeats the extraction in folowing years.
+    #SM then decided to add the appendages to the file path in case HG repeats the extraction in following years.
       {
       image_file <- paste0("www/ICES/SAG/", input$year, "/summary_", 
                            ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"New"],".png")
@@ -1608,52 +1409,24 @@ server <- function(input, output, session) {
                   "Divisions 7.g and 7.h Functional Units 20 and 21 (Celtic Sea)",
                   "Divisions 7.g and 7.f Functional Unit 22 (Celtic Sea Bristol Channel)",
                   "Subarea 7, outside the Functional Units (southern Celtic Seas, southwest of Ireland)")
-  # this used to be:  "Subarea 7 - Functional Unit 18 and rectangles outside the functional units (Southern Celtic Seas, Southwest of Ireland)")
   
   output$tabstest <- renderUI({
     panels= if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
       list(tabPanel("Stockbook Summary"))
       
-      #HERRING 6a7bc was split in 2022 into two new stocks (in 2023 the statement 'if input$year==2022' was changed to 'if input$year>2022') )
-      #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     } 
-    #NOTE THIS NEEDS TO BE CHECKED FOR 2023!!! row 1644 to 1668
-    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    # else if (input$year>2022 && input$speciesfilter=="Herring" && input$speciesbydiv=="Divisions 6.a and 7.b-c (West of Scotland West of Ireland)"  ){
-    #   # 17/11/22 - no advice for this stock in 2022 because it has been split into 2 new stocks
-    #   list(tabPanel("Stockbook Summary", value="stockbook_summ",
-    #                 
-    #                 HTML("<br><br><p>From 2015 to 2021 this stock was jointly assessed with herring in 6.a North because it was not possible to segregate 
-    #                 the two stocks in commercial catches or surveys. </p><p>The development of a genetic method to split the Malin shelf herring acoustic survey (MSHAS) 
-    #                 into the component stocks means that separate advice is now possible. </p><p> Following a benchmark in 2022 advice is given for herring in 6a South, 
-    #                 7b,c and herring in 6a North.</p> <br><br><p> Information on the two new stocks has been added to the Stock Area list (above) since 2022. 
-    #                 <li> Herring Division 6.a North (West of Scotland) and </li>
-    #                 <li> Herring in Divisions 6.a and 7.b-c (West of Scotland West of Ireland)</li><br> </p>
-    #                 <p> <h4>Use the year filter above to see historic information on the previous stock Herring in Divisions 6.a and 7.b-c 
-    #                 (west of Scotland West of Ireland) from 2015 to 2021</p><br><br>")))
-    #   
-    #   #ARCTIC COD does not appear in the 2022 stockbook, but historic information needs to be retained
-    # } else if (input$year>2021 && input$speciesfilter=="Cod" && input$speciesbydiv=="Subareas 1 and 2 (Northeast Arctic)"  ){
-    #   # 18/11/22 - no advice for this stock in 2022 or 2023
-    #   list(tabPanel("Stockbook Summary", value="stockbook_summ",
-    #                 
-    #                 HTML("<br><br><p>In 2022 and 2023 there is no ICES advice for Cod in Subareas 1 and 2 (Northeast Arctic) </p> <br><br>
-    #                 
-    #                 <p> <h4>CHANGE --> Use the year filter above to see historic information on Arctic Cod from 2015 to 2021</p><br><br>")))
-    #   
-    #   
-    # }
+    #Spurdog has no Species Summary Page
     else if(input$speciesfilter=="Spurdog"){
       list(tabPanel("Stockbook Summary", value="stockbook_summ",
-                    h3(textOutput("ICESAdviceTextMI")),
+                    h3(htmlOutput("ICESAdviceTextMI")),
                     htmlOutput("ICESAdviceTextMI2"),p(),
                     HTML("<br><br>"),#Adding white space
-                    
+
                     #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked (see lines ~1015)
                     #Click here and open the summary page in pdf format
                     #if(input$year==2022){
                     if(input$year>2022){
-                      
+
                       list(
                         fluidRow (column(width = 3,
                                          HTML("<br><br>"),
@@ -1665,56 +1438,30 @@ server <- function(input, output, session) {
                         column(width = 6, imageOutput("display.SummaryPage")),  #, height = "50%"
                         )#end of two columns
                       )#end of list
-                      
-                      
-                    }
-                    #No need for below now
-                    # else{ 
-                    #   #SM Oct 2022: Years prior to 2022 need the original page set-up
-                    #   list(                    
-                    #     fluidRow(column(width = 3, imageOutput("display.assarea", height = "50%")),
-                    #              column(width = 6, imageOutput("display.landingsbygear", height = "50%"))),
-                    #     fluidRow(column(width = 6, 
-                    #                     h3("Key Points"),
-                    #                     tags$head(
-                    #                       tags$style("td:nth-child(1) {font-weight: bold;}
-                    #                                  td:nth-child(1) {background: #f2f2f2;}")),
-                    #                     tableOutput("KPtable"),
-                    #                     if(input$year>2017){
-                    #                       list(tags$head(tags$style(HTML("
-                    #                                                       #KPtableFootnote{
-                    #                                                       font-size: 11px;}"))),
-                    #                            htmlOutput("KPtableFootnote"))
-                    #                     }),
-                    #              column(width = 6, h3(textOutput("TACtext")),
-                    #                     imageOutput("display.TAC", height = "50%"),
-                    #                     if(input$year>2017){
-                    #                       imageOutput("display.CatchDiscards", height = "25%")})),
-                    #     tabsetPanel(id="MgtAdvice", type="pills",
-                    #                 tabPanel(textOutput("ManagementAdviceHeader"), 
-                    #                          htmlOutput("ManagementAdvice"),p()),
-                    #                 tabPanel(textOutput("AddInfoHeader"), #"Additional Information", 
-                    #                          htmlOutput("Addinfo"),p()))
-                    #   )
-                    # }
-                    
+                    }#end of +2022 layout
+
+
                     ,h3("Links"),
-                    h5("Link to the Stock Book PDF:"), 
+                    h5("Link to the Stock Book PDF:"),
                     uiOutput("Stockbooklink"),
-                    h5("Link to the ICES Species Advice page:"), 
-                    uiOutput("ICESlink"), 
-                    h5("Link to the ICES Advisory Sheet pdf:"), 
-                    uiOutput("ICESlinkpdf"), 
+                    h5("Link to the ICES Species Advice page:"),
+                    uiOutput("ICESlink"),
+                    h5("Link to the ICES Advisory Sheet pdf:"),
+                    uiOutput("ICESlinkpdf"),
                     HTML("<br><br>")
       ))
-    }else{
+    }
+    else{
       list(tabPanel("Species Summary", value="species_summ",
                     h3("Biology"), 
                     fluidRow(column(width = 9, htmlOutput("biology_text")), 
                              column(width = 3, imageOutput("display.fish", height = "50%"))),   
                     h3("Distribution in Irish Waters"),
                     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-                    }else if(input$speciesfilter=="Seabass"){
+                    }
+                    
+                    ##***The Seabass page can change from year to year. This is the 2023 page layout:
+                    else if(input$speciesfilter=="Seabass"){
                       list("While found along all Irish coasts, the primary concentration of sea bass can be found in divisions 7.j, 7.g. and 7.a. Annual Marine Institute research surveys have found a clustered distribution of sea bass in the eastern Celtic Sea, particularly during the late autumn/early winter period, which are believed to be pre-spawning aggregations foraging opportunistically.",
                            fluidRow(column(width= 4, 
                                            imageOutput("display.InternationalLandings",height = "100%")),#
@@ -1723,10 +1470,14 @@ server <- function(input, output, session) {
                                            "The distribution of sea bass sampled during
                                                  research surveys in offshore waters shows
                                                  clustering in the eastern Celtic Sea and Bristol
-                                                 Channel region between 2003 and 2021.")),
+                                                 Channel region between 2003 and 2022.")),
                            h3("Irish Landings and Fishery"),
-                           htmlOutput("LandingsText"))
-                    }else{
+                           #there are extra headings and text for Seabass in the TAC2023 cell in 'StockAdvice.csv'
+                           htmlOutput("LandingsText"),
+                          imageOutput("display.IntlLdgs_x2Seabass",height = "100%"))
+                    }
+                    
+                    else{
                       list(fluidRow(column(width = 6, htmlOutput("text.InternationalLandings"), HTML("<br>"),
                                            imageOutput("display.InternationalLandings",height = "100%")),#
                                     column(width = 6, htmlOutput("text.IrishLandings"), HTML("<br>"),
@@ -1740,14 +1491,14 @@ server <- function(input, output, session) {
                                            imageOutput("display.TACValue", height="100%"))))},
                     HTML("<br><br>")) , 
            tabPanel("Stockbook Summary", value="stockbook_summ",
-                    h3(textOutput("ICESAdviceTextMI")),
+                    h3(htmlOutput("ICESAdviceTextMI")),
                     htmlOutput("ICESAdviceTextMI2"),p(),
                     HTML("<br><br>"),#Adding white space
                     
                     #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked (see lines ~1015)
                     #Click here and open the summary page in pdf format
                    # if(input$year==2022){
-                    if(input$year>2022){  
+                    if(input$year>=2022){  
                       
                       list(
                         fluidRow (column(width = 3,
@@ -1760,39 +1511,8 @@ server <- function(input, output, session) {
                         column(width = 6, imageOutput("display.SummaryPage")),  #, height = "50%"
                         )#end of two columns
                       )#end of list
-                      
-                      
-                    }
-                   #No longer needed
-                   # else{ 
-                   #    #SM Oct 2022: Years prior to 2022 need the original page set-up
-                   #    list(
-                   #      fluidRow(column(width = 3, imageOutput("display.assarea", height = "50%")),
-                   #               column(width = 6, imageOutput("display.landingsbygear", height = "50%"))),
-                   #      fluidRow(column(width = 6, 
-                   #                      h3("Key Points"),
-                   #                      tags$head(
-                   #                        tags$style("td:nth-child(1) {font-weight: bold;}
-                   #                                       td:nth-child(1) {background: #f2f2f2;}")),
-                   #                      tableOutput("KPtable"),
-                   #                      if(input$year>2017){
-                   #                        list(tags$head(tags$style(HTML("
-                   #                                                      #KPtableFootnote{
-                   #                                                      font-size: 11px;}"))),
-                   #                             htmlOutput("KPtableFootnote"))
-                   #                      }),
-                   #               column(width = 6, h3(textOutput("TACtext")),
-                   #                      imageOutput("display.TAC", height = "50%"),
-                   #                      if(input$year>2017){
-                   #                        imageOutput("display.CatchDiscards", height = "25%")})),
-                   #      
-                   #      tabsetPanel(id="MgtAdvice", type="pills",
-                   #                  tabPanel(textOutput("ManagementAdviceHeader"), 
-                   #                           htmlOutput("ManagementAdvice"),p()),
-                   #                  tabPanel(textOutput("AddInfoHeader"), #"Additional Information", 
-                   #                           htmlOutput("Addinfo"),p()))
-                   #    )
-                   #  }
+                    }#end of +2022 layout
+                   
                     
                     ,h3("Links"),
                     h5("Link to the Stock Book PDF:"), 
@@ -1805,16 +1525,12 @@ server <- function(input, output, session) {
            ))}
     
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
-    }else if(input$year==2022 && input$speciesfilter=="Herring" && input$speciesbydiv=="Divisions 6.a and 7.b-c (West of Scotland West of Ireland)" ){
-      # 17/11/22 - no advice for this stock of herring in 2022 because it has been split into 2 new stocks
-      #do nothing!
-    } else if(input$year==2022 && input$speciesfilter=="Cod" && input$speciesbydiv=="Subareas 1 and 2 (Northeast Arctic)" ){
-      # 18/11/22 - no advice for Arctic Cod in 2022
-      #do nothing!
-    } else if(!(input$speciesfilter %in% c("Albacore Tuna", "Bluefin Tuna", "Swordfish"))){
+    }
+
+    else if(!(input$speciesfilter %in% c("Albacore Tuna", "Bluefin Tuna"))){
       panels[[length(panels)+1]]=tabPanel("ICES Advice", value="ices_summ",
                                           h3("ICES Stock Advice"),
-                                          textOutput("ICESAdviceText"),
+                                          htmlOutput("ICESAdviceText"),
                                           HTML("<br>"),
                                           uiOutput("ICESinfo"),
                                           HTML("<br>"),
@@ -1950,92 +1666,93 @@ server <- function(input, output, session) {
   #Ecosystem Overview
   #~~~~~~~~~~~~~~~~~~~
   output$OverviewsAndMF <-renderUI({
-    #SM added Nov 2021 and Nov 2022
-    #  if(input$year==2022){
-    #    tagList(h4("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2022"))
+    #SM added Nov 2021, 2022, 2023
+      if(input$year>2022){
+        tagList(h4("A FEAS summary of Ecosystem and Mixed Fisheries advice will be added in late December 2023"))
+     }
+  ##Un-comment and update when the 2023 text is ready
+  ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # if(input$year>2022){  
+    #   panelsEO= list(
+    #     tabPanel("Ecosystem Overview",
+    #              h2("Ecosystem Overview"),
+    #              h3("Summary"),
+    #              fluidRow(column(width = 9, htmlOutput("SummaryText")),
+    #                       column(width = 3, imageOutput("SurfaceArea",height = "50%"),
+    #                              "Surface swept area ration of otter trawls in 2015 (ICES, 2016)")),
+    #              h3("FEAS Ecosystem Considerations"),
+    #              htmlOutput("Considerations"), HTML("<br>"),
+    #              imageOutput("guild2017"),HTML("<br>"),
+    #              "Time-series of average of relative fishing mortality (F to Fmsy ratio) and biomass 
+    #                        (SSB to Bmsy trigger ratio) by fish guild. Mean F and mean SSB is by total number of 
+    #                        stocks with reference points."))
+    #   panelsD3MF= list(
+    #     tabPanel("D3 Assessment", 
+    #              htmlOutput("D3summ"),
+    #              htmlOutput("D3text"),p(),
+    # 
+    #              #app.R was changed in 2020 to stop the Ecosystems Overview tab from appearing. Also stopped the hard-coded headings and graph captions from appearing for those years.                      HTML("<br><br>")),
+    #              HTML("<br><br>")),###
+    #     tabPanel("Mixed Fisheries", 
+    #              htmlOutput("MixedFish_1"),
+    #              htmlOutput("MixedFish_2"),
+    #              imageOutput("MixedFishimage", height="50%"), HTML("<br><br>")))
+    #   #SM: Inserted for 2021 as the Ecosystems tab above was linked to D3 also
+    #   panelsEO_MF= list(
+    #     
+    #     tabPanel("Fisheries Overview",
+    #              htmlOutput("Fisheries_1")),        
+    #     
+    #     tabPanel("Mixed Fisheries",
+    # 
+    #              if (input$year>2022){
+    #                list( htmlOutput("MixedFish_1"),
+    #                      htmlOutput("MixedFish_2"),
+    #                      fluidRow( column(width = 5, imageOutput("MF_Fig1_caption",height = "50%")), #,height = "100%"
+    #                                column(width = 7, imageOutput("MF_Tbl1"))),  #, height="50%"
+    #                      HTML("<br><br>"),
+    #                      htmlOutput("MixedFish_3"),
+    #                      fluidRow( column(width = 6, imageOutput("MF_Tbl2",height = "50%")), 
+    #                                column(width = 6, imageOutput("MF_Tbl3", height="50%"))), 
+    #                      HTML("<br><br>"),
+    #                      fluidRow( column(width = 6, imageOutput("MF_Tbl4",height = "50%")), 
+    #                                column(width = 6, imageOutput("MF_Tbl5", height="50%"))), 
+    #                      #In 2022 image names were aligned with 2021 names so that sizes are stable. Therefore there is no Fig2
+    #                      imageOutput("MF_Fig3_caption", height="50%"), #
+    #                      HTML("<br><br>"),
+    #                      fluidRow( column(width = 5, imageOutput("MF_Fig4_caption",height = "50%")), 
+    #                                column(width = 7, imageOutput("MF_Tbl6", height="50%"))), 
+    #                      #imageOutput("MF_Fig4_caption", height="80%"), #
+    #                      #imageOutput("MF_Tbl6", height="50%"),
+    #                      HTML("<br><br>"),
+    #                      htmlOutput("MixedFish_4"),         
+    #                      fluidRow( column(width = 6, imageOutput("MF_Tbl7",height = "20%")), 
+    #                                column(width = 6, imageOutput("MF_Tbl8", height="25%"))),
+    #                      HTML("<br><br>"),
+    #                      imageOutput("MF_Fig5_caption", height="50%"),
+    #                      HTML("<br><br>"),
+    #                      htmlOutput("MixedFish_5"), 
+    #                      htmlOutput("MixedFish_6")
+    #                      
+    #                )}), #end of list and tab panel 'Mixed Fisheries'
+    #     
+    #     tabPanel("Ecosystem Overview",
+    #              htmlOutput("SummaryText")))  # end of 'panelsEO_MF'
+    #   
+    #   
+    #   #this was the code in 2020. Needed to be changed for 2021
+    #   #panelstest=if(input$year>=2018 ){panelsD3MF}else{c(panelsEO, panelsD3MF)}#changed in 2020 
+    #   #do.call(tabsetPanel, panelstest)
+    #   
+    #   #panelstest=if(input$year==2021 |input$year==2022) {c(panelsEO_MF)}
+    #   panelstest=if(input$year>2021) {c(panelsEO_MF)}
+    #   # else if(input$year==2018 |input$year==2019 |input$year==2020 )
+    #   # {panelsD3MF}
+    #   # else if(input$year==2017) {c(panelsEO, panelsD3MF)}#changed in 2020 
+    #   
+    #   do.call(tabsetPanel, panelstest)
+    #   
     # }
-  
-    if(input$year>2022){  
-      panelsEO= list(
-        tabPanel("Ecosystem Overview",
-                 h2("Ecosystem Overview"),
-                 h3("Summary"),
-                 fluidRow(column(width = 9, htmlOutput("SummaryText")),
-                          column(width = 3, imageOutput("SurfaceArea",height = "50%"),
-                                 "Surface swept area ration of otter trawls in 2015 (ICES, 2016)")),
-                 h3("FEAS Ecosystem Considerations"),
-                 htmlOutput("Considerations"), HTML("<br>"),
-                 imageOutput("guild2017"),HTML("<br>"),
-                 "Time-series of average of relative fishing mortality (F to Fmsy ratio) and biomass 
-                           (SSB to Bmsy trigger ratio) by fish guild. Mean F and mean SSB is by total number of 
-                           stocks with reference points."))
-      panelsD3MF= list(
-        tabPanel("D3 Assessment", 
-                 htmlOutput("D3summ"),
-                 htmlOutput("D3text"),p(),
-
-                 #app.R was changed in 2020 to stop the Ecosystems Overview tab from appearing. Also stopped the hard-coded headings and graph captions from appearing for those years.                      HTML("<br><br>")),
-                 HTML("<br><br>")),###
-        tabPanel("Mixed Fisheries", 
-                 htmlOutput("MixedFish_1"),
-                 htmlOutput("MixedFish_2"),
-                 imageOutput("MixedFishimage", height="50%"), HTML("<br><br>")))
-      #SM: Inserted for 2021 as the Ecosystems tab above was linked to D3 also
-      panelsEO_MF= list(
-        
-        tabPanel("Fisheries Overview",
-                 htmlOutput("Fisheries_1")),        
-        
-        tabPanel("Mixed Fisheries",
-
-                 if (input$year>2022){
-                   list( htmlOutput("MixedFish_1"),
-                         htmlOutput("MixedFish_2"),
-                         fluidRow( column(width = 5, imageOutput("MF_Fig1_caption",height = "50%")), #,height = "100%"
-                                   column(width = 7, imageOutput("MF_Tbl1"))),  #, height="50%"
-                         HTML("<br><br>"),
-                         htmlOutput("MixedFish_3"),
-                         fluidRow( column(width = 6, imageOutput("MF_Tbl2",height = "50%")), 
-                                   column(width = 6, imageOutput("MF_Tbl3", height="50%"))), 
-                         HTML("<br><br>"),
-                         fluidRow( column(width = 6, imageOutput("MF_Tbl4",height = "50%")), 
-                                   column(width = 6, imageOutput("MF_Tbl5", height="50%"))), 
-                         #In 2022 image names were aligned with 2021 names so that sizes are stable. Therefore there is no Fig2
-                         imageOutput("MF_Fig3_caption", height="50%"), #
-                         HTML("<br><br>"),
-                         fluidRow( column(width = 5, imageOutput("MF_Fig4_caption",height = "50%")), 
-                                   column(width = 7, imageOutput("MF_Tbl6", height="50%"))), 
-                         #imageOutput("MF_Fig4_caption", height="80%"), #
-                         #imageOutput("MF_Tbl6", height="50%"),
-                         HTML("<br><br>"),
-                         htmlOutput("MixedFish_4"),         
-                         fluidRow( column(width = 6, imageOutput("MF_Tbl7",height = "20%")), 
-                                   column(width = 6, imageOutput("MF_Tbl8", height="25%"))),
-                         HTML("<br><br>"),
-                         imageOutput("MF_Fig5_caption", height="50%"),
-                         HTML("<br><br>"),
-                         htmlOutput("MixedFish_5"), 
-                         htmlOutput("MixedFish_6")
-                         
-                   )}), #end of list and tab panel 'Mixed Fisheries'
-        
-        tabPanel("Ecosystem Overview",
-                 htmlOutput("SummaryText")))  # end of 'panelsEO_MF'
-      
-      
-      #this was the code in 2020. Needed to be changed for 2021
-      #panelstest=if(input$year>=2018 ){panelsD3MF}else{c(panelsEO, panelsD3MF)}#changed in 2020 
-      #do.call(tabsetPanel, panelstest)
-      
-      #panelstest=if(input$year==2021 |input$year==2022) {c(panelsEO_MF)}
-      panelstest=if(input$year>2021) {c(panelsEO_MF)}
-      # else if(input$year==2018 |input$year==2019 |input$year==2020 )
-      # {panelsD3MF}
-      # else if(input$year==2017) {c(panelsEO, panelsD3MF)}#changed in 2020 
-      
-      do.call(tabsetPanel, panelstest)
-      
-    }
     
   })#closing brackets of output$OverviewsAndMF <-renderUI({
   
@@ -2089,10 +1806,12 @@ server <- function(input, output, session) {
     )                             # end of taglist
   })                                  # end of output$DataQuality
   
-  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-  
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
   #EXTRA CHAPTERS ADDED IN 2021 and continued in 2022, 2023
-  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  ##RECENT ECOSYSTEM ADVICE
+  ##~~~~~~~~~~~~~~~~~~~~~~~
   output$RecentAdvice <-renderUI({
     # if(input$year<2021){
     #   tagList(h3("Recent Advice on Ecosystem Services and Effects was introduced in 2021"))
