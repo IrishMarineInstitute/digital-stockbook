@@ -507,6 +507,7 @@ server <- function(input, output, session) {
   ############################
   # Recent Ecosystems Advice #
   ############################
+  #In 2023 'Recent_Middle2' and 'Recent_End2' was added
   ExtraChapters=read.csv('ExtraChapters.csv', header=TRUE)
   output$Recent_Beginning <- renderText({
     paste0(ExtraChapters[1, which(colnames(ExtraChapters)==paste0("X", input$year))])
@@ -514,24 +515,33 @@ server <- function(input, output, session) {
   output$Recent_Middle <- renderText({
     paste0(ExtraChapters[2, which(colnames(ExtraChapters)==paste0("X", input$year))])
   })
-  output$Recent_End<- renderText({
+  output$Recent_Middle2 <- renderText({
     paste0(ExtraChapters[3, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  })
+  output$Recent_End<- renderText({
+    paste0(ExtraChapters[4, which(colnames(ExtraChapters)==paste0("X", input$year))])
   })  
+  output$Recent_End2<- renderText({
+    paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  })
   #SMNov2023: if more than text is used in future years, then see the 2022 app.R "CovidResponse"
    output$AtSea_Text<- renderText({
-     paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
+     paste0(ExtraChapters[7, which(colnames(ExtraChapters)==paste0("X", input$year))])
    })
   # output$AtSea2020<- renderText({
   #   paste0(ExtraChapters[5, which(colnames(ExtraChapters)==paste0("X", input$year))])
   # }) 
   output$AtSeaFootnote<- renderText({
-    paste0(ExtraChapters[6, which(colnames(ExtraChapters)==paste0("X", input$year))])
+    paste0(ExtraChapters[8, which(colnames(ExtraChapters)==paste0("X", input$year))])
   }) 
   
   #2021 and 2022 Specific - IMAGES added for the three extra chapters
+  #2023 - RecentAdvice image 4 was added. 
+  #       Images 1, 2, 3, 4 were 350, 350, 400, 350 for previous years.
+  #       Changed to 500 for 2023
   output$RecentAdvice1 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice1.png")
-    return(list(src = image_file, filetype = "image/png", height = 350))
+    return(list(src = image_file, filetype = "image/png", height = 500))
   }, deleteFile = FALSE)
   output$RecentAdviceColours <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdviceColours.png")
@@ -539,7 +549,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$RecentAdvice2 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice2.png")
-    return(list(src = image_file, filetype = "image/png", height = 350))
+    return(list(src = image_file, filetype = "image/png", height = 500))
   }, deleteFile = FALSE)
   output$AtSea2020_1 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/AtSea2020_1.png")
@@ -548,13 +558,17 @@ server <- function(input, output, session) {
   #2022
   output$RecentAdvice3 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/Table_1_cropped.png")
-    return(list(src = image_file, filetype = "image/png", height = 450))
+    return(list(src = image_file, filetype = "image/png", height = 500))
   }, deleteFile = FALSE)
   output$RecentAdvice4 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice3.png")
-    return(list(src = image_file, filetype = "image/png", height = 400))
+    return(list(src = image_file, filetype = "image/png", height = 500))
   }, deleteFile = FALSE)
-  
+  #2023
+  output$RecentAdvice2 <- renderImage({
+    image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice4.png")
+    return(list(src = image_file, filetype = "image/png", height = 350))
+  }, deleteFile = FALSE)
   
   
   ################
@@ -1817,26 +1831,45 @@ server <- function(input, output, session) {
     #   tagList(h3("Recent Advice on Ecosystem Services and Effects was introduced in 2021"))
     # }
     #else if(input$year>=2021){
-    if(input$year>=2022){
+    # if(input$year==2022){
+    #   tagList(
+    #     fluidRow(column(width = 10, htmlOutput("Recent_Beginning")),
+    #              column(width = 10, imageOutput("RecentAdvice3",height = "50%"),
+    #                     column(width = 10, imageOutput("RecentAdvice4",height = "50%"),
+    #                            if(input$year==2022){"Figure 1. Reported marine mammal bycatch rates in the Celtic Seas ecoregion 2017-2021 by level 4 metier. Here and below: data used for the calculation of bycatch rates was selected based on the following criterion: monitoring coverage within a metier (level 4) was above an arbitrarily set limit of 50 days-at-sea. GNS = set gillnets, GTR = trammelnets, OTB = otter trawls, OTM = midwater otter trawl, OTT = multirig otter trawl, PTB = bottom pair trawl."})),
+    #              column(width = 10, htmlOutput("Recent_Middle")),
+    #              column(width = 10, imageOutput("RecentAdvice1",height = "50%"),
+    #                     if(input$year==2021){"Figure 1. Average Swept Area Ratio (SAR) between 2013-2018 for the waters around Ireland"}
+    #                     else if (input$year==2022){"Figure 2. NEAFC Regulatory Area 1 with NEAFC bottom-fishing closures for VME protection (NEAFC closed areas) and NEAFC bottom-fishing areas."})),
+    #     column(width = 10, imageOutput("RecentAdviceColours",height = "50%")),
+    #     HTML("<br><br>"),
+    #     fluidRow(column(width = 10, htmlOutput("Recent_End")),
+    #              column(width = 10, imageOutput("RecentAdvice2", height="50%"),
+    #                     if(input$year==2021){"Figure 2. New VME habitat and indicator records for the Irish continental slope and Porcupine Bank and Seabight within EU waters. 
+    #                         Note that other existing VME records from the VME database are not displayed for this area. In addition, it is not possible to spatially resolve all records in the map due to their close proximity.
+    #                              The Belgica Mound Province SAC is shown as the furthest south SAC in the Irish EEZ between the 600-1000 m depth contours."}
+    #                     else if (input$year==2022){"Figure 3. Shellfish and finfish aquaculture sites around the coast of Ireland."})),
+    #   )                             # end of taglist
+    # }                                  #end of 2022 content
+    
+    #else 
+    if(input$year==2023){
       tagList(
         fluidRow(column(width = 10, htmlOutput("Recent_Beginning")),
-                 column(width = 10, imageOutput("RecentAdvice3",height = "50%"),
-                        column(width = 10, imageOutput("RecentAdvice4",height = "50%"),
-                               if(input$year==2022){"Figure 1. Reported marine mammal bycatch rates in the Celtic Seas ecoregion 2017-2021 by level 4 metier. Here and below: data used for the calculation of bycatch rates was selected based on the following criterion: monitoring coverage within a metier (level 4) was above an arbitrarily set limit of 50 days-at-sea. GNS = set gillnets, GTR = trammelnets, OTB = otter trawls, OTM = midwater otter trawl, OTT = multirig otter trawl, PTB = bottom pair trawl."})),
+                 column(width = 10, imageOutput("RecentAdvice1",height = "100%")),
                  column(width = 10, htmlOutput("Recent_Middle")),
-                 column(width = 10, imageOutput("RecentAdvice1",height = "50%"),
-                        if(input$year==2021){"Figure 1. Average Swept Area Ratio (SAR) between 2013-2018 for the waters around Ireland"}
-                        else if (input$year==2022){"Figure 2. NEAFC Regulatory Area 1 with NEAFC bottom-fishing closures for VME protection (NEAFC closed areas) and NEAFC bottom-fishing areas."})),
-        column(width = 10, imageOutput("RecentAdviceColours",height = "50%")),
-        HTML("<br><br>"),
-        fluidRow(column(width = 10, htmlOutput("Recent_End")),
-                 column(width = 10, imageOutput("RecentAdvice2", height="50%"),
-                        if(input$year==2021){"Figure 2. New VME habitat and indicator records for the Irish continental slope and Porcupine Bank and Seabight within EU waters. 
-                            Note that other existing VME records from the VME database are not displayed for this area. In addition, it is not possible to spatially resolve all records in the map due to their close proximity.
-                                 The Belgica Mound Province SAC is shown as the furthest south SAC in the Irish EEZ between the 600-1000 m depth contours."}
-                        else if (input$year==2022){"Figure 3. Shellfish and finfish aquaculture sites around the coast of Ireland."})),
+                 column(width = 10, imageOutput("RecentAdvice2",height = "100%")),
+                 column(width = 10, htmlOutput("Recent_Middle2")),
+                 column(width = 10, imageOutput("RecentAdvice3",height = "100%")),
+                 column(width = 10, htmlOutput("Recent_End")),
+                 column(width = 10, imageOutput("RecentAdvice4",height = "100%")),
+                 column(width = 10, htmlOutput("Recent_End2"))),
+                 
+
       )                             # end of taglist
-    }                                  #end of 2021 and 2022 content
+    }                                  #end of 2023 content 
+    
+    
   })                                  # end of output$RecentAdvice
   
     
