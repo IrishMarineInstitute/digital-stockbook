@@ -25,8 +25,8 @@ COPY google-analytics.js /srv/shiny-server/stockbook/
 COPY StockAdvice.csv /srv/shiny-server/stockbook/
 COPY Introduction.csv /srv/shiny-server/stockbook/
 COPY IntroductionTable.csv /srv/shiny-server/stockbook/
-COPY KeyPoints.csv /srv/shiny-server/stockbook/
-COPY ManagementAdvice.csv /srv/shiny-server/stockbook/
+# COPY KeyPoints.csv /srv/shiny-server/stockbook/
+# COPY ManagementAdvice.csv /srv/shiny-server/stockbook/
 COPY MixedFish.csv /srv/shiny-server/stockbook/
 COPY ExtraChapters.csv /srv/shiny-server/stockbook/
 COPY README.md /srv/shiny-server/stockbook/
