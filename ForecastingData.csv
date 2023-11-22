@@ -1231,7 +1231,7 @@
 16736,cod.27.46a7d20_Northwestern,2023,SSB 2025 = Blim ,Catch,27344
 16762,cod.27.46a7d20_Northwestern,2023,SSB 2025 = MSY Btrigger = Bpa,Catch,27344
 16784,cod.27.46a7d20_Northwestern,2023,SSB 2025 = SSB 2024 ,Catch,27344
-17466,cod.27.46a7d20_Northwestern,2024,ICES Advice,Catch,13529
+13913,cod.27.46a7d20_Northwestern,1983,Assessment,Blim,NA
 14898,cod.27.46a7d20_Northwestern,2024,F = 0,F,0
 14924,cod.27.46a7d20_Northwestern,2024,F = F2023,F,0.34
 15016,cod.27.46a7d20_Northwestern,2024,FMSY lower,F,0.137
@@ -1252,7 +1252,7 @@
 16090,cod.27.46a7d20_Northwestern,2023,SSB 2025 = Blim ,F,0.34
 16116,cod.27.46a7d20_Northwestern,2023,SSB 2025 = MSY Btrigger = Bpa,F,0.34
 16138,cod.27.46a7d20_Northwestern,2023,SSB 2025 = SSB 2024 ,F,0.34
-17524,cod.27.46a7d20_Northwestern,2024,ICES Advice,F,0.132
+13954,cod.27.46a7d20_Northwestern,1983,Assessment,Bpa,NA
 15221,cod.27.46a7d20_Northwestern,2024,F = 0,Flandings,NA
 15247,cod.27.46a7d20_Northwestern,2024,F = F2023,Flandings,NA
 15339,cod.27.46a7d20_Northwestern,2024,FMSY lower,Flandings,NA
@@ -1263,7 +1263,7 @@
 15444,cod.27.46a7d20_Northwestern,2024,SSB 2025 = Blim ,Flandings,NA
 15470,cod.27.46a7d20_Northwestern,2024,SSB 2025 = MSY Btrigger = Bpa,Flandings,NA
 15492,cod.27.46a7d20_Northwestern,2024,SSB 2025 = SSB 2024 ,Flandings,NA
-17553,cod.27.46a7d20_Northwestern,2024,ICES Advice,Flandings,NA
+13995,cod.27.46a7d20_Northwestern,1983,Assessment,Catch,119507
 14575,cod.27.46a7d20_Northwestern,2024,F = 0,Landings,NA
 14601,cod.27.46a7d20_Northwestern,2024,F = F2023,Landings,NA
 14693,cod.27.46a7d20_Northwestern,2024,FMSY lower,Landings,NA
@@ -1284,7 +1284,7 @@
 17059,cod.27.46a7d20_Northwestern,2023,SSB 2025 = Blim ,Landings,36214
 17085,cod.27.46a7d20_Northwestern,2023,SSB 2025 = MSY Btrigger = Bpa,Landings,36214
 17107,cod.27.46a7d20_Northwestern,2023,SSB 2025 = SSB 2024 ,Landings,36214
-17495,cod.27.46a7d20_Northwestern,2024,ICES Advice,Landings,NA
+14057,cod.27.46a7d20_Northwestern,1983,Assessment,Discards,NA
 15544,cod.27.46a7d20_Northwestern,2025,F = 0,SSB,114463
 15570,cod.27.46a7d20_Northwestern,2025,F = F2023,SSB,75154
 15662,cod.27.46a7d20_Northwestern,2025,FMSY lower,SSB,96030
@@ -1315,7 +1315,7 @@
 17382,cod.27.46a7d20_Northwestern,2023,SSB 2025 = Blim ,SSB,NA
 17408,cod.27.46a7d20_Northwestern,2023,SSB 2025 = MSY Btrigger = Bpa,SSB,NA
 17430,cod.27.46a7d20_Northwestern,2023,SSB 2025 = SSB 2024 ,SSB,NA
-17582,cod.27.46a7d20_Northwestern,2024,ICES Advice,SSB,72052
+14098,cod.27.46a7d20_Northwestern,1983,Assessment,F,0.82
 14253,cod.27.46a7d20_Southern,2024,F = 0,Catch,0
 14279,cod.27.46a7d20_Southern,2024,F = F2023,Catch,8664
 14314,cod.27.46a7d20_Southern,2024,F = FMSY,Catch,5095
@@ -13507,7 +13507,7 @@
 16083,sol.27.7a,2023,SSB 2025 = Blim,F,0.261
 16105,sol.27.7a,2023,SSB 2025 = Bpa = MSY Btrigger,F,0.261
 16130,sol.27.7a,2023,SSB 2025 = SSB 2024,F,0.261
-17499,sol.27.7a,2024,ICES Advice,F,NA
+17499,sol.27.7a,2024,ICES Advice,F,0
 17641,sol.27.7a,2023,ICES Advice,F,0.261
 15239,sol.27.7a,2024,F = 0,Flandings,0
 15266,sol.27.7a,2024,F = F2023,Flandings,0.26
@@ -18057,3 +18057,1794 @@
 13910,whg.27.7b-ce-k,2022,TAC,TAC,8352
 13911,whg.27.7b-ce-k,2023,TAC,TAC,3877
 13912,whg.27.7b-ce-k,2022,ICES Advice,SSB,29946
+14171,cod.27.46a7d20_Northwestern,1983,Assessment,Flim,NA
+14212,cod.27.46a7d20_Northwestern,1983,Assessment,Fmsy,NA
+14253,cod.27.46a7d20_Northwestern,1983,Assessment,Fpa,NA
+14294,cod.27.46a7d20_Northwestern,1983,Assessment,Landings,NA
+14356,cod.27.46a7d20_Northwestern,1983,Assessment,R,520974
+14397,cod.27.46a7d20_Northwestern,1983,Assessment,SSB,56832
+13914,cod.27.46a7d20_Northwestern,1984,Assessment,Blim,NA
+13955,cod.27.46a7d20_Northwestern,1984,Assessment,Bpa,NA
+13996,cod.27.46a7d20_Northwestern,1984,Assessment,Catch,142221.3349
+14058,cod.27.46a7d20_Northwestern,1984,Assessment,Discards,NA
+14099,cod.27.46a7d20_Northwestern,1984,Assessment,F,0.95
+14172,cod.27.46a7d20_Northwestern,1984,Assessment,Flim,NA
+14213,cod.27.46a7d20_Northwestern,1984,Assessment,Fmsy,NA
+14254,cod.27.46a7d20_Northwestern,1984,Assessment,Fpa,NA
+14295,cod.27.46a7d20_Northwestern,1984,Assessment,Landings,NA
+14357,cod.27.46a7d20_Northwestern,1984,Assessment,R,767130
+14398,cod.27.46a7d20_Northwestern,1984,Assessment,SSB,53121
+13915,cod.27.46a7d20_Northwestern,1985,Assessment,Blim,NA
+13956,cod.27.46a7d20_Northwestern,1985,Assessment,Bpa,NA
+13997,cod.27.46a7d20_Northwestern,1985,Assessment,Catch,129209.0142
+14059,cod.27.46a7d20_Northwestern,1985,Assessment,Discards,NA
+14100,cod.27.46a7d20_Northwestern,1985,Assessment,F,0.93
+14173,cod.27.46a7d20_Northwestern,1985,Assessment,Flim,NA
+14214,cod.27.46a7d20_Northwestern,1985,Assessment,Fmsy,NA
+14255,cod.27.46a7d20_Northwestern,1985,Assessment,Fpa,NA
+14296,cod.27.46a7d20_Northwestern,1985,Assessment,Landings,NA
+14358,cod.27.46a7d20_Northwestern,1985,Assessment,R,238435
+14399,cod.27.46a7d20_Northwestern,1985,Assessment,SSB,51686
+13916,cod.27.46a7d20_Northwestern,1986,Assessment,Blim,NA
+13957,cod.27.46a7d20_Northwestern,1986,Assessment,Bpa,NA
+13998,cod.27.46a7d20_Northwestern,1986,Assessment,Catch,104468.7794
+14060,cod.27.46a7d20_Northwestern,1986,Assessment,Discards,NA
+14101,cod.27.46a7d20_Northwestern,1986,Assessment,F,0.98
+14174,cod.27.46a7d20_Northwestern,1986,Assessment,Flim,NA
+14215,cod.27.46a7d20_Northwestern,1986,Assessment,Fmsy,NA
+14256,cod.27.46a7d20_Northwestern,1986,Assessment,Fpa,NA
+14297,cod.27.46a7d20_Northwestern,1986,Assessment,Landings,NA
+14359,cod.27.46a7d20_Northwestern,1986,Assessment,R,653828
+14400,cod.27.46a7d20_Northwestern,1986,Assessment,SSB,35662
+13917,cod.27.46a7d20_Northwestern,1987,Assessment,Blim,NA
+13958,cod.27.46a7d20_Northwestern,1987,Assessment,Bpa,NA
+13999,cod.27.46a7d20_Northwestern,1987,Assessment,Catch,114630.8052
+14061,cod.27.46a7d20_Northwestern,1987,Assessment,Discards,NA
+14102,cod.27.46a7d20_Northwestern,1987,Assessment,F,0.93
+14175,cod.27.46a7d20_Northwestern,1987,Assessment,Flim,NA
+14216,cod.27.46a7d20_Northwestern,1987,Assessment,Fmsy,NA
+14257,cod.27.46a7d20_Northwestern,1987,Assessment,Fpa,NA
+14298,cod.27.46a7d20_Northwestern,1987,Assessment,Landings,NA
+14360,cod.27.46a7d20_Northwestern,1987,Assessment,R,394651
+14401,cod.27.46a7d20_Northwestern,1987,Assessment,SSB,47943
+13918,cod.27.46a7d20_Northwestern,1988,Assessment,Blim,NA
+13959,cod.27.46a7d20_Northwestern,1988,Assessment,Bpa,NA
+14000,cod.27.46a7d20_Northwestern,1988,Assessment,Catch,88233.85564
+14062,cod.27.46a7d20_Northwestern,1988,Assessment,Discards,NA
+14103,cod.27.46a7d20_Northwestern,1988,Assessment,F,0.88
+14176,cod.27.46a7d20_Northwestern,1988,Assessment,Flim,NA
+14217,cod.27.46a7d20_Northwestern,1988,Assessment,Fmsy,NA
+14258,cod.27.46a7d20_Northwestern,1988,Assessment,Fpa,NA
+14299,cod.27.46a7d20_Northwestern,1988,Assessment,Landings,NA
+14361,cod.27.46a7d20_Northwestern,1988,Assessment,R,151687
+14402,cod.27.46a7d20_Northwestern,1988,Assessment,SSB,36990
+13919,cod.27.46a7d20_Northwestern,1989,Assessment,Blim,NA
+13960,cod.27.46a7d20_Northwestern,1989,Assessment,Bpa,NA
+14001,cod.27.46a7d20_Northwestern,1989,Assessment,Catch,87294.65928
+14063,cod.27.46a7d20_Northwestern,1989,Assessment,Discards,NA
+14104,cod.27.46a7d20_Northwestern,1989,Assessment,F,0.95
+14177,cod.27.46a7d20_Northwestern,1989,Assessment,Flim,NA
+14218,cod.27.46a7d20_Northwestern,1989,Assessment,Fmsy,NA
+14259,cod.27.46a7d20_Northwestern,1989,Assessment,Fpa,NA
+14300,cod.27.46a7d20_Northwestern,1989,Assessment,Landings,NA
+14362,cod.27.46a7d20_Northwestern,1989,Assessment,R,537068
+14403,cod.27.46a7d20_Northwestern,1989,Assessment,SSB,60164
+13920,cod.27.46a7d20_Northwestern,1990,Assessment,Blim,NA
+13961,cod.27.46a7d20_Northwestern,1990,Assessment,Bpa,NA
+14002,cod.27.46a7d20_Northwestern,1990,Assessment,Catch,82276.87551
+14064,cod.27.46a7d20_Northwestern,1990,Assessment,Discards,NA
+14105,cod.27.46a7d20_Northwestern,1990,Assessment,F,1.01
+14178,cod.27.46a7d20_Northwestern,1990,Assessment,Flim,NA
+14219,cod.27.46a7d20_Northwestern,1990,Assessment,Fmsy,NA
+14260,cod.27.46a7d20_Northwestern,1990,Assessment,Fpa,NA
+14301,cod.27.46a7d20_Northwestern,1990,Assessment,Landings,NA
+14363,cod.27.46a7d20_Northwestern,1990,Assessment,R,168294
+14404,cod.27.46a7d20_Northwestern,1990,Assessment,SSB,43154
+13921,cod.27.46a7d20_Northwestern,1991,Assessment,Blim,NA
+13962,cod.27.46a7d20_Northwestern,1991,Assessment,Bpa,NA
+14003,cod.27.46a7d20_Northwestern,1991,Assessment,Catch,63480.25762
+14065,cod.27.46a7d20_Northwestern,1991,Assessment,Discards,NA
+14106,cod.27.46a7d20_Northwestern,1991,Assessment,F,0.99
+14179,cod.27.46a7d20_Northwestern,1991,Assessment,Flim,NA
+14220,cod.27.46a7d20_Northwestern,1991,Assessment,Fmsy,NA
+14261,cod.27.46a7d20_Northwestern,1991,Assessment,Fpa,NA
+14302,cod.27.46a7d20_Northwestern,1991,Assessment,Landings,NA
+14364,cod.27.46a7d20_Northwestern,1991,Assessment,R,242625
+14405,cod.27.46a7d20_Northwestern,1991,Assessment,SSB,42027
+13922,cod.27.46a7d20_Northwestern,1992,Assessment,Blim,NA
+13963,cod.27.46a7d20_Northwestern,1992,Assessment,Bpa,NA
+14004,cod.27.46a7d20_Northwestern,1992,Assessment,Catch,74997.3905
+14066,cod.27.46a7d20_Northwestern,1992,Assessment,Discards,NA
+14107,cod.27.46a7d20_Northwestern,1992,Assessment,F,0.92
+14180,cod.27.46a7d20_Northwestern,1992,Assessment,Flim,NA
+14221,cod.27.46a7d20_Northwestern,1992,Assessment,Fmsy,NA
+14262,cod.27.46a7d20_Northwestern,1992,Assessment,Fpa,NA
+14303,cod.27.46a7d20_Northwestern,1992,Assessment,Landings,NA
+14365,cod.27.46a7d20_Northwestern,1992,Assessment,R,564642
+14406,cod.27.46a7d20_Northwestern,1992,Assessment,SSB,54600
+13923,cod.27.46a7d20_Northwestern,1993,Assessment,Blim,NA
+13964,cod.27.46a7d20_Northwestern,1993,Assessment,Bpa,NA
+14005,cod.27.46a7d20_Northwestern,1993,Assessment,Catch,85230.17081
+14067,cod.27.46a7d20_Northwestern,1993,Assessment,Discards,NA
+14108,cod.27.46a7d20_Northwestern,1993,Assessment,F,0.9
+14181,cod.27.46a7d20_Northwestern,1993,Assessment,Flim,NA
+14222,cod.27.46a7d20_Northwestern,1993,Assessment,Fmsy,NA
+14263,cod.27.46a7d20_Northwestern,1993,Assessment,Fpa,NA
+14304,cod.27.46a7d20_Northwestern,1993,Assessment,Landings,NA
+14366,cod.27.46a7d20_Northwestern,1993,Assessment,R,263509
+14407,cod.27.46a7d20_Northwestern,1993,Assessment,SSB,52496
+13924,cod.27.46a7d20_Northwestern,1994,Assessment,Blim,NA
+13965,cod.27.46a7d20_Northwestern,1994,Assessment,Bpa,NA
+14006,cod.27.46a7d20_Northwestern,1994,Assessment,Catch,83074.3708
+14068,cod.27.46a7d20_Northwestern,1994,Assessment,Discards,NA
+14109,cod.27.46a7d20_Northwestern,1994,Assessment,F,0.93
+14182,cod.27.46a7d20_Northwestern,1994,Assessment,Flim,NA
+14223,cod.27.46a7d20_Northwestern,1994,Assessment,Fmsy,NA
+14036,cod.27.46a7d20_Northwestern,2023,F = 0,Catch,27344
+14037,cod.27.46a7d20_Northwestern,2023,F = F2023,Catch,27344
+14038,cod.27.46a7d20_Northwestern,2023,FMSY lower,Catch,27344
+14039,cod.27.46a7d20_Northwestern,2023,FMSY upper,Catch,27344
+14040,cod.27.46a7d20_Northwestern,2023,Fpa,Catch,27344
+14041,cod.27.46a7d20_Northwestern,2023,MSY approach : FMSY ,Catch,27344
+14042,cod.27.46a7d20_Northwestern,2023,Precautionary considerations : F (2023 Northwestern) x 0.40,Catch,27344
+14043,cod.27.46a7d20_Northwestern,2023,SSB 2025 = Blim ,Catch,27344
+14044,cod.27.46a7d20_Northwestern,2023,SSB 2025 = MSY Btrigger = Bpa,Catch,27344
+14045,cod.27.46a7d20_Northwestern,2023,SSB 2025 = SSB 2024 ,Catch,27344
+14046,cod.27.46a7d20_Northwestern,2024,F = 0,Catch,0
+14047,cod.27.46a7d20_Northwestern,2024,F = F2023,Catch,30248
+14048,cod.27.46a7d20_Northwestern,2024,FMSY lower,Catch,13798
+14049,cod.27.46a7d20_Northwestern,2024,FMSY upper,Catch,31073
+14050,cod.27.46a7d20_Northwestern,2024,Fpa,Catch,50503
+14264,cod.27.46a7d20_Northwestern,1994,Assessment,Fpa,NA
+14052,cod.27.46a7d20_Northwestern,2024,MSY approach : FMSY ,Catch,21380
+14053,cod.27.46a7d20_Northwestern,2024,Precautionary considerations : F (2023 Northwestern) x 0.40,Catch,13529
+14054,cod.27.46a7d20_Northwestern,2024,SSB 2025 = Blim ,Catch,75430
+14055,cod.27.46a7d20_Northwestern,2024,SSB 2025 = MSY Btrigger = Bpa,Catch,68900
+14056,cod.27.46a7d20_Northwestern,2024,SSB 2025 = SSB 2024 ,Catch,32011
+14305,cod.27.46a7d20_Northwestern,1994,Assessment,Landings,NA
+14367,cod.27.46a7d20_Northwestern,1994,Assessment,R,558553
+14408,cod.27.46a7d20_Northwestern,1994,Assessment,SSB,64231
+13925,cod.27.46a7d20_Northwestern,1995,Assessment,Blim,NA
+13966,cod.27.46a7d20_Northwestern,1995,Assessment,Bpa,NA
+14007,cod.27.46a7d20_Northwestern,1995,Assessment,Catch,103017.1307
+14069,cod.27.46a7d20_Northwestern,1995,Assessment,Discards,NA
+14110,cod.27.46a7d20_Northwestern,1995,Assessment,F,1.03
+14183,cod.27.46a7d20_Northwestern,1995,Assessment,Flim,NA
+14224,cod.27.46a7d20_Northwestern,1995,Assessment,Fmsy,NA
+14265,cod.27.46a7d20_Northwestern,1995,Assessment,Fpa,NA
+14306,cod.27.46a7d20_Northwestern,1995,Assessment,Landings,NA
+14368,cod.27.46a7d20_Northwestern,1995,Assessment,R,335717
+14409,cod.27.46a7d20_Northwestern,1995,Assessment,SSB,48736
+13926,cod.27.46a7d20_Northwestern,1996,Assessment,Blim,NA
+13967,cod.27.46a7d20_Northwestern,1996,Assessment,Bpa,NA
+14008,cod.27.46a7d20_Northwestern,1996,Assessment,Catch,81531.49375
+14070,cod.27.46a7d20_Northwestern,1996,Assessment,Discards,NA
+14111,cod.27.46a7d20_Northwestern,1996,Assessment,F,1.08
+14184,cod.27.46a7d20_Northwestern,1996,Assessment,Flim,NA
+14225,cod.27.46a7d20_Northwestern,1996,Assessment,Fmsy,NA
+14266,cod.27.46a7d20_Northwestern,1996,Assessment,Fpa,NA
+14307,cod.27.46a7d20_Northwestern,1996,Assessment,Landings,NA
+14369,cod.27.46a7d20_Northwestern,1996,Assessment,R,167206
+14410,cod.27.46a7d20_Northwestern,1996,Assessment,SSB,55262
+13927,cod.27.46a7d20_Northwestern,1997,Assessment,Blim,NA
+13968,cod.27.46a7d20_Northwestern,1997,Assessment,Bpa,NA
+14009,cod.27.46a7d20_Northwestern,1997,Assessment,Catch,68823.78458
+14071,cod.27.46a7d20_Northwestern,1997,Assessment,Discards,NA
+14112,cod.27.46a7d20_Northwestern,1997,Assessment,F,0.98
+14185,cod.27.46a7d20_Northwestern,1997,Assessment,Flim,NA
+14226,cod.27.46a7d20_Northwestern,1997,Assessment,Fmsy,NA
+14267,cod.27.46a7d20_Northwestern,1997,Assessment,Fpa,NA
+14308,cod.27.46a7d20_Northwestern,1997,Assessment,Landings,NA
+14370,cod.27.46a7d20_Northwestern,1997,Assessment,R,606987
+14411,cod.27.46a7d20_Northwestern,1997,Assessment,SSB,54253
+13928,cod.27.46a7d20_Northwestern,1998,Assessment,Blim,NA
+13969,cod.27.46a7d20_Northwestern,1998,Assessment,Bpa,NA
+14010,cod.27.46a7d20_Northwestern,1998,Assessment,Catch,61190.67422
+14072,cod.27.46a7d20_Northwestern,1998,Assessment,Discards,NA
+14113,cod.27.46a7d20_Northwestern,1998,Assessment,F,1.06
+14186,cod.27.46a7d20_Northwestern,1998,Assessment,Flim,NA
+14227,cod.27.46a7d20_Northwestern,1998,Assessment,Fmsy,NA
+14268,cod.27.46a7d20_Northwestern,1998,Assessment,Fpa,NA
+14309,cod.27.46a7d20_Northwestern,1998,Assessment,Landings,NA
+14371,cod.27.46a7d20_Northwestern,1998,Assessment,R,72979
+14412,cod.27.46a7d20_Northwestern,1998,Assessment,SSB,40534
+13929,cod.27.46a7d20_Northwestern,1999,Assessment,Blim,NA
+13970,cod.27.46a7d20_Northwestern,1999,Assessment,Bpa,NA
+14011,cod.27.46a7d20_Northwestern,1999,Assessment,Catch,37772.14291
+14073,cod.27.46a7d20_Northwestern,1999,Assessment,Discards,NA
+14114,cod.27.46a7d20_Northwestern,1999,Assessment,F,1.1
+14187,cod.27.46a7d20_Northwestern,1999,Assessment,Flim,NA
+14228,cod.27.46a7d20_Northwestern,1999,Assessment,Fmsy,NA
+14269,cod.27.46a7d20_Northwestern,1999,Assessment,Fpa,NA
+14310,cod.27.46a7d20_Northwestern,1999,Assessment,Landings,NA
+14372,cod.27.46a7d20_Northwestern,1999,Assessment,R,98946
+14413,cod.27.46a7d20_Northwestern,1999,Assessment,SSB,32774
+13930,cod.27.46a7d20_Northwestern,2000,Assessment,Blim,NA
+13971,cod.27.46a7d20_Northwestern,2000,Assessment,Bpa,NA
+14012,cod.27.46a7d20_Northwestern,2000,Assessment,Catch,31822.29146
+14074,cod.27.46a7d20_Northwestern,2000,Assessment,Discards,NA
+14115,cod.27.46a7d20_Northwestern,2000,Assessment,F,1.06
+14188,cod.27.46a7d20_Northwestern,2000,Assessment,Flim,NA
+14229,cod.27.46a7d20_Northwestern,2000,Assessment,Fmsy,NA
+14270,cod.27.46a7d20_Northwestern,2000,Assessment,Fpa,NA
+14311,cod.27.46a7d20_Northwestern,2000,Assessment,Landings,NA
+14373,cod.27.46a7d20_Northwestern,2000,Assessment,R,206887
+14414,cod.27.46a7d20_Northwestern,2000,Assessment,SSB,27489
+13931,cod.27.46a7d20_Northwestern,2001,Assessment,Blim,NA
+13972,cod.27.46a7d20_Northwestern,2001,Assessment,Bpa,NA
+14013,cod.27.46a7d20_Northwestern,2001,Assessment,Catch,26750.25723
+14075,cod.27.46a7d20_Northwestern,2001,Assessment,Discards,NA
+14116,cod.27.46a7d20_Northwestern,2001,Assessment,F,0.92
+14189,cod.27.46a7d20_Northwestern,2001,Assessment,Flim,NA
+14230,cod.27.46a7d20_Northwestern,2001,Assessment,Fmsy,NA
+14271,cod.27.46a7d20_Northwestern,2001,Assessment,Fpa,NA
+14312,cod.27.46a7d20_Northwestern,2001,Assessment,Landings,NA
+14374,cod.27.46a7d20_Northwestern,2001,Assessment,R,66532
+14415,cod.27.46a7d20_Northwestern,2001,Assessment,SSB,22282
+13932,cod.27.46a7d20_Northwestern,2002,Assessment,Blim,NA
+13973,cod.27.46a7d20_Northwestern,2002,Assessment,Bpa,NA
+14139,cod.27.46a7d20_Northwestern,2023,F = 0,F,0.34
+14140,cod.27.46a7d20_Northwestern,2023,F = F2023,F,0.34
+14141,cod.27.46a7d20_Northwestern,2023,FMSY lower,F,0.34
+14142,cod.27.46a7d20_Northwestern,2023,FMSY upper,F,0.34
+14143,cod.27.46a7d20_Northwestern,2023,Fpa,F,0.34
+14144,cod.27.46a7d20_Northwestern,2023,MSY approach : FMSY ,F,0.34
+14145,cod.27.46a7d20_Northwestern,2023,Precautionary considerations : F (2023 Northwestern) x 0.40,F,0.34
+14146,cod.27.46a7d20_Northwestern,2023,SSB 2025 = Blim ,F,0.34
+14147,cod.27.46a7d20_Northwestern,2023,SSB 2025 = MSY Btrigger = Bpa,F,0.34
+14148,cod.27.46a7d20_Northwestern,2023,SSB 2025 = SSB 2024 ,F,0.34
+14149,cod.27.46a7d20_Northwestern,2024,F = 0,F,0
+14150,cod.27.46a7d20_Northwestern,2024,F = F2023,F,0.34
+14151,cod.27.46a7d20_Northwestern,2024,FMSY lower,F,0.137
+14152,cod.27.46a7d20_Northwestern,2024,FMSY upper,F,0.348
+14153,cod.27.46a7d20_Northwestern,2024,Fpa,F,0.682
+14014,cod.27.46a7d20_Northwestern,2002,Assessment,Catch,22384.86353
+14155,cod.27.46a7d20_Northwestern,2024,MSY approach : FMSY ,F,0.223
+14156,cod.27.46a7d20_Northwestern,2024,Precautionary considerations : F (2023 Northwestern) x 0.40,F,0.132
+14157,cod.27.46a7d20_Northwestern,2024,SSB 2025 = Blim ,F,1.46
+14158,cod.27.46a7d20_Northwestern,2024,SSB 2025 = MSY Btrigger = Bpa,F,1.19
+14159,cod.27.46a7d20_Northwestern,2024,SSB 2025 = SSB 2024 ,F,0.36
+14160,cod.27.46a7d20_Northwestern,2024,F = 0,Flandings,NA
+14161,cod.27.46a7d20_Northwestern,2024,F = F2023,Flandings,NA
+14162,cod.27.46a7d20_Northwestern,2024,FMSY lower,Flandings,NA
+14163,cod.27.46a7d20_Northwestern,2024,FMSY upper,Flandings,NA
+14164,cod.27.46a7d20_Northwestern,2024,Fpa,Flandings,NA
+14076,cod.27.46a7d20_Northwestern,2002,Assessment,Discards,NA
+14166,cod.27.46a7d20_Northwestern,2024,MSY approach : FMSY ,Flandings,NA
+14167,cod.27.46a7d20_Northwestern,2024,Precautionary considerations : F (2023 Northwestern) x 0.40,Flandings,NA
+14168,cod.27.46a7d20_Northwestern,2024,SSB 2025 = Blim ,Flandings,NA
+14169,cod.27.46a7d20_Northwestern,2024,SSB 2025 = MSY Btrigger = Bpa,Flandings,NA
+14170,cod.27.46a7d20_Northwestern,2024,SSB 2025 = SSB 2024 ,Flandings,NA
+14117,cod.27.46a7d20_Northwestern,2002,Assessment,F,0.9
+14190,cod.27.46a7d20_Northwestern,2002,Assessment,Flim,NA
+14231,cod.27.46a7d20_Northwestern,2002,Assessment,Fmsy,NA
+14272,cod.27.46a7d20_Northwestern,2002,Assessment,Fpa,NA
+14313,cod.27.46a7d20_Northwestern,2002,Assessment,Landings,NA
+14375,cod.27.46a7d20_Northwestern,2002,Assessment,R,92317
+14416,cod.27.46a7d20_Northwestern,2002,Assessment,SSB,24691
+13933,cod.27.46a7d20_Northwestern,2003,Assessment,Blim,NA
+13974,cod.27.46a7d20_Northwestern,2003,Assessment,Bpa,NA
+14015,cod.27.46a7d20_Northwestern,2003,Assessment,Catch,17931.63135
+14077,cod.27.46a7d20_Northwestern,2003,Assessment,Discards,NA
+14118,cod.27.46a7d20_Northwestern,2003,Assessment,F,0.85
+14191,cod.27.46a7d20_Northwestern,2003,Assessment,Flim,NA
+14232,cod.27.46a7d20_Northwestern,2003,Assessment,Fmsy,NA
+14273,cod.27.46a7d20_Northwestern,2003,Assessment,Fpa,NA
+14314,cod.27.46a7d20_Northwestern,2003,Assessment,Landings,NA
+14376,cod.27.46a7d20_Northwestern,2003,Assessment,R,52807
+14417,cod.27.46a7d20_Northwestern,2003,Assessment,SSB,19961
+13934,cod.27.46a7d20_Northwestern,2004,Assessment,Blim,NA
+13975,cod.27.46a7d20_Northwestern,2004,Assessment,Bpa,NA
+14016,cod.27.46a7d20_Northwestern,2004,Assessment,Catch,12932.24151
+14078,cod.27.46a7d20_Northwestern,2004,Assessment,Discards,NA
+14119,cod.27.46a7d20_Northwestern,2004,Assessment,F,0.85
+14192,cod.27.46a7d20_Northwestern,2004,Assessment,Flim,NA
+14233,cod.27.46a7d20_Northwestern,2004,Assessment,Fmsy,NA
+14274,cod.27.46a7d20_Northwestern,2004,Assessment,Fpa,NA
+14315,cod.27.46a7d20_Northwestern,2004,Assessment,Landings,NA
+14377,cod.27.46a7d20_Northwestern,2004,Assessment,R,77088
+14418,cod.27.46a7d20_Northwestern,2004,Assessment,SSB,18294
+13935,cod.27.46a7d20_Northwestern,2005,Assessment,Blim,NA
+13976,cod.27.46a7d20_Northwestern,2005,Assessment,Bpa,NA
+14017,cod.27.46a7d20_Northwestern,2005,Assessment,Catch,12347.20529
+14079,cod.27.46a7d20_Northwestern,2005,Assessment,Discards,NA
+14120,cod.27.46a7d20_Northwestern,2005,Assessment,F,0.76
+14193,cod.27.46a7d20_Northwestern,2005,Assessment,Flim,NA
+14234,cod.27.46a7d20_Northwestern,2005,Assessment,Fmsy,NA
+14275,cod.27.46a7d20_Northwestern,2005,Assessment,Fpa,NA
+14316,cod.27.46a7d20_Northwestern,2005,Assessment,Landings,NA
+14378,cod.27.46a7d20_Northwestern,2005,Assessment,R,64152
+14419,cod.27.46a7d20_Northwestern,2005,Assessment,SSB,14431
+13936,cod.27.46a7d20_Northwestern,2006,Assessment,Blim,NA
+13977,cod.27.46a7d20_Northwestern,2006,Assessment,Bpa,NA
+14018,cod.27.46a7d20_Northwestern,2006,Assessment,Catch,11198.96251
+14080,cod.27.46a7d20_Northwestern,2006,Assessment,Discards,NA
+14121,cod.27.46a7d20_Northwestern,2006,Assessment,F,0.68
+14194,cod.27.46a7d20_Northwestern,2006,Assessment,Flim,NA
+14235,cod.27.46a7d20_Northwestern,2006,Assessment,Fmsy,NA
+14276,cod.27.46a7d20_Northwestern,2006,Assessment,Fpa,NA
+14317,cod.27.46a7d20_Northwestern,2006,Assessment,Landings,NA
+14379,cod.27.46a7d20_Northwestern,2006,Assessment,R,237403
+14420,cod.27.46a7d20_Northwestern,2006,Assessment,SSB,16530
+13937,cod.27.46a7d20_Northwestern,2007,Assessment,Blim,NA
+13978,cod.27.46a7d20_Northwestern,2007,Assessment,Bpa,NA
+14019,cod.27.46a7d20_Northwestern,2007,Assessment,Catch,22169.72543
+14081,cod.27.46a7d20_Northwestern,2007,Assessment,Discards,NA
+14122,cod.27.46a7d20_Northwestern,2007,Assessment,F,0.64
+14195,cod.27.46a7d20_Northwestern,2007,Assessment,Flim,NA
+14236,cod.27.46a7d20_Northwestern,2007,Assessment,Fmsy,NA
+14277,cod.27.46a7d20_Northwestern,2007,Assessment,Fpa,NA
+14318,cod.27.46a7d20_Northwestern,2007,Assessment,Landings,NA
+14380,cod.27.46a7d20_Northwestern,2007,Assessment,R,74465
+14421,cod.27.46a7d20_Northwestern,2007,Assessment,SSB,20351
+13938,cod.27.46a7d20_Northwestern,2008,Assessment,Blim,NA
+13979,cod.27.46a7d20_Northwestern,2008,Assessment,Bpa,NA
+14020,cod.27.46a7d20_Northwestern,2008,Assessment,Catch,23931.51176
+14082,cod.27.46a7d20_Northwestern,2008,Assessment,Discards,NA
+14123,cod.27.46a7d20_Northwestern,2008,Assessment,F,0.7
+14196,cod.27.46a7d20_Northwestern,2008,Assessment,Flim,NA
+14237,cod.27.46a7d20_Northwestern,2008,Assessment,Fmsy,NA
+14278,cod.27.46a7d20_Northwestern,2008,Assessment,Fpa,NA
+14319,cod.27.46a7d20_Northwestern,2008,Assessment,Landings,NA
+14381,cod.27.46a7d20_Northwestern,2008,Assessment,R,82109
+14422,cod.27.46a7d20_Northwestern,2008,Assessment,SSB,31758
+13939,cod.27.46a7d20_Northwestern,2009,Assessment,Blim,NA
+13980,cod.27.46a7d20_Northwestern,2009,Assessment,Bpa,NA
+14021,cod.27.46a7d20_Northwestern,2009,Assessment,Catch,22460.16148
+14083,cod.27.46a7d20_Northwestern,2009,Assessment,Discards,NA
+14124,cod.27.46a7d20_Northwestern,2009,Assessment,F,0.65
+14197,cod.27.46a7d20_Northwestern,2009,Assessment,Flim,NA
+14238,cod.27.46a7d20_Northwestern,2009,Assessment,Fmsy,NA
+14279,cod.27.46a7d20_Northwestern,2009,Assessment,Fpa,NA
+14320,cod.27.46a7d20_Northwestern,2009,Assessment,Landings,NA
+14382,cod.27.46a7d20_Northwestern,2009,Assessment,R,152253
+14423,cod.27.46a7d20_Northwestern,2009,Assessment,SSB,25915
+13940,cod.27.46a7d20_Northwestern,2010,Assessment,Blim,NA
+13981,cod.27.46a7d20_Northwestern,2010,Assessment,Bpa,NA
+14022,cod.27.46a7d20_Northwestern,2010,Assessment,Catch,24929.76037
+14084,cod.27.46a7d20_Northwestern,2010,Assessment,Discards,NA
+14125,cod.27.46a7d20_Northwestern,2010,Assessment,F,0.59
+14198,cod.27.46a7d20_Northwestern,2010,Assessment,Flim,NA
+14239,cod.27.46a7d20_Northwestern,2010,Assessment,Fmsy,NA
+14280,cod.27.46a7d20_Northwestern,2010,Assessment,Fpa,NA
+14321,cod.27.46a7d20_Northwestern,2010,Assessment,Landings,NA
+14383,cod.27.46a7d20_Northwestern,2010,Assessment,R,184285
+14424,cod.27.46a7d20_Northwestern,2010,Assessment,SSB,32888
+13941,cod.27.46a7d20_Northwestern,2011,Assessment,Blim,NA
+13982,cod.27.46a7d20_Northwestern,2011,Assessment,Bpa,NA
+14023,cod.27.46a7d20_Northwestern,2011,Assessment,Catch,28078.87813
+14085,cod.27.46a7d20_Northwestern,2011,Assessment,Discards,NA
+14126,cod.27.46a7d20_Northwestern,2011,Assessment,F,0.52
+14199,cod.27.46a7d20_Northwestern,2011,Assessment,Flim,NA
+14240,cod.27.46a7d20_Northwestern,2011,Assessment,Fmsy,NA
+14281,cod.27.46a7d20_Northwestern,2011,Assessment,Fpa,NA
+14322,cod.27.46a7d20_Northwestern,2011,Assessment,Landings,NA
+14384,cod.27.46a7d20_Northwestern,2011,Assessment,R,81610
+14425,cod.27.46a7d20_Northwestern,2011,Assessment,SSB,40025
+13942,cod.27.46a7d20_Northwestern,2012,Assessment,Blim,NA
+13983,cod.27.46a7d20_Northwestern,2012,Assessment,Bpa,NA
+14024,cod.27.46a7d20_Northwestern,2012,Assessment,Catch,30496.62935
+14086,cod.27.46a7d20_Northwestern,2012,Assessment,Discards,NA
+14127,cod.27.46a7d20_Northwestern,2012,Assessment,F,0.53
+14200,cod.27.46a7d20_Northwestern,2012,Assessment,Flim,NA
+14241,cod.27.46a7d20_Northwestern,2012,Assessment,Fmsy,NA
+14282,cod.27.46a7d20_Northwestern,2012,Assessment,Fpa,NA
+14323,cod.27.46a7d20_Northwestern,2012,Assessment,Landings,NA
+14385,cod.27.46a7d20_Northwestern,2012,Assessment,R,120042
+14426,cod.27.46a7d20_Northwestern,2012,Assessment,SSB,51106
+13943,cod.27.46a7d20_Northwestern,2013,Assessment,Blim,NA
+13984,cod.27.46a7d20_Northwestern,2013,Assessment,Bpa,NA
+14025,cod.27.46a7d20_Northwestern,2013,Assessment,Catch,30598.58532
+14087,cod.27.46a7d20_Northwestern,2013,Assessment,Discards,NA
+14128,cod.27.46a7d20_Northwestern,2013,Assessment,F,0.51
+14201,cod.27.46a7d20_Northwestern,2013,Assessment,Flim,NA
+14242,cod.27.46a7d20_Northwestern,2013,Assessment,Fmsy,NA
+14283,cod.27.46a7d20_Northwestern,2013,Assessment,Fpa,NA
+14324,cod.27.46a7d20_Northwestern,2013,Assessment,Landings,NA
+14386,cod.27.46a7d20_Northwestern,2013,Assessment,R,164559
+14427,cod.27.46a7d20_Northwestern,2013,Assessment,SSB,61854
+13944,cod.27.46a7d20_Northwestern,2014,Assessment,Blim,NA
+13985,cod.27.46a7d20_Northwestern,2014,Assessment,Bpa,NA
+14026,cod.27.46a7d20_Northwestern,2014,Assessment,Catch,30759.71361
+14088,cod.27.46a7d20_Northwestern,2014,Assessment,Discards,NA
+14129,cod.27.46a7d20_Northwestern,2014,Assessment,F,0.45
+14202,cod.27.46a7d20_Northwestern,2014,Assessment,Flim,NA
+14243,cod.27.46a7d20_Northwestern,2014,Assessment,Fmsy,NA
+14284,cod.27.46a7d20_Northwestern,2014,Assessment,Fpa,NA
+14325,cod.27.46a7d20_Northwestern,2014,Assessment,Landings,NA
+14387,cod.27.46a7d20_Northwestern,2014,Assessment,R,211661
+14428,cod.27.46a7d20_Northwestern,2014,Assessment,SSB,47987
+13945,cod.27.46a7d20_Northwestern,2015,Assessment,Blim,NA
+13986,cod.27.46a7d20_Northwestern,2015,Assessment,Bpa,NA
+14027,cod.27.46a7d20_Northwestern,2015,Assessment,Catch,36543.70789
+14089,cod.27.46a7d20_Northwestern,2015,Assessment,Discards,NA
+14130,cod.27.46a7d20_Northwestern,2015,Assessment,F,0.45
+14203,cod.27.46a7d20_Northwestern,2015,Assessment,Flim,NA
+14244,cod.27.46a7d20_Northwestern,2015,Assessment,Fmsy,NA
+14285,cod.27.46a7d20_Northwestern,2015,Assessment,Fpa,NA
+14326,cod.27.46a7d20_Northwestern,2015,Assessment,Landings,NA
+14388,cod.27.46a7d20_Northwestern,2015,Assessment,R,132457
+14429,cod.27.46a7d20_Northwestern,2015,Assessment,SSB,62468
+13946,cod.27.46a7d20_Northwestern,2016,Assessment,Blim,NA
+13987,cod.27.46a7d20_Northwestern,2016,Assessment,Bpa,NA
+14028,cod.27.46a7d20_Northwestern,2016,Assessment,Catch,44807.36217
+14090,cod.27.46a7d20_Northwestern,2016,Assessment,Discards,NA
+14131,cod.27.46a7d20_Northwestern,2016,Assessment,F,0.51
+14204,cod.27.46a7d20_Northwestern,2016,Assessment,Flim,NA
+14245,cod.27.46a7d20_Northwestern,2016,Assessment,Fmsy,NA
+14286,cod.27.46a7d20_Northwestern,2016,Assessment,Fpa,NA
+14327,cod.27.46a7d20_Northwestern,2016,Assessment,Landings,NA
+14389,cod.27.46a7d20_Northwestern,2016,Assessment,R,88016
+14430,cod.27.46a7d20_Northwestern,2016,Assessment,SSB,67134
+13947,cod.27.46a7d20_Northwestern,2017,Assessment,Blim,NA
+13988,cod.27.46a7d20_Northwestern,2017,Assessment,Bpa,NA
+14029,cod.27.46a7d20_Northwestern,2017,Assessment,Catch,46349.64871
+14335,cod.27.46a7d20_Northwestern,2023,F = 0,Landings,36214
+14336,cod.27.46a7d20_Northwestern,2023,F = F2023,Landings,36214
+14337,cod.27.46a7d20_Northwestern,2023,FMSY lower,Landings,36214
+14338,cod.27.46a7d20_Northwestern,2023,FMSY upper,Landings,36214
+14339,cod.27.46a7d20_Northwestern,2023,Fpa,Landings,36214
+14340,cod.27.46a7d20_Northwestern,2023,MSY approach : FMSY ,Landings,36214
+14341,cod.27.46a7d20_Northwestern,2023,Precautionary considerations : F (2023 Northwestern) x 0.40,Landings,36214
+14342,cod.27.46a7d20_Northwestern,2023,SSB 2025 = Blim ,Landings,36214
+14343,cod.27.46a7d20_Northwestern,2023,SSB 2025 = MSY Btrigger = Bpa,Landings,36214
+14344,cod.27.46a7d20_Northwestern,2023,SSB 2025 = SSB 2024 ,Landings,36214
+14345,cod.27.46a7d20_Northwestern,2024,F = 0,Landings,NA
+14346,cod.27.46a7d20_Northwestern,2024,F = F2023,Landings,NA
+14347,cod.27.46a7d20_Northwestern,2024,FMSY lower,Landings,NA
+14348,cod.27.46a7d20_Northwestern,2024,FMSY upper,Landings,NA
+14349,cod.27.46a7d20_Northwestern,2024,Fpa,Landings,NA
+14091,cod.27.46a7d20_Northwestern,2017,Assessment,Discards,NA
+14351,cod.27.46a7d20_Northwestern,2024,MSY approach : FMSY ,Landings,NA
+14352,cod.27.46a7d20_Northwestern,2024,Precautionary considerations : F (2023 Northwestern) x 0.40,Landings,NA
+14353,cod.27.46a7d20_Northwestern,2024,SSB 2025 = Blim ,Landings,NA
+14354,cod.27.46a7d20_Northwestern,2024,SSB 2025 = MSY Btrigger = Bpa,Landings,NA
+14355,cod.27.46a7d20_Northwestern,2024,SSB 2025 = SSB 2024 ,Landings,NA
+14132,cod.27.46a7d20_Northwestern,2017,Assessment,F,0.63
+14205,cod.27.46a7d20_Northwestern,2017,Assessment,Flim,NA
+14246,cod.27.46a7d20_Northwestern,2017,Assessment,Fmsy,NA
+14287,cod.27.46a7d20_Northwestern,2017,Assessment,Fpa,NA
+14328,cod.27.46a7d20_Northwestern,2017,Assessment,Landings,NA
+14390,cod.27.46a7d20_Northwestern,2017,Assessment,R,231954
+14431,cod.27.46a7d20_Northwestern,2017,Assessment,SSB,73718
+13948,cod.27.46a7d20_Northwestern,2018,Assessment,Blim,NA
+13989,cod.27.46a7d20_Northwestern,2018,Assessment,Bpa,NA
+14030,cod.27.46a7d20_Northwestern,2018,Assessment,Catch,38920.67867
+14092,cod.27.46a7d20_Northwestern,2018,Assessment,Discards,NA
+14133,cod.27.46a7d20_Northwestern,2018,Assessment,F,0.72
+14206,cod.27.46a7d20_Northwestern,2018,Assessment,Flim,NA
+14247,cod.27.46a7d20_Northwestern,2018,Assessment,Fmsy,NA
+14288,cod.27.46a7d20_Northwestern,2018,Assessment,Fpa,NA
+14329,cod.27.46a7d20_Northwestern,2018,Assessment,Landings,NA
+14391,cod.27.46a7d20_Northwestern,2018,Assessment,R,51455
+14432,cod.27.46a7d20_Northwestern,2018,Assessment,SSB,49681
+13949,cod.27.46a7d20_Northwestern,2019,Assessment,Blim,NA
+13990,cod.27.46a7d20_Northwestern,2019,Assessment,Bpa,NA
+14031,cod.27.46a7d20_Northwestern,2019,Assessment,Catch,26636.47853
+14093,cod.27.46a7d20_Northwestern,2019,Assessment,Discards,NA
+14134,cod.27.46a7d20_Northwestern,2019,Assessment,F,0.62
+14207,cod.27.46a7d20_Northwestern,2019,Assessment,Flim,NA
+14248,cod.27.46a7d20_Northwestern,2019,Assessment,Fmsy,NA
+14289,cod.27.46a7d20_Northwestern,2019,Assessment,Fpa,NA
+14330,cod.27.46a7d20_Northwestern,2019,Assessment,Landings,NA
+14392,cod.27.46a7d20_Northwestern,2019,Assessment,R,111278
+14433,cod.27.46a7d20_Northwestern,2019,Assessment,SSB,38021
+13950,cod.27.46a7d20_Northwestern,2020,Assessment,Blim,NA
+13991,cod.27.46a7d20_Northwestern,2020,Assessment,Bpa,NA
+14032,cod.27.46a7d20_Northwestern,2020,Assessment,Catch,18339.72654
+14094,cod.27.46a7d20_Northwestern,2020,Assessment,Discards,NA
+14135,cod.27.46a7d20_Northwestern,2020,Assessment,F,0.47
+14208,cod.27.46a7d20_Northwestern,2020,Assessment,Flim,NA
+14249,cod.27.46a7d20_Northwestern,2020,Assessment,Fmsy,NA
+14290,cod.27.46a7d20_Northwestern,2020,Assessment,Fpa,NA
+14331,cod.27.46a7d20_Northwestern,2020,Assessment,Landings,NA
+14393,cod.27.46a7d20_Northwestern,2020,Assessment,R,147350
+14434,cod.27.46a7d20_Northwestern,2020,Assessment,SSB,33013
+13951,cod.27.46a7d20_Northwestern,2021,Assessment,Blim,NA
+13992,cod.27.46a7d20_Northwestern,2021,Assessment,Bpa,NA
+14033,cod.27.46a7d20_Northwestern,2021,Assessment,Catch,21527.34021
+14095,cod.27.46a7d20_Northwestern,2021,Assessment,Discards,NA
+14136,cod.27.46a7d20_Northwestern,2021,Assessment,F,0.38
+14209,cod.27.46a7d20_Northwestern,2021,Assessment,Flim,NA
+14250,cod.27.46a7d20_Northwestern,2021,Assessment,Fmsy,NA
+14291,cod.27.46a7d20_Northwestern,2021,Assessment,Fpa,NA
+14332,cod.27.46a7d20_Northwestern,2021,Assessment,Landings,NA
+14394,cod.27.46a7d20_Northwestern,2021,Assessment,R,107191
+14435,cod.27.46a7d20_Northwestern,2021,Assessment,SSB,35906
+13952,cod.27.46a7d20_Northwestern,2022,Assessment,Blim,NA
+13993,cod.27.46a7d20_Northwestern,2022,Assessment,Bpa,NA
+14034,cod.27.46a7d20_Northwestern,2022,Assessment,Catch,21914.33459
+14096,cod.27.46a7d20_Northwestern,2022,Assessment,Discards,NA
+14137,cod.27.46a7d20_Northwestern,2022,Assessment,F,0.34
+14210,cod.27.46a7d20_Northwestern,2022,Assessment,Flim,NA
+14251,cod.27.46a7d20_Northwestern,2022,Assessment,Fmsy,NA
+14292,cod.27.46a7d20_Northwestern,2022,Assessment,Fpa,NA
+14333,cod.27.46a7d20_Northwestern,2022,Assessment,Landings,NA
+14395,cod.27.46a7d20_Northwestern,2022,Assessment,R,122179
+14436,cod.27.46a7d20_Northwestern,2022,Assessment,SSB,54471
+13953,cod.27.46a7d20_Northwestern,2023,Assessment,Blim,NA
+13994,cod.27.46a7d20_Northwestern,2023,Assessment,Bpa,NA
+14035,cod.27.46a7d20_Northwestern,2023,Assessment,Catch,NA
+14097,cod.27.46a7d20_Northwestern,2023,Assessment,Discards,NA
+14138,cod.27.46a7d20_Northwestern,2023,Assessment,F,NA
+14211,cod.27.46a7d20_Northwestern,2023,Assessment,Flim,NA
+14252,cod.27.46a7d20_Northwestern,2023,Assessment,Fmsy,NA
+14293,cod.27.46a7d20_Northwestern,2023,Assessment,Fpa,NA
+14334,cod.27.46a7d20_Northwestern,2023,Assessment,Landings,NA
+14396,cod.27.46a7d20_Northwestern,2023,Assessment,R,88832
+14437,cod.27.46a7d20_Northwestern,2023,Assessment,SSB,61792
+17466,cod.27.46a7d20_Northwestern,2024,ICES Advice,Catch,13529
+14051,cod.27.46a7d20_Northwestern,2024,ICES Advice,Catch,13529
+17524,cod.27.46a7d20_Northwestern,2024,ICES Advice,F,0.132
+14154,cod.27.46a7d20_Northwestern,2024,ICES Advice,F,0.132
+17553,cod.27.46a7d20_Northwestern,2024,ICES Advice,Flandings,NA
+14165,cod.27.46a7d20_Northwestern,2024,ICES Advice,Flandings,NA
+17495,cod.27.46a7d20_Northwestern,2024,ICES Advice,Landings,NA
+14350,cod.27.46a7d20_Northwestern,2024,ICES Advice,Landings,NA
+17582,cod.27.46a7d20_Northwestern,2024,ICES Advice,SSB,72052
+14438,cod.27.46a7d20_Northwestern,2023,F = 0,SSB,NA
+14439,cod.27.46a7d20_Northwestern,2023,F = F2023,SSB,NA
+14440,cod.27.46a7d20_Northwestern,2023,FMSY lower,SSB,NA
+14441,cod.27.46a7d20_Northwestern,2023,FMSY upper,SSB,NA
+14442,cod.27.46a7d20_Northwestern,2023,Fpa,SSB,NA
+14443,cod.27.46a7d20_Northwestern,2023,MSY approach : FMSY ,SSB,NA
+14444,cod.27.46a7d20_Northwestern,2023,Precautionary considerations : F (2023 Northwestern) x 0.40,SSB,NA
+14445,cod.27.46a7d20_Northwestern,2023,SSB 2025 = Blim ,SSB,NA
+14446,cod.27.46a7d20_Northwestern,2023,SSB 2025 = MSY Btrigger = Bpa,SSB,NA
+14447,cod.27.46a7d20_Northwestern,2023,SSB 2025 = SSB 2024 ,SSB,NA
+14448,cod.27.46a7d20_Northwestern,2024,F = 0,SSB,72052
+14449,cod.27.46a7d20_Northwestern,2024,F = F2023,SSB,72052
+14450,cod.27.46a7d20_Northwestern,2024,FMSY lower,SSB,72052
+14451,cod.27.46a7d20_Northwestern,2024,FMSY upper,SSB,72052
+14452,cod.27.46a7d20_Northwestern,2024,Fpa,SSB,72052
+14453,cod.27.46a7d20_Northwestern,2024,ICES Advice,SSB,72052
+14454,cod.27.46a7d20_Northwestern,2024,MSY approach : FMSY ,SSB,72052
+14455,cod.27.46a7d20_Northwestern,2024,Precautionary considerations : F (2023 Northwestern) x 0.40,SSB,72052
+14456,cod.27.46a7d20_Northwestern,2024,SSB 2025 = Blim ,SSB,72052
+14457,cod.27.46a7d20_Northwestern,2024,SSB 2025 = MSY Btrigger = Bpa,SSB,72052
+14458,cod.27.46a7d20_Northwestern,2024,SSB 2025 = SSB 2024 ,SSB,72052
+14459,cod.27.46a7d20_Northwestern,2025,F = 0,SSB,114463
+14460,cod.27.46a7d20_Northwestern,2025,F = F2023,SSB,75154
+14461,cod.27.46a7d20_Northwestern,2025,FMSY lower,SSB,96030
+14462,cod.27.46a7d20_Northwestern,2025,FMSY upper,SSB,74133
+14463,cod.27.46a7d20_Northwestern,2025,Fpa,SSB,50430
+14464,cod.27.46a7d20_Northwestern,2025,MSY approach : FMSY ,SSB,86191
+14465,cod.27.46a7d20_Northwestern,2025,Precautionary considerations : F (2023 Northwestern) x 0.40,SSB,97176
+14466,cod.27.46a7d20_Northwestern,2025,SSB 2025 = Blim ,SSB,22580
+14467,cod.27.46a7d20_Northwestern,2025,SSB 2025 = MSY Btrigger = Bpa,SSB,29331
+14468,cod.27.46a7d20_Northwestern,2025,SSB 2025 = SSB 2024 ,SSB,72593
+14469,cod.27.46a7d20_Northwestern,1983,TAC,TAC,NA
+14470,cod.27.46a7d20_Northwestern,1984,TAC,TAC,NA
+14471,cod.27.46a7d20_Northwestern,1985,TAC,TAC,NA
+14472,cod.27.46a7d20_Northwestern,1986,TAC,TAC,NA
+14473,cod.27.46a7d20_Northwestern,1987,TAC,TAC,175000
+14474,cod.27.46a7d20_Northwestern,1988,TAC,TAC,160000
+14475,cod.27.46a7d20_Northwestern,1989,TAC,TAC,124000
+14476,cod.27.46a7d20_Northwestern,1990,TAC,TAC,105000
+14477,cod.27.46a7d20_Northwestern,1991,TAC,TAC,1.00E+05
+14478,cod.27.46a7d20_Northwestern,1992,TAC,TAC,1.00E+05
+14479,cod.27.46a7d20_Northwestern,1993,TAC,TAC,101000
+14480,cod.27.46a7d20_Northwestern,1994,TAC,TAC,102000
+14481,cod.27.46a7d20_Northwestern,1995,TAC,TAC,120000
+14482,cod.27.46a7d20_Northwestern,1996,TAC,TAC,130000
+14483,cod.27.46a7d20_Northwestern,1997,TAC,TAC,115000
+14484,cod.27.46a7d20_Northwestern,1998,TAC,TAC,140000
+14485,cod.27.46a7d20_Northwestern,1999,TAC,TAC,132400
+14486,cod.27.46a7d20_Northwestern,2000,TAC,TAC,81000
+14487,cod.27.46a7d20_Northwestern,2001,TAC,TAC,48600
+14488,cod.27.46a7d20_Northwestern,2002,TAC,TAC,49300
+14489,cod.27.46a7d20_Northwestern,2003,TAC,TAC,27300
+14490,cod.27.46a7d20_Northwestern,2004,TAC,TAC,27300
+14491,cod.27.46a7d20_Northwestern,2005,TAC,TAC,27300
+14492,cod.27.46a7d20_Northwestern,2006,TAC,TAC,23205
+14493,cod.27.46a7d20_Northwestern,2007,TAC,TAC,19957
+14494,cod.27.46a7d20_Northwestern,2008,TAC,TAC,22152
+14495,cod.27.46a7d20_Northwestern,2009,TAC,TAC,28798
+14496,cod.27.46a7d20_Northwestern,2010,TAC,TAC,33552
+14497,cod.27.46a7d20_Northwestern,2011,TAC,TAC,26842
+14498,cod.27.46a7d20_Northwestern,2012,TAC,TAC,26475
+14499,cod.27.46a7d20_Northwestern,2013,TAC,TAC,26475
+14500,cod.27.46a7d20_Northwestern,2014,TAC,TAC,27799
+14501,cod.27.46a7d20_Northwestern,2015,TAC,TAC,29189
+14502,cod.27.46a7d20_Northwestern,2016,TAC,TAC,33651
+14503,cod.27.46a7d20_Northwestern,2017,TAC,TAC,39220
+14504,cod.27.46a7d20_Northwestern,2018,TAC,TAC,43156
+14505,cod.27.46a7d20_Northwestern,2019,TAC,TAC,29437
+14506,cod.27.46a7d20_Northwestern,2020,TAC,TAC,14718
+14507,cod.27.46a7d20_Northwestern,2021,TAC,TAC,13246
+14508,cod.27.46a7d20_Northwestern,2022,TAC,TAC,13246
+14509,cod.27.46a7d20_Northwestern,2023,TAC,TAC,21652
+14510,cod.27.46a7d20_Southern,1983,Assessment,Blim,NA
+14511,cod.27.46a7d20_Southern,1984,Assessment,Blim,NA
+14512,cod.27.46a7d20_Southern,1985,Assessment,Blim,NA
+14513,cod.27.46a7d20_Southern,1986,Assessment,Blim,NA
+14514,cod.27.46a7d20_Southern,1987,Assessment,Blim,NA
+14515,cod.27.46a7d20_Southern,1988,Assessment,Blim,NA
+14516,cod.27.46a7d20_Southern,1989,Assessment,Blim,NA
+14517,cod.27.46a7d20_Southern,1990,Assessment,Blim,NA
+14518,cod.27.46a7d20_Southern,1991,Assessment,Blim,NA
+14519,cod.27.46a7d20_Southern,1992,Assessment,Blim,NA
+14520,cod.27.46a7d20_Southern,1993,Assessment,Blim,NA
+14521,cod.27.46a7d20_Southern,1994,Assessment,Blim,NA
+14522,cod.27.46a7d20_Southern,1995,Assessment,Blim,NA
+14523,cod.27.46a7d20_Southern,1996,Assessment,Blim,NA
+14524,cod.27.46a7d20_Southern,1997,Assessment,Blim,NA
+14525,cod.27.46a7d20_Southern,1998,Assessment,Blim,NA
+14526,cod.27.46a7d20_Southern,1999,Assessment,Blim,NA
+14527,cod.27.46a7d20_Southern,2000,Assessment,Blim,NA
+14528,cod.27.46a7d20_Southern,2001,Assessment,Blim,NA
+14529,cod.27.46a7d20_Southern,2002,Assessment,Blim,NA
+14530,cod.27.46a7d20_Southern,2003,Assessment,Blim,NA
+14531,cod.27.46a7d20_Southern,2004,Assessment,Blim,NA
+14532,cod.27.46a7d20_Southern,2005,Assessment,Blim,NA
+14533,cod.27.46a7d20_Southern,2006,Assessment,Blim,NA
+14534,cod.27.46a7d20_Southern,2007,Assessment,Blim,NA
+14535,cod.27.46a7d20_Southern,2008,Assessment,Blim,NA
+14536,cod.27.46a7d20_Southern,2009,Assessment,Blim,NA
+14537,cod.27.46a7d20_Southern,2010,Assessment,Blim,NA
+14538,cod.27.46a7d20_Southern,2011,Assessment,Blim,NA
+14539,cod.27.46a7d20_Southern,2012,Assessment,Blim,NA
+14540,cod.27.46a7d20_Southern,2013,Assessment,Blim,NA
+14541,cod.27.46a7d20_Southern,2014,Assessment,Blim,NA
+14542,cod.27.46a7d20_Southern,2015,Assessment,Blim,NA
+14543,cod.27.46a7d20_Southern,2016,Assessment,Blim,NA
+14544,cod.27.46a7d20_Southern,2017,Assessment,Blim,NA
+14545,cod.27.46a7d20_Southern,2018,Assessment,Blim,NA
+14546,cod.27.46a7d20_Southern,2019,Assessment,Blim,NA
+14547,cod.27.46a7d20_Southern,2020,Assessment,Blim,NA
+14548,cod.27.46a7d20_Southern,2021,Assessment,Blim,NA
+14549,cod.27.46a7d20_Southern,2022,Assessment,Blim,NA
+14550,cod.27.46a7d20_Southern,2023,Assessment,Blim,NA
+14551,cod.27.46a7d20_Southern,1983,Assessment,Bpa,NA
+14552,cod.27.46a7d20_Southern,1984,Assessment,Bpa,NA
+14553,cod.27.46a7d20_Southern,1985,Assessment,Bpa,NA
+14554,cod.27.46a7d20_Southern,1986,Assessment,Bpa,NA
+14555,cod.27.46a7d20_Southern,1987,Assessment,Bpa,NA
+14556,cod.27.46a7d20_Southern,1988,Assessment,Bpa,NA
+14557,cod.27.46a7d20_Southern,1989,Assessment,Bpa,NA
+14558,cod.27.46a7d20_Southern,1990,Assessment,Bpa,NA
+14559,cod.27.46a7d20_Southern,1991,Assessment,Bpa,NA
+14560,cod.27.46a7d20_Southern,1992,Assessment,Bpa,NA
+14561,cod.27.46a7d20_Southern,1993,Assessment,Bpa,NA
+14562,cod.27.46a7d20_Southern,1994,Assessment,Bpa,NA
+14563,cod.27.46a7d20_Southern,1995,Assessment,Bpa,NA
+14564,cod.27.46a7d20_Southern,1996,Assessment,Bpa,NA
+14565,cod.27.46a7d20_Southern,1997,Assessment,Bpa,NA
+14566,cod.27.46a7d20_Southern,1998,Assessment,Bpa,NA
+14567,cod.27.46a7d20_Southern,1999,Assessment,Bpa,NA
+14568,cod.27.46a7d20_Southern,2000,Assessment,Bpa,NA
+14569,cod.27.46a7d20_Southern,2001,Assessment,Bpa,NA
+14570,cod.27.46a7d20_Southern,2002,Assessment,Bpa,NA
+14571,cod.27.46a7d20_Southern,2003,Assessment,Bpa,NA
+14572,cod.27.46a7d20_Southern,2004,Assessment,Bpa,NA
+14573,cod.27.46a7d20_Southern,2005,Assessment,Bpa,NA
+14574,cod.27.46a7d20_Southern,2006,Assessment,Bpa,NA
+14575,cod.27.46a7d20_Southern,2007,Assessment,Bpa,NA
+14576,cod.27.46a7d20_Southern,2008,Assessment,Bpa,NA
+14577,cod.27.46a7d20_Southern,2009,Assessment,Bpa,NA
+14578,cod.27.46a7d20_Southern,2010,Assessment,Bpa,NA
+14579,cod.27.46a7d20_Southern,2011,Assessment,Bpa,NA
+14580,cod.27.46a7d20_Southern,2012,Assessment,Bpa,NA
+14581,cod.27.46a7d20_Southern,2013,Assessment,Bpa,NA
+14582,cod.27.46a7d20_Southern,2014,Assessment,Bpa,NA
+14583,cod.27.46a7d20_Southern,2015,Assessment,Bpa,NA
+14584,cod.27.46a7d20_Southern,2016,Assessment,Bpa,NA
+14585,cod.27.46a7d20_Southern,2017,Assessment,Bpa,NA
+14586,cod.27.46a7d20_Southern,2018,Assessment,Bpa,NA
+14587,cod.27.46a7d20_Southern,2019,Assessment,Bpa,NA
+14588,cod.27.46a7d20_Southern,2020,Assessment,Bpa,NA
+14589,cod.27.46a7d20_Southern,2021,Assessment,Bpa,NA
+14590,cod.27.46a7d20_Southern,2022,Assessment,Bpa,NA
+14591,cod.27.46a7d20_Southern,2023,Assessment,Bpa,NA
+14592,cod.27.46a7d20_Southern,1983,Assessment,Catch,79272.01916
+14593,cod.27.46a7d20_Southern,1984,Assessment,Catch,107202.372
+14594,cod.27.46a7d20_Southern,1985,Assessment,Catch,95929.73349
+14595,cod.27.46a7d20_Southern,1986,Assessment,Catch,93040.99498
+14596,cod.27.46a7d20_Southern,1987,Assessment,Catch,123202.5033
+14597,cod.27.46a7d20_Southern,1988,Assessment,Catch,86721.57168
+14598,cod.27.46a7d20_Southern,1989,Assessment,Catch,77966.66387
+14599,cod.27.46a7d20_Southern,1990,Assessment,Catch,60571.4678
+14600,cod.27.46a7d20_Southern,1991,Assessment,Catch,44359.05442
+14601,cod.27.46a7d20_Southern,1992,Assessment,Catch,46226.49044
+14602,cod.27.46a7d20_Southern,1993,Assessment,Catch,45268.47442
+14603,cod.27.46a7d20_Southern,1994,Assessment,Catch,52052.62191
+14604,cod.27.46a7d20_Southern,1995,Assessment,Catch,73739.58728
+14605,cod.27.46a7d20_Southern,1996,Assessment,Catch,67288.90053
+14606,cod.27.46a7d20_Southern,1997,Assessment,Catch,70025.1138
+14607,cod.27.46a7d20_Southern,1998,Assessment,Catch,66040.37626
+14608,cod.27.46a7d20_Southern,1999,Assessment,Catch,37595.44479
+14609,cod.27.46a7d20_Southern,2000,Assessment,Catch,30477.48334
+14610,cod.27.46a7d20_Southern,2001,Assessment,Catch,21386.53635
+14611,cod.27.46a7d20_Southern,2002,Assessment,Catch,18539.06461
+14612,cod.27.46a7d20_Southern,2003,Assessment,Catch,19275.88682
+14613,cod.27.46a7d20_Southern,2004,Assessment,Catch,14262.27843
+14614,cod.27.46a7d20_Southern,2005,Assessment,Catch,13640.95243
+14615,cod.27.46a7d20_Southern,2006,Assessment,Catch,9399.808222
+14616,cod.27.46a7d20_Southern,2007,Assessment,Catch,16935.50303
+14617,cod.27.46a7d20_Southern,2008,Assessment,Catch,21584.08362
+14618,cod.27.46a7d20_Southern,2009,Assessment,Catch,21127.99124
+14619,cod.27.46a7d20_Southern,2010,Assessment,Catch,16226.83947
+14620,cod.27.46a7d20_Southern,2011,Assessment,Catch,13376.71865
+14621,cod.27.46a7d20_Southern,2012,Assessment,Catch,12525.45402
+14622,cod.27.46a7d20_Southern,2013,Assessment,Catch,11461.20832
+14623,cod.27.46a7d20_Southern,2014,Assessment,Catch,10314.62021
+14624,cod.27.46a7d20_Southern,2015,Assessment,Catch,10688.14409
+14625,cod.27.46a7d20_Southern,2016,Assessment,Catch,9464.126787
+14626,cod.27.46a7d20_Southern,2017,Assessment,Catch,6770.535117
+14627,cod.27.46a7d20_Southern,2018,Assessment,Catch,4901.0855
+14628,cod.27.46a7d20_Southern,2019,Assessment,Catch,3205.567114
+14629,cod.27.46a7d20_Southern,2020,Assessment,Catch,2285.251692
+14630,cod.27.46a7d20_Southern,2021,Assessment,Catch,3069.627114
+14631,cod.27.46a7d20_Southern,2022,Assessment,Catch,3444.012117
+14632,cod.27.46a7d20_Southern,2023,Assessment,Catch,NA
+14633,cod.27.46a7d20_Southern,2023,F = 0,Catch,5837
+14634,cod.27.46a7d20_Southern,2023,F = F2023,Catch,5837
+14635,cod.27.46a7d20_Southern,2023,F = FMSY,Catch,5837
+14636,cod.27.46a7d20_Southern,2023,F = FMSY lower,Catch,5837
+14637,cod.27.46a7d20_Southern,2023,F = FMSY lower x SSB 2024/MSY Btrigger,Catch,5837
+14638,cod.27.46a7d20_Southern,2023,F = Fpa,Catch,5837
+14639,cod.27.46a7d20_Southern,2023,MSY approach : FMSY x SSB 2024/MSY Btrigger,Catch,5837
+14640,cod.27.46a7d20_Southern,2023,SSB 2025 = Blim,Catch,5837
+14641,cod.27.46a7d20_Southern,2023,SSB 2025 = MSY Btrigger = Bpa,Catch,5837
+14642,cod.27.46a7d20_Southern,2023,SSB 2025 = SSB 2024,Catch,5837
+14643,cod.27.46a7d20_Southern,2024,F = 0,Catch,0
+14644,cod.27.46a7d20_Southern,2024,F = F2023,Catch,8664
+14645,cod.27.46a7d20_Southern,2024,F = FMSY,Catch,5095
+14646,cod.27.46a7d20_Southern,2024,F = FMSY lower,Catch,3481
+14647,cod.27.46a7d20_Southern,2024,F = FMSY lower x SSB 2024/MSY Btrigger,Catch,2657
+14648,cod.27.46a7d20_Southern,2024,F = Fpa,Catch,10856
+14649,cod.27.46a7d20_Southern,2024,ICES Advice,Catch,3922
+14650,cod.27.46a7d20_Southern,2024,MSY approach : FMSY x SSB 2024/MSY Btrigger,Catch,3922
+14651,cod.27.46a7d20_Southern,2024,SSB 2025 = Blim,Catch,14519
+14652,cod.27.46a7d20_Southern,2024,SSB 2025 = MSY Btrigger = Bpa,Catch,9235
+14653,cod.27.46a7d20_Southern,2024,SSB 2025 = SSB 2024,Catch,13401
+14654,cod.27.46a7d20_Southern,1983,Assessment,Discards,NA
+14655,cod.27.46a7d20_Southern,1984,Assessment,Discards,NA
+14656,cod.27.46a7d20_Southern,1985,Assessment,Discards,NA
+14657,cod.27.46a7d20_Southern,1986,Assessment,Discards,NA
+14658,cod.27.46a7d20_Southern,1987,Assessment,Discards,NA
+14659,cod.27.46a7d20_Southern,1988,Assessment,Discards,NA
+14660,cod.27.46a7d20_Southern,1989,Assessment,Discards,NA
+14661,cod.27.46a7d20_Southern,1990,Assessment,Discards,NA
+14662,cod.27.46a7d20_Southern,1991,Assessment,Discards,NA
+14663,cod.27.46a7d20_Southern,1992,Assessment,Discards,NA
+14664,cod.27.46a7d20_Southern,1993,Assessment,Discards,NA
+14665,cod.27.46a7d20_Southern,1994,Assessment,Discards,NA
+14666,cod.27.46a7d20_Southern,1995,Assessment,Discards,NA
+14667,cod.27.46a7d20_Southern,1996,Assessment,Discards,NA
+14668,cod.27.46a7d20_Southern,1997,Assessment,Discards,NA
+14669,cod.27.46a7d20_Southern,1998,Assessment,Discards,NA
+14670,cod.27.46a7d20_Southern,1999,Assessment,Discards,NA
+14671,cod.27.46a7d20_Southern,2000,Assessment,Discards,NA
+14672,cod.27.46a7d20_Southern,2001,Assessment,Discards,NA
+14673,cod.27.46a7d20_Southern,2002,Assessment,Discards,NA
+14674,cod.27.46a7d20_Southern,2003,Assessment,Discards,NA
+14675,cod.27.46a7d20_Southern,2004,Assessment,Discards,NA
+14676,cod.27.46a7d20_Southern,2005,Assessment,Discards,NA
+14677,cod.27.46a7d20_Southern,2006,Assessment,Discards,NA
+14678,cod.27.46a7d20_Southern,2007,Assessment,Discards,NA
+14679,cod.27.46a7d20_Southern,2008,Assessment,Discards,NA
+14680,cod.27.46a7d20_Southern,2009,Assessment,Discards,NA
+14681,cod.27.46a7d20_Southern,2010,Assessment,Discards,NA
+14682,cod.27.46a7d20_Southern,2011,Assessment,Discards,NA
+14683,cod.27.46a7d20_Southern,2012,Assessment,Discards,NA
+14684,cod.27.46a7d20_Southern,2013,Assessment,Discards,NA
+14685,cod.27.46a7d20_Southern,2014,Assessment,Discards,NA
+14686,cod.27.46a7d20_Southern,2015,Assessment,Discards,NA
+14687,cod.27.46a7d20_Southern,2016,Assessment,Discards,NA
+14688,cod.27.46a7d20_Southern,2017,Assessment,Discards,NA
+14689,cod.27.46a7d20_Southern,2018,Assessment,Discards,NA
+14690,cod.27.46a7d20_Southern,2019,Assessment,Discards,NA
+14691,cod.27.46a7d20_Southern,2020,Assessment,Discards,NA
+14692,cod.27.46a7d20_Southern,2021,Assessment,Discards,NA
+14693,cod.27.46a7d20_Southern,2022,Assessment,Discards,NA
+14694,cod.27.46a7d20_Southern,2023,Assessment,Discards,NA
+14695,cod.27.46a7d20_Southern,1983,Assessment,F,1.12
+14696,cod.27.46a7d20_Southern,1984,Assessment,F,1.32
+14697,cod.27.46a7d20_Southern,1985,Assessment,F,1.3
+14698,cod.27.46a7d20_Southern,1986,Assessment,F,1.35
+14699,cod.27.46a7d20_Southern,1987,Assessment,F,1.26
+14700,cod.27.46a7d20_Southern,1988,Assessment,F,1.18
+14701,cod.27.46a7d20_Southern,1989,Assessment,F,1.27
+14702,cod.27.46a7d20_Southern,1990,Assessment,F,1.36
+14703,cod.27.46a7d20_Southern,1991,Assessment,F,1.32
+14704,cod.27.46a7d20_Southern,1992,Assessment,F,1.19
+14705,cod.27.46a7d20_Southern,1993,Assessment,F,1.14
+14706,cod.27.46a7d20_Southern,1994,Assessment,F,1.14
+14707,cod.27.46a7d20_Southern,1995,Assessment,F,1.25
+14708,cod.27.46a7d20_Southern,1996,Assessment,F,1.31
+14709,cod.27.46a7d20_Southern,1997,Assessment,F,1.19
+14710,cod.27.46a7d20_Southern,1998,Assessment,F,1.32
+14711,cod.27.46a7d20_Southern,1999,Assessment,F,1.41
+14712,cod.27.46a7d20_Southern,2000,Assessment,F,1.4
+14713,cod.27.46a7d20_Southern,2001,Assessment,F,1.22
+14714,cod.27.46a7d20_Southern,2002,Assessment,F,1.2
+14715,cod.27.46a7d20_Southern,2003,Assessment,F,1.13
+14716,cod.27.46a7d20_Southern,2004,Assessment,F,1.16
+14717,cod.27.46a7d20_Southern,2005,Assessment,F,1.03
+14718,cod.27.46a7d20_Southern,2006,Assessment,F,0.93
+14719,cod.27.46a7d20_Southern,2007,Assessment,F,0.88
+14720,cod.27.46a7d20_Southern,2008,Assessment,F,1
+14721,cod.27.46a7d20_Southern,2009,Assessment,F,0.95
+14722,cod.27.46a7d20_Southern,2010,Assessment,F,0.91
+14723,cod.27.46a7d20_Southern,2011,Assessment,F,0.8
+14724,cod.27.46a7d20_Southern,2012,Assessment,F,0.83
+14725,cod.27.46a7d20_Southern,2013,Assessment,F,0.81
+14726,cod.27.46a7d20_Southern,2014,Assessment,F,0.72
+14727,cod.27.46a7d20_Southern,2015,Assessment,F,0.72
+14728,cod.27.46a7d20_Southern,2016,Assessment,F,0.81
+14729,cod.27.46a7d20_Southern,2017,Assessment,F,0.97
+14730,cod.27.46a7d20_Southern,2018,Assessment,F,1.09
+14731,cod.27.46a7d20_Southern,2019,Assessment,F,0.9
+14732,cod.27.46a7d20_Southern,2020,Assessment,F,0.67
+14733,cod.27.46a7d20_Southern,2021,Assessment,F,0.52
+14734,cod.27.46a7d20_Southern,2022,Assessment,F,0.46
+14735,cod.27.46a7d20_Southern,2023,Assessment,F,NA
+14736,cod.27.46a7d20_Southern,2023,F = 0,F,0.46
+14737,cod.27.46a7d20_Southern,2023,F = F2023,F,0.46
+14738,cod.27.46a7d20_Southern,2023,F = FMSY,F,0.46
+14739,cod.27.46a7d20_Southern,2023,F = FMSY lower,F,0.46
+14740,cod.27.46a7d20_Southern,2023,F = FMSY lower x SSB 2024/MSY Btrigger,F,0.46
+14741,cod.27.46a7d20_Southern,2023,F = Fpa,F,0.46
+14742,cod.27.46a7d20_Southern,2023,MSY approach : FMSY x SSB 2024/MSY Btrigger,F,0.46
+14743,cod.27.46a7d20_Southern,2023,SSB 2025 = Blim,F,0.46
+14744,cod.27.46a7d20_Southern,2023,SSB 2025 = MSY Btrigger = Bpa,F,0.46
+14745,cod.27.46a7d20_Southern,2023,SSB 2025 = SSB 2024,F,0.46
+14746,cod.27.46a7d20_Southern,2024,F = 0,F,0
+14747,cod.27.46a7d20_Southern,2024,F = F2023,F,0.46
+14748,cod.27.46a7d20_Southern,2024,F = FMSY,F,0.243
+14749,cod.27.46a7d20_Southern,2024,F = FMSY lower,F,0.159
+14750,cod.27.46a7d20_Southern,2024,F = FMSY lower x SSB 2024/MSY Btrigger,F,0.119
+14751,cod.27.46a7d20_Southern,2024,F = Fpa,F,0.616
+14752,cod.27.46a7d20_Southern,2024,ICES Advice,F,0.182
+14753,cod.27.46a7d20_Southern,2024,MSY approach : FMSY x SSB 2024/MSY Btrigger,F,0.182
+14754,cod.27.46a7d20_Southern,2024,SSB 2025 = Blim,F,0.92
+14755,cod.27.46a7d20_Southern,2024,SSB 2025 = MSY Btrigger = Bpa,F,0.48
+14756,cod.27.46a7d20_Southern,2024,SSB 2025 = SSB 2024,F,0.82
+14757,cod.27.46a7d20_Southern,2024,F = 0,Flandings,NA
+14758,cod.27.46a7d20_Southern,2024,F = F2023,Flandings,NA
+14759,cod.27.46a7d20_Southern,2024,F = FMSY,Flandings,NA
+14760,cod.27.46a7d20_Southern,2024,F = FMSY lower,Flandings,NA
+14761,cod.27.46a7d20_Southern,2024,F = FMSY lower x SSB 2024/MSY Btrigger,Flandings,NA
+14762,cod.27.46a7d20_Southern,2024,F = Fpa,Flandings,NA
+14763,cod.27.46a7d20_Southern,2024,ICES Advice,Flandings,NA
+14764,cod.27.46a7d20_Southern,2024,MSY approach : FMSY x SSB 2024/MSY Btrigger,Flandings,NA
+14765,cod.27.46a7d20_Southern,2024,SSB 2025 = Blim,Flandings,NA
+14766,cod.27.46a7d20_Southern,2024,SSB 2025 = MSY Btrigger = Bpa,Flandings,NA
+14767,cod.27.46a7d20_Southern,2024,SSB 2025 = SSB 2024,Flandings,NA
+14768,cod.27.46a7d20_Southern,1983,Assessment,Flim,NA
+14769,cod.27.46a7d20_Southern,1984,Assessment,Flim,NA
+14770,cod.27.46a7d20_Southern,1985,Assessment,Flim,NA
+14771,cod.27.46a7d20_Southern,1986,Assessment,Flim,NA
+14772,cod.27.46a7d20_Southern,1987,Assessment,Flim,NA
+14773,cod.27.46a7d20_Southern,1988,Assessment,Flim,NA
+14774,cod.27.46a7d20_Southern,1989,Assessment,Flim,NA
+14775,cod.27.46a7d20_Southern,1990,Assessment,Flim,NA
+14776,cod.27.46a7d20_Southern,1991,Assessment,Flim,NA
+14777,cod.27.46a7d20_Southern,1992,Assessment,Flim,NA
+14778,cod.27.46a7d20_Southern,1993,Assessment,Flim,NA
+14779,cod.27.46a7d20_Southern,1994,Assessment,Flim,NA
+14780,cod.27.46a7d20_Southern,1995,Assessment,Flim,NA
+14781,cod.27.46a7d20_Southern,1996,Assessment,Flim,NA
+14782,cod.27.46a7d20_Southern,1997,Assessment,Flim,NA
+14783,cod.27.46a7d20_Southern,1998,Assessment,Flim,NA
+14784,cod.27.46a7d20_Southern,1999,Assessment,Flim,NA
+14785,cod.27.46a7d20_Southern,2000,Assessment,Flim,NA
+14786,cod.27.46a7d20_Southern,2001,Assessment,Flim,NA
+14787,cod.27.46a7d20_Southern,2002,Assessment,Flim,NA
+14788,cod.27.46a7d20_Southern,2003,Assessment,Flim,NA
+14789,cod.27.46a7d20_Southern,2004,Assessment,Flim,NA
+14790,cod.27.46a7d20_Southern,2005,Assessment,Flim,NA
+14791,cod.27.46a7d20_Southern,2006,Assessment,Flim,NA
+14792,cod.27.46a7d20_Southern,2007,Assessment,Flim,NA
+14793,cod.27.46a7d20_Southern,2008,Assessment,Flim,NA
+14794,cod.27.46a7d20_Southern,2009,Assessment,Flim,NA
+14795,cod.27.46a7d20_Southern,2010,Assessment,Flim,NA
+14796,cod.27.46a7d20_Southern,2011,Assessment,Flim,NA
+14797,cod.27.46a7d20_Southern,2012,Assessment,Flim,NA
+14798,cod.27.46a7d20_Southern,2013,Assessment,Flim,NA
+14799,cod.27.46a7d20_Southern,2014,Assessment,Flim,NA
+14800,cod.27.46a7d20_Southern,2015,Assessment,Flim,NA
+14801,cod.27.46a7d20_Southern,2016,Assessment,Flim,NA
+14802,cod.27.46a7d20_Southern,2017,Assessment,Flim,NA
+14803,cod.27.46a7d20_Southern,2018,Assessment,Flim,NA
+14804,cod.27.46a7d20_Southern,2019,Assessment,Flim,NA
+14805,cod.27.46a7d20_Southern,2020,Assessment,Flim,NA
+14806,cod.27.46a7d20_Southern,2021,Assessment,Flim,NA
+14807,cod.27.46a7d20_Southern,2022,Assessment,Flim,NA
+14808,cod.27.46a7d20_Southern,2023,Assessment,Flim,NA
+14809,cod.27.46a7d20_Southern,1983,Assessment,Fmsy,NA
+14810,cod.27.46a7d20_Southern,1984,Assessment,Fmsy,NA
+14811,cod.27.46a7d20_Southern,1985,Assessment,Fmsy,NA
+14812,cod.27.46a7d20_Southern,1986,Assessment,Fmsy,NA
+14813,cod.27.46a7d20_Southern,1987,Assessment,Fmsy,NA
+14814,cod.27.46a7d20_Southern,1988,Assessment,Fmsy,NA
+14815,cod.27.46a7d20_Southern,1989,Assessment,Fmsy,NA
+14816,cod.27.46a7d20_Southern,1990,Assessment,Fmsy,NA
+14817,cod.27.46a7d20_Southern,1991,Assessment,Fmsy,NA
+14818,cod.27.46a7d20_Southern,1992,Assessment,Fmsy,NA
+14819,cod.27.46a7d20_Southern,1993,Assessment,Fmsy,NA
+14820,cod.27.46a7d20_Southern,1994,Assessment,Fmsy,NA
+14821,cod.27.46a7d20_Southern,1995,Assessment,Fmsy,NA
+14822,cod.27.46a7d20_Southern,1996,Assessment,Fmsy,NA
+14823,cod.27.46a7d20_Southern,1997,Assessment,Fmsy,NA
+14824,cod.27.46a7d20_Southern,1998,Assessment,Fmsy,NA
+14825,cod.27.46a7d20_Southern,1999,Assessment,Fmsy,NA
+14826,cod.27.46a7d20_Southern,2000,Assessment,Fmsy,NA
+14827,cod.27.46a7d20_Southern,2001,Assessment,Fmsy,NA
+14828,cod.27.46a7d20_Southern,2002,Assessment,Fmsy,NA
+14829,cod.27.46a7d20_Southern,2003,Assessment,Fmsy,NA
+14830,cod.27.46a7d20_Southern,2004,Assessment,Fmsy,NA
+14831,cod.27.46a7d20_Southern,2005,Assessment,Fmsy,NA
+14832,cod.27.46a7d20_Southern,2006,Assessment,Fmsy,NA
+14833,cod.27.46a7d20_Southern,2007,Assessment,Fmsy,NA
+14834,cod.27.46a7d20_Southern,2008,Assessment,Fmsy,NA
+14835,cod.27.46a7d20_Southern,2009,Assessment,Fmsy,NA
+14836,cod.27.46a7d20_Southern,2010,Assessment,Fmsy,NA
+14837,cod.27.46a7d20_Southern,2011,Assessment,Fmsy,NA
+14838,cod.27.46a7d20_Southern,2012,Assessment,Fmsy,NA
+14839,cod.27.46a7d20_Southern,2013,Assessment,Fmsy,NA
+14840,cod.27.46a7d20_Southern,2014,Assessment,Fmsy,NA
+14841,cod.27.46a7d20_Southern,2015,Assessment,Fmsy,NA
+14842,cod.27.46a7d20_Southern,2016,Assessment,Fmsy,NA
+14843,cod.27.46a7d20_Southern,2017,Assessment,Fmsy,NA
+14844,cod.27.46a7d20_Southern,2018,Assessment,Fmsy,NA
+14845,cod.27.46a7d20_Southern,2019,Assessment,Fmsy,NA
+14846,cod.27.46a7d20_Southern,2020,Assessment,Fmsy,NA
+14847,cod.27.46a7d20_Southern,2021,Assessment,Fmsy,NA
+14848,cod.27.46a7d20_Southern,2022,Assessment,Fmsy,NA
+14849,cod.27.46a7d20_Southern,2023,Assessment,Fmsy,NA
+14850,cod.27.46a7d20_Southern,1983,Assessment,Fpa,NA
+14851,cod.27.46a7d20_Southern,1984,Assessment,Fpa,NA
+14852,cod.27.46a7d20_Southern,1985,Assessment,Fpa,NA
+14853,cod.27.46a7d20_Southern,1986,Assessment,Fpa,NA
+14854,cod.27.46a7d20_Southern,1987,Assessment,Fpa,NA
+14855,cod.27.46a7d20_Southern,1988,Assessment,Fpa,NA
+14856,cod.27.46a7d20_Southern,1989,Assessment,Fpa,NA
+14857,cod.27.46a7d20_Southern,1990,Assessment,Fpa,NA
+14858,cod.27.46a7d20_Southern,1991,Assessment,Fpa,NA
+14859,cod.27.46a7d20_Southern,1992,Assessment,Fpa,NA
+14860,cod.27.46a7d20_Southern,1993,Assessment,Fpa,NA
+14861,cod.27.46a7d20_Southern,1994,Assessment,Fpa,NA
+14862,cod.27.46a7d20_Southern,1995,Assessment,Fpa,NA
+14863,cod.27.46a7d20_Southern,1996,Assessment,Fpa,NA
+14864,cod.27.46a7d20_Southern,1997,Assessment,Fpa,NA
+14865,cod.27.46a7d20_Southern,1998,Assessment,Fpa,NA
+14866,cod.27.46a7d20_Southern,1999,Assessment,Fpa,NA
+14867,cod.27.46a7d20_Southern,2000,Assessment,Fpa,NA
+14868,cod.27.46a7d20_Southern,2001,Assessment,Fpa,NA
+14869,cod.27.46a7d20_Southern,2002,Assessment,Fpa,NA
+14870,cod.27.46a7d20_Southern,2003,Assessment,Fpa,NA
+14871,cod.27.46a7d20_Southern,2004,Assessment,Fpa,NA
+14872,cod.27.46a7d20_Southern,2005,Assessment,Fpa,NA
+14873,cod.27.46a7d20_Southern,2006,Assessment,Fpa,NA
+14874,cod.27.46a7d20_Southern,2007,Assessment,Fpa,NA
+14875,cod.27.46a7d20_Southern,2008,Assessment,Fpa,NA
+14876,cod.27.46a7d20_Southern,2009,Assessment,Fpa,NA
+14877,cod.27.46a7d20_Southern,2010,Assessment,Fpa,NA
+14878,cod.27.46a7d20_Southern,2011,Assessment,Fpa,NA
+14879,cod.27.46a7d20_Southern,2012,Assessment,Fpa,NA
+14880,cod.27.46a7d20_Southern,2013,Assessment,Fpa,NA
+14881,cod.27.46a7d20_Southern,2014,Assessment,Fpa,NA
+14882,cod.27.46a7d20_Southern,2015,Assessment,Fpa,NA
+14883,cod.27.46a7d20_Southern,2016,Assessment,Fpa,NA
+14884,cod.27.46a7d20_Southern,2017,Assessment,Fpa,NA
+14885,cod.27.46a7d20_Southern,2018,Assessment,Fpa,NA
+14886,cod.27.46a7d20_Southern,2019,Assessment,Fpa,NA
+14887,cod.27.46a7d20_Southern,2020,Assessment,Fpa,NA
+14888,cod.27.46a7d20_Southern,2021,Assessment,Fpa,NA
+14889,cod.27.46a7d20_Southern,2022,Assessment,Fpa,NA
+14890,cod.27.46a7d20_Southern,2023,Assessment,Fpa,NA
+14891,cod.27.46a7d20_Southern,1983,Assessment,Landings,NA
+14892,cod.27.46a7d20_Southern,1984,Assessment,Landings,NA
+14893,cod.27.46a7d20_Southern,1985,Assessment,Landings,NA
+14894,cod.27.46a7d20_Southern,1986,Assessment,Landings,NA
+14895,cod.27.46a7d20_Southern,1987,Assessment,Landings,NA
+14896,cod.27.46a7d20_Southern,1988,Assessment,Landings,NA
+14897,cod.27.46a7d20_Southern,1989,Assessment,Landings,NA
+14898,cod.27.46a7d20_Southern,1990,Assessment,Landings,NA
+14899,cod.27.46a7d20_Southern,1991,Assessment,Landings,NA
+14900,cod.27.46a7d20_Southern,1992,Assessment,Landings,NA
+14901,cod.27.46a7d20_Southern,1993,Assessment,Landings,NA
+14902,cod.27.46a7d20_Southern,1994,Assessment,Landings,NA
+14903,cod.27.46a7d20_Southern,1995,Assessment,Landings,NA
+14904,cod.27.46a7d20_Southern,1996,Assessment,Landings,NA
+14905,cod.27.46a7d20_Southern,1997,Assessment,Landings,NA
+14906,cod.27.46a7d20_Southern,1998,Assessment,Landings,NA
+14907,cod.27.46a7d20_Southern,1999,Assessment,Landings,NA
+14908,cod.27.46a7d20_Southern,2000,Assessment,Landings,NA
+14909,cod.27.46a7d20_Southern,2001,Assessment,Landings,NA
+14910,cod.27.46a7d20_Southern,2002,Assessment,Landings,NA
+14911,cod.27.46a7d20_Southern,2003,Assessment,Landings,NA
+14912,cod.27.46a7d20_Southern,2004,Assessment,Landings,NA
+14913,cod.27.46a7d20_Southern,2005,Assessment,Landings,NA
+14914,cod.27.46a7d20_Southern,2006,Assessment,Landings,NA
+14915,cod.27.46a7d20_Southern,2007,Assessment,Landings,NA
+14916,cod.27.46a7d20_Southern,2008,Assessment,Landings,NA
+14917,cod.27.46a7d20_Southern,2009,Assessment,Landings,NA
+14918,cod.27.46a7d20_Southern,2010,Assessment,Landings,NA
+14919,cod.27.46a7d20_Southern,2011,Assessment,Landings,NA
+14920,cod.27.46a7d20_Southern,2012,Assessment,Landings,NA
+14921,cod.27.46a7d20_Southern,2013,Assessment,Landings,NA
+14922,cod.27.46a7d20_Southern,2014,Assessment,Landings,NA
+14923,cod.27.46a7d20_Southern,2015,Assessment,Landings,NA
+14924,cod.27.46a7d20_Southern,2016,Assessment,Landings,NA
+14925,cod.27.46a7d20_Southern,2017,Assessment,Landings,NA
+14926,cod.27.46a7d20_Southern,2018,Assessment,Landings,NA
+14927,cod.27.46a7d20_Southern,2019,Assessment,Landings,NA
+14928,cod.27.46a7d20_Southern,2020,Assessment,Landings,NA
+14929,cod.27.46a7d20_Southern,2021,Assessment,Landings,NA
+14930,cod.27.46a7d20_Southern,2022,Assessment,Landings,NA
+14931,cod.27.46a7d20_Southern,2023,Assessment,Landings,NA
+14932,cod.27.46a7d20_Southern,2023,F = 0,Landings,NA
+14933,cod.27.46a7d20_Southern,2023,F = F2023,Landings,36214
+14934,cod.27.46a7d20_Southern,2023,F = FMSY,Landings,36214
+14935,cod.27.46a7d20_Southern,2023,F = FMSY lower,Landings,36214
+14936,cod.27.46a7d20_Southern,2023,F = FMSY lower x SSB 2024/MSY Btrigger,Landings,NA
+14937,cod.27.46a7d20_Southern,2023,F = Fpa,Landings,NA
+14938,cod.27.46a7d20_Southern,2023,MSY approach : FMSY x SSB 2024/MSY Btrigger,Landings,NA
+14939,cod.27.46a7d20_Southern,2023,SSB 2025 = Blim,Landings,NA
+14940,cod.27.46a7d20_Southern,2023,SSB 2025 = MSY Btrigger = Bpa,Landings,36214
+14941,cod.27.46a7d20_Southern,2023,SSB 2025 = SSB 2024,Landings,36214
+14942,cod.27.46a7d20_Southern,2024,F = 0,Landings,NA
+14943,cod.27.46a7d20_Southern,2024,F = F2023,Landings,NA
+14944,cod.27.46a7d20_Southern,2024,F = FMSY,Landings,NA
+14945,cod.27.46a7d20_Southern,2024,F = FMSY lower,Landings,NA
+14946,cod.27.46a7d20_Southern,2024,F = FMSY lower x SSB 2024/MSY Btrigger,Landings,NA
+14947,cod.27.46a7d20_Southern,2024,F = Fpa,Landings,NA
+14948,cod.27.46a7d20_Southern,2024,ICES Advice,Landings,NA
+14949,cod.27.46a7d20_Southern,2024,MSY approach : FMSY x SSB 2024/MSY Btrigger,Landings,NA
+14950,cod.27.46a7d20_Southern,2024,SSB 2025 = Blim,Landings,NA
+14951,cod.27.46a7d20_Southern,2024,SSB 2025 = MSY Btrigger = Bpa,Landings,NA
+14952,cod.27.46a7d20_Southern,2024,SSB 2025 = SSB 2024,Landings,NA
+14953,cod.27.46a7d20_Southern,1983,Assessment,R,372204
+14954,cod.27.46a7d20_Southern,1984,Assessment,R,782795
+14955,cod.27.46a7d20_Southern,1985,Assessment,R,159883
+14956,cod.27.46a7d20_Southern,1986,Assessment,R,957226
+14957,cod.27.46a7d20_Southern,1987,Assessment,R,363871
+14958,cod.27.46a7d20_Southern,1988,Assessment,R,271567
+14959,cod.27.46a7d20_Southern,1989,Assessment,R,346411
+14960,cod.27.46a7d20_Southern,1990,Assessment,R,156415
+14961,cod.27.46a7d20_Southern,1991,Assessment,R,159844
+14962,cod.27.46a7d20_Southern,1992,Assessment,R,279984
+14963,cod.27.46a7d20_Southern,1993,Assessment,R,184455
+14964,cod.27.46a7d20_Southern,1994,Assessment,R,445459
+14965,cod.27.46a7d20_Southern,1995,Assessment,R,290953
+14966,cod.27.46a7d20_Southern,1996,Assessment,R,241389
+14967,cod.27.46a7d20_Southern,1997,Assessment,R,619016
+14968,cod.27.46a7d20_Southern,1998,Assessment,R,61595
+14969,cod.27.46a7d20_Southern,1999,Assessment,R,133064
+14970,cod.27.46a7d20_Southern,2000,Assessment,R,125811
+14971,cod.27.46a7d20_Southern,2001,Assessment,R,73982
+14972,cod.27.46a7d20_Southern,2002,Assessment,R,146964
+14973,cod.27.46a7d20_Southern,2003,Assessment,R,51632
+14974,cod.27.46a7d20_Southern,2004,Assessment,R,86971
+14975,cod.27.46a7d20_Southern,2005,Assessment,R,87157
+14976,cod.27.46a7d20_Southern,2006,Assessment,R,105883
+14977,cod.27.46a7d20_Southern,2007,Assessment,R,119006
+14978,cod.27.46a7d20_Southern,2008,Assessment,R,107762
+14979,cod.27.46a7d20_Southern,2009,Assessment,R,46896
+14980,cod.27.46a7d20_Southern,2010,Assessment,R,70277
+14981,cod.27.46a7d20_Southern,2011,Assessment,R,47388
+14982,cod.27.46a7d20_Southern,2012,Assessment,R,48376
+14983,cod.27.46a7d20_Southern,2013,Assessment,R,46677
+14984,cod.27.46a7d20_Southern,2014,Assessment,R,60130
+14985,cod.27.46a7d20_Southern,2015,Assessment,R,20021
+14986,cod.27.46a7d20_Southern,2016,Assessment,R,14386
+14987,cod.27.46a7d20_Southern,2017,Assessment,R,28143
+14988,cod.27.46a7d20_Southern,2018,Assessment,R,10583
+14989,cod.27.46a7d20_Southern,2019,Assessment,R,14081
+14990,cod.27.46a7d20_Southern,2020,Assessment,R,22148
+14991,cod.27.46a7d20_Southern,2021,Assessment,R,20207
+14992,cod.27.46a7d20_Southern,2022,Assessment,R,49133
+14993,cod.27.46a7d20_Southern,2023,Assessment,R,39561
+14994,cod.27.46a7d20_Southern,1983,Assessment,SSB,18511
+14995,cod.27.46a7d20_Southern,1984,Assessment,SSB,17963
+14996,cod.27.46a7d20_Southern,1985,Assessment,SSB,20995
+14997,cod.27.46a7d20_Southern,1986,Assessment,SSB,20206
+14998,cod.27.46a7d20_Southern,1987,Assessment,SSB,15648
+14999,cod.27.46a7d20_Southern,1988,Assessment,SSB,20704
+15000,cod.27.46a7d20_Southern,1989,Assessment,SSB,33030
+15001,cod.27.46a7d20_Southern,1990,Assessment,SSB,29523
+15002,cod.27.46a7d20_Southern,1991,Assessment,SSB,27483
+15003,cod.27.46a7d20_Southern,1992,Assessment,SSB,22598
+15004,cod.27.46a7d20_Southern,1993,Assessment,SSB,16880
+15005,cod.27.46a7d20_Southern,1994,Assessment,SSB,21018
+15006,cod.27.46a7d20_Southern,1995,Assessment,SSB,19116
+15007,cod.27.46a7d20_Southern,1996,Assessment,SSB,19893
+15008,cod.27.46a7d20_Southern,1997,Assessment,SSB,21199
+15009,cod.27.46a7d20_Southern,1998,Assessment,SSB,18365
+15010,cod.27.46a7d20_Southern,1999,Assessment,SSB,32151
+15011,cod.27.46a7d20_Southern,2000,Assessment,SSB,20598
+15012,cod.27.46a7d20_Southern,2001,Assessment,SSB,13338
+15013,cod.27.46a7d20_Southern,2002,Assessment,SSB,18944
+15014,cod.27.46a7d20_Southern,2003,Assessment,SSB,17474
+15015,cod.27.46a7d20_Southern,2004,Assessment,SSB,16731
+15016,cod.27.46a7d20_Southern,2005,Assessment,SSB,14642
+15017,cod.27.46a7d20_Southern,2006,Assessment,SSB,15709
+15018,cod.27.46a7d20_Southern,2007,Assessment,SSB,16186
+15019,cod.27.46a7d20_Southern,2008,Assessment,SSB,30093
+15020,cod.27.46a7d20_Southern,2009,Assessment,SSB,25543
+15021,cod.27.46a7d20_Southern,2010,Assessment,SSB,21230
+15022,cod.27.46a7d20_Southern,2011,Assessment,SSB,15514
+15023,cod.27.46a7d20_Southern,2012,Assessment,SSB,21708
+15024,cod.27.46a7d20_Southern,2013,Assessment,SSB,16643
+15025,cod.27.46a7d20_Southern,2014,Assessment,SSB,17540
+15026,cod.27.46a7d20_Southern,2015,Assessment,SSB,23526
+15027,cod.27.46a7d20_Southern,2016,Assessment,SSB,16709
+15028,cod.27.46a7d20_Southern,2017,Assessment,SSB,8782
+15029,cod.27.46a7d20_Southern,2018,Assessment,SSB,5710
+15030,cod.27.46a7d20_Southern,2019,Assessment,SSB,3492
+15031,cod.27.46a7d20_Southern,2020,Assessment,SSB,2731
+15032,cod.27.46a7d20_Southern,2021,Assessment,SSB,5288
+15033,cod.27.46a7d20_Southern,2022,Assessment,SSB,6361
+15034,cod.27.46a7d20_Southern,2023,Assessment,SSB,12563
+15035,cod.27.46a7d20_Southern,2023,F = 0,SSB,NA
+15036,cod.27.46a7d20_Southern,2023,F = F2023,SSB,NA
+15037,cod.27.46a7d20_Southern,2023,F = FMSY,SSB,NA
+15038,cod.27.46a7d20_Southern,2023,F = FMSY lower,SSB,NA
+15039,cod.27.46a7d20_Southern,2023,F = FMSY lower x SSB 2024/MSY Btrigger,SSB,NA
+15040,cod.27.46a7d20_Southern,2023,F = Fpa,SSB,NA
+15041,cod.27.46a7d20_Southern,2023,MSY approach : FMSY x SSB 2024/MSY Btrigger,SSB,NA
+15042,cod.27.46a7d20_Southern,2023,SSB 2025 = Blim,SSB,NA
+15043,cod.27.46a7d20_Southern,2023,SSB 2025 = MSY Btrigger = Bpa,SSB,NA
+15044,cod.27.46a7d20_Southern,2023,SSB 2025 = SSB 2024,SSB,NA
+15045,cod.27.46a7d20_Southern,2024,F = 0,SSB,14790
+15046,cod.27.46a7d20_Southern,2024,F = F2023,SSB,14790
+15047,cod.27.46a7d20_Southern,2024,F = FMSY,SSB,14790
+15048,cod.27.46a7d20_Southern,2024,F = FMSY lower,SSB,14790
+15049,cod.27.46a7d20_Southern,2024,F = FMSY lower x SSB 2024/MSY Btrigger,SSB,14790
+15050,cod.27.46a7d20_Southern,2024,F = Fpa,SSB,14790
+15051,cod.27.46a7d20_Southern,2024,ICES Advice,SSB,14790
+15052,cod.27.46a7d20_Southern,2024,MSY approach : FMSY x SSB 2024/MSY Btrigger,SSB,14790
+15053,cod.27.46a7d20_Southern,2024,SSB 2025 = Blim,SSB,14790
+15054,cod.27.46a7d20_Southern,2024,SSB 2025 = MSY Btrigger = Bpa,SSB,14790
+15055,cod.27.46a7d20_Southern,2024,SSB 2025 = SSB 2024,SSB,14790
+15056,cod.27.46a7d20_Southern,2025,F = 0,SSB,32845
+15057,cod.27.46a7d20_Southern,2025,F = F2023,SSB,20882
+15058,cod.27.46a7d20_Southern,2025,F = FMSY,SSB,25500
+15059,cod.27.46a7d20_Southern,2025,F = FMSY lower,SSB,27868
+15060,cod.27.46a7d20_Southern,2025,F = FMSY lower x SSB 2024/MSY Btrigger,SSB,29039
+15061,cod.27.46a7d20_Southern,2025,F = Fpa,SSB,17999
+15062,cod.27.46a7d20_Southern,2025,MSY approach : FMSY x SSB 2024/MSY Btrigger,SSB,27170
+15063,cod.27.46a7d20_Southern,2025,SSB 2025 = Blim,SSB,13677
+15064,cod.27.46a7d20_Southern,2025,SSB 2025 = MSY Btrigger = Bpa,SSB,19902
+15065,cod.27.46a7d20_Southern,2025,SSB 2025 = SSB 2024,SSB,14978
+15066,cod.27.46a7d20_Southern,1983,TAC,TAC,NA
+15067,cod.27.46a7d20_Southern,1984,TAC,TAC,NA
+15068,cod.27.46a7d20_Southern,1985,TAC,TAC,NA
+15069,cod.27.46a7d20_Southern,1986,TAC,TAC,NA
+15070,cod.27.46a7d20_Southern,1987,TAC,TAC,175000
+15071,cod.27.46a7d20_Southern,1988,TAC,TAC,160000
+15072,cod.27.46a7d20_Southern,1989,TAC,TAC,124000
+15073,cod.27.46a7d20_Southern,1990,TAC,TAC,105000
+15074,cod.27.46a7d20_Southern,1991,TAC,TAC,1.00E+05
+15075,cod.27.46a7d20_Southern,1992,TAC,TAC,1.00E+05
+15076,cod.27.46a7d20_Southern,1993,TAC,TAC,101000
+15077,cod.27.46a7d20_Southern,1994,TAC,TAC,102000
+15078,cod.27.46a7d20_Southern,1995,TAC,TAC,120000
+15079,cod.27.46a7d20_Southern,1996,TAC,TAC,130000
+15080,cod.27.46a7d20_Southern,1997,TAC,TAC,115000
+15081,cod.27.46a7d20_Southern,1998,TAC,TAC,140000
+15082,cod.27.46a7d20_Southern,1999,TAC,TAC,132400
+15083,cod.27.46a7d20_Southern,2000,TAC,TAC,81000
+15084,cod.27.46a7d20_Southern,2001,TAC,TAC,48600
+15085,cod.27.46a7d20_Southern,2002,TAC,TAC,49300
+15086,cod.27.46a7d20_Southern,2003,TAC,TAC,27300
+15087,cod.27.46a7d20_Southern,2004,TAC,TAC,27300
+15088,cod.27.46a7d20_Southern,2005,TAC,TAC,27300
+15089,cod.27.46a7d20_Southern,2006,TAC,TAC,23205
+15090,cod.27.46a7d20_Southern,2007,TAC,TAC,19957
+15091,cod.27.46a7d20_Southern,2008,TAC,TAC,22152
+15092,cod.27.46a7d20_Southern,2009,TAC,TAC,28798
+15093,cod.27.46a7d20_Southern,2010,TAC,TAC,33552
+15094,cod.27.46a7d20_Southern,2011,TAC,TAC,26842
+15095,cod.27.46a7d20_Southern,2012,TAC,TAC,26475
+15096,cod.27.46a7d20_Southern,2013,TAC,TAC,26475
+15097,cod.27.46a7d20_Southern,2014,TAC,TAC,27799
+15098,cod.27.46a7d20_Southern,2015,TAC,TAC,29189
+15099,cod.27.46a7d20_Southern,2016,TAC,TAC,33651
+15100,cod.27.46a7d20_Southern,2017,TAC,TAC,39220
+15101,cod.27.46a7d20_Southern,2018,TAC,TAC,43156
+15102,cod.27.46a7d20_Southern,2019,TAC,TAC,29437
+15103,cod.27.46a7d20_Southern,2020,TAC,TAC,14718
+15104,cod.27.46a7d20_Southern,2021,TAC,TAC,13246
+15105,cod.27.46a7d20_Southern,2022,TAC,TAC,13246
+15106,cod.27.46a7d20_Southern,2023,TAC,TAC,21652
+15107,cod.27.46a7d20_Viking,1983,Assessment,Blim,NA
+15108,cod.27.46a7d20_Viking,1984,Assessment,Blim,NA
+15109,cod.27.46a7d20_Viking,1985,Assessment,Blim,NA
+15110,cod.27.46a7d20_Viking,1986,Assessment,Blim,NA
+15111,cod.27.46a7d20_Viking,1987,Assessment,Blim,NA
+15112,cod.27.46a7d20_Viking,1988,Assessment,Blim,NA
+15113,cod.27.46a7d20_Viking,1989,Assessment,Blim,NA
+15114,cod.27.46a7d20_Viking,1990,Assessment,Blim,NA
+15115,cod.27.46a7d20_Viking,1991,Assessment,Blim,NA
+15116,cod.27.46a7d20_Viking,1992,Assessment,Blim,NA
+15117,cod.27.46a7d20_Viking,1993,Assessment,Blim,NA
+15118,cod.27.46a7d20_Viking,1994,Assessment,Blim,NA
+15119,cod.27.46a7d20_Viking,1995,Assessment,Blim,NA
+15120,cod.27.46a7d20_Viking,1996,Assessment,Blim,NA
+15121,cod.27.46a7d20_Viking,1997,Assessment,Blim,NA
+15122,cod.27.46a7d20_Viking,1998,Assessment,Blim,NA
+15123,cod.27.46a7d20_Viking,1999,Assessment,Blim,NA
+15124,cod.27.46a7d20_Viking,2000,Assessment,Blim,NA
+15125,cod.27.46a7d20_Viking,2001,Assessment,Blim,NA
+15126,cod.27.46a7d20_Viking,2002,Assessment,Blim,NA
+15127,cod.27.46a7d20_Viking,2003,Assessment,Blim,NA
+15128,cod.27.46a7d20_Viking,2004,Assessment,Blim,NA
+15129,cod.27.46a7d20_Viking,2005,Assessment,Blim,NA
+15130,cod.27.46a7d20_Viking,2006,Assessment,Blim,NA
+15131,cod.27.46a7d20_Viking,2007,Assessment,Blim,NA
+15132,cod.27.46a7d20_Viking,2008,Assessment,Blim,NA
+15133,cod.27.46a7d20_Viking,2009,Assessment,Blim,NA
+15134,cod.27.46a7d20_Viking,2010,Assessment,Blim,NA
+15135,cod.27.46a7d20_Viking,2011,Assessment,Blim,NA
+15136,cod.27.46a7d20_Viking,2012,Assessment,Blim,NA
+15137,cod.27.46a7d20_Viking,2013,Assessment,Blim,NA
+15138,cod.27.46a7d20_Viking,2014,Assessment,Blim,NA
+15139,cod.27.46a7d20_Viking,2015,Assessment,Blim,NA
+15140,cod.27.46a7d20_Viking,2016,Assessment,Blim,NA
+15141,cod.27.46a7d20_Viking,2017,Assessment,Blim,NA
+15142,cod.27.46a7d20_Viking,2018,Assessment,Blim,NA
+15143,cod.27.46a7d20_Viking,2019,Assessment,Blim,NA
+15144,cod.27.46a7d20_Viking,2020,Assessment,Blim,NA
+15145,cod.27.46a7d20_Viking,2021,Assessment,Blim,NA
+15146,cod.27.46a7d20_Viking,2022,Assessment,Blim,NA
+15147,cod.27.46a7d20_Viking,2023,Assessment,Blim,NA
+15148,cod.27.46a7d20_Viking,1983,Assessment,Bpa,NA
+15149,cod.27.46a7d20_Viking,1984,Assessment,Bpa,NA
+15150,cod.27.46a7d20_Viking,1985,Assessment,Bpa,NA
+15151,cod.27.46a7d20_Viking,1986,Assessment,Bpa,NA
+15152,cod.27.46a7d20_Viking,1987,Assessment,Bpa,NA
+15153,cod.27.46a7d20_Viking,1988,Assessment,Bpa,NA
+15154,cod.27.46a7d20_Viking,1989,Assessment,Bpa,NA
+15155,cod.27.46a7d20_Viking,1990,Assessment,Bpa,NA
+15156,cod.27.46a7d20_Viking,1991,Assessment,Bpa,NA
+15157,cod.27.46a7d20_Viking,1992,Assessment,Bpa,NA
+15158,cod.27.46a7d20_Viking,1993,Assessment,Bpa,NA
+15159,cod.27.46a7d20_Viking,1994,Assessment,Bpa,NA
+15160,cod.27.46a7d20_Viking,1995,Assessment,Bpa,NA
+15161,cod.27.46a7d20_Viking,1996,Assessment,Bpa,NA
+15162,cod.27.46a7d20_Viking,1997,Assessment,Bpa,NA
+15163,cod.27.46a7d20_Viking,1998,Assessment,Bpa,NA
+15164,cod.27.46a7d20_Viking,1999,Assessment,Bpa,NA
+15165,cod.27.46a7d20_Viking,2000,Assessment,Bpa,NA
+15166,cod.27.46a7d20_Viking,2001,Assessment,Bpa,NA
+15167,cod.27.46a7d20_Viking,2002,Assessment,Bpa,NA
+15168,cod.27.46a7d20_Viking,2003,Assessment,Bpa,NA
+15169,cod.27.46a7d20_Viking,2004,Assessment,Bpa,NA
+15170,cod.27.46a7d20_Viking,2005,Assessment,Bpa,NA
+15171,cod.27.46a7d20_Viking,2006,Assessment,Bpa,NA
+15172,cod.27.46a7d20_Viking,2007,Assessment,Bpa,NA
+15173,cod.27.46a7d20_Viking,2008,Assessment,Bpa,NA
+15174,cod.27.46a7d20_Viking,2009,Assessment,Bpa,NA
+15175,cod.27.46a7d20_Viking,2010,Assessment,Bpa,NA
+15176,cod.27.46a7d20_Viking,2011,Assessment,Bpa,NA
+15177,cod.27.46a7d20_Viking,2012,Assessment,Bpa,NA
+15178,cod.27.46a7d20_Viking,2013,Assessment,Bpa,NA
+15179,cod.27.46a7d20_Viking,2014,Assessment,Bpa,NA
+15180,cod.27.46a7d20_Viking,2015,Assessment,Bpa,NA
+15181,cod.27.46a7d20_Viking,2016,Assessment,Bpa,NA
+15182,cod.27.46a7d20_Viking,2017,Assessment,Bpa,NA
+15183,cod.27.46a7d20_Viking,2018,Assessment,Bpa,NA
+15184,cod.27.46a7d20_Viking,2019,Assessment,Bpa,NA
+15185,cod.27.46a7d20_Viking,2020,Assessment,Bpa,NA
+15186,cod.27.46a7d20_Viking,2021,Assessment,Bpa,NA
+15187,cod.27.46a7d20_Viking,2022,Assessment,Bpa,NA
+15188,cod.27.46a7d20_Viking,2023,Assessment,Bpa,NA
+15189,cod.27.46a7d20_Viking,1983,Assessment,Catch,31651
+15190,cod.27.46a7d20_Viking,1984,Assessment,Catch,37503
+15191,cod.27.46a7d20_Viking,1985,Assessment,Catch,35944
+15192,cod.27.46a7d20_Viking,1986,Assessment,Catch,29191
+15193,cod.27.46a7d20_Viking,1987,Assessment,Catch,26535
+15194,cod.27.46a7d20_Viking,1988,Assessment,Catch,24344
+15195,cod.27.46a7d20_Viking,1989,Assessment,Catch,24187
+15196,cod.27.46a7d20_Viking,1990,Assessment,Catch,22832
+15197,cod.27.46a7d20_Viking,1991,Assessment,Catch,20069
+15198,cod.27.46a7d20_Viking,1992,Assessment,Catch,18532
+15199,cod.27.46a7d20_Viking,1993,Assessment,Catch,20297
+15200,cod.27.46a7d20_Viking,1994,Assessment,Catch,21104
+15201,cod.27.46a7d20_Viking,1995,Assessment,Catch,25834
+15202,cod.27.46a7d20_Viking,1996,Assessment,Catch,24301
+15203,cod.27.46a7d20_Viking,1997,Assessment,Catch,18673
+15204,cod.27.46a7d20_Viking,1998,Assessment,Catch,18716
+15205,cod.27.46a7d20_Viking,1999,Assessment,Catch,17083
+15206,cod.27.46a7d20_Viking,2000,Assessment,Catch,13449
+15207,cod.27.46a7d20_Viking,2001,Assessment,Catch,11444
+15208,cod.27.46a7d20_Viking,2002,Assessment,Catch,10596
+15209,cod.27.46a7d20_Viking,2003,Assessment,Catch,9986
+15210,cod.27.46a7d20_Viking,2004,Assessment,Catch,8001
+15211,cod.27.46a7d20_Viking,2005,Assessment,Catch,7788
+15212,cod.27.46a7d20_Viking,2006,Assessment,Catch,6328
+15213,cod.27.46a7d20_Viking,2007,Assessment,Catch,8406
+15214,cod.27.46a7d20_Viking,2008,Assessment,Catch,9848
+15215,cod.27.46a7d20_Viking,2009,Assessment,Catch,9661
+15216,cod.27.46a7d20_Viking,2010,Assessment,Catch,9199
+15217,cod.27.46a7d20_Viking,2011,Assessment,Catch,10094
+15218,cod.27.46a7d20_Viking,2012,Assessment,Catch,11905
+15219,cod.27.46a7d20_Viking,2013,Assessment,Catch,11629
+15220,cod.27.46a7d20_Viking,2014,Assessment,Catch,10466
+15221,cod.27.46a7d20_Viking,2015,Assessment,Catch,12470
+15222,cod.27.46a7d20_Viking,2016,Assessment,Catch,17537
+15223,cod.27.46a7d20_Viking,2017,Assessment,Catch,19766
+15224,cod.27.46a7d20_Viking,2018,Assessment,Catch,15362
+15225,cod.27.46a7d20_Viking,2019,Assessment,Catch,10187
+15226,cod.27.46a7d20_Viking,2020,Assessment,Catch,6248
+15227,cod.27.46a7d20_Viking,2021,Assessment,Catch,7343
+15228,cod.27.46a7d20_Viking,2022,Assessment,Catch,8819
+15229,cod.27.46a7d20_Viking,2023,Assessment,Catch,NA
+15230,cod.27.46a7d20_Viking,2023,F = 0,Catch,10728
+15231,cod.27.46a7d20_Viking,2023,F = F2023,Catch,10728
+15232,cod.27.46a7d20_Viking,2023,FMSY lower,Catch,10728
+15233,cod.27.46a7d20_Viking,2023,FMSY upper,Catch,10728
+15234,cod.27.46a7d20_Viking,2023,Fpa,Catch,10728
+15235,cod.27.46a7d20_Viking,2023,MSY approach : FMSY ,Catch,10728
+15236,cod.27.46a7d20_Viking,2023,Precautionary considerations : F (2023 Viking) x 0.40,Catch,10728
+15237,cod.27.46a7d20_Viking,2023,SSB 2025 = Blim ,Catch,10728
+15238,cod.27.46a7d20_Viking,2023,SSB 2025 = MSY Btrigger = Bpa,Catch,10728
+15239,cod.27.46a7d20_Viking,2023,SSB 2025 = SSB 2024 ,Catch,10728
+15240,cod.27.46a7d20_Viking,2024,F = 0,Catch,0
+15241,cod.27.46a7d20_Viking,2024,F = F2023,Catch,11765
+15242,cod.27.46a7d20_Viking,2024,FMSY lower,Catch,5680
+15243,cod.27.46a7d20_Viking,2024,FMSY upper,Catch,13740
+15244,cod.27.46a7d20_Viking,2024,Fpa,Catch,16765
+15245,cod.27.46a7d20_Viking,2024,ICES Advice,Catch,5240
+15246,cod.27.46a7d20_Viking,2024,MSY approach : FMSY ,Catch,8818
+15247,cod.27.46a7d20_Viking,2024,Precautionary considerations : F (2023 Viking) x 0.40,Catch,5240
+15248,cod.27.46a7d20_Viking,2024,SSB 2025 = Blim ,Catch,24073
+15249,cod.27.46a7d20_Viking,2024,SSB 2025 = MSY Btrigger = Bpa,Catch,18494
+15250,cod.27.46a7d20_Viking,2024,SSB 2025 = SSB 2024 ,Catch,13197
+15251,cod.27.46a7d20_Viking,1983,Assessment,Discards,NA
+15252,cod.27.46a7d20_Viking,1984,Assessment,Discards,NA
+15253,cod.27.46a7d20_Viking,1985,Assessment,Discards,NA
+15254,cod.27.46a7d20_Viking,1986,Assessment,Discards,NA
+15255,cod.27.46a7d20_Viking,1987,Assessment,Discards,NA
+15256,cod.27.46a7d20_Viking,1988,Assessment,Discards,NA
+15257,cod.27.46a7d20_Viking,1989,Assessment,Discards,NA
+15258,cod.27.46a7d20_Viking,1990,Assessment,Discards,NA
+15259,cod.27.46a7d20_Viking,1991,Assessment,Discards,NA
+15260,cod.27.46a7d20_Viking,1992,Assessment,Discards,NA
+15261,cod.27.46a7d20_Viking,1993,Assessment,Discards,NA
+15262,cod.27.46a7d20_Viking,1994,Assessment,Discards,NA
+15263,cod.27.46a7d20_Viking,1995,Assessment,Discards,NA
+15264,cod.27.46a7d20_Viking,1996,Assessment,Discards,NA
+15265,cod.27.46a7d20_Viking,1997,Assessment,Discards,NA
+15266,cod.27.46a7d20_Viking,1998,Assessment,Discards,NA
+15267,cod.27.46a7d20_Viking,1999,Assessment,Discards,NA
+15268,cod.27.46a7d20_Viking,2000,Assessment,Discards,NA
+15269,cod.27.46a7d20_Viking,2001,Assessment,Discards,NA
+15270,cod.27.46a7d20_Viking,2002,Assessment,Discards,NA
+15271,cod.27.46a7d20_Viking,2003,Assessment,Discards,NA
+15272,cod.27.46a7d20_Viking,2004,Assessment,Discards,NA
+15273,cod.27.46a7d20_Viking,2005,Assessment,Discards,NA
+15274,cod.27.46a7d20_Viking,2006,Assessment,Discards,NA
+15275,cod.27.46a7d20_Viking,2007,Assessment,Discards,NA
+15276,cod.27.46a7d20_Viking,2008,Assessment,Discards,NA
+15277,cod.27.46a7d20_Viking,2009,Assessment,Discards,NA
+15278,cod.27.46a7d20_Viking,2010,Assessment,Discards,NA
+15279,cod.27.46a7d20_Viking,2011,Assessment,Discards,NA
+15280,cod.27.46a7d20_Viking,2012,Assessment,Discards,NA
+15281,cod.27.46a7d20_Viking,2013,Assessment,Discards,NA
+15282,cod.27.46a7d20_Viking,2014,Assessment,Discards,NA
+15283,cod.27.46a7d20_Viking,2015,Assessment,Discards,NA
+15284,cod.27.46a7d20_Viking,2016,Assessment,Discards,NA
+15285,cod.27.46a7d20_Viking,2017,Assessment,Discards,NA
+15286,cod.27.46a7d20_Viking,2018,Assessment,Discards,NA
+15287,cod.27.46a7d20_Viking,2019,Assessment,Discards,NA
+15288,cod.27.46a7d20_Viking,2020,Assessment,Discards,NA
+15289,cod.27.46a7d20_Viking,2021,Assessment,Discards,NA
+15290,cod.27.46a7d20_Viking,2022,Assessment,Discards,NA
+15291,cod.27.46a7d20_Viking,2023,Assessment,Discards,NA
+15292,cod.27.46a7d20_Viking,1983,Assessment,F,0.66
+15293,cod.27.46a7d20_Viking,1984,Assessment,F,0.75
+15294,cod.27.46a7d20_Viking,1985,Assessment,F,0.72
+15295,cod.27.46a7d20_Viking,1986,Assessment,F,0.76
+15296,cod.27.46a7d20_Viking,1987,Assessment,F,0.71
+15297,cod.27.46a7d20_Viking,1988,Assessment,F,0.66
+15298,cod.27.46a7d20_Viking,1989,Assessment,F,0.72
+15299,cod.27.46a7d20_Viking,1990,Assessment,F,0.77
+15300,cod.27.46a7d20_Viking,1991,Assessment,F,0.75
+15301,cod.27.46a7d20_Viking,1992,Assessment,F,0.7
+15302,cod.27.46a7d20_Viking,1993,Assessment,F,0.69
+15303,cod.27.46a7d20_Viking,1994,Assessment,F,0.71
+15304,cod.27.46a7d20_Viking,1995,Assessment,F,0.78
+15305,cod.27.46a7d20_Viking,1996,Assessment,F,0.8
+15306,cod.27.46a7d20_Viking,1997,Assessment,F,0.71
+15307,cod.27.46a7d20_Viking,1998,Assessment,F,0.76
+15308,cod.27.46a7d20_Viking,1999,Assessment,F,0.79
+15309,cod.27.46a7d20_Viking,2000,Assessment,F,0.77
+15310,cod.27.46a7d20_Viking,2001,Assessment,F,0.67
+15311,cod.27.46a7d20_Viking,2002,Assessment,F,0.64
+15312,cod.27.46a7d20_Viking,2003,Assessment,F,0.62
+15313,cod.27.46a7d20_Viking,2004,Assessment,F,0.63
+15314,cod.27.46a7d20_Viking,2005,Assessment,F,0.58
+15315,cod.27.46a7d20_Viking,2006,Assessment,F,0.52
+15316,cod.27.46a7d20_Viking,2007,Assessment,F,0.48
+15317,cod.27.46a7d20_Viking,2008,Assessment,F,0.53
+15318,cod.27.46a7d20_Viking,2009,Assessment,F,0.5
+15319,cod.27.46a7d20_Viking,2010,Assessment,F,0.46
+15320,cod.27.46a7d20_Viking,2011,Assessment,F,0.41
+15321,cod.27.46a7d20_Viking,2012,Assessment,F,0.42
+15322,cod.27.46a7d20_Viking,2013,Assessment,F,0.4
+15323,cod.27.46a7d20_Viking,2014,Assessment,F,0.35
+15324,cod.27.46a7d20_Viking,2015,Assessment,F,0.35
+15325,cod.27.46a7d20_Viking,2016,Assessment,F,0.41
+15326,cod.27.46a7d20_Viking,2017,Assessment,F,0.53
+15327,cod.27.46a7d20_Viking,2018,Assessment,F,0.62
+15328,cod.27.46a7d20_Viking,2019,Assessment,F,0.54
+15329,cod.27.46a7d20_Viking,2020,Assessment,F,0.4
+15330,cod.27.46a7d20_Viking,2021,Assessment,F,0.31
+15331,cod.27.46a7d20_Viking,2022,Assessment,F,0.28
+15332,cod.27.46a7d20_Viking,2023,Assessment,F,NA
+15333,cod.27.46a7d20_Viking,2023,F = 0,F,0.29
+15334,cod.27.46a7d20_Viking,2023,F = F2023,F,0.29
+15335,cod.27.46a7d20_Viking,2023,FMSY lower,F,0.29
+15336,cod.27.46a7d20_Viking,2023,FMSY upper,F,0.29
+15337,cod.27.46a7d20_Viking,2023,Fpa,F,0.29
+15338,cod.27.46a7d20_Viking,2023,MSY approach : FMSY ,F,0.29
+15339,cod.27.46a7d20_Viking,2023,Precautionary considerations : F (2023 Viking) x 0.40,F,0.29
+15340,cod.27.46a7d20_Viking,2023,SSB 2025 = Blim ,F,0.29
+15341,cod.27.46a7d20_Viking,2023,SSB 2025 = MSY Btrigger = Bpa,F,0.29
+15342,cod.27.46a7d20_Viking,2023,SSB 2025 = SSB 2024 ,F,0.29
+15343,cod.27.46a7d20_Viking,2024,F = 0,F,0
+15344,cod.27.46a7d20_Viking,2024,F = F2023,F,0.28
+15345,cod.27.46a7d20_Viking,2024,FMSY lower,F,0.119
+15346,cod.27.46a7d20_Viking,2024,FMSY upper,F,0.338
+15347,cod.27.46a7d20_Viking,2024,Fpa,F,0.44
+15348,cod.27.46a7d20_Viking,2024,ICES Advice,F,0.112
+15349,cod.27.46a7d20_Viking,2024,MSY approach : FMSY ,F,0.196
+15350,cod.27.46a7d20_Viking,2024,Precautionary considerations : F (2023 Viking) x 0.40,F,0.112
+15351,cod.27.46a7d20_Viking,2024,SSB 2025 = Blim ,F,0.78
+15352,cod.27.46a7d20_Viking,2024,SSB 2025 = MSY Btrigger = Bpa,F,0.51
+15353,cod.27.46a7d20_Viking,2024,SSB 2025 = SSB 2024 ,F,0.32
+15354,cod.27.46a7d20_Viking,2024,F = 0,Flandings,NA
+15355,cod.27.46a7d20_Viking,2024,F = F2023,Flandings,NA
+15356,cod.27.46a7d20_Viking,2024,FMSY lower,Flandings,NA
+15357,cod.27.46a7d20_Viking,2024,FMSY upper,Flandings,NA
+15358,cod.27.46a7d20_Viking,2024,Fpa,Flandings,NA
+15359,cod.27.46a7d20_Viking,2024,ICES Advice,Flandings,NA
+15360,cod.27.46a7d20_Viking,2024,MSY approach : FMSY ,Flandings,NA
+15361,cod.27.46a7d20_Viking,2024,Precautionary considerations : F (2023 Viking) x 0.40,Flandings,NA
+15362,cod.27.46a7d20_Viking,2024,SSB 2025 = Blim ,Flandings,NA
+15363,cod.27.46a7d20_Viking,2024,SSB 2025 = MSY Btrigger = Bpa,Flandings,NA
+15364,cod.27.46a7d20_Viking,2024,SSB 2025 = SSB 2024 ,Flandings,NA
+15365,cod.27.46a7d20_Viking,1983,Assessment,Flim,NA
+15366,cod.27.46a7d20_Viking,1984,Assessment,Flim,NA
+15367,cod.27.46a7d20_Viking,1985,Assessment,Flim,NA
+15368,cod.27.46a7d20_Viking,1986,Assessment,Flim,NA
+15369,cod.27.46a7d20_Viking,1987,Assessment,Flim,NA
+15370,cod.27.46a7d20_Viking,1988,Assessment,Flim,NA
+15371,cod.27.46a7d20_Viking,1989,Assessment,Flim,NA
+15372,cod.27.46a7d20_Viking,1990,Assessment,Flim,NA
+15373,cod.27.46a7d20_Viking,1991,Assessment,Flim,NA
+15374,cod.27.46a7d20_Viking,1992,Assessment,Flim,NA
+15375,cod.27.46a7d20_Viking,1993,Assessment,Flim,NA
+15376,cod.27.46a7d20_Viking,1994,Assessment,Flim,NA
+15377,cod.27.46a7d20_Viking,1995,Assessment,Flim,NA
+15378,cod.27.46a7d20_Viking,1996,Assessment,Flim,NA
+15379,cod.27.46a7d20_Viking,1997,Assessment,Flim,NA
+15380,cod.27.46a7d20_Viking,1998,Assessment,Flim,NA
+15381,cod.27.46a7d20_Viking,1999,Assessment,Flim,NA
+15382,cod.27.46a7d20_Viking,2000,Assessment,Flim,NA
+15383,cod.27.46a7d20_Viking,2001,Assessment,Flim,NA
+15384,cod.27.46a7d20_Viking,2002,Assessment,Flim,NA
+15385,cod.27.46a7d20_Viking,2003,Assessment,Flim,NA
+15386,cod.27.46a7d20_Viking,2004,Assessment,Flim,NA
+15387,cod.27.46a7d20_Viking,2005,Assessment,Flim,NA
+15388,cod.27.46a7d20_Viking,2006,Assessment,Flim,NA
+15389,cod.27.46a7d20_Viking,2007,Assessment,Flim,NA
+15390,cod.27.46a7d20_Viking,2008,Assessment,Flim,NA
+15391,cod.27.46a7d20_Viking,2009,Assessment,Flim,NA
+15392,cod.27.46a7d20_Viking,2010,Assessment,Flim,NA
+15393,cod.27.46a7d20_Viking,2011,Assessment,Flim,NA
+15394,cod.27.46a7d20_Viking,2012,Assessment,Flim,NA
+15395,cod.27.46a7d20_Viking,2013,Assessment,Flim,NA
+15396,cod.27.46a7d20_Viking,2014,Assessment,Flim,NA
+15397,cod.27.46a7d20_Viking,2015,Assessment,Flim,NA
+15398,cod.27.46a7d20_Viking,2016,Assessment,Flim,NA
+15399,cod.27.46a7d20_Viking,2017,Assessment,Flim,NA
+15400,cod.27.46a7d20_Viking,2018,Assessment,Flim,NA
+15401,cod.27.46a7d20_Viking,2019,Assessment,Flim,NA
+15402,cod.27.46a7d20_Viking,2020,Assessment,Flim,NA
+15403,cod.27.46a7d20_Viking,2021,Assessment,Flim,NA
+15404,cod.27.46a7d20_Viking,2022,Assessment,Flim,NA
+15405,cod.27.46a7d20_Viking,2023,Assessment,Flim,NA
+15406,cod.27.46a7d20_Viking,1983,Assessment,Fmsy,NA
+15407,cod.27.46a7d20_Viking,1984,Assessment,Fmsy,NA
+15408,cod.27.46a7d20_Viking,1985,Assessment,Fmsy,NA
+15409,cod.27.46a7d20_Viking,1986,Assessment,Fmsy,NA
+15410,cod.27.46a7d20_Viking,1987,Assessment,Fmsy,NA
+15411,cod.27.46a7d20_Viking,1988,Assessment,Fmsy,NA
+15412,cod.27.46a7d20_Viking,1989,Assessment,Fmsy,NA
+15413,cod.27.46a7d20_Viking,1990,Assessment,Fmsy,NA
+15414,cod.27.46a7d20_Viking,1991,Assessment,Fmsy,NA
+15415,cod.27.46a7d20_Viking,1992,Assessment,Fmsy,NA
+15416,cod.27.46a7d20_Viking,1993,Assessment,Fmsy,NA
+15417,cod.27.46a7d20_Viking,1994,Assessment,Fmsy,NA
+15418,cod.27.46a7d20_Viking,1995,Assessment,Fmsy,NA
+15419,cod.27.46a7d20_Viking,1996,Assessment,Fmsy,NA
+15420,cod.27.46a7d20_Viking,1997,Assessment,Fmsy,NA
+15421,cod.27.46a7d20_Viking,1998,Assessment,Fmsy,NA
+15422,cod.27.46a7d20_Viking,1999,Assessment,Fmsy,NA
+15423,cod.27.46a7d20_Viking,2000,Assessment,Fmsy,NA
+15424,cod.27.46a7d20_Viking,2001,Assessment,Fmsy,NA
+15425,cod.27.46a7d20_Viking,2002,Assessment,Fmsy,NA
+15426,cod.27.46a7d20_Viking,2003,Assessment,Fmsy,NA
+15427,cod.27.46a7d20_Viking,2004,Assessment,Fmsy,NA
+15428,cod.27.46a7d20_Viking,2005,Assessment,Fmsy,NA
+15429,cod.27.46a7d20_Viking,2006,Assessment,Fmsy,NA
+15430,cod.27.46a7d20_Viking,2007,Assessment,Fmsy,NA
+15431,cod.27.46a7d20_Viking,2008,Assessment,Fmsy,NA
+15432,cod.27.46a7d20_Viking,2009,Assessment,Fmsy,NA
+15433,cod.27.46a7d20_Viking,2010,Assessment,Fmsy,NA
+15434,cod.27.46a7d20_Viking,2011,Assessment,Fmsy,NA
+15435,cod.27.46a7d20_Viking,2012,Assessment,Fmsy,NA
+15436,cod.27.46a7d20_Viking,2013,Assessment,Fmsy,NA
+15437,cod.27.46a7d20_Viking,2014,Assessment,Fmsy,NA
+15438,cod.27.46a7d20_Viking,2015,Assessment,Fmsy,NA
+15439,cod.27.46a7d20_Viking,2016,Assessment,Fmsy,NA
+15440,cod.27.46a7d20_Viking,2017,Assessment,Fmsy,NA
+15441,cod.27.46a7d20_Viking,2018,Assessment,Fmsy,NA
+15442,cod.27.46a7d20_Viking,2019,Assessment,Fmsy,NA
+15443,cod.27.46a7d20_Viking,2020,Assessment,Fmsy,NA
+15444,cod.27.46a7d20_Viking,2021,Assessment,Fmsy,NA
+15445,cod.27.46a7d20_Viking,2022,Assessment,Fmsy,NA
+15446,cod.27.46a7d20_Viking,2023,Assessment,Fmsy,NA
+15447,cod.27.46a7d20_Viking,1983,Assessment,Fpa,NA
+15448,cod.27.46a7d20_Viking,1984,Assessment,Fpa,NA
+15449,cod.27.46a7d20_Viking,1985,Assessment,Fpa,NA
+15450,cod.27.46a7d20_Viking,1986,Assessment,Fpa,NA
+15451,cod.27.46a7d20_Viking,1987,Assessment,Fpa,NA
+15452,cod.27.46a7d20_Viking,1988,Assessment,Fpa,NA
+15453,cod.27.46a7d20_Viking,1989,Assessment,Fpa,NA
+15454,cod.27.46a7d20_Viking,1990,Assessment,Fpa,NA
+15455,cod.27.46a7d20_Viking,1991,Assessment,Fpa,NA
+15456,cod.27.46a7d20_Viking,1992,Assessment,Fpa,NA
+15457,cod.27.46a7d20_Viking,1993,Assessment,Fpa,NA
+15458,cod.27.46a7d20_Viking,1994,Assessment,Fpa,NA
+15459,cod.27.46a7d20_Viking,1995,Assessment,Fpa,NA
+15460,cod.27.46a7d20_Viking,1996,Assessment,Fpa,NA
+15461,cod.27.46a7d20_Viking,1997,Assessment,Fpa,NA
+15462,cod.27.46a7d20_Viking,1998,Assessment,Fpa,NA
+15463,cod.27.46a7d20_Viking,1999,Assessment,Fpa,NA
+15464,cod.27.46a7d20_Viking,2000,Assessment,Fpa,NA
+15465,cod.27.46a7d20_Viking,2001,Assessment,Fpa,NA
+15466,cod.27.46a7d20_Viking,2002,Assessment,Fpa,NA
+15467,cod.27.46a7d20_Viking,2003,Assessment,Fpa,NA
+15468,cod.27.46a7d20_Viking,2004,Assessment,Fpa,NA
+15469,cod.27.46a7d20_Viking,2005,Assessment,Fpa,NA
+15470,cod.27.46a7d20_Viking,2006,Assessment,Fpa,NA
+15471,cod.27.46a7d20_Viking,2007,Assessment,Fpa,NA
+15472,cod.27.46a7d20_Viking,2008,Assessment,Fpa,NA
+15473,cod.27.46a7d20_Viking,2009,Assessment,Fpa,NA
+15474,cod.27.46a7d20_Viking,2010,Assessment,Fpa,NA
+15475,cod.27.46a7d20_Viking,2011,Assessment,Fpa,NA
+15476,cod.27.46a7d20_Viking,2012,Assessment,Fpa,NA
+15477,cod.27.46a7d20_Viking,2013,Assessment,Fpa,NA
+15478,cod.27.46a7d20_Viking,2014,Assessment,Fpa,NA
+15479,cod.27.46a7d20_Viking,2015,Assessment,Fpa,NA
+15480,cod.27.46a7d20_Viking,2016,Assessment,Fpa,NA
+15481,cod.27.46a7d20_Viking,2017,Assessment,Fpa,NA
+15482,cod.27.46a7d20_Viking,2018,Assessment,Fpa,NA
+15483,cod.27.46a7d20_Viking,2019,Assessment,Fpa,NA
+15484,cod.27.46a7d20_Viking,2020,Assessment,Fpa,NA
+15485,cod.27.46a7d20_Viking,2021,Assessment,Fpa,NA
+15486,cod.27.46a7d20_Viking,2022,Assessment,Fpa,NA
+15487,cod.27.46a7d20_Viking,2023,Assessment,Fpa,NA
+15488,cod.27.46a7d20_Viking,1983,Assessment,Landings,NA
+15489,cod.27.46a7d20_Viking,1984,Assessment,Landings,NA
+15490,cod.27.46a7d20_Viking,1985,Assessment,Landings,NA
+15491,cod.27.46a7d20_Viking,1986,Assessment,Landings,NA
+15492,cod.27.46a7d20_Viking,1987,Assessment,Landings,NA
+15493,cod.27.46a7d20_Viking,1988,Assessment,Landings,NA
+15494,cod.27.46a7d20_Viking,1989,Assessment,Landings,NA
+15495,cod.27.46a7d20_Viking,1990,Assessment,Landings,NA
+15496,cod.27.46a7d20_Viking,1991,Assessment,Landings,NA
+15497,cod.27.46a7d20_Viking,1992,Assessment,Landings,NA
+15498,cod.27.46a7d20_Viking,1993,Assessment,Landings,NA
+15499,cod.27.46a7d20_Viking,1994,Assessment,Landings,NA
+15500,cod.27.46a7d20_Viking,1995,Assessment,Landings,NA
+15501,cod.27.46a7d20_Viking,1996,Assessment,Landings,NA
+15502,cod.27.46a7d20_Viking,1997,Assessment,Landings,NA
+15503,cod.27.46a7d20_Viking,1998,Assessment,Landings,NA
+15504,cod.27.46a7d20_Viking,1999,Assessment,Landings,NA
+15505,cod.27.46a7d20_Viking,2000,Assessment,Landings,NA
+15506,cod.27.46a7d20_Viking,2001,Assessment,Landings,NA
+15507,cod.27.46a7d20_Viking,2002,Assessment,Landings,NA
+15508,cod.27.46a7d20_Viking,2003,Assessment,Landings,NA
+15509,cod.27.46a7d20_Viking,2004,Assessment,Landings,NA
+15510,cod.27.46a7d20_Viking,2005,Assessment,Landings,NA
+15511,cod.27.46a7d20_Viking,2006,Assessment,Landings,NA
+15512,cod.27.46a7d20_Viking,2007,Assessment,Landings,NA
+15513,cod.27.46a7d20_Viking,2008,Assessment,Landings,NA
+15514,cod.27.46a7d20_Viking,2009,Assessment,Landings,NA
+15515,cod.27.46a7d20_Viking,2010,Assessment,Landings,NA
+15516,cod.27.46a7d20_Viking,2011,Assessment,Landings,NA
+15517,cod.27.46a7d20_Viking,2012,Assessment,Landings,NA
+15518,cod.27.46a7d20_Viking,2013,Assessment,Landings,NA
+15519,cod.27.46a7d20_Viking,2014,Assessment,Landings,NA
+15520,cod.27.46a7d20_Viking,2015,Assessment,Landings,NA
+15521,cod.27.46a7d20_Viking,2016,Assessment,Landings,NA
+15522,cod.27.46a7d20_Viking,2017,Assessment,Landings,NA
+15523,cod.27.46a7d20_Viking,2018,Assessment,Landings,NA
+15524,cod.27.46a7d20_Viking,2019,Assessment,Landings,NA
+15525,cod.27.46a7d20_Viking,2020,Assessment,Landings,NA
+15526,cod.27.46a7d20_Viking,2021,Assessment,Landings,NA
+15527,cod.27.46a7d20_Viking,2022,Assessment,Landings,NA
+15528,cod.27.46a7d20_Viking,2023,Assessment,Landings,NA
+15529,cod.27.46a7d20_Viking,2023,F = 0,Landings,36214
+15530,cod.27.46a7d20_Viking,2023,F = F2023,Landings,36214
+15531,cod.27.46a7d20_Viking,2023,FMSY lower,Landings,36214
+15532,cod.27.46a7d20_Viking,2023,FMSY upper,Landings,36214
+15533,cod.27.46a7d20_Viking,2023,Fpa,Landings,36214
+15534,cod.27.46a7d20_Viking,2023,MSY approach : FMSY ,Landings,36214
+15535,cod.27.46a7d20_Viking,2023,Precautionary considerations : F (2023 Viking) x 0.40,Landings,36214
+15536,cod.27.46a7d20_Viking,2023,SSB 2025 = Blim ,Landings,36214
+15537,cod.27.46a7d20_Viking,2023,SSB 2025 = MSY Btrigger = Bpa,Landings,36214
+15538,cod.27.46a7d20_Viking,2023,SSB 2025 = SSB 2024 ,Landings,36214
+15539,cod.27.46a7d20_Viking,2024,F = 0,Landings,NA
+15540,cod.27.46a7d20_Viking,2024,F = F2023,Landings,NA
+15541,cod.27.46a7d20_Viking,2024,FMSY lower,Landings,NA
+15542,cod.27.46a7d20_Viking,2024,FMSY upper,Landings,NA
+15543,cod.27.46a7d20_Viking,2024,Fpa,Landings,NA
+15544,cod.27.46a7d20_Viking,2024,ICES Advice,Landings,NA
+15545,cod.27.46a7d20_Viking,2024,MSY approach : FMSY ,Landings,NA
+15546,cod.27.46a7d20_Viking,2024,Precautionary considerations : F (2023 Viking) x 0.40,Landings,NA
+15547,cod.27.46a7d20_Viking,2024,SSB 2025 = Blim ,Landings,NA
+15548,cod.27.46a7d20_Viking,2024,SSB 2025 = MSY Btrigger = Bpa,Landings,NA
+15549,cod.27.46a7d20_Viking,2024,SSB 2025 = SSB 2024 ,Landings,NA
+15550,cod.27.46a7d20_Viking,1983,Assessment,R,116833
+15551,cod.27.46a7d20_Viking,1984,Assessment,R,127804
+15552,cod.27.46a7d20_Viking,1985,Assessment,R,38272
+15553,cod.27.46a7d20_Viking,1986,Assessment,R,127330
+15554,cod.27.46a7d20_Viking,1987,Assessment,R,62530
+15555,cod.27.46a7d20_Viking,1988,Assessment,R,59318
+15556,cod.27.46a7d20_Viking,1989,Assessment,R,92978
+15557,cod.27.46a7d20_Viking,1990,Assessment,R,48394
+15558,cod.27.46a7d20_Viking,1991,Assessment,R,52566
+15559,cod.27.46a7d20_Viking,1992,Assessment,R,105001
+15560,cod.27.46a7d20_Viking,1993,Assessment,R,65671
+15561,cod.27.46a7d20_Viking,1994,Assessment,R,119178
+15562,cod.27.46a7d20_Viking,1995,Assessment,R,89397
+15563,cod.27.46a7d20_Viking,1996,Assessment,R,59475
+15564,cod.27.46a7d20_Viking,1997,Assessment,R,144094
+15565,cod.27.46a7d20_Viking,1998,Assessment,R,19562
+15566,cod.27.46a7d20_Viking,1999,Assessment,R,47776
+15567,cod.27.46a7d20_Viking,2000,Assessment,R,69089
+15568,cod.27.46a7d20_Viking,2001,Assessment,R,29735
+15569,cod.27.46a7d20_Viking,2002,Assessment,R,39285
+15570,cod.27.46a7d20_Viking,2003,Assessment,R,24311
+15571,cod.27.46a7d20_Viking,2004,Assessment,R,49539
+15572,cod.27.46a7d20_Viking,2005,Assessment,R,32685
+15573,cod.27.46a7d20_Viking,2006,Assessment,R,65600
+15574,cod.27.46a7d20_Viking,2007,Assessment,R,28079
+15575,cod.27.46a7d20_Viking,2008,Assessment,R,33976
+15576,cod.27.46a7d20_Viking,2009,Assessment,R,40794
+15577,cod.27.46a7d20_Viking,2010,Assessment,R,60135
+15578,cod.27.46a7d20_Viking,2011,Assessment,R,29937
+15579,cod.27.46a7d20_Viking,2012,Assessment,R,48501
+15580,cod.27.46a7d20_Viking,2013,Assessment,R,50646
+15581,cod.27.46a7d20_Viking,2014,Assessment,R,66014
+15582,cod.27.46a7d20_Viking,2015,Assessment,R,35327
+15583,cod.27.46a7d20_Viking,2016,Assessment,R,22459
+15584,cod.27.46a7d20_Viking,2017,Assessment,R,48788
+15585,cod.27.46a7d20_Viking,2018,Assessment,R,14569
+15586,cod.27.46a7d20_Viking,2019,Assessment,R,26431
+15587,cod.27.46a7d20_Viking,2020,Assessment,R,60703
+15588,cod.27.46a7d20_Viking,2021,Assessment,R,27464
+15589,cod.27.46a7d20_Viking,2022,Assessment,R,36169
+15590,cod.27.46a7d20_Viking,2023,Assessment,R,34407
+15591,cod.27.46a7d20_Viking,1983,Assessment,SSB,14323
+15592,cod.27.46a7d20_Viking,1984,Assessment,SSB,18715
+15593,cod.27.46a7d20_Viking,1985,Assessment,SSB,14328
+15594,cod.27.46a7d20_Viking,1986,Assessment,SSB,10880
+15595,cod.27.46a7d20_Viking,1987,Assessment,SSB,13380
+15596,cod.27.46a7d20_Viking,1988,Assessment,SSB,9018
+15597,cod.27.46a7d20_Viking,1989,Assessment,SSB,12362
+15598,cod.27.46a7d20_Viking,1990,Assessment,SSB,10448
+15599,cod.27.46a7d20_Viking,1991,Assessment,SSB,10330
+15600,cod.27.46a7d20_Viking,1992,Assessment,SSB,15100
+15601,cod.27.46a7d20_Viking,1993,Assessment,SSB,8797
+15602,cod.27.46a7d20_Viking,1994,Assessment,SSB,12879
+15603,cod.27.46a7d20_Viking,1995,Assessment,SSB,12337
+15604,cod.27.46a7d20_Viking,1996,Assessment,SSB,16348
+15605,cod.27.46a7d20_Viking,1997,Assessment,SSB,13991
+15606,cod.27.46a7d20_Viking,1998,Assessment,SSB,15274
+15607,cod.27.46a7d20_Viking,1999,Assessment,SSB,13461
+15608,cod.27.46a7d20_Viking,2000,Assessment,SSB,12356
+15609,cod.27.46a7d20_Viking,2001,Assessment,SSB,8857
+15610,cod.27.46a7d20_Viking,2002,Assessment,SSB,9999
+15611,cod.27.46a7d20_Viking,2003,Assessment,SSB,8312
+15612,cod.27.46a7d20_Viking,2004,Assessment,SSB,10266
+15613,cod.27.46a7d20_Viking,2005,Assessment,SSB,9382
+15614,cod.27.46a7d20_Viking,2006,Assessment,SSB,7501
+15615,cod.27.46a7d20_Viking,2007,Assessment,SSB,9209
+15616,cod.27.46a7d20_Viking,2008,Assessment,SSB,11868
+15617,cod.27.46a7d20_Viking,2009,Assessment,SSB,10991
+15618,cod.27.46a7d20_Viking,2010,Assessment,SSB,10001
+15619,cod.27.46a7d20_Viking,2011,Assessment,SSB,11373
+15620,cod.27.46a7d20_Viking,2012,Assessment,SSB,11649
+15621,cod.27.46a7d20_Viking,2013,Assessment,SSB,13717
+15622,cod.27.46a7d20_Viking,2014,Assessment,SSB,14486
+15623,cod.27.46a7d20_Viking,2015,Assessment,SSB,16427
+15624,cod.27.46a7d20_Viking,2016,Assessment,SSB,17772
+15625,cod.27.46a7d20_Viking,2017,Assessment,SSB,24288
+15626,cod.27.46a7d20_Viking,2018,Assessment,SSB,18159
+15627,cod.27.46a7d20_Viking,2019,Assessment,SSB,12867
+15628,cod.27.46a7d20_Viking,2020,Assessment,SSB,9971
+15629,cod.27.46a7d20_Viking,2021,Assessment,SSB,7724
+15630,cod.27.46a7d20_Viking,2022,Assessment,SSB,10559
+15631,cod.27.46a7d20_Viking,2023,Assessment,SSB,14755
+15632,cod.27.46a7d20_Viking,2023,F = 0,SSB,NA
+15633,cod.27.46a7d20_Viking,2023,F = F2023,SSB,NA
+15634,cod.27.46a7d20_Viking,2023,FMSY lower,SSB,NA
+15635,cod.27.46a7d20_Viking,2023,FMSY upper,SSB,NA
+15636,cod.27.46a7d20_Viking,2023,Fpa,SSB,NA
+15637,cod.27.46a7d20_Viking,2023,MSY approach : FMSY ,SSB,NA
+15638,cod.27.46a7d20_Viking,2023,Precautionary considerations : F (2023 Viking) x 0.40,SSB,NA
+15639,cod.27.46a7d20_Viking,2023,SSB 2025 = Blim ,SSB,NA
+15640,cod.27.46a7d20_Viking,2023,SSB 2025 = MSY Btrigger = Bpa,SSB,NA
+15641,cod.27.46a7d20_Viking,2023,SSB 2025 = SSB 2024 ,SSB,NA
+15642,cod.27.46a7d20_Viking,2024,F = 0,SSB,19857
+15643,cod.27.46a7d20_Viking,2024,F = F2023,SSB,19857
+15644,cod.27.46a7d20_Viking,2024,FMSY lower,SSB,19857
+15645,cod.27.46a7d20_Viking,2024,FMSY upper,SSB,19857
+15646,cod.27.46a7d20_Viking,2024,Fpa,SSB,19857
+15647,cod.27.46a7d20_Viking,2024,ICES Advice,SSB,19857
+15648,cod.27.46a7d20_Viking,2024,MSY approach : FMSY ,SSB,19857
+15649,cod.27.46a7d20_Viking,2024,Precautionary considerations : F (2023 Viking) x 0.40,SSB,19857
+15650,cod.27.46a7d20_Viking,2024,SSB 2025 = Blim ,SSB,19857
+15651,cod.27.46a7d20_Viking,2024,SSB 2025 = MSY Btrigger = Bpa,SSB,19857
+15652,cod.27.46a7d20_Viking,2024,SSB 2025 = SSB 2024 ,SSB,19857
+15653,cod.27.46a7d20_Viking,2025,F = 0,SSB,33615
+15654,cod.27.46a7d20_Viking,2025,F = F2023,SSB,21507
+15655,cod.27.46a7d20_Viking,2025,FMSY lower,SSB,27700
+15656,cod.27.46a7d20_Viking,2025,FMSY upper,SSB,19946
+15657,cod.27.46a7d20_Viking,2025,Fpa,SSB,17249
+15658,cod.27.46a7d20_Viking,2025,MSY approach : FMSY ,SSB,24531
+15659,cod.27.46a7d20_Viking,2025,Precautionary considerations : F (2023 Viking) x 0.40,SSB,27939
+15660,cod.27.46a7d20_Viking,2025,SSB 2025 = Blim ,SSB,10608
+15661,cod.27.46a7d20_Viking,2025,SSB 2025 = MSY Btrigger = Bpa,SSB,15342
+15662,cod.27.46a7d20_Viking,2025,SSB 2025 = SSB 2024 ,SSB,19861
+15663,cod.27.46a7d20_Viking,1983,TAC,TAC,NA
+15664,cod.27.46a7d20_Viking,1984,TAC,TAC,NA
+15665,cod.27.46a7d20_Viking,1985,TAC,TAC,NA
+15666,cod.27.46a7d20_Viking,1986,TAC,TAC,NA
+15667,cod.27.46a7d20_Viking,1987,TAC,TAC,175000
+15668,cod.27.46a7d20_Viking,1988,TAC,TAC,160000
+15669,cod.27.46a7d20_Viking,1989,TAC,TAC,124000
+15670,cod.27.46a7d20_Viking,1990,TAC,TAC,105000
+15671,cod.27.46a7d20_Viking,1991,TAC,TAC,1.00E+05
+15672,cod.27.46a7d20_Viking,1992,TAC,TAC,1.00E+05
+15673,cod.27.46a7d20_Viking,1993,TAC,TAC,101000
+15674,cod.27.46a7d20_Viking,1994,TAC,TAC,102000
+15675,cod.27.46a7d20_Viking,1995,TAC,TAC,120000
+15676,cod.27.46a7d20_Viking,1996,TAC,TAC,130000
+15677,cod.27.46a7d20_Viking,1997,TAC,TAC,115000
+15678,cod.27.46a7d20_Viking,1998,TAC,TAC,140000
+15679,cod.27.46a7d20_Viking,1999,TAC,TAC,132400
+15680,cod.27.46a7d20_Viking,2000,TAC,TAC,81000
+15681,cod.27.46a7d20_Viking,2001,TAC,TAC,48600
+15682,cod.27.46a7d20_Viking,2002,TAC,TAC,49300
+15683,cod.27.46a7d20_Viking,2003,TAC,TAC,27300
+15684,cod.27.46a7d20_Viking,2004,TAC,TAC,27300
+15685,cod.27.46a7d20_Viking,2005,TAC,TAC,27300
+15686,cod.27.46a7d20_Viking,2006,TAC,TAC,23205
+15687,cod.27.46a7d20_Viking,2007,TAC,TAC,19957
+15688,cod.27.46a7d20_Viking,2008,TAC,TAC,22152
+15689,cod.27.46a7d20_Viking,2009,TAC,TAC,28798
+15690,cod.27.46a7d20_Viking,2010,TAC,TAC,33552
+15691,cod.27.46a7d20_Viking,2011,TAC,TAC,26842
+15692,cod.27.46a7d20_Viking,2012,TAC,TAC,26475
+15693,cod.27.46a7d20_Viking,2013,TAC,TAC,26475
+15694,cod.27.46a7d20_Viking,2014,TAC,TAC,27799
+15695,cod.27.46a7d20_Viking,2015,TAC,TAC,29189
+15696,cod.27.46a7d20_Viking,2016,TAC,TAC,33651
+15697,cod.27.46a7d20_Viking,2017,TAC,TAC,39220
+15698,cod.27.46a7d20_Viking,2018,TAC,TAC,43156
+15699,cod.27.46a7d20_Viking,2019,TAC,TAC,29437
+15700,cod.27.46a7d20_Viking,2020,TAC,TAC,14718
+15701,cod.27.46a7d20_Viking,2021,TAC,TAC,13246
+15702,cod.27.46a7d20_Viking,2022,TAC,TAC,13246
+15703,cod.27.46a7d20_Viking,2023,TAC,TAC,21652
