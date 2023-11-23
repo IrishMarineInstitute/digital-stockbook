@@ -1377,12 +1377,12 @@ server <- function(input, output, session) {
       list(tabPanel("Stockbook Summary"))
       
     } 
-    #Spurdog has no Species Summary Page
-    else if(input$speciesfilter=="Spurdog"){
+    #Spurdog and Ling have no Species Summary Page
+    else if(input$speciesfilter=="Spurdog" || input$speciesfilter=="Ling"){
       list(tabPanel("Stockbook Summary", value="stockbook_summ",
                     h3(htmlOutput("ICESAdviceTextMI")),
                     htmlOutput("ICESAdviceTextMI2"),p(),
-                    HTML("<br><br>"),#Adding white space
+                    HTML("<br><br>"),#Adding white space             
 
                     #SM Oct 2022: In 2022 the layout of the Summary page changed, to allow for a pdf page to be called when a link is clicked (see lines ~1015)
                     #Click here and open the summary page in pdf format
