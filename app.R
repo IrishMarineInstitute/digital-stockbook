@@ -62,7 +62,7 @@ ui <- fluidPage(
                         tabsetPanel(type="tabs",
                                     tabPanel("Celtic Sea",uiOutput("CelticSea")),
                                              #HTML("<br><br>")),
-                                    tabPanel("Irish Sea",uiOutput("IrishSea")),
+                                    tabPanel("Irish Sea",uiOutput("IrishSea"))
                                              #HTML("<br><br>")),
                                     )),
                tabPanel("Recent Ecosystem Advice", uiOutput("RecentAdvice"),
