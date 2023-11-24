@@ -60,10 +60,10 @@ ui <- fluidPage(
 #                        HTML("<br><br>")),
                tabPanel("Mixed Fisheries", 
                         tabsetPanel(type="tabs",
-                                    tabPanel("Celtic Sea",uiOutput("CelticSea")),
-                                             #HTML("<br><br>")),
-                                    tabPanel("Irish Sea",uiOutput("IrishSea"))
-                                             #HTML("<br><br>")),
+                                    tabPanel("Celtic Sea (pg.1)",uiOutput("CelticSea_1")),
+                                    tabPanel("Celtic Sea (pg.2)",uiOutput("CelticSea_2")),
+                                    tabPanel("Irish Sea (pg.1)",uiOutput("IrishSea_1")),
+                                    tabPanel("Irish Sea (pg.2)",uiOutput("IrishSea_2"))
                                     )),
                tabPanel("Recent Ecosystem Advice", uiOutput("RecentAdvice"),
                         HTML("<br><br>")),
@@ -360,7 +360,7 @@ server <- function(input, output, session) {
   })
   
   #################################
-  # Overviews and Mixed Fisheries #
+  # Mixed Fisheries #
   #################################
   #MIX FISH TEXT (in 2023 this was for the Celtic Sea)
   MixedFish=read.csv('MixedFish.csv', header=TRUE)
@@ -379,7 +379,7 @@ server <- function(input, output, session) {
   output$D3text<- renderText({
     paste0(MixedFish[5, which(colnames(MixedFish)==paste0("X", input$year))])
   }) 
-  ## 2021 'MixedFish' Text: tab in Ecosystem Overview section. Extra cells for control over long text## (SM)
+  #2023 CELTIC SEAS TEXT
   output$MixedFish_1 <-renderText({
     paste0(MixedFish[6, which(colnames(MixedFish)==paste0("X", input$year))])
   })
@@ -389,39 +389,53 @@ server <- function(input, output, session) {
   output$MixedFish_3 <-renderText({
     paste0(MixedFish[8, which(colnames(MixedFish)==paste0("X", input$year))])
   })
+  #(Text in 3 was split)
+  # output$MixedFish_3A <-renderText({
+  #   paste0(MixedFish[9, which(colnames(MixedFish)==paste0("X", input$year))])
+  # })
   output$MixedFish_4 <-renderText({
-    paste0(MixedFish[9, which(colnames(MixedFish)==paste0("X", input$year))])
-  })
-  output$MixedFish_5 <-renderText({
     paste0(MixedFish[10, which(colnames(MixedFish)==paste0("X", input$year))])
   })
-  output$MixedFish_6 <-renderText({
+  output$MixedFish_5 <-renderText({
     paste0(MixedFish[11, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  output$MixedFish_6 <-renderText({
+    paste0(MixedFish[12, which(colnames(MixedFish)==paste0("X", input$year))])
   })
   
   ## 2021 'Fisheries Overview' Text: tab in Ecosystem Overview section. ## SM
   output$Fisheries_1 <-renderText({
-    paste0(MixedFish[12, which(colnames(MixedFish)==paste0("X", input$year))])
+    paste0(MixedFish[13, which(colnames(MixedFish)==paste0("X", input$year))])
   })
  
   #IRISH SEA TEXT (This was added in 2023)
+  #IrishSea
   output$MixedFish_7 <-renderText({
-    paste0(MixedFish[13, which(colnames(MixedFish)==paste0("X", input$year))])
-  })
-  output$MixedFish_8 <-renderText({
     paste0(MixedFish[14, which(colnames(MixedFish)==paste0("X", input$year))])
   })
-  output$MixedFish_9 <-renderText({
+  #IS_2
+  output$MixedFish_8 <-renderText({
     paste0(MixedFish[15, which(colnames(MixedFish)==paste0("X", input$year))])
   })
-  output$MixedFish_10 <-renderText({
+  #IS_3
+  output$MixedFish_9 <-renderText({
     paste0(MixedFish[16, which(colnames(MixedFish)==paste0("X", input$year))])
   })
-  output$MixedFish_11 <-renderText({
-    paste0(MixedFish[17, which(colnames(MixedFish)==paste0("X", input$year))])
-  })
-  output$MixedFish_12 <-renderText({
+  # #IS_3A (Text in 3 was split)
+  # output$MixedFish_9A <-renderText({
+  #   paste0(MixedFish[17, which(colnames(MixedFish)==paste0("X", input$year))])
+  # })
+  #IS_4
+  output$MixedFish_10 <-renderText({
     paste0(MixedFish[18, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  #IS_5
+  output$MixedFish_11 <-renderText({
+    paste0(MixedFish[19, which(colnames(MixedFish)==paste0("X", input$year))])
+  })
+  #IS_6
+  output$MixedFish_12 <-renderText({
+    paste0(MixedFish[20, which(colnames(MixedFish)==paste0("X", input$year))])
   }) 
   
   #IMAGES
@@ -436,19 +450,19 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$MF_Fig3_caption <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig3_caption.png")
-    return(list(src = image_file, filetype = "image/png", height = 400))
+    return(list(src = image_file, filetype = "image/png", height = 475))
   }, deleteFile = FALSE)
   output$MF_Fig4_caption <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig4_caption.png")
-    return(list(src = image_file, filetype = "image/png", height = 450))
+    return(list(src = image_file, filetype = "image/png", height = 500))
   }, deleteFile = FALSE)
   output$MF_Tbl1 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl1.png")
-    return(list(src = image_file, filetype = "image/png", height = 600))
+    return(list(src = image_file, filetype = "image/png", height = 700))
   }, deleteFile = FALSE)
   output$MF_Tbl2 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl2.png")
-    return(list(src = image_file, filetype = "image/png", height = 175))#
+    return(list(src = image_file, filetype = "image/png", height = 200))#
   }, deleteFile = FALSE)
   output$MF_Tbl3 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl3.png")
@@ -456,7 +470,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$MF_Tbl4 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl4.png")
-    return(list(src = image_file, filetype = "image/png", height = 450)) #2021 height = 400, 
+    return(list(src = image_file, filetype = "image/png", height = 500)) #2021 height = 400, 
   }, deleteFile = FALSE)
   output$MF_Tbl5 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl5.png")
@@ -464,15 +478,15 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$MF_Tbl6 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl6.png")
-    return(list(src = image_file, filetype = "image/png", height = 275))
+    return(list(src = image_file, filetype = "image/png", height = 300))
   }, deleteFile = FALSE)
   output$MF_Tbl7 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl7.png")
-    return(list(src = image_file, filetype = "image/png", height = 175))
+    return(list(src = image_file, filetype = "image/png", height = 225))
   }, deleteFile = FALSE)
   output$MF_Tbl8 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Tbl8.png")
-    return(list(src = image_file, filetype = "image/png", height = 350))
+    return(list(src = image_file, filetype = "image/png", height = 400))
   }, deleteFile = FALSE)
   
   #2023 - IRISH SEA
@@ -486,43 +500,43 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$IS_Fig3_caption <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Fig3_caption.png")
-    return(list(src = image_file, filetype = "image/png", height = 500))
+    return(list(src = image_file, filetype = "image/png", height = 550))
   }, deleteFile = FALSE)
   output$IS_Fig4_caption <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Fig4_caption.png")
-    return(list(src = image_file, filetype = "image/png", height = 275))
+    return(list(src = image_file, filetype = "image/png", height = 350))
   }, deleteFile = FALSE)
   output$IS_Tbl1 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Tbl1.png")
-    return(list(src = image_file, filetype = "image/png", height = 525))
+    return(list(src = image_file, filetype = "image/png", height = 550))
   }, deleteFile = FALSE)
   output$IS_Tbl2 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Tbl2.png")
-    return(list(src = image_file, filetype = "image/png", height = 125))#
+    return(list(src = image_file, filetype = "image/png", height = 200))#
   }, deleteFile = FALSE)
   output$IS_Tbl3 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Tbl3.png")
-    return(list(src = image_file, filetype = "image/png", height = 250))
+    return(list(src = image_file, filetype = "image/png", height = 275))
   }, deleteFile = FALSE)
   output$IS_Tbl4 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Tbl4.png")
-    return(list(src = image_file, filetype = "image/png", height = 325)) #2021 height = 400, 
+    return(list(src = image_file, filetype = "image/png", height = 375)) #2021 height = 400, 
   }, deleteFile = FALSE)
   output$IS_Tbl5 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Tbl5.png")
-    return(list(src = image_file, filetype = "image/png", height = 350)) #2021 height = 300
+    return(list(src = image_file, filetype = "image/png", height = 400)) #2021 height = 300
   }, deleteFile = FALSE)
   output$IS_Tbl6 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Tbl6.png")
-    return(list(src = image_file, filetype = "image/png", height = 125))
+    return(list(src = image_file, filetype = "image/png", height = 175))
   }, deleteFile = FALSE)
   output$IS_Tbl7 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Tbl7.png")
-    return(list(src = image_file, filetype = "image/png", height = 175))
+    return(list(src = image_file, filetype = "image/png", height = 200))
   }, deleteFile = FALSE)
   output$IS_Tbl8 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/IS_Tbl8.png")
-    return(list(src = image_file, filetype = "image/png", height = 275))
+    return(list(src = image_file, filetype = "image/png", height = 325))
   }, deleteFile = FALSE)
   
 
@@ -854,8 +868,8 @@ server <- function(input, output, session) {
     #   a(href=paste0("The Stock Book 2023.pdf"), #CONNECT TO A PDF UNTIL THE 2023 LINK IS READY
     #     "The Stock Book 2023",target="_blank")
       
-      #The OAR link became live on 23/11/2022 
-      a(href=paste0("http://hdl.handle.net/10793/1805"), 
+      #The OAR link became live on 24/11/2023      (#The OAR link became live on 23/11/2022)
+      a(href=paste0("http://hdl.handle.net/10793/1873"), 
         "The Stock Book 2023",target="_blank")
     }
     else{paste0("No Link Available")
@@ -1581,57 +1595,21 @@ server <- function(input, output, session) {
                                       column(width = 3 ,
                                              h4("Links to the UWTV Surveys"),
                                              "No Link Available",p(), #FU14
-                                             
-                                             #SM/DC In 2021 the code was changed to reflect FU's that have no links in some years, i.e. FU15, FU19, FU2021 and FU22
-                                             
-                                             if (input$year==2017){a(href="http://hdl.handle.net/10793/1333","Link to UWTV for FU15",target="_blank")}
-                                             else if (input$year==2018){a(href="https://oar.marine.ie/handle/10793/1378","Link to UWTV for FU15",target="_blank")}
-                                             else if (input$year==2019){a(href="http://hdl.handle.net/10793/1451","Link to UWTV for FU15",target="_blank")}
-                                             else{"No Link Available"},p(),
+                                             "No Link Available",p(), #FU15
                                              
                                              #FU 16 and FU17 are the only ones to have a report published in 2016
-                                             a(href=paste0(
-                                               if(input$year==2016){"https://oar.marine.ie/handle/10793/1185"}
-                                               else if(input$year==2017){"http://hdl.handle.net/10793/1334"}
-                                               else if(input$year==2018){"https://oar.marine.ie/handle/10793/1379"}
-                                               else if(input$year==2019){"https://oar.marine.ie/handle/10793/1431"}
-                                               else if(input$year==2020){"http://hdl.handle.net/10793/1655"}
-                                               else if(input$year==2021){"https://oar.marine.ie/handle/10793/1718"}
-                                               else if(input$year==2022){"https://oar.marine.ie/handle/10793/1794"}),"Link to UWTV for FU16",target="_blank"),p(),
-                                             a(href=paste0(
-                                               if(input$year==2016){"https://oar.marine.ie/handle/10793/1184"}
-                                               else if(input$year==2017){"http://hdl.handle.net/10793/1335"}
-                                               else if(input$year==2018){"https://oar.marine.ie/handle/10793/1374"}
-                                               else if(input$year==2019){"https://oar.marine.ie/handle/10793/1427"}
-                                               else if(input$year==2020){"http://hdl.handle.net/10793/1656"}
-                                               else if(input$year==2021){"https://oar.marine.ie/handle/10793/1721"}
-                                               else if(input$year==2022){"https://oar.marine.ie/handle/10793/1793"}),"Link to UWTV for FU17",target="_blank"),p(),
+                                             if (input$year==2023){a(href="https://oar.marine.ie/handle/10793/1185","Link to UWTV for FU16",target="_blank")},p(),
+
+                                             if (input$year==2023){a(href="https://oar.marine.ie/handle/10793/1184","Link to UWTV for FU17",target="_blank")},p(),
+
+                                             "No Link Available",p(), #this lists 'No Link' for 'FU18 & 7 Other'
                                              
-                                             "No Link Available",p(), #this lists 'No Link' for outFU
+                                             if (input$year==2023){a(href="http://hdl.handle.net/10793/1332","Link to UWTV for FU19",target="_blank")},p(),
                                              
-                                             if (input$year==2017){a(href="http://hdl.handle.net/10793/1332","Link to UWTV for FU19",target="_blank")}
-                                             else if (input$year==2018){a(href="https://oar.marine.ie/handle/10793/1375","Link to UWTV for FU19",target="_blank")}
-                                             else if (input$year==2019){a(href="https://oar.marine.ie/handle/10793/1429","Link to UWTV for FU19",target="_blank")}
-                                             else if (input$year==2020){a(href="http://hdl.handle.net/10793/1654","Link to UWTV for FU19",target="_blank")}
-                                             else if (input$year==2021){a(href="https://oar.marine.ie/handle/10793/1722","Link to UWTV for FU19",target="_blank")}
-                                             else if (input$year==2022){a(href="https://oar.marine.ie/handle/10793/1795","Link to UWTV for FU19",target="_blank")}
-                                             else{"No Link Available"},p(),
+                                             if(input$year==2023){a(href="http://hdl.handle.net/10793/1330","Link to UWTV for FU2021",target="_blank")},p(),
                                              
-                                             if(input$year==2017){a(href="http://hdl.handle.net/10793/1330","Link to UWTV for FU2021",target="_blank")}
-                                             else if(input$year==2018){a(href="https://oar.marine.ie/handle/10793/1377","Link to UWTV for FU2021",target="_blank")}
-                                             else if(input$year==2019){a(href="https://oar.marine.ie/handle/10793/1430","Link to UWTV for FU2021",target="_blank")}
-                                             else if(input$year==2020){a(href="https://oar.marine.ie/handle/10793/1430","Link to UWTV for FU2021",target="_blank")}
-                                             else if(input$year==2021){a(href="https://oar.marine.ie/handle/10793/1724","Link to UWTV for FU2021",target="_blank")}
-                                             else if(input$year==2022){a(href="https://oar.marine.ie/handle/10793/1798","Link to UWTV for FU2021",target="_blank")}
-                                             else{"No Link Available"},p(),
-                                             
-                                             if(input$year==2017){a(href="http://oar.marine.ie/handle/10793/1331","Link to UWTV for FU22",target="_blank")}
-                                             else if(input$year==2018){a(href="https://oar.marine.ie/handle/10793/1376","Link to UWTV for FU22",target="_blank")}
-                                             else if(input$year==2019){a(href="https://oar.marine.ie/handle/10793/1428","Link to UWTV for FU22",target="_blank")}
-                                             else if(input$year==2020){a(href="http://hdl.handle.net/10793/1658","Link to UWTV for FU22",target="_blank")}
-                                             else if(input$year==2021){a(href="https://oar.marine.ie/handle/10793/1723","Link to UWTV for FU22",target="_blank")}
-                                             else if(input$year==2022){a(href="https://oar.marine.ie/handle/10793/1797","Link to UWTV for FU22",target="_blank")}
-                                             else{"No Link Available"},p(),
+                                             if(input$year==2023){a(href="http://oar.marine.ie/handle/10793/1331","Link to UWTV for FU22",target="_blank")},p(),
+
                                       )),
                              HTML("<br><br>"))}}
     do.call(tabsetPanel, panels)
@@ -1641,75 +1619,100 @@ server <- function(input, output, session) {
   #MIXED FISHERIES 2023
   #~~~~~~~~~~~~~~~~~~~
   #CELTIC SEA
-  output$CelticSea <-renderUI({
+  output$CelticSea_1 <-renderUI({
                   tagList(htmlOutput("MixedFish_1"),
                           htmlOutput("MixedFish_2"),
                           HTML("<br>"),
-                          fluidRow( column(width = 7, imageOutput("MF_Fig1_caption")), #,height = "100%"    ,height = "50%"
-                                    column(width = 5, imageOutput("MF_Tbl1"))),  #, height="50%"
-                         HTML("<br><br><br><br><br><br><br><br><br><br><br>"),
-                         htmlOutput("MixedFish_3"),
-                         HTML("<br><br>"),
-                         fluidRow( column(width = 6, imageOutput("MF_Tbl2")), #,height = "50%"
-                                   column(width = 6, imageOutput("MF_Tbl3"))),#, height="50%"
-                         HTML("<br><br><br><br>"),
-                         fluidRow( column(width = 6, imageOutput("MF_Tbl4")),#,height = "60%"
-                                   column(width = 6, imageOutput("MF_Tbl5"))),#, height="50%"
-                         HTML("<br><br><br><br><br><br><br><br>"),
-                         #In 2022 image names were aligned with 2021 names so that sizes are stable. Therefore there is no Fig2
-                         #In 2023 Fig 2 was re-introduced
-                         fluidRow( column(width = 6, imageOutput("MF_Fig2_caption")), #,height = "50%"
-                                   column(width = 6, imageOutput("MF_Fig3_caption"))),#, height="50%"
-                         HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
-                         HTML("<br><br><br><br><br><br>"),
-                         HTML("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"),
-                         htmlOutput("MixedFish_4"),
-                         fluidRow( column(width = 5, imageOutput("MF_Tbl6")), #,height = "50%"
-                                   column(width = 7, imageOutput("MF_Fig4_caption"))), #, height="50%"
-                         HTML("<br><br><br><br><br><br>"),
-                         fluidRow( column(width = 6, imageOutput("MF_Tbl7")),#,height = "60%"
-                                   column(width = 6, imageOutput("MF_Tbl8"))),#, height="50%"
-                         HTML("<br><br><br>"),
-                         htmlOutput("MixedFish_5"),
-                         htmlOutput("MixedFish_6"),
+                         #  # fluidRow( column(width = 7, imageOutput("MF_Fig1_caption")), #,height = "100%"    ,height = "50%"
+                         #  #           column(width = 5, imageOutput("MF_Tbl1"))),  #, height="50%"
+                          imageOutput("MF_Fig1_caption"),
+                          HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
+                          imageOutput("MF_Tbl1"),
+                          HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
+                          HTML("<br><br><br><br><br><br>"),
+                          htmlOutput("MixedFish_3"),
+                          HTML("<br><br>"),
+                          imageOutput("MF_Tbl2"),
+                          #htmlOutput("MixedFish_3A"),
+                          #HTML("<br><br>"),
+                          imageOutput("MF_Tbl3"),
+                          HTML("<br><br><br>"),
+                          imageOutput("MF_Tbl4"),
+                          HTML("<br><br><br><br><br><br><br><br>"),
+                          imageOutput("MF_Tbl5"),
+                          HTML("<br><br><br><br>"),
+                         
+                  )}) #end of uiOutput 'CelticSea_1'   
+                         
+  output$CelticSea_2 <-renderUI({
+                                        
+                tagList(  htmlOutput("MixedFish_4"),
+                          imageOutput("MF_Fig2_caption"),
+                          HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
+                          HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
+                          HTML("<br><br><br><br><br><br><br><br><br>"),
+                          imageOutput("MF_Fig3_caption"),
+                          HTML("<br><br><br><br><br><br><br><br><br>"),
+                          imageOutput("MF_Tbl6"),
+                          #HTML("<br><br>"),
+                          htmlOutput("MixedFish_5"),
+                          HTML("<br><br><br>"),
+                          imageOutput("MF_Fig4_caption"),
+                          HTML("<br><br><br><br><br><br><br><br>"),
+                          imageOutput("MF_Tbl7"),
+                          HTML("<br>"),
+                          imageOutput("MF_Tbl8"),
+                          HTML("<br>"),
+                          htmlOutput("MixedFish_6"),
+                          HTML("<br><br>"),
 
-                   )}) #end of uiOutput 'Celtic Sea'
+                   )}) #end of uiOutput 'CelticSea_2'
 
   #IRISH SEA
-  output$IrishSea <-renderUI({
-                tagList( htmlOutput("MixedFish_7"),
-                         htmlOutput("MixedFish_8"),
-                         HTML("<br>"),
-                         fluidRow( column(width = 7, imageOutput("IS_Fig1_caption")),
-                                   column(width = 5, imageOutput("IS_Tbl1"))),
-                         HTML("<br><br><br><br><br><br><br><br><br>"),
-                         htmlOutput("MixedFish_9"),
-                         HTML("<br><br>"),
-                         fluidRow( column(width = 6, imageOutput("IS_Tbl2")),
-                                   column(width = 6, imageOutput("IS_Tbl3"))),
-                         #HTML("<br><br>"),
-                         fluidRow( column(width = 6, imageOutput("IS_Tbl4")),
-                                   column(width = 6, imageOutput("IS_Tbl5"))),
-                         HTML("<br><br>"),
-                         #In 2022 image names were aligned with 2021 names so that sizes are stable. Therefore there is no Fig2
-                         #In 2023 Fig 2 was re-introduced
-                         fluidRow( column(width = 6, imageOutput("IS_Fig2_caption")),
-                                   column(width = 6, imageOutput("IS_Fig3_caption"))),
-                         HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
-                         HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
-                         HTML("<br><br><br><br>"),
-                         htmlOutput("MixedFish_10"),
-                         HTML("<br><br>"),
-                         fluidRow( column(width = 5, imageOutput("IS_Tbl6")),
-                                   column(width = 7, imageOutput("IS_Fig4_caption"))),
-                         #HTML("<br><br>"),
-                         fluidRow( column(width = 6, imageOutput("IS_Tbl7")),
-                                   column(width = 6, imageOutput("IS_Tbl8"))),
-                         #HTML("<br><br>"),
-                         htmlOutput("MixedFish_11"),
-                         htmlOutput("MixedFish_12"),
-
-                   )}) #end of uiOutput 'Irish Sea'
+  output$IrishSea_1 <-renderUI({
+    tagList(htmlOutput("MixedFish_7"),
+            htmlOutput("MixedFish_8"),
+            HTML("<br>"),
+            imageOutput("IS_Fig1_caption"),
+            HTML("<br><br><br><br><br><br><br><br><br><br>"),
+            imageOutput("IS_Tbl1"),
+            HTML("<br><br><br><br><br><br><br><br><br><br>"),
+            imageOutput("IS_Tbl2"),
+            htmlOutput("MixedFish_9"),
+            HTML("<br><br>"),
+            imageOutput("IS_Tbl3"),
+            # HTML("<br>"),
+            imageOutput("IS_Tbl4"),
+            # HTML("<br><br><br>"),
+            imageOutput("IS_Tbl5"),
+            # HTML("<br><br><br>"),
+            
+    )}) #end of uiOutput 'CelticSea_1'   
+  
+  output$IrishSea_2 <-renderUI({
+    
+    tagList(  htmlOutput("MixedFish_10"),
+              HTML("<br><br>"),
+              imageOutput("IS_Fig2_caption"),
+              HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
+              HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
+              HTML("<br><br><br><br><br>"),
+              imageOutput("IS_Fig3_caption"),
+              HTML("<br><br><br><br><br><br><br><br><br><br><br>"),
+              imageOutput("IS_Tbl6"),
+              #HTML("<br><br>"),
+              htmlOutput("MixedFish_11"),
+              HTML("<br><br><br>"),
+              imageOutput("IS_Fig4_caption"),
+              HTML("<br><br><br>"),
+              imageOutput("IS_Tbl7"),
+              #HTML("<br>"),
+              imageOutput("IS_Tbl8"),
+              #HTML("<br>"),
+              htmlOutput("MixedFish_12"),
+              HTML("<br><br>"),
+              
+    )}) #end of uiOutput 'CelticSea_2'
   
   
   #SUSTAINABILITY ASSESSMENT 2022 
