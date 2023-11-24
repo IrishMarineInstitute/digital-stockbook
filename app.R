@@ -72,6 +72,7 @@ ui <- fluidPage(
                         sidebarLayout(fluidRow(column(3,uiOutput("speciesSelector")),
                                                column(5,uiOutput("DescSelector"))),
                                       mainPanel(uiOutput("tabstest"),width = 12))),
+               tabPanel("Stock Book 2022 (with Stock Advice 2015-2022)", htmlOutput("StockBook2022")),
                tabPanel("Definitions", htmlOutput("Defns"), htmlOutput("Defns2"),
                         HTML("<br><br>"))),
   hr(),
@@ -573,6 +574,10 @@ server <- function(input, output, session) {
     paste0(ExtraChapters[9, which(colnames(ExtraChapters)==paste0("X", input$year))])
   }) 
   
+  #2023 text for Cod sub-stocks
+  output$StockBook2022<- renderText({
+    paste0(ExtraChapters[10, which(colnames(ExtraChapters)==paste0("X", input$year))])
+  })
   
   #2021 and 2022 Specific - IMAGES added for the three extra chapters in www/MixedFisheries
   #2023 - RecentAdvice image 4 was added. 
