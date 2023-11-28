@@ -735,11 +735,18 @@ server <- function(input, output, session) {
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                "</em> landings by Irish Vessels between 2017 - 2021", sep="")
       } 
-      # #hom_mac_whb
-      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel" | input$speciesfilter=="Blue Whiting"){      
-        paste0("The distribution of Irish landings of ", 
+      # #hom_mac
+      else if(input$speciesfilter=="Mackerel" | input$speciesfilter=="Horse Mackerel"){      
+        paste0("The distribution of Irish catches of ", 
                ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
                " in 2022", sep="")
+      }
+      
+      # #whb
+      else if(input$speciesfilter=="Blue Whiting"){      
+        paste0("The distribution of ", 
+               ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,"Fish"], 
+               " catches from Irish vessels (mainly pelagic otter trawls) during 2022", sep="")
       }
       
       #SM added Nov 24th 2021 and updated in 2022/2023
@@ -1441,7 +1448,7 @@ server <- function(input, output, session) {
                     h3("Biology"), 
                     fluidRow(column(width = 9, htmlOutput("biology_text")), 
                              column(width = 3, imageOutput("display.fish", height = "50%"))),   
-                    h3("Distribution in Irish Waters"),
+                    h3("Landings Distribution"),
                     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
                     }
                     
