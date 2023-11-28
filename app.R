@@ -9,7 +9,7 @@ library(ggplot2)
 library(reshape2)
 
 
-availableYears<- list("2023", "2022")
+availableYears<- list("2023")
 
 ui <- fluidPage(
   tags$head(includeScript("google-analytics.js")),
@@ -53,11 +53,8 @@ ui <- fluidPage(
                         imageOutput("AdviceSummtable1", height="100%"),p(),
                         imageOutput("AdviceSummtable2", height="100%"),
                         HTML("<br><br>")),
-               #Nov 2022 moved the Sustainability Ass. set-up to a uiOutput() to avoid 'Navigation Containers' warning
                tabPanel("Sustainability Assessment", uiOutput("SustainAss"),
                         HTML("<br><br>")),
-#              tabPanel("Mixed Fisheries", uiOutput("MixFish"),
-#                        HTML("<br><br>")),
                tabPanel("Mixed Fisheries", 
                         tabsetPanel(type="tabs",
                                     tabPanel("Celtic Sea (pg.1)",uiOutput("CelticSea_1")),
@@ -102,7 +99,6 @@ server <- function(input, output, session) {
   ICEStable$SpeciesByDiv <- trimws(ICEStable$SpeciesByDiv)
   Speciesfilter <- unique(ICEStable$Fish)
   
-  ##SM Nov2023: Warning: Error in data.frame: arguments imply differing number of rows: 1, 0  - this shows when the three cod sub-stocks are chosen.....
   ## Read parameter strings from the URL and change the selection appropriately
   observe({
     urlParameters <- parseQueryString(session$clientData$url_search)
@@ -233,14 +229,14 @@ server <- function(input, output, session) {
   
   #Data Quality
   #~~~~~~~~~~~~
+  #TEXT
     output$DataQualitytext1 <- renderText({
-      paste0(Introduction[7, which(colnames(Introduction)==paste0("X", input$year))])
+      paste0(Introduction[3, which(colnames(Introduction)==paste0("X", input$year))])
       })
-  
     output$DataQualitytext2 <- renderText({
-        paste0(Introduction[8, which(colnames(Introduction)==paste0("X", input$year))])
+        paste0(Introduction[4, which(colnames(Introduction)==paste0("X", input$year))])
       })
-  
+  #IMAGES
     output$DataQualityimage1 <- renderImage({
       image_file <- paste0("www/Introduction/DataQuality",input$year,".png")
       return(list(src = image_file, filetype = "image/png", height = 500))
@@ -256,7 +252,7 @@ server <- function(input, output, session) {
   #ICES Rationale
   #~~~~~~~~~~~~~~
   output$Rationaletext <- renderText({
-    paste0(Introduction[3, which(colnames(Introduction)==paste0("X", input$year))])
+    paste0(Introduction[5, which(colnames(Introduction)==paste0("X", input$year))])
   })
   
   
@@ -265,7 +261,7 @@ server <- function(input, output, session) {
   ##############################
   output$LongTermManagementtext <- renderText({
     
-    paste0(Introduction[9, which(colnames(Introduction)==paste0("X", input$year))])
+    paste0(Introduction[6, which(colnames(Introduction)==paste0("X", input$year))])
     
   })
   output$MgtPlan <- renderImage({
@@ -300,10 +296,6 @@ server <- function(input, output, session) {
     image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table2.PNG")
     return(list(src = image_file, filetype = "image/png", width = 750))
   }, deleteFile = FALSE)
-  output$AdviceSummtable3 <- renderImage({
-    image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table3.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 750))
-  }, deleteFile = FALSE)
   output$AdviceSummtext<- renderText({
     paste0("Marine Institute Summary on the Status, Scientific Advice for ", as.numeric(input$year)+1,
            " for those Stocks of Interest to Ireland")
@@ -312,38 +304,50 @@ server <- function(input, output, session) {
   #############################
   # Sustainability Assessment #  #table 3 was width=800 
   #############################
-  output$Sustainabilitytext <- renderText({
-    paste0(Introduction[4, which(colnames(Introduction)==paste0("X", input$year))])
+ #Text
+  output$SustainabilityText <- renderText({
+    paste0(Introduction[9, which(colnames(Introduction)==paste0("X", input$year))])
   })
-  output$SustainabilityTabletext <- renderText({
-    paste0("Table 4: Stocks with a status change between the ", as.numeric(input$year)-1, 
-           " and ", input$year, " assessments.") # SM Nov: changed in 2021 from 'Stock Books'
+  #In 2023 the text was split to reflect the pdf layout
+  output$SustainabilityText2 <- renderText({
+    paste0(Introduction[10, which(colnames(Introduction)==paste0("X", input$year))])
   })
-  # Figure 1 text added in 2022
-  output$SustainabilityFigText <- renderText({
-    paste0("Figure 1: Number of stocks assessed to be fished below Fmsy and where SSB is above MSY Btrigger in the Stock Book each year, with trends indicated.") 
+  output$SustainTable1Text <- renderText({
+    paste0(Introduction[11, which(colnames(Introduction)==paste0("X", input$year))])
   })
-  # SM Nov: changed in 2021 from 'Stock Books'
+  output$SustainTable2Text <- renderText({
+    paste0(Introduction[12, which(colnames(Introduction)==paste0("X", input$year))])
+  })
+  output$SustainFig1Text <- renderText({
+    paste0(Introduction[13, which(colnames(Introduction)==paste0("X", input$year))])
+  })
+  output$SustainTable3Text <- renderText({
+    paste0(Introduction[14, which(colnames(Introduction)==paste0("X", input$year))])
+  })
+  output$SustainTable4Text <- renderText({
+    paste0(Introduction[15, which(colnames(Introduction)==paste0("X", input$year))])
+  })
+  #Images
   output$Sustainabilitytable1 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table1.png")
-    return(list(src = image_file, filetype = "image/png", width = 700))
+    return(list(src = image_file, filetype = "image/png", width = 800))
   }, deleteFile = FALSE)
   output$Sustainabilitytable2 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table2.png")
-    return(list(src = image_file, filetype = "image/png", width = 700))
+    return(list(src = image_file, filetype = "image/png", width = 800))
   }, deleteFile = FALSE)
   output$Sustainabilitytable3 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table3.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 800))
+    return(list(src = image_file, filetype = "image/png", width = 900))
   }, deleteFile = FALSE)
   output$Sustainabilitytable4 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table4.PNG")
-    return(list(src = image_file, filetype = "image/png", width = 800))
+    return(list(src = image_file, filetype = "image/png", width = 900))
   }, deleteFile = FALSE)
   #Added in 2022
   output$SustainabilityFig <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Fig1.png")
-    return(list(src = image_file, filetype = "image/png", width = 800))
+    return(list(src = image_file, filetype = "image/png", width = 900))
   }, deleteFile = FALSE)
   
   ###############
@@ -353,11 +357,11 @@ server <- function(input, output, session) {
   # 2021: Changed the column from '3' to '2' so that the second cell is also displayed ) 
   output$Defns <- renderText({
     #   #print(Introduction[5, 2])
-    paste0(Introduction[5, 2])
+    paste0(Introduction[7, 2])
   })
   output$Defns2 <- renderText({
     #print(Introduction[6, 2])
-    paste0(Introduction[6, 2])
+    paste0(Introduction[8, 2])
   })
   
   #################################
@@ -447,7 +451,7 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   output$MF_Fig2_caption <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig2_caption.png")
-    return(list(src = image_file, filetype = "image/png", height = 1000))
+    return(list(src = image_file, filetype = "image/png", height = 1100))
   }, deleteFile = FALSE)
   output$MF_Fig3_caption <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/MF_Fig3_caption.png")
@@ -585,15 +589,15 @@ server <- function(input, output, session) {
   #       Changed to 500 for 2023
   output$RecentAdvice1 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice1.png")
-    return(list(src = image_file, filetype = "image/png", height = 500))
+    return(list(src = image_file, filetype = "image/png", height = 650))
   }, deleteFile = FALSE)
   output$RecentAdvice2 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice2.png")
-    return(list(src = image_file, filetype = "image/png", height = 500))
+    return(list(src = image_file, filetype = "image/png", height = 600))
   }, deleteFile = FALSE)
   output$RecentAdvice3 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice3.png")
-    return(list(src = image_file, filetype = "image/png", height = 500))
+    return(list(src = image_file, filetype = "image/png", height = 550))
   }, deleteFile = FALSE)
   output$RecentAdvice4 <- renderImage({
     image_file <- paste0("www/MixedFisheries/",input$year,"/RecentAdvice4.png")
@@ -1623,52 +1627,49 @@ server <- function(input, output, session) {
   
   #MIXED FISHERIES 2023
   #~~~~~~~~~~~~~~~~~~~
+  #2023: It's important to include the image height so extra space is eliminated
   #CELTIC SEA
   output$CelticSea_1 <-renderUI({
                   tagList(htmlOutput("MixedFish_1"),
                           htmlOutput("MixedFish_2"),
                           HTML("<br>"),
-                         #  # fluidRow( column(width = 7, imageOutput("MF_Fig1_caption")), #,height = "100%"    ,height = "50%"
-                         #  #           column(width = 5, imageOutput("MF_Tbl1"))),  #, height="50%"
-                          imageOutput("MF_Fig1_caption"),
-                          HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
-                          imageOutput("MF_Tbl1"),
-                          HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
-                          HTML("<br><br><br><br><br><br>"),
+                          imageOutput("MF_Fig1_caption", height="100%"),
+                          HTML("<br><br><br>"),
+                          imageOutput("MF_Tbl1", height="100%"),
+                          HTML("<br><br><br>"),
                           htmlOutput("MixedFish_3"),
                           HTML("<br><br>"),
-                          imageOutput("MF_Tbl2"),
-                          #htmlOutput("MixedFish_3A"),
-                          #HTML("<br><br>"),
-                          imageOutput("MF_Tbl3"),
+                          imageOutput("MF_Tbl2", height="100%"),
+                          HTML("<br><br>"),
+                          imageOutput("MF_Tbl3", height="100%"),
                           HTML("<br><br><br>"),
-                          imageOutput("MF_Tbl4"),
-                          HTML("<br><br><br><br><br><br><br><br>"),
-                          imageOutput("MF_Tbl5"),
-                          HTML("<br><br><br><br>"),
+                          imageOutput("MF_Tbl4", height="100%"),
+                          HTML("<br><br><br>"),
+                          imageOutput("MF_Tbl5", height="100%"),
+                          HTML("<br><br>"),
                          
                   )}) #end of uiOutput 'CelticSea_1'   
                          
   output$CelticSea_2 <-renderUI({
                                         
                 tagList(  htmlOutput("MixedFish_4"),
-                          imageOutput("MF_Fig2_caption"),
-                          HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
-                          HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
-                          HTML("<br><br><br><br><br><br><br><br><br>"),
-                          imageOutput("MF_Fig3_caption"),
-                          HTML("<br><br><br><br><br><br><br><br><br>"),
-                          imageOutput("MF_Tbl6"),
-                          #HTML("<br><br>"),
-                          htmlOutput("MixedFish_5"),
+                          HTML("<br>"),
+                          imageOutput("MF_Fig2_caption", height="100%"),
                           HTML("<br><br><br>"),
-                          imageOutput("MF_Fig4_caption"),
-                          HTML("<br><br><br><br><br><br><br><br>"),
-                          imageOutput("MF_Tbl7"),
+                          imageOutput("MF_Fig3_caption", height="100%"),
+                          HTML("<br><br><br>"),
+                          imageOutput("MF_Tbl6", height="100%"),
+                          HTML("<br><br><br>"),
+                          
+                          imageOutput("MF_Fig4_caption", height="100%"),
+                          HTML("<br><br><br>"),
+                          imageOutput("MF_Tbl7", height="100%"),
+                          HTML("<br><br><br>"),
+                          imageOutput("MF_Tbl8", height="100%"),
+                          HTML("<br><br><br>"),
+                          htmlOutput("MixedFish_5"),
                           HTML("<br>"),
-                          imageOutput("MF_Tbl8"),
-                          HTML("<br>"),
-                          htmlOutput("MixedFish_6"),
+                          htmlOutput("MixedFish_6", height="100%"),
                           HTML("<br><br>"),
 
                    )}) #end of uiOutput 'CelticSea_2'
@@ -1678,79 +1679,80 @@ server <- function(input, output, session) {
     tagList(htmlOutput("MixedFish_7"),
             htmlOutput("MixedFish_8"),
             HTML("<br>"),
-            imageOutput("IS_Fig1_caption"),
-            HTML("<br><br><br><br><br><br><br><br><br><br>"),
-            imageOutput("IS_Tbl1"),
-            HTML("<br><br><br><br><br><br><br><br><br><br>"),
-            imageOutput("IS_Tbl2"),
+            imageOutput("IS_Fig1_caption", height="100%"),
+            HTML("<br><br><br>"),
+            imageOutput("IS_Tbl1", height="100%"),
+            HTML("<br><br><br>"),
+            imageOutput("IS_Tbl2", height="100%"),
             htmlOutput("MixedFish_9"),
             HTML("<br><br>"),
-            imageOutput("IS_Tbl3"),
-            # HTML("<br>"),
-            imageOutput("IS_Tbl4"),
-            # HTML("<br><br><br>"),
-            imageOutput("IS_Tbl5"),
-            # HTML("<br><br><br>"),
+            imageOutput("IS_Tbl3", height="100%"),
+            HTML("<br><br><br>"),
+            imageOutput("IS_Tbl4", height="100%"),
+            HTML("<br><br><br>"),
+            imageOutput("IS_Tbl5", height="100%"),
+            HTML("<br><br><br>"),
             
-    )}) #end of uiOutput 'CelticSea_1'   
+    )}) #end of uiOutput 'IrishSea_1'   
   
   output$IrishSea_2 <-renderUI({
     
     tagList(  htmlOutput("MixedFish_10"),
               HTML("<br><br>"),
-              imageOutput("IS_Fig2_caption"),
-              HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
-              HTML("<br><br><br><br><br><br><br><br><br><br><br><br>"),
-              HTML("<br><br><br><br><br>"),
-              imageOutput("IS_Fig3_caption"),
-              HTML("<br><br><br><br><br><br><br><br><br><br><br>"),
-              imageOutput("IS_Tbl6"),
-              #HTML("<br><br>"),
-              htmlOutput("MixedFish_11"),
+              imageOutput("IS_Fig2_caption", height="100%"),
+              HTML("<br><<br><br>"),
+              imageOutput("IS_Fig3_caption", height="100%"),
               HTML("<br><br><br>"),
-              imageOutput("IS_Fig4_caption"),
+              imageOutput("IS_Tbl6", height="100%"),
+              HTML("<br><br>"),
+              imageOutput("IS_Fig4_caption", height="100%"),
               HTML("<br><br><br>"),
-              imageOutput("IS_Tbl7"),
-              #HTML("<br>"),
-              imageOutput("IS_Tbl8"),
-              #HTML("<br>"),
-              htmlOutput("MixedFish_12"),
+              imageOutput("IS_Tbl7", height="100%"),
+              HTML("<br><br><br>"),
+              imageOutput("IS_Tbl8", height="100%"),
+              HTML("<br><br><br>"),
+              htmlOutput("MixedFish_11", height="100%"),
+              HTML("<br><br><br>"),
+              htmlOutput("MixedFish_12", height="100%"),
               HTML("<br><br>"),
               
-    )}) #end of uiOutput 'CelticSea_2'
+    )}) #end of uiOutput 'IrishSea_2'
   
   
   #SUSTAINABILITY ASSESSMENT 2022 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  #(output code removed from 'tabpanel' (line ~54) to here)
-  # to avoid 'Navigation Containers' warning
- 
+  
+  #2023: It's important to include the image height so extra space is eliminated
   output$SustainAss <-renderUI({
     
     tagList(
       
-      htmlOutput("Sustainabilitytext"),
-      "Table 1: Summary of FEAS evaluation of fishing mortality in relation 
-                       to FMSY for Stocks of interest to Ireland", 
+      htmlOutput("SustainabilityText"),
+      HTML("<br>"),
+      htmlOutput("SustainTable1Text"),
       imageOutput("Sustainabilitytable1", height="100%"),
       HTML("<br>"),
-      "Table 2: Summary of FEAS evaluation of SSB in 
-                       relation to biomass reference points for stocks of interest to Ireland.",
+      htmlOutput("SustainTable2Text"),
       imageOutput("Sustainabilitytable2", height="100%"),
+      HTML("<br>"),
+      # In 2023 the text was split to reflect the pdf layout
+      htmlOutput("SustainabilityText2"),
       HTML("<br>"),
       # SM added Fig 1 image and caption in Nov 2022
       imageOutput("SustainabilityFig", height="100%"),
-      textOutput("SustainabilityFigText"),
+      htmlOutput("SustainFig1Text"),
+      HTML("<br><br>"),
+      htmlOutput("SustainTable3Text"),
+      imageOutput("Sustainabilitytable3", height="100%"),
+      HTML("<br><br>"),
+      htmlOutput("SustainTable4Text"),
+      imageOutput("Sustainabilitytable4", height="100%"),
       HTML("<br>"),
-      "Table 3: Details of FEAS evaluation of fishing mortality in relation to FMSY and SSB 
-                       in relation to biomass reference points for stocks of interest to Ireland.",
-      imageOutput("Sustainabilitytable3", height="100%"),HTML("<br>"),
-      textOutput("SustainabilityTabletext"),
-      imageOutput("Sustainabilitytable4", height="100%"), HTML("<br>"),  
       
       
     )                             # end of taglist
-  })                                  # end of output$SustainAss
+  })          
+  
   
   ##DATA QUALITY
   ##~~~~~~~~~~~~~~~~~~~~~~~
@@ -1759,17 +1761,18 @@ server <- function(input, output, session) {
     tagList(
       
       htmlOutput("DataQualitytext1"),
+      HTML("<br>"),
       imageOutput("DataQualityimage1", height="100%"),
       "Figure 1: Data Management Quality Management Framework Model", 
-      HTML("<br>"),
-      p(),p(),p(),
+      HTML("<br><br><br>"),
+      #p(),p(),p(),
       htmlOutput("DataQualitytext2"),
       imageOutput("DataQualityimage2", height="100%"),
       "10 principles of the ICES advice",
       HTML("<br>"),
       
     )                             # end of taglist
-  })                                  # end of output$DataQuality
+  })                           # end of output$DataQuality
   
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
   #EXTRA CHAPTERS ADDED IN 2021 and continued in 2022, 2023
@@ -1777,26 +1780,30 @@ server <- function(input, output, session) {
   
   ##RECENT ECOSYSTEM ADVICE
   ##~~~~~~~~~~~~~~~~~~~~~~~
+  
   output$RecentAdvice <-renderUI({
-    if(input$year==2023){
-      tagList(
-        fluidRow(column(width = 10, htmlOutput("Recent_Beginning")),
-                 column(width = 10, imageOutput("RecentAdvice1",height = "100%")),
-                 HTML("<br><br>")),
-        fluidRow(column(width = 10, htmlOutput("Recent_Middle")),
-                 column(width = 10, imageOutput("RecentAdvice2",height = "100%")),
-                 column(width = 10, htmlOutput("Recent_Middle2")),
-                 column(width = 10, imageOutput("RecentAdvice3",height = "100%"))),
-        fluidRow(column(width = 10, htmlOutput("Recent_End")),
-                 column(width = 10, imageOutput("RecentAdvice4",height = "100%")),
-                 column(width = 10, htmlOutput("Recent_End2"))),
-                 
-
-      )                             # end of taglist
-    }                                  #end of 2023 content 
     
-    
-  })                                  # end of output$RecentAdvice
+    tagList(  htmlOutput("Recent_Beginning"),
+              HTML("<br>"),
+              imageOutput("RecentAdvice1",height = "100%"),
+              HTML("<br>"),
+              htmlOutput("Recent_Middle"),
+              HTML("<br>"),
+              imageOutput("RecentAdvice2",height = "100%"),
+              HTML("<br>"),
+              htmlOutput("Recent_Middle2"),
+              HTML("<br>"),
+              imageOutput("RecentAdvice3",height = "100%"),
+              HTML("<br>"),
+              htmlOutput("Recent_End"),
+              HTML("<br>"),
+              imageOutput("RecentAdvice4",height = "100%"),
+              HTML("<br>"),
+              htmlOutput("Recent_End2"),
+              HTML("<br><br>"),
+              
+    )}) #end of uiOutput 'RecentAdvice'
+  
   
     
 } #closing bracket of server <- function(input, output, session) {     (line 87)
