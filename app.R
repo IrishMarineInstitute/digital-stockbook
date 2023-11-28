@@ -608,7 +608,6 @@ server <- function(input, output, session) {
   ################
   # Stock Advice #    
   ################
-  
   #Species Summary 
   #~~~~~~~~~~~~~~~
   output$biology_text <- renderText({
@@ -711,7 +710,6 @@ server <- function(input, output, session) {
      }
     })
     
-  
   
   #Irish Landings
   #~~~~~~~~~~~~~~
@@ -879,6 +877,7 @@ server <- function(input, output, session) {
   
   #Links
   #~~~~~  
+  #Stockbook Link
   output$Stockbooklink <-renderUI({
      if(input$year==2023){
     #   a(href=paste0("The Stock Book 2023.pdf"), #CONNECT TO A PDF UNTIL THE 2023 LINK IS READY
@@ -891,19 +890,11 @@ server <- function(input, output, session) {
     else{paste0("No Link Available")
     }
   })
-  #In 2023 CL removed this link from the digital stockbook 
-  # output$ICESlink <-renderUI({
-  #   # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
-  #   
-  #   if(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
-  #                paste0("ICESCode",input$year, sep="")]=="Not Available"){
-  #     paste0("No Link Available")
-  #   }else{
-  #     a(href=paste0(ICEStable[ICEStable$Fish == input$speciesfilter & ICEStable$SpeciesByDiv == input$speciesbydiv,
-  #                             paste0("ICESCode",input$year, sep="")]),
-  #       "ICES Advice ",target="_blank")}
-  # })
   
+  #ICES Grouped Stocks Page
+  #In 2023 CL removed the link to the ICES page listing the grouped stocks. To see this code see '2022_Git'
+  
+  #Advice Sheet Link
   output$ICESlinkpdf <-renderUI({
     # djc 10/11/21 - Filtering was previously only done by area description! - Fixed to filter by species and area
     
@@ -1590,7 +1581,6 @@ server <- function(input, output, session) {
       }
     
     
-    
     if(is.null(input$speciesfilter) || is.na(input$speciesfilter)){
     }else if(input$year>2022){
       if(input$speciesbydiv %in% NephropsStock){
@@ -1728,7 +1718,6 @@ server <- function(input, output, session) {
   
   #SUSTAINABILITY ASSESSMENT 2022 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  
   #2023: It's important to include the image height so extra space is eliminated
   output$SustainAss <-renderUI({
     
