@@ -548,6 +548,7 @@ server <- function(input, output, session) {
   ############################
   # Recent Ecosystems Advice #
   ############################
+  #ExtraChapters.csv
   #In 2023 'Recent_Middle2' and 'Recent_End2' was added
   ExtraChapters=read.csv('ExtraChapters.csv', header=TRUE)
   output$Recent_Beginning <- renderText({
@@ -578,7 +579,7 @@ server <- function(input, output, session) {
     paste0(ExtraChapters[9, which(colnames(ExtraChapters)==paste0("X", input$year))])
   }) 
   
-  #2023 text for Cod sub-stocks
+  #2023 text for explanation link to Stockbook 2022
   output$StockBook2022<- renderText({
     paste0(ExtraChapters[10, which(colnames(ExtraChapters)==paste0("X", input$year))])
   })
