@@ -28,7 +28,8 @@ ui <- fluidPage(
                                     tabPanel("Organisation of the Stock Book",htmlOutput("Introtext2"),
                                              HTML("<br><br>")),
                                     tabPanel("Ireland's TAC", 
-                                             textOutput("TACsubheading"),
+                                             #textOutput("TACsubheading"),
+                                             h4(htmlOutput("TACsubheading")),
                                              #"Ireland's Share of the EU TAC",
                                              HTML("<br><br>"),
                                              tags$head(tags$style(type="text/css", ".test_type {font-size: 11px;}")),
@@ -1604,18 +1605,17 @@ server <- function(input, output, session) {
                                              "No Link Available",p(), #FU14
                                              "No Link Available",p(), #FU15
                                              
-                                             #FU 16 and FU17 are the only ones to have a report published in 2016
-                                             if (input$year==2023){a(href="https://oar.marine.ie/handle/10793/1185","Link to UWTV for FU16",target="_blank")},p(),
+                                             if (input$year==2023){a(href="http://hdl.handle.net/10793/1875","Link to UWTV for FU16",target="_blank")},p(),
 
-                                             if (input$year==2023){a(href="https://oar.marine.ie/handle/10793/1184","Link to UWTV for FU17",target="_blank")},p(),
+                                             if (input$year==2023){a(href="http://hdl.handle.net/10793/1876","Link to UWTV for FU17",target="_blank")},p(),
 
                                              "No Link Available",p(), #this lists 'No Link' for 'FU18 & 7 Other'
                                              
-                                             if (input$year==2023){a(href="http://hdl.handle.net/10793/1332","Link to UWTV for FU19",target="_blank")},p(),
+                                             if (input$year==2023){a(href="http://hdl.handle.net/10793/1879","Link to UWTV for FU19",target="_blank")},p(),
                                              
-                                             if(input$year==2023){a(href="http://hdl.handle.net/10793/1330","Link to UWTV for FU2021",target="_blank")},p(),
+                                             if(input$year==2023){a(href="http://hdl.handle.net/10793/1877","Link to UWTV for FU2021",target="_blank")},p(),
                                              
-                                             if(input$year==2023){a(href="http://oar.marine.ie/handle/10793/1331","Link to UWTV for FU22",target="_blank")},p(),
+                                             if(input$year==2023){a(href=" http://hdl.handle.net/10793/1878","Link to UWTV for FU22",target="_blank")},p(),
 
                                       )),
                              HTML("<br><br>"))}}
