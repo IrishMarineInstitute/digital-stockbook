@@ -45,7 +45,7 @@ ui <- fluidPage(
                                     tabPanel("ICES Rationale",htmlOutput("Rationaletext"),
                                              HTML("<br><br>")))),
                tabPanel("Long Term Management Plans", htmlOutput("LongTermManagementtext"),p(),
-                        imageOutput("MgtPlanFlow", height="30%"),p(),
+                        imageOutput("MgtPlanFlow", height="100%"),p(),
                         imageOutput("MgtPlan", height="100%"),
                         fluidRow(column(width = 5, imageOutput("MgtPlan2", height="100%")),
                                  column(width = 5, imageOutput("MgtPlan3", height="100%"))),
@@ -267,12 +267,12 @@ server <- function(input, output, session) {
   })
   output$MgtPlan <- renderImage({
     image_file <- paste0("www/Introduction/ManagementPlan",input$year,".PNG")
-    return(list(src = image_file, filetype = "image/png", height = 850))
+    return(list(src = image_file, filetype = "image/png", height = 1000))
   }, deleteFile = FALSE)
   
   output$MgtPlanFlow <- renderImage({
     image_file <- paste0("www/Introduction/ManPlanFlow",input$year,".png")
-    return(list(src = image_file, filetype = "image/png", height = 300))
+    return(list(src = image_file, filetype = "image/png", height = 450))
   }, deleteFile = FALSE)
   
   output$MgtPlan2 <- renderImage({
