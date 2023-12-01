@@ -31,7 +31,7 @@ ui <- fluidPage(
                                              #textOutput("TACsubheading"),
                                              h4(htmlOutput("TACsubheading")),
                                              #"Ireland's Share of the EU TAC",
-                                             HTML("<br><br>"),
+                                             HTML("<br>"),
                                              tags$head(tags$style(type="text/css", ".test_type {font-size: 11px;}")),
                                              div(class="test_type", tableOutput("IntroTable")),
                                              textOutput("TACtext1"),
@@ -50,7 +50,7 @@ ui <- fluidPage(
                         fluidRow(column(width = 5, imageOutput("MgtPlan2", height="100%")),
                                  column(width = 5, imageOutput("MgtPlan3", height="100%"))),
                         HTML("<br><br>")),
-               tabPanel("Advice Summary", textOutput("AdviceSummtext"),p(),
+               tabPanel("Advice Summary", h3(htmlOutput("AdviceSummtext")),p(),
                         imageOutput("AdviceSummtable1", height="100%"),p(),
                         imageOutput("AdviceSummtable2", height="100%"),
                         HTML("<br><br>")),
@@ -223,8 +223,9 @@ server <- function(input, output, session) {
   
   
   # djc 19/11/2021 Change the TAC sub-heading based on the year selected
+  #SM2023: Added formatting to title
   output$TACsubheading=renderText({
-       paste0(input$year," Irish quota in tonnes")
+       paste0(input$year," Irish quota in tonnes", HTML("<br>_____________________"))
   })
   
   
@@ -297,9 +298,10 @@ server <- function(input, output, session) {
     image_file <- paste0("www/Introduction/AdviceSumm",input$year,"table2.PNG")
     return(list(src = image_file, filetype = "image/png", width = 750))
   }, deleteFile = FALSE)
+  #SM2023: Added formatting totitle
   output$AdviceSummtext<- renderText({
-    paste0("Marine Institute Summary on the Status, Scientific Advice for ", as.numeric(input$year)+1,
-           " for those Stocks of Interest to Ireland")
+    paste0("Marine Institute Summary on the Status, Scientific Advice for ", as.numeric(input$year)+1, HTML("<br>"),
+           " for those Stocks of Interest to Ireland", HTML("<br>______________________________________________________"))
   })
   
   #############################
@@ -331,11 +333,11 @@ server <- function(input, output, session) {
   #Images
   output$Sustainabilitytable1 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table1.png")
-    return(list(src = image_file, filetype = "image/png", width = 800))
+    return(list(src = image_file, filetype = "image/png", width = 900))
   }, deleteFile = FALSE)
   output$Sustainabilitytable2 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table2.png")
-    return(list(src = image_file, filetype = "image/png", width = 800))
+    return(list(src = image_file, filetype = "image/png", width = 900))
   }, deleteFile = FALSE)
   output$Sustainabilitytable3 <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Table3.PNG")
@@ -348,7 +350,7 @@ server <- function(input, output, session) {
   #Added in 2022
   output$SustainabilityFig <- renderImage({
     image_file <- paste0("www/Introduction/Sustain",input$year,"Fig1.png")
-    return(list(src = image_file, filetype = "image/png", width = 900))
+    return(list(src = image_file, filetype = "image/png", width = 950))
   }, deleteFile = FALSE)
   
   ###############
